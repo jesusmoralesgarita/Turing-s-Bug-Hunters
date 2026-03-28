@@ -1,7 +1,15 @@
-
-/*Chucho*/
-
-/*Giovanni*/
+/*Chucho y Gio*/
+/* custom de la navbar */
+.navbar-custom {
+  background-color: #0b1c26; /* color oscuro similar */
+}
+.navbar-custom .nav-link,
+.navbar-custom .navbar-brand {
+  color: white;
+}
+.navbar-custom .nav-link:hover {
+  color: #00c3ff;
+}
 
 /*Oswaldo*/
 
