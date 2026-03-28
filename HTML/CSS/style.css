@@ -14,5 +14,41 @@
 /*Fer*/
 
 /*Luis*/
+.profiledevs-container{
+    background-color: #DADADA;
+    padding: 1rem;
+}
 
+.profiledevs{
+    background-color: #469487;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 5px;
+}
+
+.profiledevs-img{
+    width: 8rem;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    display: flex;
+    border-radius: 1rem;
+}
+
+.profiledevs-img img{
+    flex: 1;
+    object-fit: cover;
+}
+.profiledevs-desc{
+    width: 100%;
+    padding: 1rem;
+}
+.profiledevs-desc p{
+    color: white;
+    font-size: 0.7rem;
+}
+
+.profiledevs-desc h1{
+    color: #242424;
+    font-size: 1.2rem;
+}
 /*Leila*/
