@@ -26,14 +26,18 @@
     padding: 1rem;
     margin: 15px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
+    align-items: center;
     -webkit-box-shadow: 5px 5px 25px -3px #000000; 
     box-shadow: 5px 5px 25px -3px #000000;
+    transition: all 0.3s ease;
 }
 
 .profiledevs:hover {
     background-color: #469487bd;
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
 }
 
 
@@ -42,6 +46,7 @@
     aspect-ratio: 1 / 1;
     overflow: hidden;
     display: flex;
+    border-radius: 50%;
     border-radius: 1rem;
 }
 
@@ -52,14 +57,16 @@
 .profiledevs-desc{
     padding: 1rem;
     flex: 1;
+     text-align: center;
 }
 .profiledevs-desc p{
     color: white;
-    font-size: 0.7rem;
+    font-size: 0.9rem;
 }
 
 .profiledevs-desc h1{
     color: #242424;
     font-size: 1.2rem;
+    margin-bottom: 0.5rem;
 }
 /*Leila*/
