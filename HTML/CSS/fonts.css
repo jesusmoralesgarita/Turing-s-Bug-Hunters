@@ -1,20 +1,24 @@
+
 /* Fuente Montserrat para Títulos [Bold peso 700] */
 @font-face {
-  font-family: "Montserrat-T";
+  font-family: "Montserrat";
   src: url("../FONT/Montserrat/Montserrat-Bold.ttf") format("truetype");
   font-weight: 700;
+  font-style: normal;
 }
 
 /* Fuente Montserrat para Subtítulos [Semibold peso 600] */
 @font-face {
-  font-family: "Montserrat-ST";
+  font-family: "Montserrat";
   src: url("../FONT/Montserrat/Montserrat-SemiBold.ttf") format("truetype");
   font-weight: 600;
+  font-style: normal;
 }
 
 /* Fuente DM Sans para cuerpo de texto [Regular peso 400] */
 @font-face {
-  font-family: "DM-Sans-CT";
+  font-family: "DM Sans";
   src: url("../FONT/DM_Sans/DMSans-Regular.ttf") format("truetype");
   font-weight: 400;
+  font-style: normal;
 }
