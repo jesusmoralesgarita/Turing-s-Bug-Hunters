@@ -24,10 +24,12 @@
     background-color: #469487;
     border-radius: 1rem;
     padding: 1rem;
-    margin: 5px;
+    margin: 15px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    -webkit-box-shadow: 5px 5px 25px -3px #000000; 
+    box-shadow: 5px 5px 25px -3px #000000;
 }
 
 .profiledevs:hover {
