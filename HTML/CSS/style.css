@@ -14,7 +14,58 @@
 /*Oswaldo*/
 
 /*Maitte*/
+/* Sección contenedora con el efecto de fondo */
+.tn-section-sobre-nosotros {
+    /* Fondo con degradado suave inspirado en la captura */
+    background: linear-gradient(135deg, #ffffff 0%, #f0f8f7 100%);
+    border: 1px solid rgba(0,0,0,0.05);
+    overflow: hidden; /* Para que nada se salga de los bordes redondeados */
+}
 
+/* Título principal */
+.tn-titulo-sobre {
+    font-weight: 700;
+    color: #212529;
+    font-size: 1.75rem;
+}
+
+/* Estilo del párrafo (Justificado como en la original) */
+.tn-texto-sobre {
+    font-size: 1.05rem;
+    color: #4a4a4a;
+    line-height: 1.7;
+    text-align: justify; 
+}
+
+/* Contenedor del logo para centrarlo */
+.tn-logo-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo del Logo Circular */
+.tn-logo-circular {
+    width: 280px; 
+    height: 280px;
+    object-fit: cover; 
+    border-radius: 50%; 
+}
+.tn-logo-circular:hover {
+    transform: scale(1.02);
+}
+
+/* Ajustes para celulares (Responsivo) */
+@media (max-width: 768px) {
+    .tn-logo-circular {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .tn-texto-sobre {
+        text-align: left; 
+    }
+}
 /*Erick*/
 
 /*Alex*/
