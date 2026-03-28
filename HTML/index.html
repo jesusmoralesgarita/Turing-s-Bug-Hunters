@@ -1,38 +1,104 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Index</title>
     <!-- LINKS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="CSS/style.css">
-</head>
-<body>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="CSS/style.css" />
+  </head>
+  <body>
     <!-- Chucho y Gio Nav bar-->
-     <nav>
-        <!-- boton para las categorias -->
-         <button class="btn btn-outline-light me-3">
-            <i class="bi bi-list">Categorías</i>
-         </button>
-     </nav>
+    <nav class="navbar navbar-expand-lg navbar-custom px-4">
+      <!-- boton para las categorias con dropdown  -->
+      <!-- dropdown para las categorias -->
+      <div class="dropdown">
+        <button
+          class="btn btn-outline-light dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+        >
+          <i class="bi bi-list"></i> Categorías
+        </button>
 
-     <!---Oswaldo-->
+        <div class="dropdown-menu p-4 custom-dropdown">
+          <!-- Lista de categorías -->
+          <div class="menu-categorias text-center mb-4">
+            <p>Playeras</p>
+            <p>Tazas</p>
+            <p>Sudaderas</p>
+            <p>Vasos</p>
+            <p>Plumas</p>
+            <p>Pines</p>
+            <p>Stickers</p>
+          </div>
 
-     <!--Maitte-->
+          <!-- Sección diseño personalizado -->
+          <div class="menu-contacto d-flex align-items-center">
+            <i class="bi bi-envelope fs-1 me-3"></i>
+            <div>
+              <strong>¿Necesitas un diseño personalizado?</strong>
+              <p class="mb-0">Contáctanos y te cotizaremos</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Secciones -->
+      <div class="collapse navbar-collapse show">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Quiénes Somos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contacto</a>
+          </li>
+        </ul>
+        <!-- carrito de compras -->
+       <div class="dropdown">
+        <button class="btn text-white" type="button" data-bs-toggle="dropdown">
+            <i class="bi bi-cart fs-4"></i>
+        </button>
+        <div class="dropdown-menu dropdown-carrito dropdown-menu-end p-3">
+            <div class="carrito-menu text-center">
+                <p>Carrito de compras</p>
+                <p>Historial de compras</p>
+            </div>
+        </div>
+    </div>
+</nav>
 
-     <!-- Erick-->
+    <!---Oswaldo-->
 
-     <!-- Alex -->
+    <!--Maitte-->
 
-      <!-- Fer-->
+    <!-- Erick-->
 
-      <!-- Luis -->
+    <!-- Alex -->
 
-      <!-- Leila -->
+    <!-- Fer-->
 
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-      <script src="JS/script.js"></script>
-</body>
+    <!-- Luis -->
+
+    <!-- Leila -->
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="JS/script.js"></script>
+  </body>
 </html>

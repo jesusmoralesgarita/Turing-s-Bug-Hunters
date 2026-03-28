@@ -1,7 +1,7 @@
 /*Chucho y Gio*/
 /* custom de la navbar */
 .navbar-custom {
-  background-color: #0b1c26; /* color oscuro similar */
+  background-color: #0b1c26; 
 }
 .navbar-custom .nav-link,
 .navbar-custom .navbar-brand {
@@ -9,6 +9,55 @@
 }
 .navbar-custom .nav-link:hover {
   color: #00c3ff;
+}
+
+/* estilo del menu de categorias */
+.custom-dropdown {
+  width: 280px;
+  background-color: #b67c4b; /* fondo café */
+  border: none;
+}
+
+/* Caja de categorías */
+.menu-categorias {
+  background-color: #e9e4ea;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.menu-categorias p {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+/* Caja inferior */
+.menu-contacto {
+  background-color: #e9e4ea;
+  border-radius: 20px;
+  padding: 15px;
+}
+
+.menu-contacto i {
+  color: #333;
+}
+
+/* diseño carro de compras */
+.dropdown-carrito {
+  width: 250px;
+  background-color: #b67c4b; /* fondo café */
+  border: none;
+}
+
+/* Caja interna */
+.carrito-menu {
+  background-color: #e9e4ea;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.carrito-menu p {
+  margin: 15px 0;
+  font-size: 18px;
 }
 
 /*Oswaldo*/
