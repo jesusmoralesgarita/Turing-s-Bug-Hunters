@@ -1,10 +1,8 @@
-
 /* Fuente Montserrat para Títulos [Bold peso 700] */
 @font-face {
-  font-family: "Montserrat";
+  font-family: "Montserrat-T";
   src: url("../FONT/Montserrat/Montserrat-Bold.ttf") format("truetype");
   font-weight: 700;
-  font-style: normal;
 }
 
 /* Fuente Montserrat para Subtítulos [Semibold peso 600] */
