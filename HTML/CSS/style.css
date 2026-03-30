@@ -14,11 +14,29 @@
 /*Oswaldo*/
 
 /*Maitte*/
+/* --- 1. REGISTRO DE FUENTES --- */
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: url('../FONT/Montserrat-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat-Bold';
+    src: url('../FONT/Montserrat-Bold.ttf') format('truetype');
+}
+
+/* Aplicar fuente base a todo el proyecto */
+body {
+    font-family: 'Montserrat-Regular', sans-serif;
+}
+
+/* --- 2. ESTILOS DE LA SECCIÓN --- */
+
 /* Sección contenedora con el fondo de acuarela suave */
 .tn-section-sobre-nosotros {
-    background-image: url('../imagenes/fondoTurings.jpeg'); 
+    background-image: url('../Pictures/fondoTurings.jpeg'); 
     
-    /* 2. EFECTO DE TRANSPARENCIA REFORZADO */
+    /* EFECTO DE TRANSPARENCIA REFORZADO */
     background-size: cover;
     background-position: center bottom;
     background-repeat: no-repeat;
@@ -32,7 +50,7 @@
     overflow: hidden;
     border-radius: 1.5rem;
     padding: 3rem; 
-    transition: background-color 0.3s ease; /*  efecto al pasar el mouse */
+    transition: background-color 0.3s ease; 
 }
 
 /* Alineación de la fila */
@@ -40,22 +58,24 @@
     min-height: 300px;
 }
 
-/* Título */
+/* Título con Montserrat Bold */
 .tn-titulo-sobre {
+    font-family: 'Montserrat-Bold', sans-serif; /* Fuente de Oswaldo aplicada */
     font-weight: 700;
-    color: #1a1a1a; /* Un negro casi puro para máxima legibilidad */
+    color: #1a1a1a; 
     font-size: 1.75rem;
 }
 
-/* Texto del párrafo */
+/* Texto del párrafo con Montserrat Regular */
 .tn-texto-sobre {
+    font-family: 'Montserrat-Regular', sans-serif; /* Fuente de Oswaldo aplicada */
     font-size: 1.05rem;
     color: #333333; 
     line-height: 1.7;
     text-align: justify;
 }
 
-/* Contenedor y estilo del Logo (SIN FONDO BLANCO) */
+/* Contenedor y estilo del Logo */
 .tn-logo-wrapper {
     display: flex;
     justify-content: center;
@@ -76,7 +96,7 @@
     transform: scale(1.03);
 }
 
-/* Ajustes para Celulares */
+/* --- 3. AJUSTES PARA CELULARES --- */
 @media (max-width: 768px) {
     .tn-logo-circular {
         width: 180px;
