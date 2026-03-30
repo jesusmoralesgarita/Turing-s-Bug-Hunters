@@ -12,6 +12,56 @@
 }
 
 /*Oswaldo*/
+.color-row {
+  color: #ffffff;
+  background-color: #208774;
+  margin: 0;
+  min-height: 5rem;
+}
+
+.marca {
+  font-family: "Montserrat-T";
+  font-size: 2rem;
+}
+
+.sloga1 {
+  font-family: "Montserrat-ST";
+  font-size: 0.8rem;
+  letter-spacing: 0.08rem;
+}
+
+.btn-inicio-sesion {
+  font-family: "DM-Sans-CT";
+  color: #fff;
+  border-color: white;
+  border-width: 0.15rem;
+  background: #208774;
+}
+
+.btn-registrate {
+  font-family: "DM-Sans-CT";
+  color: #fff;
+  border-color: #be814f;
+  border-width: 0.15rem;
+  background: #be814f;
+}
+
+.sloga2 {
+  font-family: "Montserrat-ST";
+  min-height: 3.5rem;
+  font-size: 1.6rem;
+  color: #fff;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    to right,
+    rgba(32, 135, 116, 0.7),
+    rgba(190, 129, 79, 0.7)
+  );
+  width: 100%;
+}
 
 /*Maitte*/
 /* --- 1. REGISTRO DE FUENTES --- */
