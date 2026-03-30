@@ -1,93 +1,270 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="CSS/fonts.css">
+    <title>Index</title>
+    <!-- LINKS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/fonts.css"> 
     <link rel="stylesheet" href="CSS/style.css">
+    
 </head>
 
 <body>
-    <!-- Chucho-->
+    <!-- Chucho y Gio Nav bar-->
+     <nav>
+        <!-- boton para las categorias -->
+         <button class="btn btn-outline-light me-3">
+            <i class="bi bi-list">Categorías</i>
+         </button>
+     </nav>
 
-    <!--Giovanni-->
+     <!---Oswaldo-->
+    <!-- Grid con el nombre de la marca, slogan 1 y botones de iniciar sesión y registrate -->
+    <div class="row g-0 align-items-center color-row">
+        <div class="col-12 col-md-4 px-3">
+            <h1 class="text-center text-md-start marca m-0">
+                Tinta Nómada
+            </h1>
+        </div>
 
-    <!---Oswaldo-->
+        <div class="col-12 col-md-4 py-2 py-md-0">
+            <p class="text-center sloga1 m-0 ">
+                Ponle color a tu vida, ponle Tinta Nómada
+            </p>
+        </div>
 
-    <!--Maitte-->
-
-    <!-- Erick-->
-    <div class="container-fluid">
-        <div class="container text-center">
-            <div class="row">
-                <div class="col-8">
-                    <div class="container text-start">
-                        <div class="row">
-                            <div class="col">
-                                <p></p>
-                                <div class="card" id="colorBackmv">
-                                    <div class="card-body">
-                                        <h5 class="misionVisionT"><img src="Pictures/mision 1.png" class="float-end"
-                                                width="60rem">Nuestra misión</h5>
-                                        <p></p>
-                                        <div class="col-10 offset-md-1">
-                                            <p class="misionVisionP">Tinta Nómada ofrece una plataforma
-                                                confiable y sencilla para gestionar recuerdos personalizados, optimizando la administración
-                                                de pedidos y fortaleciendo la comunicación con los clientes. Nuestro compromiso
-                                                es transformar momentos especiales en recuerdos únicos, brindando un
-                                                servicio eficiente, transparente y cercano.</p>
-                                        </div>
-                                        <img src="Pictures/Line 1.png" class="img-fluid">
-                                    </div>
-                                </div>
-                                <p></p>
-                                <div class="card" id="colorBackmv">
-                                    <div class="card-body">
-                                        <h5 class="misionVisionT"><img src="Pictures/vision 1.png" class="float-end"
-                                                width="60rem">Nuestra visión</h5>
-                                        <p></p>
-                                        <div class="col-10 offset-md-1">
-                                            <p class="misionVisionP" >Tinta Nómada busca convertirse en
-                                                la plataforma digital líder para la gestión y personalización de
-                                                recuerdos y regalos especiales, destacando por su innovación,
-                                                confiabilidad y atención al cliente. Su propósito es conectar emociones
-                                                con creatividad y ayudar a las personas a celebrar momentos importantes
-                                                de manera única.</p>
-                                        </div>
-                                        <img src="Pictures/Line 1.png" class="img-fluid">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    Tarea de alejandro
-                </div>
-            </div>
+        <div class="col-12 col-md-4 d-grid d-md-flex justify-content-md-end gap-3 p-2">
+            <!-- [Importante sustituir el contenido de href] Botón de iniciar sesión -->
+            <a href="inicio_sesion.html" target="_self" rel="noopener noreferrer" class="d-grid d-md-inline-block text-decoration-none">
+                <button type="button" class="btn btn-primary btn-inicio-sesion">
+                    Iniciar Sesión
+                </button>
+            </a>
+            <!--[Importante sustituir el contenido de href] Botón de registrate -->
+            <a href="registro.html" target="_self" rel="noopener noreferrer" class="d-grid d-md-inline-block text-decoration-none">
+                <button type="button" class="btn btn-secondary btn-registrate">
+                    Registrate
+                </button> 
+            </a>
         </div>
     </div>
 
-    <!-- Alex -->
+    <!-- Slogan 2 y gradiente -->
+    <div class="row g-0">
+        <div class="col-12">
+            <p class="sloga2 text-center m-0 d-flex align-items-center justify-content-center">
+                Creatividad que conecta emociones
+            </p>
+        </div>
+    </div>
 
-    <!-- Fer-->
+     <!--Maitte-->
+     <section class="container tn-section-sobre-nosotros my-5 shadow-sm">
+        <div class="row align-items-center tn-row-ajustada">
+            
+            <div class="col-md-8 pe-md-5">
+                <h2 class="tn-titulo-sobre mb-4">Sobre Tinta Nómada</h2>
+                <p class="tn-texto-sobre">
+                    Somos un grupo de mentes creativas dedicadas a plasmar la cultura, el arte y lo que tu imaginación inspire. 
+                    Nuestro trabajo no se limita a crear piezas visuales, sino a conectar emociones con experiencias únicas, 
+                    transformando cada proyecto en un reflejo auténtico de quienes lo solicitan.
+                </p>
+            </div>
 
+            <div class="col-md-4">
+                <div class="tn-logo-wrapper">
+                    <img src="Pictures/turinglogo.jpeg" alt="Logo Tinta Nómada" class="tn-logo-circular">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+ <!-- Fer-->
+       <div class="profiledevs-container">
+        <div class="container">
+            <div class="row">
+                <div class="col profiledevs">
+                    <div class="">
+                        <div class="profiledevs-img">
+                            <img src="./Pictures/Lei.jpeg">
+                        </div>
+                      </div>
+                    <div class=" profiledevs-desc">
+                        <h1>Leilani</h1>
+                        <p>Estratega SCRUM y Desarrollador Frontend</p>
+                    </div>
+                </div>
+                <div class="col profiledevs">
+                    <div class="">
+                        <div class="profiledevs-img">
+                            <img  src="./Pictures/Maitte.jpeg">
+                        </div>
+                    </div>
+                    <div class="profiledevs-desc ">
+                        <h1>Maitte</h1>
+                        <p>Estratega SCRUM y Desarrollador Frontend</p>
+                    </div>
+                </div>
+                <div class="col profiledevs">
+                    <div class="">
+                        <div class="profiledevs-img">
+                            <img  src="./Pictures/Gio.jpeg">
+                        </div>
+                    </div>
+                    <div class="profiledevs-desc ">
+                        <h1>Giovanni</h1>
+                        <p>Estratega SCRUM y Desarrollador Frontend</p>
+                    </div>
+                </div>
+                <div class="col profiledevs">
+                    <div class="">
+                        <div class="profiledevs-img">
+                            <img  src="./Pictures/Jesus.jpeg">
+                        </div>
+                    </div>
+                    <div class="profiledevs-desc">
+                        <h1>Jesus</h1>
+                        <p>Estratega SCRUM y Desarrollador Frontend</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+      </div>
     <!-- Luis -->
+ <!-- tarjetas del equipo -->
+      <div class="profiledevs-container">
+        <div class="container">
+            <div class="row">
+                <div class="col profiledevs">
+                    <div class="">
+                        <div class="profiledevs-img">
+                            <img src="./Pictures/Erick.png">
+                        </div>
+                    </div>
+                    <div class=" profiledevs-desc">
+                        <h1>Erick</h1>
+                        <p>Estratega SCRUM y Desarrollador Frontend</p>
+                    </div>
+                </div>
+                <div class="col profiledevs">
+                    <div class="">
+                        <div class="profiledevs-img">
+                            <img  src="./Pictures/Luis.png">
+                        </div>
+                    </div>
+                    <div class="profiledevs-desc ">
+                        <h1>Luis Angel</h1>
+                        <p>Estratega SCRUM y Desarrollador Frontend</p>
+                    </div>
+                </div>
+                <div class="col profiledevs">
+                    <div class="">
+                        <div class="profiledevs-img">
+                            <img  src="./Pictures/Oswaldo.png">
+                        </div>
+                    </div>
+                    <div class="profiledevs-desc ">
+                        <h1>Oswaldo</h1>
+                        <p>Estratega SCRUM y Desarrollador Frontend</p>
+                    </div>
+                </div>
+                <div class="col profiledevs">
+                    <div class="">
+                        <div class="profiledevs-img">
+                            <img  src="./Pictures/FerS.jpeg">
+                        </div>
+                    </div>
+                    <div class="profiledevs-desc">
+                        <h1>Fernando</h1>
+                        <p>Estratega SCRUM y Desarrollador Frontend</p>
+                    </div>
+                </div>
+                <div class="col profiledevs">
+                        <div class="profiledevs-img">
+                            <img  src="./Pictures/Ale.png">
+                        </div>
+                        <div class="profiledevs-desc ">
+                            <h1>Alejandro</h1>
+                            <p>Estratega SCRUM y Desarrollador Frontend</p>
+                        </div>
+                </div>
+            </div>
+        </div>
 
+      </div>
     <!-- Leila -->
+    <!---Estructura del Footer-->
+    <footer class="f-dorado text-white pt-4 pb-2">
+      <div class="container">
+        <div class="row">
+          <!---Contacto-->
+          <div class="col-md-3">
+            <h5 class="text-dark">
+              <i class="bi bi-envelope me-2"></i>Contacto
+            </h5>
+            <p>
+              <a href="mailto:turingsbh@contacto.com" class="correo"
+                >turingsbh@contacto.com</a
+              >
+            </p>
+          </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+          <!---Redes Sociales-->
+          <div class="col-md-3">
+            <h5 class="text-dark">Nuestras Redes Sociales</h5>
+            <a href="enlace Facebook" class="text-white me-2"
+              ><i class="bi bi-facebook"></i
+            ></a>
+            <a href="enlace Instagram" class="text-white me-2"
+              ><i class="bi bi-instagram"></i
+            ></a>
+            <a href="enlace Github" class="text-white"
+              ><i class="bi bi-github"></i
+            ></a>
+          </div>
+     
+       
+
+          <!---Ubicación-->
+          <div class="col-md-3">
+            <h5 class="text-dark">
+              <i class="bi bi-geo-alt me-2"></i>Ubicación
+            </h5>
+            <p class="text-dark">Temascalpa, Estado de México</p>
+          </div>
+
+          <!---Políticas-->
+          <div class="col-md-3 text-md-end">
+            <h5 class="text-dark">Política de Privacidad</h5>
+            <p>
+              <a href="Enlace a Políticas" class="politica">Ver Política</a>
+            </p>
+          </div>
+
+          <!---Estructura de footer-->
+        </div>
+        <hr class="border-light" />
+        <p class="text-center">
+          Copyright © 2026 Turing's Bug Hunters S.A de C.V. All Rights Reserved.
+        </p>
+      </div>
+    </footer>
+
+    
+     
+       
+     
+
+      <!-- Leila -->
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+      <script src="JS/script.js"></script>
 </body>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </html>
