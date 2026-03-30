@@ -58,44 +58,55 @@
 
 /*Erick*/
 
-/*Alex*/
-
 /* Alex */
 
 .valores-card {
-    background-color: #0B192C;
-    border: 2px solid #D68F5B;
+    background-color: #0B192C; 
+    
+    border: 2px solid #be814f; 
+    
     border-radius: 12px;
     padding: 30px 25px;
-    width: 280px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    width: 320px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    margin: 40px auto;
 }
 
 .valores-card h2 {
     color: #FFFFFF;
-    font-size: 22px;
+    font-family: "Montserrat-T", sans-serif;
+    font-size: 1.8rem;
     text-align: center;
-    margin-top: 0;
     margin-bottom: 25px;
-    font-weight: 700;
 }
 
 .valor-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 2px solid #D68F5B;
+    border: 1.5px solid #be814f;
     border-radius: 10px;
     padding: 12px 20px;
-    margin-bottom: 16px;
-    background-color: transparent;
+    margin-bottom: 12px;
+    background-color: rgba(255, 255, 255, 0.03);
     transition: all 0.3s ease;
+}
+
+.valor-item:hover {
+    transform: scale(1.03);
+    background-color: rgba(190, 129, 79, 0.2);
 }
 
 .valor-item span {
     color: #FFFFFF;
-    font-size: 15px;
+    font-family: "Montserrat-ST", sans-serif;
+    font-size: 1.1rem;
     font-weight: 600;
+}
+
+.valor-item img {
+    height: 40px;
+    width: auto;
 }
 
 
