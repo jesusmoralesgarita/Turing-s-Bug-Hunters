@@ -14,56 +14,81 @@
 /*Oswaldo*/
 
 /*Maitte*/
-/* Sección contenedora con el efecto de fondo */
+/* Sección contenedora con el fondo de acuarela suave */
 .tn-section-sobre-nosotros {
-    /* Fondo con degradado suave inspirado en la captura */
-    background: linear-gradient(135deg, #ffffff 0%, #f0f8f7 100%);
+    background-image: url('../imagenes/fondoTurings.jpeg'); 
+    
+    /* 2. EFECTO DE TRANSPARENCIA REFORZADO */
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    
+    /* TRUCO: Un color de fondo blanco con transparencia del 60% */
+    background-color: rgba(255, 255, 255, 0.6); 
+    
+    /* para que el fondo se aclare */
+    background-blend-mode: overlay; 
     border: 1px solid rgba(0,0,0,0.05);
-    overflow: hidden; /* Para que nada se salga de los bordes redondeados */
+    overflow: hidden;
+    border-radius: 1.5rem;
+    padding: 3rem; 
+    transition: background-color 0.3s ease; /*  efecto al pasar el mouse */
 }
 
-/* Título principal */
+/* Alineación de la fila */
+.tn-row-ajustada {
+    min-height: 300px;
+}
+
+/* Título */
 .tn-titulo-sobre {
     font-weight: 700;
-    color: #212529;
+    color: #1a1a1a; /* Un negro casi puro para máxima legibilidad */
     font-size: 1.75rem;
 }
 
-/* Estilo del párrafo (Justificado como en la original) */
+/* Texto del párrafo */
 .tn-texto-sobre {
     font-size: 1.05rem;
-    color: #4a4a4a;
+    color: #333333; 
     line-height: 1.7;
-    text-align: justify; 
+    text-align: justify;
 }
 
-/* Contenedor del logo para centrarlo */
+/* Contenedor y estilo del Logo (SIN FONDO BLANCO) */
 .tn-logo-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Estilo del Logo Circular */
 .tn-logo-circular {
-    width: 280px; 
-    height: 280px;
-    object-fit: cover; 
-    border-radius: 50%; 
-}
-.tn-logo-circular:hover {
-    transform: scale(1.02);
+    width: 260px;
+    height: 260px;
+    object-fit: contain; 
+    border-radius: 50%;
+    /* Añadimos una sombrita muy suave para que el logo resalte sin el fondo blanco */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1); 
+    transition: transform 0.3s ease;
 }
 
-/* Ajustes para celulares (Responsivo) */
+.tn-logo-circular:hover {
+    transform: scale(1.03);
+}
+
+/* Ajustes para Celulares */
 @media (max-width: 768px) {
     .tn-logo-circular {
-        width: 200px;
-        height: 200px;
+        width: 180px;
+        height: 180px;
     }
     
     .tn-texto-sobre {
-        text-align: left; 
+        text-align: left;
+    }
+    
+    .tn-section-sobre-nosotros {
+        padding: 2.5rem 1.5rem;
     }
 }
 /*Erick*/
