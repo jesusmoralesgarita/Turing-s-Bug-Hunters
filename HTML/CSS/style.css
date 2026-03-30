@@ -64,6 +64,17 @@
 #colorRaya{
     background-color: #BE814F;
 }
+
+.misionVisionT{
+    font-family: 'Montserrat-T';
+    color: #FFFFFF;
+    font-size: 2rem;
+}
+.misionVisionP{
+    font-family: 'Montserrat-ST';
+    color: #FFFFFF;
+    font-size: 1rem;
+}
 /*Alex*/
 
 /*Fer*/
