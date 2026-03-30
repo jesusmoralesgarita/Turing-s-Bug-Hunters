@@ -63,11 +63,13 @@
 }
 .profiledevs-desc p{
     color: white;
+    font-family: "DM-Sans-CT";
     font-size: 0.9rem;
 }
 
 .profiledevs-desc h1{
     color: #242424;
+    font-family: "Montserrat-ST";
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
 }
