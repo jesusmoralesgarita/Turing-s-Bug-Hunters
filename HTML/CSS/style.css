@@ -221,10 +221,57 @@ body {
     font-size: 0.9rem;
 }
 
+/*Leila*/
+.f-dorado {
+  background-color: #BE814F; /* Poner el fondo dorado */
+}
+
+/*Fuentes*/
+body, footer p, footer a {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400; /* Regular, cuerpo de texto */
+}
+
+footer h5 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700; /* Bold, títulos principales */
+}
+
+footer h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600; /* SemiBold, subtítulos */
+}
+
+
+footer a i {
+  color: black; /* color inicial */
+  transition: color 0.3s ease; /* efecto suave */
+}
+
+footer a i:hover {
+  color: #FFFFFF; /* blanco al pasar el mouse */
+}
+
+footer a.politica {
+    color: black; /* color inicial */
+    transition: color 0.3s ease;
+}
+
+footer a.politica:hover {
+    color: #FFFFFF; /* blanco al pasar el mouse */
+}
+
+footer a.correo {
+    color: black; /* color inicial */
+    transition: color 0.3s ease;
+}
+
+footer a.correo:hover {
+    color: #FFFFFF; /* blanco al pasar el mouse */
+}
 .profiledevs-desc h1{
     color: #242424;
     font-family: "Montserrat-ST";
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
 }
-/*Leila*/
