@@ -78,6 +78,22 @@
   font-size: 2rem;
 }
 
+<<<<<<< Gio
+=======
+/*Oswaldo*/
+.color-row {
+  color: #ffffff;
+  background-color: #208774;
+  margin: 0;
+  min-height: 5rem;
+}
+
+.marca {
+  font-family: "Montserrat-T";
+  font-size: 2rem;
+}
+
+>>>>>>> quienessomos
 .sloga1 {
   font-family: "Montserrat-ST";
   font-size: 0.8rem;
@@ -118,13 +134,282 @@
 }
 
 /*Maitte*/
+/* --- 1. REGISTRO DE FUENTES --- */
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: url('../FONT/Montserrat-Regular.ttf') format('truetype');
+}
 
+@font-face {
+    font-family: 'Montserrat-Bold';
+    src: url('../FONT/Montserrat-Bold.ttf') format('truetype');
+}
+
+/* Aplicar fuente base a todo el proyecto */
+body {
+    font-family: 'Montserrat-Regular', sans-serif;
+}
+
+/* --- 2. ESTILOS DE LA SECCIÓN --- */
+
+/* Sección contenedora con el fondo de acuarela suave */
+.tn-section-sobre-nosotros {
+    background-image: url('../Pictures/fondoTurings.jpeg'); 
+    
+    /* EFECTO DE TRANSPARENCIA REFORZADO */
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    
+    /* TRUCO: Un color de fondo blanco con transparencia del 60% */
+    background-color: rgba(255, 255, 255, 0.6); 
+    
+    /* para que el fondo se aclare */
+    background-blend-mode: overlay; 
+    border: 1px solid rgba(0,0,0,0.05);
+    overflow: hidden;
+    border-radius: 1.5rem;
+    padding: 3rem; 
+    transition: background-color 0.3s ease; 
+}
+
+/* Alineación de la fila */
+.tn-row-ajustada {
+    min-height: 300px;
+}
+
+/* Título con Montserrat Bold */
+.tn-titulo-sobre {
+    font-family: 'Montserrat-Bold', sans-serif; /* Fuente de Oswaldo aplicada */
+    font-weight: 700;
+    color: #1a1a1a; 
+    font-size: 1.75rem;
+}
+
+/* Texto del párrafo con Montserrat Regular */
+.tn-texto-sobre {
+    font-family: 'Montserrat-Regular', sans-serif; /* Fuente de Oswaldo aplicada */
+    font-size: 1.05rem;
+    color: #333333; 
+    line-height: 1.7;
+    text-align: justify;
+}
+
+/* Contenedor y estilo del Logo */
+.tn-logo-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tn-logo-circular {
+    width: 260px;
+    height: 260px;
+    object-fit: contain; 
+    border-radius: 50%;
+    /* Añadimos una sombrita muy suave para que el logo resalte sin el fondo blanco */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1); 
+    transition: transform 0.3s ease;
+}
+
+.tn-logo-circular:hover {
+    transform: scale(1.03);
+}
+
+/* --- 3. AJUSTES PARA CELULARES --- */
+@media (max-width: 768px) {
+    .tn-logo-circular {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .tn-texto-sobre {
+        text-align: left;
+    }
+    
+    .tn-section-sobre-nosotros {
+        padding: 2.5rem 1.5rem;
+    }
+}
 /*Erick*/
+#colorBackmv{
+    background-color: #061f2f;
+    font-family: 'Montserrat';
+}
+#colorRaya{
+    background-color: #BE814F;
+}
 
+.misionVisionT{
+    font-family: 'Montserrat-T';
+    color: #FFFFFF;
+    font-size: 2rem;
+}
+.misionVisionP{
+    font-family: 'Montserrat-ST';
+    color: #FFFFFF;
+    font-size: 1rem;
+}
 /*Alex*/
+
+.valores-card {
+    background-color: #0B192C; 
+    border: 2px solid #be814f; 
+    border-radius: 12px;
+    padding: 40px 30px;
+    width: 350px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    margin: 0; 
+}
+
+.valores-card h2 {
+    color: #FFFFFF;
+    font-family: "Montserrat-T", sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+.valor-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid #be814f; 
+    border-radius: 10px;
+    padding: 12px 20px;
+    margin-bottom: 16px;
+    background-color: rgba(255, 255, 255, 0.03);
+    
+    transition: none; 
+    transform: none;
+    cursor: default;
+}
+
+.valor-item:last-child {
+    margin-bottom: 0;
+}
+
+
+.valor-item span {
+    color: #FFFFFF;
+    font-family: "Montserrat-ST", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.valor-item img {
+    height: 45px;
+    width: auto;
+}
 
 /*Fer*/
 
 /*Luis*/
+.profiledevs-container{
+    background-color: #DADADA;
+    padding: 1rem;
+}
+
+
+.profiledevs{
+    background-color: #469487;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    -webkit-box-shadow: 5px 5px 25px -3px #000000; 
+    box-shadow: 5px 5px 25px -3px #000000;
+    transition: all 0.3s ease;
+}
+
+.profiledevs:hover {
+    background-color: #469487bd;
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+}
+
+
+.profiledevs-img{
+    width: 8rem;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    display: flex;
+    border-radius: 50%;
+    border-radius: 1rem;
+}
+
+.profiledevs-img img{
+    flex: 1;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.profiledevs-desc{
+    padding: 1rem;
+    flex: 1;
+     text-align: center;
+}
+.profiledevs-desc p{
+    color: white;
+    font-family: "DM-Sans-CT";
+    font-size: 0.9rem;
+}
 
 /*Leila*/
+.f-dorado {
+  background-color: #BE814F; /* Poner el fondo dorado */
+}
+
+/*Fuentes*/
+body, footer p, footer a {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400; /* Regular, cuerpo de texto */
+}
+
+footer h5 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700; /* Bold, títulos principales */
+}
+
+footer h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600; /* SemiBold, subtítulos */
+}
+
+
+footer a i {
+  color: black; /* color inicial */
+  transition: color 0.3s ease; /* efecto suave */
+}
+
+footer a i:hover {
+  color: #FFFFFF; /* blanco al pasar el mouse */
+}
+
+footer a.politica {
+    color: black; /* color inicial */
+    transition: color 0.3s ease;
+}
+
+footer a.politica:hover {
+    color: #FFFFFF; /* blanco al pasar el mouse */
+}
+
+footer a.correo {
+    color: black; /* color inicial */
+    transition: color 0.3s ease;
+}
+
+footer a.correo:hover {
+    color: #FFFFFF; /* blanco al pasar el mouse */
+}
+.profiledevs-desc h1{
+    color: #242424;
+    font-family: "Montserrat-ST";
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
