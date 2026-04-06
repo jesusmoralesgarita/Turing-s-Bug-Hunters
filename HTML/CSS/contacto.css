@@ -1,11 +1,23 @@
 /* Oswaldo */
-.card-contactanos {
-  background-color: #061f2f;
+/* estilo del menu de categorias */
+.custom-dropdown {
+  width: 280px;
+  background-color: #b67c4b; /* fondo café */
+  border: none;
+  font-family: "DM Sans";
 }
-.text-contactanos {
+
+.card-cttn {
+  background-color: #061f2f;
+  border-radius: 25px;
+  width: 100%;
+  max-width: 80%;
+  box-shadow: 18px -18px 2px 5px #bcbbbb;
+}
+.text-cttn {
+  font-size: 3rem;
   color: #ffffff;
   font-family: "Montserrat-T";
-  font-size: 2rem;
 }
 
 /* Luis */
