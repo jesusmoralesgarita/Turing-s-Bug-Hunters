@@ -3,30 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tinta Nómada - Contacto</title>
 </head>
 <body>
-    <form id="contact-form" action="" method="POST">
 
-    
-    <label>Nombre</label>
-    <input type="text" name="nombre" placeholder="Nombre" required>
+    <form id="contact-form" action="https://formspree.io/f/xykblqrv" method="POST">
 
-    <label>Apellido</label>
-    <input type="text" name="apellido" placeholder="Apellido" required>
+        <label>Nombre</label>
+        <input type="text" name="nombre" placeholder="Nombre" required>
 
-    <label>Correo</label>
-    <input type="email" name="_replyto" placeholder="ejemplo@tintanomada.com" required>
+        <label>Apellido</label>
+        <input type="text" name="apellido" placeholder="Apellido" required>
 
-    <label>Mensaje</label>
-    <textarea name="mensaje" placeholder="Ingresa tu mensaje" required></textarea>
+        <label>Correo</label>
+        <input type="email" name="email" placeholder="ejemplo@tintanomada.com" required>
 
-    <input type="hidden" name="_subject" value="Nuevo mensaje de Tinta Nómada">
+        <label>Mensaje</label>
+        <textarea name="mensaje" placeholder="Ingresa tu mensaje" required></textarea>
 
-    <button type="submit">Enviar</button>
-</form>
-<!-- Esto le dice: "Busca el script que está en esta misma carpeta" -->
-<script src="script.js"></script>
+        <input type="hidden" name="_subject" value="Nuevo mensaje de Tinta Nómada">
 
+        <button type="submit" id="submit-btn">Enviar</button>
+    </form>
+
+    <script src="script.js"></script>
 </body>
 </html>
