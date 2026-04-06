@@ -14,9 +14,9 @@ function validarEmail(email) {
     return regex.test(email);
 }
 
-
+/*
 document.getElementById("registroForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Evita el envío automático
+    event.preventDefault(); // Evita el envío automático */
 
     // Limpiar mensajes previos
     document.querySelectorAll(".error").forEach(e => e.textContent = "");
@@ -68,7 +68,7 @@ document.getElementById("registroForm").addEventListener("submit", function(even
         alert("Registro realizado con exito");
         this.submit();
     }
-});
+//});
 
     /* Mai */
 
