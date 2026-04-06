@@ -88,6 +88,75 @@
   text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
 }
 
+/*CARDS DE PRODUCTOS*/
+.card {
+  border: 1px solid #dee2e6;
+  transition: transform 0.2s ease-in-out;
+}
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.card-body {
+  display: flex;              /* activa flexbox */
+  flex-direction: column;     /* coloca elementos en columna */
+  justify-content: center;    /* centra verticalmente */
+  align-items: center;        /* centra horizontalmente */
+  text-align: center;         /* centra el texto */
+  padding: 15px;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.card-text {
+  margin-bottom: 15px;
+}
+
+/* Precio centrado */
+.price {
+  display: block;          /* ocupa toda la línea */
+  text-align: center;      /* centra el texto */
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #71156e;          /* tu color corporativo */
+  margin-bottom: 8px;
+}
+
+/* Detalles justificados */
+.details {
+  display: block;
+  text-align: justify;     /* distribuye el texto */
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #6c757d;
+}
+
+/* Botón dentro de la card */
+.card .btn {
+  background-color: #71156e;   /* color corporativo */
+  color: #fff;
+  border: none;
+  display: block;              /* hace que el botón sea un bloque */
+  margin: 0 auto;              /* centra horizontalmente */
+  text-align: center;          /* asegura que el texto esté centrado */
+  width: 80%;
+  padding: 12px 20 px;
+  font-size: 1.1rem;                  /* opcional: ancho fijo para mejor estética */
+  border-radius: 8px;
+}
+.card .btn:hover {
+  background-color: #9a1f91;   /* tono más claro para hover */
+  color: #fff;
+}
+.btn-custom {
+  width: 100%;
+  padding: 14px;
+  font-size: 1.1rem;
+}
+
 /*FOOTER*/
 .f-dorado {
   background-color: #BE814F; /* Poner el fondo dorado */
