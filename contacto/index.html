@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="contact-form" action="" method="POST">
+
+    
+    <label>Nombre</label>
+    <input type="text" name="nombre" placeholder="Nombre" required>
+
+    <label>Apellido</label>
+    <input type="text" name="apellido" placeholder="Apellido" required>
+
+    <label>Correo</label>
+    <input type="email" name="_replyto" placeholder="ejemplo@tintanomada.com" required>
+
+    <label>Mensaje</label>
+    <textarea name="mensaje" placeholder="Ingresa tu mensaje" required></textarea>
+
+    <input type="hidden" name="_subject" value="Nuevo mensaje de Tinta Nómada">
+
+    <button type="submit">Enviar</button>
+</form>
+<!-- Esto le dice: "Busca el script que está en esta misma carpeta" -->
+<script src="script.js"></script>
+
+</body>
+</html>
