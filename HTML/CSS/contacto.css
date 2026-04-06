@@ -1,12 +1,5 @@
 /* Oswaldo */
 /* estilo del menu de categorias */
-.custom-dropdown {
-  width: 280px;
-  background-color: #b67c4b; /* fondo café */
-  border: none;
-  font-family: "DM Sans";
-}
-
 .card-cttn {
   background-color: #061f2f;
   border-radius: 25px;
@@ -15,7 +8,7 @@
   box-shadow: 18px -18px 2px 5px #bcbbbb;
 }
 .text-cttn {
-  font-size: 3rem;
+  font-size: 2.2rem;
   color: #ffffff;
   font-family: "Montserrat-T";
 }
