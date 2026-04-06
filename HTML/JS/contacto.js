@@ -1,0 +1,19 @@
+    /* Oswaldo */
+
+
+    /* Luis */
+
+
+    /* Gio  */
+
+
+    /* Erick */
+
+
+    /* Mai */
+
+
+    /* Alex */
+
+
+    
