@@ -25,7 +25,7 @@
                if(inputType !== null){
                     switch(inputType){
                         case "email":
-                            message = "te falto un @";
+                            message = validarNombre();
                             break;
                         default:
                             console.log(divInput.getAttribute("valtype"))
@@ -69,32 +69,40 @@ document.getElementById("registroForm").addEventListener("submit", function(even
     event.preventDefault(); // Evita el envío automático */
 
     // Limpiar mensajes previos
-    document.querySelectorAll(".error").forEach(e => e.textContent = "");
+    //document.querySelectorAll(".error").forEach(e => e.textContent = "");
 
-    let valido = true;
+    
 
     // Validar nombre
-    const nombre = document.getElementById("nombre").value.trim();
-    if (nombre === "") {
-        document.getElementById("errorNombre").textContent = "El nombre es obligatorio.";
-        valido = false;
-    }
-    if(!/\d/.test(nombre)){
-        valido = true;
-    }else{
-        document.getElementById("errorNombre").textContent = "El nombre sin números";
-        valido = false;
-    }
+    function validarNombre(){
 
+        
+        const nombre = document.getElementById("contact-name").value.trim();
+        if (nombre === "") {
+        
+        return "El nombre es obligatorio.";
+        }
+        if(!/\d/.test(nombre)){
+        return "OK"
+        }else{
+        return "El nombre sin números";
+
+        }
+    };
+    
     // Validar email
-    const email = document.getElementById("email").value.trim();
-    if (email === "") {
+    function validarEmail(){
+
+        const email = document.getElementById("email").value.trim();
+        if (email === "") {
         document.getElementById("errorEmail").textContent = "El email es obligatorio.";
         valido = false;
-    } else if (!validarEmail(email)) {
+        } else if (!validarEmail(email)) {
         document.getElementById("errorEmail").textContent = "Formato de email inválido.";
         valido = false;
-    }
+        }
+    };
+    
      // Validar numero de telefono
     const cel = document.getElementById("cel").value;
     if (typeof cel !== 'number') {
