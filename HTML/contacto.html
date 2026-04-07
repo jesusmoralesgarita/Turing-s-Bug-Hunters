@@ -92,7 +92,7 @@
         <form class="needs-validation" novalidate>
             <div class="mb-3 form-element">
                 <label for="contact-name" class="form-label">Nombre</label>
-                <input type="text" valtype="email" class="form-control" placeholder="Nombre" id="contact-name" aria-describedby="Nombre">
+                <input type="text" valtype="nombrehomes" class="form-control" placeholder="Nombre" id="contact-name" aria-describedby="Nombre">
                 
                 <div class="invalid-feedback">
                     Looks bad!
@@ -101,15 +101,25 @@
             <div class="mb-3">
                 <label for="contact-number" class="form-label">Teléfono</label>
                 <input type="text" valtype="number" class="form-control" placeholder="Teléfono" id="contact-number" aria-describedby="Telefono">
+                
+                <div class="invalid-feedback">
+                    Looks bad!
+                </div>
             </div>
             <div class="mb-3">
                 <label for="contact-email" class="form-label">Correo</label>
-                <input type="email" placeholder="ejemplo@tintanomada.com" class="form-control" id="contact-email" aria-describedby="Correo">
+                <input type="email" valtyoe="email" placeholder="ejemplo@tintanomada.com" class="form-control" id="contact-email" aria-describedby="Correo">
+                <div class="invalid-feedback">
+                    Looks bad!
+                </div>
             </div>
             <div class="mb-3">
                 <label for="contact-message" class="form-label">Mensaje</label>
-                <textarea class="form-control" placeholder="Ingresa tu mensaje" id="contact-message" rows="4"></textarea>
+                <textarea class="form-control" valtype="message" placeholder="Ingresa tu mensaje" id="contact-message" rows="4"></textarea>
             </div>
+            <div class="invalid-feedback">
+                    Looks bad!
+                </div>
 
             <input type="submit">
         </form>
