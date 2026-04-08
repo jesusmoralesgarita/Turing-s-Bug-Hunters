@@ -86,34 +86,49 @@
             </div>
             <!-- Se cierran las etiquetas (div) déspues de ALEX -->
 
-    <!-- Luis -->
-
-    <div class="container-lg" >
-        <form class="needs-validation" novalidate>
+        <!-- Luis, Maitte y Alex -->
+    <div class="container-lg">
+                <form id="contact-form" action="" method="POST" class="needs-validation" novalidate>
+            
             <div class="mb-3 form-element">
                 <label for="contact-name" class="form-label">Nombre</label>
-                <input type="text" valtype="email" class="form-control" placeholder="Nombre" id="contact-name" aria-describedby="Nombre">
-                
-                <div class="invalid-feedback">
-                    Looks bad!
-                </div>
-            </div>
-            <div class="mb-3">
-                <label for="contact-number" class="form-label">Teléfono</label>
-                <input type="text" class="form-control" placeholder="Teléfono" id="contact-number" aria-describedby="Telefono">
-            </div>
-            <div class="mb-3">
-                <label for="contact-email" class="form-label">Correo</label>
-                <input type="email" placeholder="ejemplo@tintanomada.com" class="form-control" id="contact-email" aria-describedby="Correo">
-            </div>
-            <div class="mb-3">
-                <label for="contact-message" class="form-label">Mensaje</label>
-                <textarea class="form-control" placeholder="Ingresa tu mensaje" id="contact-message" rows="4"></textarea>
+                <input type="text" name="nombre" class="form-control" placeholder="Nombre" id="contact-name" required>
+                <div class="invalid-feedback">Por favor, ingresa tu nombre.</div>
             </div>
 
-            <input type="submit">
+            <div class="mb-3">
+                <label for="contact-lastname" class="form-label">Apellido</label>
+                <input type="text" name="apellido" class="form-control" placeholder="Apellido" id="contact-lastname" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="contact-number" class="form-label">Teléfono</label>
+                <input type="text" name="telefono" class="form-control" placeholder="Teléfono" id="contact-number">
+            </div>
+
+            <div class="mb-3 form-element">
+                <label for="contact-email" class="form-label">Correo</label>
+                <input type="email" name="email" valtype="email" class="form-control" id="contact-email" placeholder="ejemplo@tintanomada.com" required>
+                <div class="invalid-feedback">
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="contact-message" class="form-label">Mensaje</label>
+                <textarea name="mensaje" class="form-control" id="contact-message" rows="4" placeholder="Ingresa tu mensaje" required></textarea>
+            </div>
+
+            <input type="hidden" name="_subject" value="Nuevo mensaje de Tinta Nómada">
+
+            <button type="submit" id="submit-btn" class="btn btn-primary">Enviar</button>
         </form>
     </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="JS/contacto.js"></script>
+
+
 
     <!-- Gio  -->
 
@@ -121,10 +136,7 @@
     <!-- Erick -->
 
 
-    <!-- Mai -->
-
-
-    <!-- Alex -->
+    
 
 
         <!-- Fin del contenedor azul -->

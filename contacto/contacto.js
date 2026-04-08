@@ -1,3 +1,5 @@
+require("dotev").config();
+const Contact = process.env.BASE_URL;
 const miFormu = document.getElementById('contact-form');
 
 miFormu.addEventListener('submit', async function(event) {
