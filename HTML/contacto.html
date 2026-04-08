@@ -92,7 +92,7 @@
         <form class="needs-validation" novalidate>
             <div class="mb-3 form-element">
                 <label for="contact-name" class="form-label">Nombre</label>
-                <input type="text" valtype="email" class="form-control" placeholder="Nombre" id="contact-name" aria-describedby="Nombre">
+                <input type="text" valtype="nombrehomes" class="form-control" placeholder="Nombre" id="contact-name" aria-describedby="Nombre">
                 
                 <div class="invalid-feedback">
                     Looks bad!
@@ -100,16 +100,26 @@
             </div>
             <div class="mb-3">
                 <label for="contact-number" class="form-label">Teléfono</label>
-                <input type="text" class="form-control" placeholder="Teléfono" id="contact-number" aria-describedby="Telefono">
+                <input type="text" valtype="number" class="form-control" placeholder="Teléfono" id="contact-number" aria-describedby="Telefono">
+                
+                <div class="invalid-feedback">
+                    Looks bad!
+                </div>
             </div>
             <div class="mb-3">
                 <label for="contact-email" class="form-label">Correo</label>
-                <input type="email" placeholder="ejemplo@tintanomada.com" class="form-control" id="contact-email" aria-describedby="Correo">
+                <input type="email" valtyoe="email" placeholder="ejemplo@tintanomada.com" class="form-control" id="contact-email" aria-describedby="Correo">
+                <div class="invalid-feedback">
+                    Looks bad!
+                </div>
             </div>
             <div class="mb-3">
                 <label for="contact-message" class="form-label">Mensaje</label>
-                <textarea class="form-control" placeholder="Ingresa tu mensaje" id="contact-message" rows="4"></textarea>
+                <textarea class="form-control" valtype="message" placeholder="Ingresa tu mensaje" id="contact-message" rows="4"></textarea>
             </div>
+            <div class="invalid-feedback">
+                    Looks bad!
+                </div>
 
             <input type="submit">
         </form>
@@ -119,70 +129,68 @@
 
 
     <!-- Erick -->
+    
+        <!-- Mai -->
 
 
-    <!-- Mai -->
-
-
-    <!-- Alex -->
+        <!-- Alex -->
 
 
         <!-- Fin del contenedor azul -->
         </div>
     </div>
 
-    <!---Estructura del Footer-->
-    <footer class="f-dorado text-white pt-4 pb-2">
-        <div class="container">
-            <div class="row">
-                <!---Contacto-->
-                <div class="col-md-3">
-                    <h5 class="text-dark">
-                        <i class="bi bi-envelope me-2"></i>Contacto
-                    </h5>
-                    <p>
-                        <a href="mailto:turingsbh@contacto.com" class="correo">turingsbh@contacto.com</a>
-                    </p>
+        <!---Estructura del Footer-->
+        <footer class="f-dorado text-white pt-4 pb-2">
+            <div class="container">
+                <div class="row">
+                    <!---Contacto-->
+                    <div class="col-md-3">
+                        <h5 class="text-dark">
+                            <i class="bi bi-envelope me-2"></i>Contacto
+                        </h5>
+                        <p>
+                            <a href="mailto:turingsbh@contacto.com" class="correo">turingsbh@contacto.com</a>
+                        </p>
+                    </div>
+
+                    <!---Redes Sociales-->
+                    <div class="col-md-3">
+                        <h5 class="text-dark">Nuestras Redes Sociales</h5>
+                        <a href="enlace Facebook" class="text-white me-2"><i class="bi bi-facebook"></i></a>
+                        <a href="enlace Instagram" class="text-white me-2"><i class="bi bi-instagram"></i></a>
+                        <a href="enlace Github" class="text-white"><i class="bi bi-github"></i></a>
+                    </div>
+
+
+
+                    <!---Ubicación-->
+                    <div class="col-md-3">
+                        <h5 class="text-dark">
+                            <i class="bi bi-geo-alt me-2"></i>Ubicación
+                        </h5>
+                        <p class="text-dark">Temascalpa, Estado de México</p>
+                    </div>
+
+                    <!---Políticas-->
+                    <div class="col-md-3 text-md-end">
+                        <h5 class="text-dark">Política de Privacidad</h5>
+                        <p>
+                            <a href="Enlace a Políticas" class="politica">Ver Política</a>
+                        </p>
+                    </div>
+
+                    <!---Estructura de footer-->
                 </div>
-
-                <!---Redes Sociales-->
-                <div class="col-md-3">
-                    <h5 class="text-dark">Nuestras Redes Sociales</h5>
-                    <a href="enlace Facebook" class="text-white me-2"><i class="bi bi-facebook"></i></a>
-                    <a href="enlace Instagram" class="text-white me-2"><i class="bi bi-instagram"></i></a>
-                    <a href="enlace Github" class="text-white"><i class="bi bi-github"></i></a>
-                </div>
-
-
-
-                <!---Ubicación-->
-                <div class="col-md-3">
-                    <h5 class="text-dark">
-                        <i class="bi bi-geo-alt me-2"></i>Ubicación
-                    </h5>
-                    <p class="text-dark">Temascalpa, Estado de México</p>
-                </div>
-
-                <!---Políticas-->
-                <div class="col-md-3 text-md-end">
-                    <h5 class="text-dark">Política de Privacidad</h5>
-                    <p>
-                        <a href="Enlace a Políticas" class="politica">Ver Política</a>
-                    </p>
-                </div>
-
-                <!---Estructura de footer-->
+                <hr class="border-light" />
+                <p class="text-center">
+                    Copyright © 2026 Turing's Bug Hunters S.A de C.V. All Rights Reserved.
+                </p>
             </div>
-            <hr class="border-light" />
-            <p class="text-center">
-                Copyright © 2026 Turing's Bug Hunters S.A de C.V. All Rights Reserved.
-            </p>
-        </div>
-    </footer>
-
-
-</body>
+        </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 <script src="./JS/contacto.js"></script>
+</body>
+
 
 </html>
