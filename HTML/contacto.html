@@ -86,44 +86,49 @@
             </div>
             <!-- Se cierran las etiquetas (div) déspues de ALEX -->
 
-    <!-- Luis -->
-
-    <div class="container-lg" >
-        <form class="needs-validation" novalidate>
+        <!-- Luis, Maitte y Alex -->
+    <div class="container-lg">
+                <form id="contact-form" action="" method="POST" class="needs-validation" novalidate>
+            
             <div class="mb-3 form-element">
                 <label for="contact-name" class="form-label">Nombre</label>
-                <input type="text" valtype="nombrehomes" class="form-control" placeholder="Nombre" id="contact-name" aria-describedby="Nombre">
+                <input type="text" name="Nombre" valtype="nombrehomes" class="form-control" placeholder="Nombre" id="contact-name" aria-describedby="Nombre">
                 
                 <div class="invalid-feedback">
                     Looks bad!
                 </div>
             </div>
-            <div class="mb-3">
+            <div class="mb-3 form-element">
                 <label for="contact-number" class="form-label">Teléfono</label>
-                <input type="text" valtype="number" class="form-control" placeholder="Teléfono" id="contact-number" aria-describedby="Telefono">
+                <input type="text" name="Telefono" valtype="number" class="form-control" placeholder="Teléfono" id="contact-number" aria-describedby="Telefono">
                 
                 <div class="invalid-feedback">
                     Looks bad!
                 </div>
             </div>
-            <div class="mb-3">
+            <div class="mb-3 form-element">
                 <label for="contact-email" class="form-label">Correo</label>
-                <input type="email" valtyoe="email" placeholder="ejemplo@tintanomada.com" class="form-control" id="contact-email" aria-describedby="Correo">
+                <input type="email" name="Email" valtype="email" placeholder="ejemplo@tintanomada.com" class="form-control" id="contact-email" aria-describedby="Correo">
                 <div class="invalid-feedback">
                     Looks bad!
                 </div>
             </div>
             <div class="mb-3">
                 <label for="contact-message" class="form-label">Mensaje</label>
-                <textarea class="form-control" valtype="message" placeholder="Ingresa tu mensaje" id="contact-message" rows="4"></textarea>
+                <textarea class="form-control" name="Mensaje" valtype="message" placeholder="Ingresa tu mensaje" id="contact-message" rows="4"></textarea>
             </div>
-            <div class="invalid-feedback">
-                    Looks bad!
-                </div>
 
-            <input type="submit">
+            <input type="hidden" name="_subject" value="Nuevo mensaje de Tinta Nómada">
+
+            <button type="submit" id="submit-btn" class="btn btn-primary btn-lg shadow-sm">Enviar Solicitud</button>
         </form>
     </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="JS/contacto.js"></script>
+
+
 
     <!-- Gio  -->
 

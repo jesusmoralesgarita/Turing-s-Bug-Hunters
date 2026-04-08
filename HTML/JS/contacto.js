@@ -1,27 +1,29 @@
 /* Oswaldo */
 
 
-/* Luis */
+class Config {
+    static ENDPOINT = "url";
+}
+
+/* --- INTEGRACIÓN LUIS, Maitte & ALEX --- */
 (() => {
     'use strict'
 
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    const forms = document.querySelectorAll('.needs-validation')
+    const form = document.getElementById('contact-form');
 
-    // Loop over them and prevent submission
-    Array.from(forms).forEach(form => {
-        form.addEventListener('submit', event => {
+    if (form) {
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
 
             const divs = form.getElementsByClassName("form-element");
-
             Array.from(divs).forEach(div => {
                 let message = "";
                 const divInput = div.getElementsByTagName("input").item(0);
 
-                console.log(divInput)
                 const inputType = divInput.getAttribute("valtype");
 
 
+                console.log(inputType)
                 if (inputType !== null) {
                     switch (inputType) {
                         case "nombrehomes":
@@ -37,30 +39,60 @@
                             message = validarMensaje();
                             break;
                         default:
-                            console.log(divInput.getAttribute("valtype"))
                             message = "";
                     }
 
-                    if (message !== null && message.length !== 0) {
-                        div.getElementsByClassName("invalid-feedback").item(0).innerHTML = message;
-                        console.log(message.length)
+                    if (message.length !== 0) {
+                        const feedback = div.querySelector(".invalid-feedback");
+                        if (feedback) feedback.innerText = message;
                         divInput.setCustomValidity(message);
+                    } else {
+                        divInput.setCustomValidity("");
                     }
                 }
-
-
             });
 
             if (!form.checkValidity()) {
-                event.preventDefault()
-                event.stopPropagation()
+                event.stopPropagation();
+            } else {
+                const boton = document.getElementById('submit-btn');
+                const textoOriginal = boton.innerText;
+                
+                boton.innerText = "Enviando...";
+                boton.disabled = true;
+
+                const formData = new FormData(form);
+
+                try {
+                    const response = await fetch(Config.ENDPOINT, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    if (response.ok) {
+                        alert("¡Mensaje enviado con éxito!");
+                        form.reset();
+                        form.classList.remove('was-validated');
+                    } else {
+                        alert("Hubo un error al enviar. Revisa el endpoint en la clase Config.");
+                    }
+                } catch (error) {
+                    alert("Revisa tu conexión a internet.");
+                    console.error("Error de red:", error);
+                } finally {
+                    boton.innerText = textoOriginal;
+                    boton.disabled = false;
+                }
             }
-            form.classList.add('was-validated')
+            
+            form.classList.add('was-validated');
+        }, false);
+    }
+})();
 
-
-        }, false)
-    })
-})()
 
 
 /* Gio  */
@@ -119,7 +151,7 @@ function validarNumCel() {
     if (/^\d$/.test(cel)) {
         return "Solo se aceptan números";
     }
-    if (cel.length == 10) {
+    if (cel.length < 10) {
         return "El número de telefono debe tener al menos 10 digitos.";
     } else {
         return "";
