@@ -40,13 +40,13 @@
 }
 
 .contenido{
-    background: linear-gradient(135deg, #3bc469, #31debe);
+    background: linear-gradient(135deg, #0B192C, #3a64ed);
     padding:25px;
     margin: 120px auto;
     width: 320px;
     border-radius: 15px;
     text-align: center;
-    color: darkcyan;
+    color: rgb(155, 164, 239);
     font-weight: bold;
     box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     animation: aparecer 0.4s ease;
