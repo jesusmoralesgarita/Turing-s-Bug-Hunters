@@ -1,13 +1,20 @@
-/* Oswaldo */
+/* CONFIG */
 class Config {
-  static ENDPOINT = "url"; 
+  static ENDPOINT = "url"; // 👈 reemplaza después
 }
 
 /* --- INTEGRACIÓN --- */
-(() => {
+document.addEventListener("DOMContentLoaded", () => {
   "use strict";
 
   const form = document.getElementById("contact-form");
+  const boton = document.getElementById("submit-btn");
+
+  /* EVENTOS EN TIEMPO REAL */
+  document.getElementById("contact-name").addEventListener("input", validarFormularioCompleto);
+  document.getElementById("contact-number").addEventListener("input", validarFormularioCompleto);
+  document.getElementById("contact-email").addEventListener("input", validarFormularioCompleto);
+  document.getElementById("contact-message").addEventListener("input", validarFormularioCompleto);
 
   if (form) {
     form.addEventListener("submit", async (event) => {
@@ -19,7 +26,6 @@ class Config {
         return;
       }
 
-      const boton = document.getElementById("submit-btn");
       const textoOriginal = boton.innerText;
 
       boton.innerText = "Enviando...";
@@ -28,6 +34,11 @@ class Config {
       const formData = new FormData(form);
 
       try {
+        /* 🔥 MODO PRUEBA (COMENTA ESTO CUANDO USES FORMSPREE) */
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        enviarFormulario();
+
+        /* 🔥 DESCOMENTA ESTO PARA PRODUCCIÓN
         const response = await fetch(Config.ENDPOINT, {
           method: "POST",
           body: formData,
@@ -37,13 +48,16 @@ class Config {
         });
 
         if (response.ok) {
-          enviarFormulario(); 
-          form.reset();
-          form.classList.remove("was-validated");
-          validarFormularioCompleto(); 
+          enviarFormulario();
         } else {
-          alert("Error al enviar. Revisa el endpoint.");
+          alert("Error al enviar.");
         }
+        */
+
+        form.reset();
+        form.classList.remove("was-validated");
+        validarFormularioCompleto();
+
       } catch (error) {
         alert("Error de conexión.");
         console.error(error);
@@ -52,7 +66,7 @@ class Config {
       }
     });
   }
-})();
+});
 
 /* VALIDACIONES */
 
@@ -80,24 +94,20 @@ function validarEmail1() {
 // Teléfono
 function validarNumCel() {
   const cel = document.getElementById("contact-number").value.trim();
-
   if (!/^\d+$/.test(cel)) return "Solo números.";
   if (cel.length < 10) return "Mínimo 10 dígitos.";
-
   return "";
 }
 
 // Mensaje
 function validarMensaje() {
   const mensaje = document.getElementById("contact-message").value.trim();
-
   if (mensaje === "") return "Coloca un mensaje.";
   if (mensaje.length > 250) return "Máximo 250 caracteres.";
-
   return "";
 }
 
-/* VALIDACIÓN GLOBAL PARA BOTÓN */
+/* VALIDACIÓN GLOBAL BOTÓN */
 function validarFormularioCompleto() {
   const nombre = validarNombre();
   const telefono = validarNumCel();
@@ -112,22 +122,21 @@ function validarFormularioCompleto() {
     email === "" &&
     mensaje === ""
   ) {
-    boton.disabled = false; // habilita
+    boton.disabled = false;
   } else {
-    boton.disabled = true; // bloquea
+    boton.disabled = true;
   }
 }
 
-/* EVENTOS EN TIEMPO REAL */
-document.getElementById("contact-name").addEventListener("input", validarFormularioCompleto);
-document.getElementById("contact-number").addEventListener("input", validarFormularioCompleto);
-document.getElementById("contact-email").addEventListener("input", validarFormularioCompleto);
-document.getElementById("contact-message").addEventListener("input", validarFormularioCompleto);
-
 /* MODAL */
 function enviarFormulario() {
-    const modal = document.getElementById("modal");
-    modal.style.display = "block";
+  const modal = document.getElementById("modal");
+  modal.style.display = "block";
+
+  // Auto cerrar en 3 segundos
+  setTimeout(() => {
+    modal.style.display = "none";
+  }, 3000);
 }
 
 function cerrarModal() {
