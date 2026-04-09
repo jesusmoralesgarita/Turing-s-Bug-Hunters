@@ -1,9 +1,6 @@
-    /* Oswaldo */
+import { URL } from './constantes.js';
 
-
-class Config {
-    static ENDPOINT = "https://formspree.io/f/xykblqrv";
-}
+/* Oswaldo */
 
 /* --- INTEGRACIÓN LUIS, Maitte & ALEX --- */
 (() => {
