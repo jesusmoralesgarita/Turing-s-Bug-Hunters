@@ -1,9 +1,6 @@
+import { URL } from './constantes.js';
+
 /* Oswaldo */
-
-
-class Config {
-    static ENDPOINT = "url";
-}
 
 /* --- INTEGRACIÓN LUIS, Maitte & ALEX --- */
 (() => {
