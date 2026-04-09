@@ -1,6 +1,6 @@
 /* CONFIG */
 class Config {
-  static ENDPOINT = "url"; // 👈 reemplaza después
+  static ENDPOINT = "url"; // 
 }
 
 /* --- INTEGRACIÓN --- */
