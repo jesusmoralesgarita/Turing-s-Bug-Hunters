@@ -1,4 +1,4 @@
-import { URL } from './constantes.js';
+//import { URL } from './constantes.js';
 
 /* Oswaldo */
 
