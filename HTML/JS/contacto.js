@@ -1,6 +1,8 @@
-/* CONFIG */
+/* Oswaldo */
+
+
 class Config {
-  static ENDPOINT = "url"; // 
+    static ENDPOINT = "url";
 }
 
 /* --- INTEGRACIÓN --- */
