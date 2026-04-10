@@ -162,7 +162,7 @@ function validarNumCel() {
 
 // Validar mensaje
 function validarMensaje() {
-    const mensaje = document.getElementById("contact-menssage").value.trim();
+    const mensaje = document.getElementById("contact-message").value.trim();
     if (mensaje.length < 0 && mensaje.length <= 250) {
         return "";
     }else{
