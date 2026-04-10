@@ -78,6 +78,7 @@
                         alert("Hubo un error al enviar. Revisa el endpoint en la clase Config.");
                     }
                 } catch (error) {
+                    //alert de error de red en ves de enviar formulario, esto solo para la revision de la pag 09/04/2026, cambiar al tener el URL 
                     enviarFormulario();
                     console.error("Error de red:", error);
                 } finally {
