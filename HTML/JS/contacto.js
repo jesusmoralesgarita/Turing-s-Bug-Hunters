@@ -70,14 +70,15 @@
                     });
 
                     if (response.ok) {
-                        alert("¡Mensaje enviado con éxito!");
+                        enviarFormulario();
+                        cerrarModal();
                         form.reset();
                         form.classList.remove('was-validated');
                     } else {
                         alert("Hubo un error al enviar. Revisa el endpoint en la clase Config.");
                     }
                 } catch (error) {
-                    alert("Revisa tu conexión a internet.");
+                    enviarFormulario();
                     console.error("Error de red:", error);
                 } finally {
                     boton.innerText = textoOriginal;
@@ -178,7 +179,20 @@ if (valido) {
 //});
 
 /* Mai */
+/* MODAL */
+function enviarFormulario() {
+  const modal = document.getElementById("modal");
+  modal.style.display = "block";
 
+  // Auto cerrar en 3 segundos
+  setTimeout(() => {
+    modal.style.display = "none";
+  }, 3000);
+}
+
+function cerrarModal() {
+  document.getElementById("modal").style.display = "none";
+}
 
 /* Alex */
 
