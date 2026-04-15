@@ -63,6 +63,55 @@
   font-family: "DM-Sans-CT";
 }
 
+/*BARRA DE CATEGORÍAS*/
+
+.contenedor-categorias {
+background: 
+    linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), 
+    url('/Turing-s-Bug-Hunters/fondo_categorias.jpeg');
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+padding: 40px;
+margin: 0 auto;
+
+}
+
+h1{
+  font-family: url(/FONT/Montserrat/Montserrat-Bold.ttf);
+  font-weight: bold;
+  font-size: 24px;
+  text-align:left;
+  margin-bottom: 20px;
+}
+
+
+.botones-categorias {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  
+}
+
+.btn-primary {
+  font-family:url(/FONT/DM_Sans/DMSans-Regular.ttf);
+  font-weight:400;
+  background-color: #061F2F;
+  border-color: #061F2F;
+}
+
+.btn-primary:hover {
+background-color: #061F2F;
+}
+
+.btn-secondary {
+  font-family:url(/FONT/DM_Sans/DMSans-Regular.ttf);
+  font-weight: 400;
+  background-color: #71156E;
+  border-color: #71156E;
+}
+
 /*BANNER PLAYERAS*/
 .categoriaPlayeras {
   display: flex;
