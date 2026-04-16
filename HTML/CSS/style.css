@@ -68,7 +68,7 @@
 .contenedor-categorias {
 background: 
     linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), 
-    url('/Turing-s-Bug-Hunters/fondo_categorias.jpeg');
+    url('../Pictures/banner.jpeg');
 background-size: cover;
 background-position: center;
 background-repeat: no-repeat;

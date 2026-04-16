@@ -9,7 +9,8 @@ class Producto {
         diseño,
         descripcion,
         cantidad,
-        imagen
+        imagen,
+        descuento
     ) {
         this.tipoProducto = tipoProducto;
         this.nombreProducto = nombreProducto;
@@ -20,6 +21,31 @@ class Producto {
         this.descripcion = descripcion;
         this.cantidad = cantidad;
         this.imagen = imagen;
+        this.descuento = descuento;
+    }
+    
+    constructor( 
+        idProducto,
+        tipoProducto,
+        nombreProducto,
+        precio,
+        talla,
+        color,
+        diseño,
+        descripcion,
+        cantidad,
+        imagen,
+    ) {
+        this.tipoProducto = tipoProducto;
+        this.nombreProducto = nombreProducto;
+        this.precio = precio;
+        this.talla = talla;
+        this.color = color;
+        this.diseño = diseño;
+        this.descripcion = descripcion;
+        this.cantidad = cantidad;
+        this.imagen = imagen;
+        this.descuento = 0;
     }
     
 
@@ -107,7 +133,8 @@ const listaProductos = [
         ["imagen1","imagen2"],
         ["se lava", "huele"],
         3,
-        "../HTML/Pictures/playeragris.jpeg"
+        "../HTML/Pictures/playeragris.jpeg",
+        0
     ), 
     new Producto(
         1,
