@@ -1,26 +1,266 @@
-/*Chucho y Gio*/
 /* custom de la navbar */
 .navbar-custom {
-  background-color: #0b1c26; /* color oscuro similar */
+  background-color: #0b1c26;
 }
 .navbar-custom .nav-link,
 .navbar-custom .navbar-brand {
   color: white;
+  font-family: "DM-Sans-CT";
 }
 .navbar-custom .nav-link:hover {
   color: #00c3ff;
 }
 
-/*Oswaldo*/
+/* estilo del menu de categorias */
+.custom-dropdown {
+  width: 280px;
+  background-color: #b67c4b; /* fondo café */
+  border: none;
+  font-family: "DM-Sans-CT";
+}
 
-/*Maitte*/
+/* Caja de categorías */
+.menu-categorias {
+  background-color: #e9e4ea;
+  border-radius: 20px;
+  padding: 20px;
+}
 
-/*Erick*/
+.menu-categorias p {
+  margin: 10px 0;
+  font-size: 18px;
+  font-family: "DM-Sans-CT";
+}
 
-/*Alex*/
+/* Caja inferior */
+.menu-contacto {
+  background-color: #e9e4ea;
+  border-radius: 20px;
+  padding: 15px;
+}
 
-/*Fer*/
+.menu-contacto i {
+  color: #333;
+}
 
-/*Luis*/
+/* diseño carro de compras */
+.dropdown-carrito {
+  width: 250px;
+  background-color: #b67c4b; /* fondo café */
+  border: none;
+}
 
-/*Leila*/
+/* Caja interna */
+.carrito-menu {
+  background-color: #e9e4ea;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.carrito-menu p {
+  margin: 15px 0;
+  font-size: 18px;
+  font-family: "DM-Sans-CT";
+}
+
+/*BARRA DE CATEGORÍAS*/
+
+.contenedor-categorias {
+background: 
+    linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), 
+    url('../Pictures/banner.jpeg');
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+padding: 40px;
+margin: 0 auto;
+
+}
+
+h1{
+  font-family: url(/FONT/Montserrat/Montserrat-Bold.ttf);
+  font-weight: bold;
+  font-size: 24px;
+  text-align:left;
+  margin-bottom: 20px;
+}
+
+
+.botones-categorias {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  
+}
+
+.btn-primary {
+  font-family:url(/FONT/DM_Sans/DMSans-Regular.ttf);
+  font-weight:400;
+  background-color: #061F2F;
+  border-color: #061F2F;
+}
+
+.btn-primary:hover {
+background-color: #061F2F;
+}
+
+.btn-secondary {
+  font-family:url(/FONT/DM_Sans/DMSans-Regular.ttf);
+  font-weight: 400;
+  background-color: #71156E;
+  border-color: #71156E;
+}
+
+/*BANNER PLAYERAS*/
+.categoriaPlayeras {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 30px;
+}
+
+.banner-playeras {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  color: black;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+    url("../Pictures/banner.jpeg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 50px;
+  padding: 20px 40px;
+  display: inline-block;
+  text-shadow:
+    -1px -1px 0 white,
+    1px -1px 0 white,
+    -1px 1px 0 white,
+    1px 1px 0 white;
+}
+
+/*CARDS DE PRODUCTOS*/
+.card {
+  border: 1px solid #dee2e6;
+  transition: transform 0.2s ease-in-out;
+}
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.card-body {
+  display: flex; /* activa flexbox */
+  flex-direction: column; /* coloca elementos en columna */
+  justify-content: center; /* centra verticalmente */
+  align-items: center; /* centra horizontalmente */
+  text-align: center; /* centra el texto */
+  padding: 15px;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.card-text {
+  margin-bottom: 15px;
+}
+
+/* Precio centrado */
+.price {
+  display: block; /* ocupa toda la línea */
+  text-align: center; /* centra el texto */
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #71156e; /* tu color corporativo */
+  margin-bottom: 8px;
+}
+
+/* Detalles justificados */
+.details {
+  display: block;
+  text-align: justify; /* distribuye el texto */
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #6c757d;
+}
+
+/* Botón dentro de la card */
+.card .btn {
+  background-color: #71156e; /* color corporativo */
+  color: #fff;
+  border: none;
+  display: block; /* hace que el botón sea un bloque */
+  margin: 0 auto; /* centra horizontalmente */
+  text-align: center; /* asegura que el texto esté centrado */
+  width: 80%;
+  padding: 12px 20 px;
+  font-size: 1.1rem; /* opcional: ancho fijo para mejor estética */
+  border-radius: 8px;
+}
+.card .btn:hover {
+  background-color: #9a1f91; /* tono más claro para hover */
+  color: #fff;
+}
+.btn-custom {
+  width: 100%;
+  padding: 14px;
+  font-size: 1.1rem;
+}
+
+/*FOOTER*/
+.f-dorado {
+  background-color: #be814f; /* Poner el fondo dorado */
+}
+
+/*Fuentes*/
+body,
+footer p,
+footer a {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400; /* Regular, cuerpo de texto */
+}
+
+footer h5 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700; /* Bold, títulos principales */
+}
+
+footer h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600; /* SemiBold, subtítulos */
+}
+
+footer a i {
+  color: black; /* color inicial */
+  transition: color 0.3s ease; /* efecto suave */
+}
+
+footer a i:hover {
+  color: #ffffff; /* blanco al pasar el mouse */
+}
+
+footer a.politica {
+  color: black; /* color inicial */
+  transition: color 0.3s ease;
+}
+
+footer a.politica:hover {
+  color: #ffffff; /* blanco al pasar el mouse */
+}
+
+footer a.correo {
+  color: black; /* color inicial */
+  transition: color 0.3s ease;
+}
+
+footer a.correo:hover {
+  color: #ffffff; /* blanco al pasar el mouse */
+}
+.profiledevs-desc h1 {
+  color: #242424;
+  font-family: "Montserrat-ST";
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
