@@ -24,30 +24,6 @@ class Producto {
         this.descuento = descuento;
     }
     
-    constructor( 
-        idProducto,
-        tipoProducto,
-        nombreProducto,
-        precio,
-        talla,
-        color,
-        diseño,
-        descripcion,
-        cantidad,
-        imagen,
-    ) {
-        this.tipoProducto = tipoProducto;
-        this.nombreProducto = nombreProducto;
-        this.precio = precio;
-        this.talla = talla;
-        this.color = color;
-        this.diseño = diseño;
-        this.descripcion = descripcion;
-        this.cantidad = cantidad;
-        this.imagen = imagen;
-        this.descuento = 0;
-    }
-    
 
     generateHTML(){
         const divPrincipal = document.createElement("div");
@@ -84,8 +60,15 @@ class Producto {
         const button = document.createElement("button");
         button.className = "btn btn-custom d-flex justify-content-between align-items-center";
         button.addEventListener("click", (e) => {
-            carrito.push(new ProductoCarrito(2,"imagen1",0,this));
-            console.log(carrito);
+            const storage = localStorage.getItem("carrito");
+            if(storage){
+                const carritoStorage = JSON.parse(storage);
+                carritoStorage.push(new ProductoCarrito(2,"imagen1",0,this));
+                localStorage.setItem("carrito", JSON.stringify(carritoStorage));
+            }else{
+                localStorage.setItem("carrito", JSON.stringify([new ProductoCarrito(2,"imagen1",0,this)]));
+            }
+            console.log(JSON.parse(localStorage.getItem("carrito")));
         })
 
         const spanButton = document.createElement("span");
@@ -147,7 +130,7 @@ const listaProductos = [
         ["imagen1","imagen2"],
         ["se lava", "huele"],
         3,
-        "../HTML/Pictures/playeragris.jpeg"
+        "../HTML/Pictures/playeragris.jpeg", 0
     ), 
     new Producto(
         2,
@@ -160,7 +143,7 @@ const listaProductos = [
         ["imagen1","imagen2"],
         ["no se lava", "huele"],
         3,
-        "../HTML/Pictures/playeragris.jpeg"
+        "../HTML/Pictures/playeragris.jpeg", 0
     ), 
     new Producto(
         3,
@@ -173,7 +156,7 @@ const listaProductos = [
         ["imagen1","imagen2"],
         ["se lava", "huele"],
         3,
-        "../HTML/Pictures/playeragris.jpeg"
+        "../HTML/Pictures/playeragris.jpeg", 0
     ), 
     new Producto(
         4,
@@ -186,7 +169,7 @@ const listaProductos = [
         ["imagen1","imagen2"],
         ["se lava", "huele"],
         3,
-        "../HTML/Pictures/playeragris.jpeg"
+        "../HTML/Pictures/playeragris.jpeg", 0
     ), 
     new Producto(
         5,
@@ -199,7 +182,7 @@ const listaProductos = [
         ["imagen1","imagen2"],
         ["se lava", "no huele"],
         3,
-        "../HTML/Pictures/playeragris.jpeg"
+        "../HTML/Pictures/playeragris.jpeg", 0
     ), 
     new Producto(
         6,
@@ -212,7 +195,7 @@ const listaProductos = [
         ["imagen1","imagen2"],
         ["se lava", "huele"],
         3,
-        "../HTML/Pictures/playeragris.jpeg"
+        "../HTML/Pictures/playeragris.jpeg", 0
     ), 
     new Producto(
         7,
@@ -225,7 +208,7 @@ const listaProductos = [
         ["imagen1","imagen2"],
         ["se lava", "huele"],
         3,
-        "../HTML/Pictures/playeragris.jpeg"
+        "../HTML/Pictures/playeragris.jpeg", 0
     ), 
     new Producto(
         8,
@@ -238,7 +221,7 @@ const listaProductos = [
         ["imagen1","imagen2"],
         ["se lava", "huele"],
         3,
-        "../HTML/Pictures/playeragris.jpeg"
+        "../HTML/Pictures/playeragris.jpeg", 0
     ), 
     new Producto(
         9,
@@ -251,7 +234,7 @@ const listaProductos = [
         ["imagen1","imagen2"],
         ["se lava", "huele"],
         3,
-        "../HTML/Pictures/playeragris.jpeg"
+        "../HTML/Pictures/playeragris.jpeg", 0
     )
 ];
 
@@ -280,5 +263,6 @@ console.log(carrito)
 listaProductos.forEach((e) => {
     document.getElementById("contenedor").append(e.generateHTML());
 })
+
 
  
