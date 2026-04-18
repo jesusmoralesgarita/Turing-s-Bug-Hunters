@@ -4,24 +4,33 @@
 
 /* Oswaldo */
 .sec-3-t {
-  font-family: "Montserrat-T";
+  font-family: "Montserrat";
+  font-size: 2.4rem;
 }
 .sec-3-sb {
   font-family: "Montserrat";
+  font-size: 1.8rem;
 }
 .sec-3-ct {
   font-family: "DM Sans";
+  font-size: 1.2rem;
 }
-
 .img-svg {
   width: 25%;
   height: 25%;
 }
-
 .color-desc {
   border-color: #be814f;
   background-color: #be814f;
   color: #ffffff;
+  font-family: "DM Sans";
+  font-size: 1rem;
+}
+.color-desc:hover {
+  background-color: #d68849;
+  border-color: #d68849;
+  transform: scale(1.05); /* efecto ligero */
+  transition: all 0.2s ease;
 }
 
 /* Giovani */
