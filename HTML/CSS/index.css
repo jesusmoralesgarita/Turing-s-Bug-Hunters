@@ -13,6 +13,17 @@
   font-family: "DM Sans";
 }
 
+.img-svg {
+  width: 25%;
+  height: 25%;
+}
+
+.color-desc {
+  border-color: #be814f;
+  background-color: #be814f;
+  color: #ffffff;
+}
+
 /* Giovani */
 
 /* Alex */
