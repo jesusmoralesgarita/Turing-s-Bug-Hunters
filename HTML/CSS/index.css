@@ -3,9 +3,11 @@
 /* Fernando */
 
 /* Oswaldo */
+/* Estilo y tamaño de letra sección 3 */
 .sec-3-t {
   font-family: "Montserrat";
   font-size: 2.4rem;
+  padding-left: 100px;
 }
 .sec-3-sb {
   font-family: "Montserrat";
@@ -15,10 +17,12 @@
   font-family: "DM Sans";
   font-size: 1.2rem;
 }
+/* Formato para los iconos de la sección por qué elegirnos */
 .img-svg {
   width: 25%;
   height: 25%;
 }
+/* Formato y diseño para el botón para explorar descuentos */
 .color-desc {
   border-color: #be814f;
   background-color: #be814f;
