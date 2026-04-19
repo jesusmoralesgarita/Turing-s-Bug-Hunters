@@ -23,7 +23,7 @@
 }
 
 #carousel div img {
-  width: 400px;
+  width: 200px;
   transition: width 1s;
 }
 
@@ -34,7 +34,7 @@
 }
 
 #carousel div.hideLeft img {
-  width: 200px;
+  width: 100px;
 }
 
 #carousel div.hideRight {
@@ -44,7 +44,7 @@
 }
 
 #carousel div.hideRight img {
-  width: 200px;
+  width: 100px;
 }
 
 #carousel div.prev {
@@ -54,7 +54,7 @@
 }
 
 #carousel div.prev img {
-  width: 300px;
+  width: 100px;
 }
 
 #carousel div.prevLeftSecond {
@@ -65,7 +65,7 @@
 }
 
 #carousel div.prevLeftSecond img {
-  width: 200px;
+  width: 100px;
 }
 
 #carousel div.selected {
@@ -81,7 +81,7 @@
 }
 
 #carousel div.next img {
-  width: 300px;
+  width: 100px;
 }
 
 #carousel div.nextRightSecond {
@@ -92,7 +92,7 @@
 }
 
 #carousel div.nextRightSecond img {
-  width: 200px;
+  width: 100px;
 }
 
 .buttons {

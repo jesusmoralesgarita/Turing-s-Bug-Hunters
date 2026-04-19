@@ -9,59 +9,78 @@
 
 //Giovani
 function moveToSelected(element) {
+  const $items = $("#carousel div");
+  const total = $items.length;
 
-  if (element == "next") {
-    var selected = $(".selected").next();
-  } else if (element == "prev") {
-    var selected = $(".selected").prev();
+  let $selected;
+
+  if (element === "next") {
+    $selected = $(".selected").next();
+    if (!$selected.length) {
+      $selected = $items.first(); // loop al inicio
+    }
+  } else if (element === "prev") {
+    $selected = $(".selected").prev();
+    if (!$selected.length) {
+      $selected = $items.last(); // loop al final
+    }
   } else {
-    var selected = element;
+    $selected = element;
   }
 
-  var next = $(selected).next();
-  var prev = $(selected).prev();
-  var prevSecond = $(prev).prev();
-  var nextSecond = $(next).next();
+  // Funciones auxiliares para circularidad
+  const getNext = ($el) => $el.next().length ? $el.next() : $items.first();
+  const getPrev = ($el) => $el.prev().length ? $el.prev() : $items.last();
 
-  $(selected).removeClass().addClass("selected");
+  const $next = getNext($selected);
+  const $prev = getPrev($selected);
+  const $nextSecond = getNext($next);
+  const $prevSecond = getPrev($prev);
 
-  $(prev).removeClass().addClass("prev");
-  $(next).removeClass().addClass("next");
+  // Reset de clases
+  $items.removeClass();
 
-  $(nextSecond).removeClass().addClass("nextRightSecond");
-  $(prevSecond).removeClass().addClass("prevLeftSecond");
+  // Asignación de estados
+  $selected.addClass("selected");
+  $prev.addClass("prev");
+  $next.addClass("next");
+  $prevSecond.addClass("prevLeftSecond");
+  $nextSecond.addClass("nextRightSecond");
 
-  $(nextSecond).nextAll().removeClass().addClass('hideRight');
-  $(prevSecond).prevAll().removeClass().addClass('hideLeft');
+  // Ocultar el resto (lado derecho)
+  let current = getNext($nextSecond);
+  while (!current.is($selected)) {
+    current.addClass("hideRight");
+    current = getNext(current);
+  }
 
+  // Ocultar el resto (lado izquierdo)
+  current = getPrev($prevSecond);
+  while (!current.is($selected)) {
+    current.addClass("hideLeft");
+    current = getPrev(current);
+  }
 }
 
 // Eventos teclado
-$(document).keydown(function(e) {
-    switch(e.which) {
-        case 37: // left
-        moveToSelected('prev');
-        break;
-
-        case 39: // right
-        moveToSelected('next');
-        break;
-
-        default: return;
-    }
-    e.preventDefault();
+$(document).on("keydown", function (e) {
+  if (e.which === 37) moveToSelected("prev");
+  if (e.which === 39) moveToSelected("next");
+  e.preventDefault();
 });
 
-$('#carousel div').click(function() {
+// Click en elementos
+$("#carousel div").on("click", function () {
   moveToSelected($(this));
 });
 
-$('#prev').click(function() {
-  moveToSelected('prev');
+// Botones
+$("#prev").on("click", function () {
+  moveToSelected("prev");
 });
 
-$('#next').click(function() {
-  moveToSelected('next');
+$("#next").on("click", function () {
+  moveToSelected("next");
 });
 
 
