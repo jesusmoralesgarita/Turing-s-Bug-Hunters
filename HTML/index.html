@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="CSS/fonts.css">
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/index.css">
@@ -80,23 +81,100 @@
 
 
 //Giovani
-<!-- seccion del carouseel -->
- <div id="carousel">
-    <div class="hideleft"><img src="Pictures/BotelladeAguadeAcero.png"></div>
-    <div class="prevLeftSecond"> <img src="Pictures/BotelladeAguadeAcero.png"></div>
-    <div class="prev"><img src="Pictures/BotelladeAguadeAcero.png"></div>
-    <div class="selected"><img src="Pictures/BotelladeAguadeAcero.png"></div>
-    <div class="next"><img src="Pictures/BotelladeAguadeAcero.png"></div>
-    <div class="nextRightSecond"><img src="Pictures/BotelladeAguadeAcero.png"></div>
-    <div class="hideRight"><img src="Pictures/BotelladeAguadeAcero.png"></div>
-    
-    <div class="buttons">
-        <button id="prev">Anterior</button>
-        <button id="next">Siguiente</button>
+<section class="carousel-section">
+  <h2>Últimos Encargos</h2>
+  <p>Mira algunos de los productos personalizados que hemos creado recientemente.</p>
+
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <div class="card">
+                <img src="Pictures/BotelladeAguadeAcero.png" alt="Producto 1">
+                <div class="info">
+                    <h3>Bottella de Agua</h3>
+                    <p>Diseño exclusivo con materiales de acero.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="swiper-slide">
+            <div class="card">
+                <img src="Pictures/ButtonFrontCardiganHoodie.png" alt="Producto 2">
+                <div class="info">
+                    <h3>Cardigan</h3>
+                    <p>Diseño exclusivo fabricado 100% con algodon.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="swiper-slide">
+            <div class="card">
+                <img src="Pictures/ClassicCrewneckSweatshirt.png" alt="Producto 3">
+                <div class="info">
+                    <h3>Crewneck</h3>
+                    <p>Diseño exclusivo fabricado 100% con algodon.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="swiper-slide">
+            <div class="card">
+                <img src="Pictures/ClassicPulloverHoodie.png" alt="Producto 4">
+                <div class="info">
+                    <h3>Classic Pull Over Hoodie</h3>
+                    <p>Diseño exclusivo fabricado 100% con algodon.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="swiper-slide">
+            <div class="card">
+                <img src="Pictures/MockNeckHalfZip.png" alt="Producto 5">
+                <div class="info">
+                    <h3>Mock Neck</h3>
+                    <p>Diseño exclusivo fabricado 100% con algodon.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="swiper-slide">
+            <div class="card">
+                <img src="Pictures/TermoInsuladoconPanel.png" alt="Producto 6">
+                <div class="info">
+                    <h3>Termo Insulado</h3>
+                    <p>Fabricado con materiales aislantes.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="swiper-slide">
+            <div class="card">
+                <img src="Pictures/playdeportiva.png" alt="Producto 7">
+                <div class="info">
+                    <h3>Playera Deportiva</h3>
+                    <p>Fabricado con licra para maximo rendimiento.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="swiper-slide">
+            <div class="card">
+                <img src="Pictures/tazarickmorty.png" alt="Producto 8">
+                <div class="info">
+                    <h3>Taza Mágica</h3>
+                    <p>Diseño termosensible al calor.</p>
+                </div>
+            </div>
+        </div>
     </div>
- </div>
+    <!-- Botones -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
 
-
+    <!-- Paginación -->
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
 
 
 //Alex
@@ -157,6 +235,8 @@
             </div>
         </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 <script src="JS/index.js"></script>
 </body>
 </html>
