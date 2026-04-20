@@ -15,7 +15,7 @@
 .textilloPriv{
     text-align: justify;
     color: #FFFFFF;
-    padding: 5rem;
+    padding: 2.5rem;
     font-family: 'Montserrat-Regular';
 }
 
@@ -23,6 +23,7 @@ h2{
     padding-block-end: 10px;
     font-family: 'Montserrat-Bold'
 }
+
 h5{
     padding-block-end: 10px;
     padding-top: 10px;
