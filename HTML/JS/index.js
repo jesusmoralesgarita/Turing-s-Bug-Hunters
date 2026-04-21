@@ -33,6 +33,9 @@ const swiper = new Swiper(".mySwiper", {
 
 //Alex
 
+console.log("Estructura de testimonios lista.");
+
+
 
 //Luis
 

@@ -207,6 +207,41 @@
 
 /* Alex */
 
+/* Alex */
+
+.custom-review-card {
+    background-color: #E2D4E7;
+    border-radius: 8px;
+    height: 100%;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+}
+
+.review-stars {
+    color: #4B2E74;
+    font-size: 0.8rem;
+}
+
+.review-body {
+    font-size: 0.85rem;
+    color: #444;
+}
+
+.reviewer-name {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.review-date {
+    font-size: 0.7rem;
+    color: #777;
+}
+
+.carousel-item {
+    transition: transform 1.2s ease-in-out;
+}
+
 
 /* Luis */
 
