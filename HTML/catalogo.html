@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorías</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/fonts.css"> 
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+    <!-- HEADER/NAV BAR-->
+    <nav class="navbar navbar-expand-lg navbar-custom px-4">
+      <!-- boton para las categorias con dropdown  -->
+      <!-- dropdown para las categorias -->
+      <div class="dropdown">
+        <button
+          class="btn btn-outline-light dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+        >
+          <i class="bi bi-list"></i> Categorías
+        </button>
+        <div class="dropdown-menu p-4 custom-dropdown">
+          <!-- Lista de categorías -->
+          <div class="menu-categorias text-center mb-4">
+            <a href="#" class="dropdown-item text-center">Playeras</a>
+            <a href="#" class="dropdown-item text-center">Tazas</a>
+            <a href="#" class="dropdown-item text-center">Sudaderas</a>
+            <a href="#" class="dropdown-item text-center">Vasos</a>
+            <a href="#" class="dropdown-item text-center">Plumas</a>
+            <a href="#" class="dropdown-item text-center">Pines</a>
+            <a href="#" class="dropdown-item text-center">Stickers</a>
+          </div>
+          <!-- Sección diseño personalizado -->
+          <div class="menu-contacto d-flex align-items-center">
+            <i class="bi bi-envelope fs-1 me-3"></i>
+            <div>
+              <strong>¿Necesitas un diseño personalizado?</strong>
+              <a href="#" class="contacto-link">Contáctanos y te cotizaremos</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Secciones -->
+      <div class="collapse navbar-collapse show">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Quiénes Somos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contacto</a>
+          </li>
+        </ul>
+        <!-- carrito de compras -->
+       <div class="dropdown">
+        <button class="btn text-white" type="button" data-bs-toggle="dropdown">
+            <i class="bi bi-cart fs-4"></i>
+        </button>
+        <div class="dropdown-menu dropdown-carrito dropdown-menu-end p-3">
+            <div class="carrito-menu text-center">
+                <a href="#" class="dropdown-item text-center">Carrito de Compras</a>
+                <a href="#" class="dropdown-item text-center">Historial de Compras</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+  <!-- BARRA DE CATEGORÍAS -->
+    <div class="contenedor-categorias"> 
+        <h1>Categorias</h1>
+        <div class="botones-categorias">
+                <a href="#sectplayeras" class="btn btn-primary" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 2.8rem; --bs-btn-font-size: .75rem;">Playeras</a>
+                <a href="#secttazas" class="btn btn-primary"  style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 2.8rem; --bs-btn-font-size: .75rem;">Tazas</a>
+                <a href="#sectsudaderas" class="btn btn-primary"  style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 2.8rem; --bs-btn-font-size: .75rem;">Sudaderas</a>
+                <a href="#sectvasos" class="btn btn-primary"  style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 2.8rem; --bs-btn-font-size: .75rem;">Vasos</a>
+                <a href="#sectplumas" class="btn btn-primary"  style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 2.8rem; --bs-btn-font-size: .75rem;">Plumas</a>
+                <a href="#sectpines" class="btn btn-primary"  style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 2.8rem; --bs-btn-font-size: .75rem;">Pines</a>
+                <a href="#sectstickers" class="btn btn-primary" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 2.8rem; --bs-btn-font-size: .75rem;">Stickers</a>
+                <a href="#sectdescuentos" class="btn btn-secondary" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 2.8rem; --bs-btn-font-size: .75rem;">⭐ Descuentos</a>
+        </div>
+     </div>
+
+  <!-- BANNER PLAYERAS -->
+<section id="sectplayeras" class="categoriaPlayeras">
+    <div class="banner-playeras">
+        PLAYERAS
+    </div>
+</section>
+  <!-- CARDS DE PRODUCTOS -->
+  <main class="container">
+            <div class="row" id="contenedor">
+                <!--  card -->
+                <div class="col-md-3 mb-4">
+                    <div class="card h-100">
+                        <img src="../HTML/Pictures/playbasica.png" class="card-img-top" alt="Playera Básica">
+                        <div class="card-body">
+                            <h5 class="card-title">Playera Básica</h5>
+                            <p class="card-text">
+                                <span class="price">$199.99</span>
+                                <span class="details">
+                                    • 100 % algodón <br>
+                                    • Unisex <br>
+                                    • Lavar a máquina en frío con colores similares, secar a baja temperatura
+                                </span>
+                            </p>
+
+                            <button class="btn btn-custom d-flex justify-content-between align-items-center">
+                                <span><i class="bi bi-plus-circle me-2"></i> Agregar al carrito</span>
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card h-100">
+                        <img src="../HTML/Pictures/playpolo.png" class="card-img-top" alt="Polo clásica">
+                        <div class="card-body">
+                            <h5 class="card-title">Polo Clásica</h5>
+                            <p class="card-text">
+                                <span class="price">$199.99</span>
+                                <span class="details">
+                                    • 100 % algodón <br>
+                                    • Unisex <br>
+                                    • Lavar a máquina en frío con colores similares, secar a baja temperatura
+                                </span>
+                            </p>                            
+                            <button class="btn btn-custom d-flex justify-content-between align-items-center">
+                                <span><i class="bi bi-plus-circle me-2"></i> Agregar al carrito</span>
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card h-100">
+                        <img src="../HTML/Pictures/playjuego.png" class="card-img-top" alt="Juego de Playeras">
+                        <div class="card-body">
+                            <h5 class="card-title">Juego de Playeras</h5>
+                            <p class="card-text">
+                                <span class="price">$379.99</span>
+                                <span class="details">
+                                    • 100 % algodón <br>
+                                    • Unisex <br>
+                                    • Lavar a máquina en frío con colores similares, secar a baja temperatura
+                                </span>
+                            </p>
+                            <button class="btn btn-custom d-flex justify-content-between align-items-center">
+                                <span><i class="bi bi-plus-circle me-2"></i> Agregar al carrito</span>
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card h-100">
+                        <img src="../HTML/Pictures/playraglan.png" class="card-img-top" alt="Playera de Mangas Raglán">
+                        <div class="card-body">
+                            <h5 class="card-title">Playera de Mangas Raglán</h5>
+                            <p class="card-text">
+                                <span class="price">$229.99</span>
+                                <span class="details">
+                                    • 100 % algodón <br>
+                                    • Unisex <br>
+                                    • Lavar a máquina en frío con colores similares, secar a baja temperatura
+                                </span>
+                            </p>
+                            <button class="btn btn-custom d-flex justify-content-between align-items-center">
+                                <span><i class="bi bi-plus-circle me-2"></i> Agregar al carrito</span>
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-2">
+                    <div class="card h-100">
+                        <img src="../HTML/Pictures/playdeportiva.png" class="card-img-top" alt="Playera de Compresión Deportiva">
+                        <div class="card-body">
+                            <h5 class="card-title">Playera de Compresión Deportiva</h5>
+                            <p class="card-text">
+                                <span class="price">$259.99</span>
+                                <span class="details">
+                                    • 100 % algodón <br>
+                                    • Unisex <br>
+                                    • Lavar a máquina en frío con colores similares, secar a baja temperatura
+                                </span>
+                            </p>
+                            <button class="btn btn-custom d-flex justify-content-between align-items-center">
+                                <span><i class="bi bi-plus-circle me-2"></i> Agregar al carrito</span>
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+        
+            </div>
+        </main>
+
+         <!-- BANNER TAZAS -->
+<section id="secttazas" class="categoriaPlayeras">
+    <div class="banner-playeras">
+        TAZAS
+    </div>
+</section>
+  <!-- CARDS DE PRODUCTOS -->
+  <main class="container">
+            <div class="row" id="contenedor">
+                <!--  card -->
+                <div class="col-md-3 mb-4">
+                    <div class="card h-100">
+                        <img src="../HTML/Pictures/tazaclasica.png" class="card-img-top" alt="Taza clásica">
+                        <div class="card-body">
+                            <h5 class="card-title">Taza clásica (12 Oz)</h5>
+                            <p class="card-text">
+                                <span class="price">$149.99</span>
+                                <span class="details">
+                                    • 100 % ceramica<br>
+                                    • Apta para microondas y lavavajillas
+                                </span>
+                            </p>
+
+                            <button class="btn btn-custom d-flex justify-content-between align-items-center">
+                                <span><i class="bi bi-plus-circle me-2"></i> Agregar al carrito</span>
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card h-100">
+                        <img src="../HTML/Pictures/tazapersonalizable.png" class="card-img-top" alt="Taza personalizable">
+                        <div class="card-body">
+                            <h5 class="card-title">Taza Personalizable (12 Oz)</h5>
+                            <p class="card-text">
+                                <span class="price">$199.99</span>
+                                <span class="details">
+                                    • 100 % ceramica<br>
+                                    • Apta para microondas y lavavajillas
+                                </span>
+                            </p>                            <button class="btn btn-custom d-flex justify-content-between align-items-center">
+                                <span><i class="bi bi-plus-circle me-2"></i> Agregar al carrito</span>
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card h-100">
+                        <img src="../HTML/Pictures/tazarickmorty.png" class="card-img-top" alt="Taza Rick and Morty">
+                        <div class="card-body">
+                            <h5 class="card-title">Taza Mágica Rick & Morty (12Oz, Termosensible)</h5>
+                            <p class="card-text">
+                                <span class="price">$299.99</span>
+                                <span class="details">
+                                    • 100 % ceramica<br>
+                                    • Apta para microondas y lavavajillas
+                                </span>
+                            </p>
+                            <button class="btn btn-custom d-flex justify-content-between align-items-center">
+                                <span><i class="bi bi-plus-circle me-2"></i> Agregar al carrito</span>
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card h-100">
+                        <img src="../HTML/Pictures/tazatermopers.png" class="card-img-top" alt="Taza Mágica Personalizable">
+                        <div class="card-body">
+                            <h5 class="card-title">Taza Mágica Personalizable (12 Oz, Termosensible)</h5>
+                            <p class="card-text">
+                                <span class="price">$279.99</span>
+                                <span class="details">
+                                    • 100 % ceramica<br>
+                                    • Apta para microondas y lavavajillas
+                                </span>
+                            </p>
+                            <button class="btn btn-custom d-flex justify-content-between align-items-center">
+                                <span><i class="bi bi-plus-circle me-2"></i> Agregar al carrito</span>
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card h-100">
+                        <img src="../HTML/Pictures/tazaparejas.png" class="card-img-top" alt="Taza parejas">
+                        <div class="card-body">
+                            <h5 class="card-title">Taza Para Parejas (Personalizables)</h5>
+                            <p class="card-text">
+                                <span class="price">$249.99</span>
+                                <span class="details">
+                                    • 100 % ceramica<br>
+                                    • Apta para microondas y lavavajillas
+                                </span>
+                            </p>
+                            <button class="btn btn-custom d-flex justify-content-between align-items-center">
+                                <span><i class="bi bi-plus-circle me-2"></i> Agregar al carrito</span>
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+        
+            </div>
+        </main>
+
+        <!-- BANNER SUDADERAS -->
+
+        <section id="sectsudaderas" class="categoriaPlayeras">
+    <div class="banner-playeras">
+        SUDADERAS
+    </div>
+</section>
+  <!-- CARDS DE PRODUCTOS -->
+  <main class="container">
+            <div class="row" id="contenedor">
+                <!--  card -->
+                <div class="col-md-3 mb-4">
+                    <div class="card h-100">
+                        <img src="../HTML/Pictures/ClassicPulloverHoodie.png" class="card-img-top" alt="Classic Pullover Hoodie">
+                        <div class="card-body">
+                            <h5 class="card-title">Classic Pullover Hoodie</h5>
+                            <p class="card-text">
+                                <span class="price">$259.99</span>
+                                <span class="details">
+                                    • 100 % algodón <br>
+                                    • Unisex <br>
+                                    • Lavar a máquina en frío con colores similares, secar a baja temperatura
+                                </span>
+                            </p>
+
+                            <button class="btn btn-custom d-flex justify-content-between align-items-center">
+                                <span><i class="bi bi-plus-circle me-2"></i> Agregar al carrito</span>
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card h-100">
+                        <img src="../HTML/Pictures/FullZipUpHoodie.png" class="card-img-top" alt="Full Zip Up Hoodie">
+                        <div class="card-body">
+                            <h5 class="card-title">Full Zip Up Hoodie</h5>
+                            <p class="card-text">
+                                <span class="price">$259.99</span>
+                                <span class="details">
+                                    • 100 % algodón <br>
+                                    • Unisex <br>
+                                    • Lavar a máquina en frío con colores similares, secar a baja temperatura
+                                </span>
+                            </p>                            <button class="btn btn-custom d-flex justify-content-between align-items-center">
+                                <span><i class="bi bi-plus-circle me-2"></i> Agregar al carrito</span>
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card h-100">
+                        <img src="../HTML/Pictures/MockNeckHalfZip.png" class="card-img-top" alt="Mock Neck Half Zip">
+                        <div class="card-body">
+                            <h5 class="card-title">Mock Neck Half Zip</h5>
+                            <p class="card-text">
+                                <span class="price">$259.99</span>
+                                <span class="details">
+                                    • 100 % algodón <br>
+                                    • Unisex <br>
+                                    • Lavar a máquina en frío con colores similares, secar a baja temperatura
+                                </span>
+                            </p>
+                            <button class="btn btn-custom d-flex justify-content-between align-items-center">
+                                <span><i class="bi bi-plus-circle me-2"></i> Agregar al carrito</span>
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card h-100">
+                        <img src="../HTML/Pictures/ClassicCrewneckSweatshirt.png" class="card-img-top" alt="Classic Crewneck Sweatshirt">
+                        <div class="card-body">
+                            <h5 class="card-title">Classic Crewneck Sweatshirt</h5>
+                            <p class="card-text">
+                                <span class="price">$259.99</span>
+                                <span class="details">
+                                    • 100 % algodón <br>
+                                    • Unisex <br>
+                                    • Lavar a máquina en frío con colores similares, secar a baja temperatura
+                                </span>
+                            </p>
+                            <button class="btn btn-custom d-flex justify-content-between align-items-center">
+                                <span><i class="bi bi-plus-circle me-2"></i> Agregar al carrito</span>
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card h-100">
+                        <img src="../HTML/Pictures/ButtonFrontCardiganHoodie.png" class="card-img-top" alt="Button Front Cardigan Hoodie">
+                        <div class="card-body">
+                            <h5 class="card-title">Button Front Cardigan Hoodie</h5>
+                            <p class="card-text">
+                                <span class="price">$259.99</span>
+                                <span class="details">
+                                    • 100 % algodón <br>
+                                    • Unisex <br>
+                                    • Lavar a máquina en frío con colores similares, secar a baja temperatura
+                                </span>
+                            </p>
+                            <button class="btn btn-custom d-flex justify-content-between align-items-center">
+                                <span><i class="bi bi-plus-circle me-2"></i> Agregar al carrito</span>
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+        
+            </div>
+        </main>
+
+        <!-- BANNER VASOS -->
+         
+        <section id="sectvasos" class="categoriaPlayeras">
+    <div class="banner-playeras">
+        VASOS
+    </div>
+</section>
+  <!-- CARDS DE PRODUCTOS -->
+  <main class="container">
+            <div class="row" id="contenedor">
+                <!--  card -->
+                <div class="col-md-3 mb-4">
+                    <div class="card h-100">
+                        <img src="../HTML/Pictures/TermodeViaje.png" class="card-img-top" alt="Termo de viaje">
+                        <div class="card-body">
+                            <h5 class="card-title">Termo de viaje</h5>
+                            <p class="card-text">
+                                <span class="price">$189.99</span>
+                                <span class="details">
+                                    • Acero inoxidable<br>
+                                    • Mantiene bebidas calientes por 12 horas y frías por 24 horas
+                                </span>
+                            </p>
+
+                            <button class="btn btn-custom d-flex justify-content-between align-items-center">
+                                <span><i class="bi bi-plus-circle me-2"></i> Agregar al carrito</span>
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card h-100">
+                        <img src="../HTML/Pictures/VasoDobleParedconPopote.png" class="card-img-top" alt="Vaso doble pared con popote">
+                        <div class="card-body">
+                            <h5 class="card-title">Vaso Doble Pared con Popote</h5>
+                            <p class="card-text">
+                                <span class="price">$99.99</span>
+                                <span class="details">
+                                    • Resistente al impacto<br>
+                                    • Apto para bebidas frías
+                                </span>
+                            </p>                            <button class="btn btn-custom d-flex justify-content-between align-items-center">
+                                <span><i class="bi bi-plus-circle me-2"></i> Agregar al carrito</span>
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card h-100">
+                        <img src="../HTML/Pictures/BotelladeAguadeAcero.png" class="card-img-top" alt="Botella de agua de acero">
+                        <div class="card-body">
+                            <h5 class="card-title">Botella de Agua de Acero (750 ml)</h5>
+                            <p class="card-text">
+                                <span class="price">$199.99</span>
+                                <span class="details">
+                                    • Resistente al impacto<br>
+                                    • Mantiene bebidas calientes por 12 horas y frías por 24 horas
+                                </span>
+                            </p>
+                            <button class="btn btn-custom d-flex justify-content-between align-items-center">
+                                <span><i class="bi bi-plus-circle me-2"></i> Agregar al carrito</span>
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card h-100">
+                        <img src="../HTML/Pictures/FrascoMasonEsmeriladoconPopote.png" class="card-img-top" alt="Frasco Mason Esmerilado con Popote">
+                        <div class="card-body">
+                            <h5 class="card-title">Frasco Mason Esmerilado con Popote (32 Oz)</h5>
+                            <p class="card-text">
+                                <span class="price">$149.99</span>
+                                <span class="details">
+                                    • Apto para bebidas frías<br>
+                                    • Cierre hermético para evitar derrames
+                                </span>
+                            </p>
+                            <button class="btn btn-custom d-flex justify-content-between align-items-center">
+                                <span><i class="bi bi-plus-circle me-2"></i> Agregar al carrito</span>
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card h-100">
+                        <img src="../HTML/Pictures/TermoInsuladoconPanel.png" class="card-img-top" alt="Termo Insulado con Panel">
+                        <div class="card-body">
+                            <h5 class="card-title">Termo Insulado con Panel (750 ml)</h5>
+                            <p class="card-text">
+                                <span class="price">$189.99</span>
+                                <span class="details">
+                                    • Aislamiento térmico superior<br>
+                                    • Mantiene bebidas calientes por 12 horas y frías por 24 horas
+                                </span>
+                            </p>
+                            <button class="btn btn-custom d-flex justify-content-between align-items-center">
+                                <span><i class="bi bi-plus-circle me-2"></i> Agregar al carrito</span>
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+        
+            </div>
+        </main>
+
+
+        <!-- BANNER PLUMAS -->
+
+        <!-- BANNER PINES -->
+
+        <!-- BANNER STICKERS -->
+
+        <!-- BANNER DESCUENTOS -->
+
+
+
+
+
+
+
+
+   
+    <!--- FOOTER-->
+    <footer class="f-dorado text-white pt-4 pb-2">
+      <div class="container">
+        <div class="row">
+          <!---Contacto-->
+          <div class="col-md-3">
+            <h5 class="text-dark">
+              <i class="bi bi-envelope me-2"></i>Contacto
+            </h5>
+            <p>
+              <a href="mailto:turingsbh@contacto.com" class="correo"
+                >turingsbh@contacto.com</a
+              >
+            </p>
+          </div>
+          <!---Redes Sociales-->
+          <div class="col-md-3">
+            <h5 class="text-dark">Nuestras Redes Sociales</h5>
+            <a href="enlace Facebook" class="text-white me-2"
+              ><i class="bi bi-facebook"></i
+            ></a>
+            <a href="enlace Instagram" class="text-white me-2"
+              ><i class="bi bi-instagram"></i
+            ></a>
+            <a href="enlace Github" class="text-white"
+              ><i class="bi bi-github"></i
+            ></a>
+          </div>   
+          <!---Ubicación-->
+          <div class="col-md-3">
+            <h5 class="text-dark">
+              <i class="bi bi-geo-alt me-2"></i>Ubicación
+            </h5>
+            <p class="text-dark">Temascalpa, Estado de México</p>
+          </div>
+          <!---Políticas-->
+          <div class="col-md-3 text-md-end">
+            <h5 class="text-dark">Política de Privacidad</h5>
+            <p>
+              <a href="Enlace a Políticas" class="politica">Ver Política</a>
+            </p>
+          </div>
+          <!---Estructura de footer-->
+        </div>
+        <hr class="border-light" />
+        <p class="text-center">
+          Copyright © 2026 Turing's Bug Hunters S.A de C.V. All Rights Reserved.
+        </p>
+      </div>
+    </footer>     
+
+    <!-- Script de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="JS/script.js"></script>
+    <script src="JS/catalogo.js"></script>
+   
+</body>
+</html>

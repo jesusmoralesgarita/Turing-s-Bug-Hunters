@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
+    <title>Contacto</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="CSS/fonts.css">
     <link rel="stylesheet" href="CSS/style.css">
-    <link rel="stylesheet" href="CSS/index.css">
+    <link rel="stylesheet" href="CSS/contacto.css">
 </head>
+
 <body>
-    
+
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-custom px-4">
         <!-- boton para las categorias con dropdown  -->
@@ -40,7 +42,7 @@
                     <i class="bi bi-envelope fs-1 me-3"></i>
                     <div>
                         <strong>¿Necesitas un diseño personalizado?</strong>
-                        <a href="contacto.html" class="contacto-link">Contáctanos y te cotizaremos</a>
+                        <a href="#" class="contacto-link">Contáctanos y te cotizaremos</a>
                     </div>
                 </div>
             </div>
@@ -65,34 +67,86 @@
                 </button>
                 <div class="dropdown-menu dropdown-carrito dropdown-menu-end p-3">
                     <div class="carrito-menu text-center">
-                        <a href="carritoDeCompra.html" class="dropdown-item text-center">Carrito de Compras</a>
-                        <a href="historialCompras.html" class="dropdown-item text-center">Historial de Compras</a>
+                        <a href="#" class="dropdown-item text-center">Carrito de Compras</a>
+                        <a href="#" class="dropdown-item text-center">Historial de Compras</a>
                     </div>
                 </div>
             </div>
     </nav>
-  // <!------------ ------------ ------------ ------------ ------------>
-    //Erick
-//Fernando
+
+    <!-- Oswaldo -->
+    <!-- Contenedor principal de contáctanos -->
+    <div class="container my-5 d-flex justify-content-center">
+        <!-- Carta de color responsive para formulario -->
+        <div class="card card-cttn text-white border-0 shadow-cttn">
+            <div class="card-body p-4 p-md-5">
+                <h2 class="text-cttn text-center mb-4">
+                    Contáctanos
+                </h2>
+            </div>
+            <!-- Se cierran las etiquetas (div) déspues de ALEX -->
+
+        <!-- Luis, Maitte y Alex -->
+    <div class="card-body form-ctn">
+                <form id="contact-form" method="POST" class="needs-validation" novalidate>
+            
+            <div class="mb-3 form-element">
+                <label for="contact-name" class="form-label">Nombre</label>
+                <input type="text" name="Nombre" valtype="nombrehomes" class="form-control" placeholder="Nombre" id="contact-name" aria-describedby="Nombre">
+                
+                <div class="invalid-feedback">
+                    Looks bad!
+                </div>
+            </div>
+            <div class="mb-3 form-element">
+                <label for="contact-number" class="form-label">Teléfono</label>
+                <input type="text" name="Telefono" valtype="number" class="form-control" placeholder="Teléfono" id="contact-number" aria-describedby="Telefono">
+                
+                <div class="invalid-feedback">
+                    Looks bad!
+                </div>
+            </div>
+            <div class="mb-3 form-element">
+                <label for="contact-email" class="form-label">Correo</label>
+                <input type="email" name="Email" valtype="email" placeholder="ejemplo@tintanomada.com" class="form-control" id="contact-email" aria-describedby="Correo">
+                <div class="invalid-feedback">
+                    Looks bad!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="contact-message" class="form-label">Mensaje</label>
+                <textarea class="form-control" name="Mensaje" valtype="message" placeholder="Ingresa tu mensaje" id="contact-message" rows="4"></textarea>
+            </div>
+
+            <input type="hidden" name="_subject" value="Nuevo mensaje de Tinta Nómada">
+
+                        <div class="d-grid mt-4">
+            <button type="submit" id="submit-btn" class="btn btn-primary btn-lg shadow-sm">Enviar Solicitud</button>
+            </div>
+        </form>
+            <div class="d-grid mt-4">
+            <img class="form-logo" src="./Pictures/logo.png">
+            </div>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Gio  -->
 
 
-//Oswaldo
+    <!-- Erick -->
+    
+        <!-- Mai -->
 
 
-//Giovani
+        <!-- Alex -->
 
 
-//Alex
+        <!-- Fin del contenedor azul -->
+        </div>
+    </div>
 
-
-//Luis
-
-
-//Jésus
-
-
-//Leila - Maitte
-     <footer class="f-dorado text-white pt-4 pb-2">
+        <!---Estructura del Footer-->
+        <footer class="f-dorado text-white pt-4 pb-2">
             <div class="container">
                 <div class="row">
                     <!---Contacto-->
@@ -140,6 +194,8 @@
             </div>
         </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-<script src="JS/index.js"></script>
+<script src="./JS/contacto.js"></script>
 </body>
+
+
 </html>
