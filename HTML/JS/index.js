@@ -12,6 +12,9 @@
 
 //Alex
 
+console.log("Estructura de testimonios lista.");
+
+
 
 //Luis
 
