@@ -2,6 +2,44 @@
 
 
 /* Fernando */
+.banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  color: white;
+  font-family: Arial, sans-serif;
+
+  /* Aquí va tu imagen de fondo */
+  background-image: 
+  linear-gradient(to right, rgba(0, 0, 128, 0.5), rgba(128, 0, 128, 0.5)), /* azul → morado con transparencia */
+  url("../Pictures/fondoTinta.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Capa transparente encima de la imagen */
+.banner::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.2); /* negro semitransparente */
+  z-index: 1;
+}
+
+.texto {
+  flex: 1;              /* ocupa el espacio restante */
+  text-align: right;    /* alinea el texto hacia la derecha */
+  position: relative;
+  z-index: 2
+}
+.logo img {
+  width: 150px;
+  border-radius: 50%;
+  margin-right: 30px;
+}
+
 
 
 /* Oswaldo */
