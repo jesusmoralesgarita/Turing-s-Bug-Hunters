@@ -21,7 +21,8 @@
 
 h2{
     padding-block-end: 10px;
-    font-family: 'Montserrat-Bold'
+    font-family: 'Montserrat-Bold';
+    color: black;
 }
 
 h5{
