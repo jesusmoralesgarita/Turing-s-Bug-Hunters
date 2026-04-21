@@ -2,7 +2,30 @@
 
 
 /* Fernando */
+.banner {
+  display: flex;                /* coloca logo y texto en fila */
+  align-items: center;          /* centra verticalmente */
+  justify-content: space-around;/* separa logo y texto */
+  background: linear-gradient(to right, #4a90e2, #9013fe); /* degradado */
+  color: white;
+  padding: 20px;
+}
 
+.logo img {
+  width: 150px;
+  border-radius: 50%;           /* hace el logo circular */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.texto h1 {
+  margin: 0;
+  font-size: 2.5em;
+}
+
+.texto p {
+  margin-top: 10px;
+  font-size: 1.2em;
+}
 
 /* Oswaldo */
 
