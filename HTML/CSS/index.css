@@ -10,6 +10,201 @@
 /* Giovani */
 
 
+/* #carousel {
+  position: relative;
+  height: 400px;
+  top: 50%;
+  transform: translateY(-50%);
+  overflow: hidden;
+}
+
+#carousel div {
+  position: absolute;
+  transition: transform 1s, left 1s, opacity 1s, z-index 0s;
+  opacity: 1;
+}
+
+#carousel div img {
+    max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  transition: all 1s;
+}
+
+#carousel div.hideLeft {
+  left: 0%;
+  opacity: 0;
+  transform: translateY(50%) translateX(-50%);
+}
+
+#carousel div.hideLeft img {
+  width: 200px;
+}
+
+#carousel div.hideRight {
+  left: 100%;
+  opacity: 0;
+  transform: translateY(50%) translateX(-50%);
+}
+
+#carousel div.hideRight img {
+  width: 200px;
+}
+
+#carousel div.prev {
+  z-index: 5;
+  left: 30%;
+  transform: translateY(50px) translateX(-50%);
+}
+
+#carousel div.prev img {
+  width: 300px;
+}
+
+#carousel div.prevLeftSecond {
+  z-index: 4;
+  left: 15%;
+  transform: translateY(50%) translateX(-50%);
+  opacity: 0.7;
+}
+
+#carousel div.prevLeftSecond img {
+  width: 200px;
+}
+
+#carousel div.selected {
+  z-index: 10;
+  left: 50%;
+  transform: translateY(0px) translateX(-50%);
+}
+
+#carousel div.next {
+  z-index: 5;
+  left: 70%;
+  transform: translateY(50px) translateX(-50%);
+}
+
+#carousel div.next img {
+  width: 300px;
+}
+
+#carousel div.nextRightSecond {
+  z-index: 4;
+  left: 85%;
+  transform: translateY(50%) translateX(-50%);
+  opacity: 0.7;
+}
+
+#carousel div.nextRightSecond img {
+  width: 200px;
+}
+
+.buttons {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 10px;
+} */
+
+.carousel-section {
+  text-align: center;
+  padding: 40px;
+  background: #f5f5f5;
+}
+
+.swiper {
+  width: 100%;
+  max-width: 900px;
+  padding: 40px 0;
+}
+
+.swiper-slide {
+  width: 250px;
+  height: 300px;
+  background: #cfe3f1;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s, opacity 0.3s;
+  opacity: 0.5;
+}
+
+/* Imagen adaptable */
+.swiper-slide img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Slide activo (centro) */
+.swiper-slide-active {
+  transform: scale(1.15);
+  opacity: 1;
+  filter: blur(0);
+}
+
+/* Slides laterales */
+.swiper-slide-prev,
+.swiper-slide-next {
+  transform: scale(0.9);
+  opacity: 0.8;
+}
+
+.swiper-slide {
+  width: 260px;
+  height: 340px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Tarjeta */
+.card {
+  width: 100%;
+  height: 100%;
+  background: #cfe3f1;
+  border-radius: 15px;
+  padding: 15px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Imagen */
+.card img {
+  max-width: 100%;
+  max-height: 180px;
+  object-fit: contain;
+}
+
+/* Texto */
+.info {
+  text-align: center;
+}
+
+.info h3 {
+  font-size: 16px;
+  margin: 10px 0 5px;
+  font-family: "Montserrar-T"
+}
+
+.info p {
+  font-size: 13px;
+  color: #555;
+}
+
+/* Efecto activo */
+.swiper-slide-active .card {
+  transform: scale(1.1);
+}
+
 /* Alex */
 
 /* Alex */
