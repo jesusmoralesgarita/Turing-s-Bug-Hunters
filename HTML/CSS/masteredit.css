@@ -8,11 +8,51 @@
 
 /* LEI */
 
+.card-cttn {
+  background-color: #061f2f;
+  border-radius: 25px;
+  width: 100%;
+  max-width: 80%;
+  box-shadow: 18px -18px 2px 5px #bcbbbb;
+}
+.text-cttn {
+  font-size: 2.2rem;
+  color: #ffffff;
+  font-family: "Montserrat-T";
+}
+
+.form-ctn{
+  background-color: #ffffff;
+  border-radius: 25px;
+  color: #061f2f;
+  margin: 2rem;
+  padding: 1rem;
+}
+
+.form-logo{
+  width: 30%;
+  padding: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 
 /* ERICK */
-
-
+.upload-area {
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    padding: 40px;
+    background-color: #f8f9fa;
+    cursor: pointer;
+    transition: border-color 0.3s;
+  }
+  .upload-area:hover {
+    border-color: #0d6efd; /* azul Bootstrap */
+  }
+  .upload-icon {
+    font-size: 48px;
+    color: #6c757d;
+  }
 
 /* FER */
 
@@ -23,7 +63,10 @@
 
 
 /* CHUCHO */
-
+.btn-primary {
+    font-family: url(/FONT/DM_Sans/DMSans-Regular.ttf);
+    background-color:  #208774;
+}
 
 
 /* OSWALDO */
@@ -32,4 +75,22 @@
 
 /* ALE */
 
+.btn-verde-turing {
+    background-color: #008080;
+    color: white;
+    border: none;
+}
 
+.btn-verde-turing:hover {
+    background-color: #006666;
+    color: white;
+}
+
+.card-formulario {
+    background-color: #ffffff;
+    border-radius: 15px;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
