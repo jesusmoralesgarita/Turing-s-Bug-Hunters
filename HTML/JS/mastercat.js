@@ -19,6 +19,10 @@
 
 
 /* GIO */
+// funcion para redirigir a añadir nuevo producto
+function agregarCarrito(){
+    window.location.href = "masteradd.html";
+}
 
 
 
