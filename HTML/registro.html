@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="CSS/fonts.css">
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/registro.css">
+    <link rel="stylesheet" href="JS/registro.js">
 </head>
 <body>
     
@@ -71,6 +72,61 @@
                 </div>
             </div>
     </nav>
+
+        <!-- Contenedor de registro -->
+         <!--Todo esto lo hice siguiendo la estructura que tenian los compañeros-->
+    <div class="container my-5 d-flex justify-content-center">
+        <!-- Carta de color responsive para formulario -->
+        <div class="card card-cttn text-white border-0 shadow-cttn">
+            <div class="card-body p-4 p-md-5">
+                <h2 class="text-cttn text-center mb-4">
+                    Registrate
+                </h2>
+            </div>
+            
+    <div class="card-body form-ctn">
+                <form id="registro-form" method="POST" class="needs-validation" novalidate>
+            
+            
+            <div class="mb-3 form-element">
+                <label for="contact-email" class="form-label">Correo</label>
+                <input type="email" name="Email" valtype="email" placeholder="ejemplo@tintanomada.com" class="form-control" id="contact-email" aria-describedby="Correo">
+                <div class="invalid-feedback">
+                    Looks bad!
+                </div>
+            </div>
+            
+            <div class="mb-3 form-element">
+                <label for="password" class="form-label">Contraseña</label>
+                <input type="password" name="Password" valtype="password" class="form-control" placeholder="Contraseña123" id="password" aria-describedby="Contraseña">
+            </div>
+
+            <div class="d-grid mt-4">
+            <button type="submit" id="submit-btn" class="btn btn-primary btn-lg shadow-sm">Registro</button>
+            </div>
+            
+        </form>
+            <div class="d-grid mt-4">
+            <img class="form-logo" src="./Pictures/logo.png">
+            </div>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Gio  -->
+
+
+    <!-- Erick -->
+    
+        <!-- Mai -->
+
+
+        <!-- Alex -->
+
+
+        <!-- Fin del contenedor azul -->
+        </div>
+    </div>
+
 
      <footer class="f-dorado text-white pt-4 pb-2">
             <div class="container">

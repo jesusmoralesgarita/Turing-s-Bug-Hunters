@@ -1,0 +1,36 @@
+/*Hola*/
+/* Oswaldo */
+/* estilo del menu de categorias */
+body{
+    background-color: #208774;
+}
+
+.card-cttn {
+  background-color: white;
+  border-radius: 25px;
+  width: 100%;
+  max-width: 80%;
+  box-shadow: 18px -18px 2px 5px #145f51;
+}
+.text-cttn {
+  font-size: 2.2rem;
+  color: black;
+  font-family: "Montserrat-T";
+}
+
+/* Luis */
+
+.form-ctn{
+  background-color: #ffffff;
+  border-radius: 25px;
+  color: #061f2f;
+  margin: 2rem;
+  padding: 1rem;
+}
+
+.form-logo{
+  width: 30%;
+  padding: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
