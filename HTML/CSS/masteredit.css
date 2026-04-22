@@ -23,7 +23,10 @@
 
 
 /* CHUCHO */
-
+.btn-primary {
+    font-family: url(/FONT/DM_Sans/DMSans-Regular.ttf);
+    background-color:  #208774;
+}
 
 
 /* OSWALDO */
