@@ -16,6 +16,8 @@ function prepararEdicion(id) {
 }
 
 // 3. Guardar los cambios realizados
+
+/*
 const btnGuardarCambios = document.getElementById('btnActualizar');
 btnGuardarCambios.addEventListener('click', () => {
     const datosActualizados = {
@@ -25,7 +27,7 @@ btnGuardarCambios.addEventListener('click', () => {
     
     console.log("Actualizando en el servidor...", datosActualizados);
 });
-
+*/
 
 /* LUIS */
 
@@ -96,7 +98,7 @@ if (alertTrigger) {
 /* ALE */
 
 document.addEventListener('DOMContentLoaded', () => {
-    const formulario = document.getElementById('form-agregar-producto');
+    const formulario = document.getElementById('form-edit-producto');
 
     if (formulario) {
         formulario.addEventListener('submit', (e) => {

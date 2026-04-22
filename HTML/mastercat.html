@@ -87,7 +87,7 @@
     <div class="contenedor-categorias"> 
         <h1>Categorias</h1>
         <div class="botones-categorias">
-                <a href="#sectplayeras" onclick="mostrarAlerta()" class="btn btn-primary" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 2.8rem; --bs-btn-font-size: .75rem;">Playeras</a>
+                <a href="#sectplayeras" class="btn btn-primary" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 2.8rem; --bs-btn-font-size: .75rem;">Playeras</a>
                 <a href="#secttazas" class="btn btn-primary"  style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 2.8rem; --bs-btn-font-size: .75rem;">Tazas</a>
                 <a href="#sectsudaderas" class="btn btn-primary"  style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 2.8rem; --bs-btn-font-size: .75rem;">Sudaderas</a>
                 <a href="#sectvasos" class="btn btn-primary"  style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 2.8rem; --bs-btn-font-size: .75rem;">Vasos</a>
@@ -111,7 +111,7 @@
         <!-- GIO -->
             <div class="row" id="contenedor">
                 <!--  card -->
-                  <div class="card-add">
+                  <div class="card-add col-md-3 mb-4">
                     <div class="icon-container">
                         <i class="bi bi-plus-circle"></i>
                     </div>
@@ -135,7 +135,7 @@
                                 <button class="btn btn-light btn-edit">
                                     <i class="bi bi-pencil me-2"></i> Editar
                                 </button>
-                                <button class="btn btn-danger btn-delete">
+                                <button  onclick="mostrarAlerta()" class="btn btn-danger btn-delete">
                                     <i class="bi bi-trash me-2"></i> Eliminar
                                 </button>
                             </div>
@@ -159,7 +159,7 @@
                                 <button class="btn btn-edit">
                                     <i class="bi bi-pencil me-2"></i> Editar
                                 </button>
-                                <button class="btn btn-delete">
+                                <button  onclick="mostrarAlerta()" class="btn btn-delete">
                                     <i class="bi bi-trash me-2"></i> Eliminar
                                 </button>
                             </div>
@@ -183,7 +183,7 @@
                                 <button class="btn btn-edit">
                                     <i class="bi bi-pencil me-2"></i> Editar
                                 </button>
-                                <button class="btn btn-delete">
+                                <button  onclick="mostrarAlerta()" class="btn btn-delete">
                                     <i class="bi bi-trash me-2"></i> Eliminar
                                 </button>
                             </div>
@@ -207,7 +207,7 @@
                                 <button class="btn btn-edit">
                                     <i class="bi bi-pencil me-2"></i> Editar
                                 </button>
-                                <button class="btn btn-delete">
+                                <button onclick="mostrarAlerta()" class="btn btn-delete">
                                     <i class="bi bi-trash me-2"></i> Eliminar
                                 </button>
                             </div>
@@ -231,7 +231,7 @@
                                 <button class="btn btn-edit">
                                     <i class="bi bi-pencil me-2"></i> Editar
                                 </button>
-                                <button class="btn btn-delete">
+                                <button onclick="mostrarAlerta()" class="btn btn-delete">
                                     <i class="bi bi-trash me-2"></i> Eliminar
                                 </button>
                             </div>

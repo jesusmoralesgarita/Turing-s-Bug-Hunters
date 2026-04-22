@@ -1,93 +1,99 @@
 /* MAITTE */
 
-
-
 /* LUIS */
 
-
-
 /* LEI */
+
 .card-cttn {
-  background-color: #061f2f;
-  border-radius: 25px;
-  width: 100%;
-  max-width: 80%;
-  box-shadow: 18px -18px 2px 5px #bcbbbb;
+    background-color: #061f2f;
+    border-radius: 25px;
+    width: 100%;
+    max-width: 80%;
+    box-shadow: 18px -18px 2px 5px #bcbbbb;
 }
 .text-cttn {
-  font-size: 2.2rem;
-  color: #ffffff;
-  font-family: "Montserrat-T";
+    font-size: 2.2rem;
+    color: #ffffff;
+    font-family: "Montserrat-T";
 }
 
-.form-ctn{
-  background-color: #ffffff;
-  border-radius: 25px;
-  color: #061f2f;
-  margin: 2rem;
-  padding: 1rem;
+.form-ctn {
+    background-color: #ffffff;
+    border-radius: 25px;
+    color: #061f2f;
+    margin: 2rem;
+    padding: 1rem;
 }
 
-.form-logo{
-  width: 30%;
-  padding: 1rem;
-  margin-left: auto;
-  margin-right: auto;
+.form-logo {
+    width: 30%;
+    padding: 1rem;
+    margin-left: auto;
+    margin-right: auto;
 }
-
-
 
 /* ERICK */
-
-
-
-/* FER */
-h2 {
-  color: #333;
+.upload-area {
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    padding: 40px;
+    background-color: #f8f9fa;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+.upload-area:hover {
+    border-color: #0d6efd; /* azul Bootstrap */
+}
+.upload-icon {
+    font-size: 48px;
+    color: #6c757d;
 }
 
-label {
-  display: flex;          /* coloca círculo y checkbox en línea */
-  align-items: center;
-  margin: 8px 0;
-  font-size: 16px;
-  cursor: pointer;
+/* FER */
+
+h2 {
+    color: #333;
+}
+
+.label-list {
+    display: flex; /* coloca círculo y checkbox en línea */
+    align-items: center;
+    margin: 8px 0;
+    font-size: 16px;
+    cursor: pointer;
 }
 
 /* círculo con la letra */
 .circle {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: #d8b4fe; /* color de fondo del círculo */
-  color: #333;
-  font-weight: bold;
-  margin-right: 10px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #d8b4fe; /* color de fondo del círculo */
+    color: #333;
+    font-weight: bold;
+    margin-right: 10px;
 }
 
 /* estilo de los checkboxes */
 input[type="checkbox"] {
-  accent-color: green; /* palomita verde */
-  width: 18px;
-  height: 18px;
-  margin-left: auto;   /* empuja el checkbox a la derecha */
+    accent-color: green; /* palomita verde */
+    width: 18px;
+    height: 18px;
+    margin-left: auto; /* empuja el checkbox a la derecha */
 }
-
 
 /* GIO */
 
-
-
 /* CHUCHO */
-
-
+.btn-primary {
+    font-family: url(/FONT/DM_Sans/DMSans-Regular.ttf);
+    background-color: #208774;
+}
 
 /* OSWALDO */
-
-
 
 /* ALE */
 
@@ -108,5 +114,5 @@ input[type="checkbox"] {
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
 }

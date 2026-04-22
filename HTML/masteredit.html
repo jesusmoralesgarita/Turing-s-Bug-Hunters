@@ -87,26 +87,13 @@
             </div>
 
             <div class="card-body form-ctn">
-                <form id="editproduct-form" method="POST" class="needs-validation" novalidate>
+
+                <form id="form-edit-producto" method="POST" class="needs-validation" novalidate>
 
                     <!--AGREGAR NUEVOS CAMPOS-->
 
 
 
-
-
-                    <div class="d-grid mt-4">
-                    <button type="submit" id="submit-btn" class="btn btn-primary btn-lg shadow-sm">Editar Producto</button>
-                    </div>
-                </form>
-                <div class="d-grid mt-4">
-                <img class="form-logo" src="./Pictures/logo.png">
-                </div>
-            </div>
-        <!-- Fin del contenedor azul -->
-        </div>
-    </div>
-    
 
 
 
@@ -129,74 +116,93 @@
             </div>
         </div>
 
-                <form id="form-agregar-producto">
-                    <div class="mb-3">
-                        <label class="form-label">Nombre del Producto</label>
-                        <input type="text" class="form-control" placeholder="Ej. Playera Básica">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Descripción</label>
-                        <textarea class="form-control" rows="3"></textarea>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">Precio</label>
-                            <input type="number" class="form-control" placeholder="$0.00">
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">Categoría</label>
-                            <select class="form-select">
-                                <option>Playeras</option>
-                                <option>Tazas</option>
-                                <option>Sudaderas</option>
-                            </select>
-                        </div>
-                    </div>
-                </form>
-        </div>
-    </div>
-</div>
-
-
-
-
 
         <!-- ALE -->
+            <div class="mb-3">
+                    <h2>Nombre del Producto</h2>
+                <input type="text" class="form-control" placeholder="Ej. Playera Básica">
+            </div>
+            <div class="mb-3">
+                    <h2>Descripción</h2>
+                <textarea class="form-control" rows="3"></textarea>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    
+                    <h2>Precio</h2>
+                    <input type="number" class="form-control" placeholder="$0.00">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <h2>Categoría</h2>
+                    <select class="form-select">
+                        <option>Playeras</option>
+                        <option>Tazas</option>
+                        <option>Sudaderas</option>
+                    </select>
+                </div>
+            </div>
 
 
-    <!-- MAITE -->
-<div style="width: 400px; margin: 0 auto;">
+        <!-- FER -->
+        <h2>Tallas del producto</h2>
+        <label class="label-list"><span class="circle">G</span>{talla: G}<input type="checkbox" checked> </label><br>
+        <label class="label-list"><span class="circle">M</span>{talla: M}<input type="checkbox" checked> </label><br>
+        <label class="label-list"><span class="circle">CH</span>{talla: CH}<input type="checkbox" checked> </label><br>
 
-    <div class="mb-4">
-        <label for="descuento" class="form-label small fw-medium text-secondary">Ingrese el descuento que se aplicara</label>
-        <input type="text" class="form-control rounded-3 shadow-sm border-secondary-subtle" 
-               id="descuento" placeholder="descuento" style="width: 200px;"> 
-    </div>
+        <h2>Colores del producto</h2>
+        <label class="label-list"><span class="circle">B</span>{color: Blanco}<input type="checkbox" checked> </label><br>
+        <label class="label-list"><span class="circle">N</span>{color: Negro}<input type="checkbox" checked> </label><br>
+        <label class="label-list"><span class="circle">A</span>{color: Azul}<input type="checkbox" checked> </label><br>
+        <label class="label-list"><span class="circle">R</span>{color: Rojo}<input type="checkbox" checked> </label><br>
+        <label class="label-list"><span class="circle">G</span>{color: Gris}<input type="checkbox" checked> </label><br>
 
-    <div style="width: 400px;">
-        <div style="float: left; width: 300px;">
-            <label class="form-label fw-bold mb-0" style="font-size: 0.95rem; color: #333;">Diseño personalizado</label>
-            <p class="text-muted small mb-0">Permitir al cliente personalizar el producto</p>
-        </div>
-        <div class="form-check form-switch pt-1" style="float: right; width: 50px;">
-            <input class="form-check-input border-secondary" type="checkbox" role="switch" id="customDesign" style="width: 2.4em; height: 1.2em; cursor: pointer;">
-        </div>
-        <div style="clear: both;"></div>
-    </div>
 
-</div>
 
 
         <!-- MAITE -->
-    <!-- CHUCHO -->
-     <div id="liveAlertPlaceholder"></div>
-     <button type="button" class="btn btn-primary" id="liveAlertBtn">Guardar cambios</button>
+
+            <div style="padding-top: 1rem;">
+                    <h2>Descuento a aplicar</h2>
+                <input type="text" class="form-control rounded-3 shadow-sm border-secondary-subtle" id="descuento"
+                    placeholder="Descuento">
+            </div>
+
+            <div style="padding-top: 2rem;">
+                <div style="float: left;">
+
+                    <h2>Diseño personalizado</h2>
+                    <p class="text-muted small mb-0">Permitir al cliente personalizar el producto</p>
+                </div>
+                <div class="form-check form-switch pt-1" style="float: right; width: 50px;">
+                    <input class="form-check-input border-secondary" type="checkbox" role="switch" id="customDesign"
+                        style="width: 2.4em; height: 1.2em; cursor: pointer;">
+                </div>
+                <div style="clear: both;"></div>
+            </div>
+
+
+
+        <!-- MAITE -->
+        <!-- CHUCHO -->
+        <div id="liveAlertPlaceholder"></div>
+        <button type="button" class="btn btn-primary mt-4 w-100" id="liveAlertBtn">Guardar cambios</button>
 
 
 
         <!-- CHUCHO -->
 
 
+    </div>
+
+
+
+                </form>
+                <div class="d-grid mt-4">
+                    <img class="form-logo" src="./Pictures/logo.png">
+                </div>
+            </div>
+            <!-- Fin del contenedor azul -->
+        </div>
     </div>
 
 

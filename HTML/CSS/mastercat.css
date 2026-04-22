@@ -33,8 +33,6 @@
 
 /* GIO */
 .card-add {
-    width: 250px;
-    height: 400px;
     border: 2px solid #ddd;
     border-radius: 15px;
     background-color: #f5f5f5;
