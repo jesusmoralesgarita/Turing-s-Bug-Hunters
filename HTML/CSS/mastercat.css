@@ -1,5 +1,18 @@
 /* MAITTE */
+/* Importar la fuente local */
+@font-face {
+    font-family: 'DM Sans';
+    src: url('../FONT/DM_Sans/DMSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
+@font-face {
+    font-family: 'DM Sans';
+    src: url('../FONT/DM_Sans/DMSans-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
 
 
 /* LUIS */
