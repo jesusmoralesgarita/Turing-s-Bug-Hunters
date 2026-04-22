@@ -15,7 +15,39 @@
 
 
 /* FER */
+h2 {
+  color: #333;
+}
 
+label {
+  display: flex;          /* coloca círculo y checkbox en línea */
+  align-items: center;
+  margin: 8px 0;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* círculo con la letra */
+.circle {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #d8b4fe; /* color de fondo del círculo */
+  color: #333;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+/* estilo de los checkboxes */
+input[type="checkbox"] {
+  accent-color: green; /* palomita verde */
+  width: 18px;
+  height: 18px;
+  margin-left: auto;   /* empuja el checkbox a la derecha */
+}
 
 
 /* GIO */
