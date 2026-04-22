@@ -7,6 +7,33 @@
 
 
 /* LEI */
+.card-cttn {
+  background-color: #061f2f;
+  border-radius: 25px;
+  width: 100%;
+  max-width: 80%;
+  box-shadow: 18px -18px 2px 5px #bcbbbb;
+}
+.text-cttn {
+  font-size: 2.2rem;
+  color: #ffffff;
+  font-family: "Montserrat-T";
+}
+
+.form-ctn{
+  background-color: #ffffff;
+  border-radius: 25px;
+  color: #061f2f;
+  margin: 2rem;
+  padding: 1rem;
+}
+
+.form-logo{
+  width: 30%;
+  padding: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 
 
@@ -15,7 +42,39 @@
 
 
 /* FER */
+h2 {
+  color: #333;
+}
 
+label {
+  display: flex;          /* coloca círculo y checkbox en línea */
+  align-items: center;
+  margin: 8px 0;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* círculo con la letra */
+.circle {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #d8b4fe; /* color de fondo del círculo */
+  color: #333;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+/* estilo de los checkboxes */
+input[type="checkbox"] {
+  accent-color: green; /* palomita verde */
+  width: 18px;
+  height: 18px;
+  margin-left: auto;   /* empuja el checkbox a la derecha */
+}
 
 
 /* GIO */
@@ -32,4 +91,22 @@
 
 /* ALE */
 
+.btn-verde-turing {
+    background-color: #008080;
+    color: white;
+    border: none;
+}
 
+.btn-verde-turing:hover {
+    background-color: #006666;
+    color: white;
+}
+
+.card-formulario {
+    background-color: #ffffff;
+    border-radius: 15px;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
