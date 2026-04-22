@@ -109,7 +109,38 @@
 
 
 /* OSWALDO */
+/* Oculto por defecto y con fondo oscuro transparente */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.modal-contenido {
+  font-family: "Montserrat";
+  color: black;
+  background-color: #be814f;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 350px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+.btn-eliminar-artc {
+  box-sizing: border-box;
+  padding: 0 0 14px 0;
+}
 
+.btn-si-no {
+  width: 100%;
+  height: 10%;
+  border-color: #ffffff;
+  border-radius: 5px;
+}
 
 
 /* ALE */

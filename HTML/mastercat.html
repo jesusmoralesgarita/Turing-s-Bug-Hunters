@@ -76,12 +76,18 @@
 
 
     <!-- OSWALDO -->
-
+    <div id="miAlerta" class="modal">
+      <div class="modal-contenido">
+        <p>¿Seguro de eliminar esto?</p>
+        <div class="btn-eliminar-artc"><button onclick="cerrarAlerta()" class="btn-rojo btn-si-no">Sí</button></div>
+        <div><button onclick="cerrarAlerta()" class="btn-gris btn-si-no">No</button></div>
+      </div>
+    </div>
   <!-- BARRA DE CATEGORÍAS -->
     <div class="contenedor-categorias"> 
         <h1>Categorias</h1>
         <div class="botones-categorias">
-                <a href="#sectplayeras" class="btn btn-primary" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 2.8rem; --bs-btn-font-size: .75rem;">Playeras</a>
+                <a href="#sectplayeras" onclick="mostrarAlerta()" class="btn btn-primary" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 2.8rem; --bs-btn-font-size: .75rem;">Playeras</a>
                 <a href="#secttazas" class="btn btn-primary"  style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 2.8rem; --bs-btn-font-size: .75rem;">Tazas</a>
                 <a href="#sectsudaderas" class="btn btn-primary"  style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 2.8rem; --bs-btn-font-size: .75rem;">Sudaderas</a>
                 <a href="#sectvasos" class="btn btn-primary"  style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 2.8rem; --bs-btn-font-size: .75rem;">Vasos</a>
