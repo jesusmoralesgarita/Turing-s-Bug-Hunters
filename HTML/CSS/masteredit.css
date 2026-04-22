@@ -11,8 +11,21 @@
 
 
 /* ERICK */
-
-
+.upload-area {
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    padding: 40px;
+    background-color: #f8f9fa;
+    cursor: pointer;
+    transition: border-color 0.3s;
+  }
+  .upload-area:hover {
+    border-color: #0d6efd; /* azul Bootstrap */
+  }
+  .upload-icon {
+    font-size: 48px;
+    color: #6c757d;
+  }
 
 /* FER */
 
