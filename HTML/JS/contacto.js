@@ -124,7 +124,7 @@ function validarNombre() {
     } else {
         return "El nombre sin números";
     }
-};
+}; 
 
 // Validar email
 function validarEmail1() {

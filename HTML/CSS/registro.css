@@ -1,0 +1,78 @@
+/*Hola*/
+/* Oswaldo */
+/* estilo del menu de categorias */
+body{
+    background-color: #208774;
+}
+
+.card-cttn {
+  background-color: white;
+  border-radius: 25px;
+  width: 100%;
+  max-width: 80%;
+  box-shadow: 18px -18px 2px 5px #145f51;
+}
+.text-cttn {
+  font-size: 2.2rem;
+  color: black;
+  font-family: "Montserrat-T";
+}
+
+/* Luis */
+
+.form-ctn{
+  background-color: #ffffff;
+  border-radius: 25px;
+  color: #061f2f;
+  margin: 2rem;
+  padding: 1rem;
+}
+
+.form-logo{
+  width: 30%;
+  padding: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+   /* Gio  */
+    /* formato al modal de mensaje enviado */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+}
+.contenido{
+    background: linear-gradient(135deg, #0B192C, #3a64ed);
+    padding:25px;
+    margin: 120px auto;
+    width: 320px;
+    border-radius: 15px;
+    text-align: center;
+    color: rgb(155, 164, 239);
+    font-weight: bold;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    animation: aparecer 0.4s ease;
+}
+/* titulo con efecto */
+.titulo{
+    margin-bottom: 10px;
+}
+.btn:hover{
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+/* animacion */
+@keyframes aparecer{
+    from{
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
