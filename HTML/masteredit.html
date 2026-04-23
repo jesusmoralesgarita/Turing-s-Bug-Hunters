@@ -107,7 +107,7 @@
                 <label for="inputImagen" class="upload-area w-100 mb-3">
                     <div class="upload-icon">＋</div>
                     <p class="text-muted">Haz clic para seleccionar una imagen</p>
-                    <input type="file" id="inputImagen" accept="image/*" class="d-none">
+                    <input name="imagen" type="file" id="inputImagen" accept="image/*" class="d-none">
                     <img id="preview" class="img-fluid rounded mt-3 d-none" alt="Vista previa">
                 </label>
 
@@ -116,45 +116,53 @@
             </div>
         </div>
 
-
         <!-- ALE -->
             <div class="mb-3">
                     <h2>Nombre del Producto</h2>
-                <input type="text" class="form-control" placeholder="Ej. Playera Básica">
+                <input name="nombre" type="text" class="form-control" placeholder="Ej. Playera Básica">
             </div>
             <div class="mb-3">
                     <h2>Descripción</h2>
-                <textarea class="form-control" rows="3"></textarea>
+                <textarea name="descripcion" class="form-control" rows="3"></textarea>
             </div>
             <div class="row">
                 <div class="col-md-6 mb-3">
                     
                     <h2>Precio</h2>
-                    <input type="number" class="form-control" placeholder="$0.00">
+                    <input name="precio" type="number" class="form-control" placeholder="$0.00">
                 </div>
                 <div class="col-md-6 mb-3">
                     <h2>Categoría</h2>
-                    <select class="form-select">
-                        <option>Playeras</option>
-                        <option>Tazas</option>
-                        <option>Sudaderas</option>
+                    <select name="categoria" class="form-select">
+                        <option>Playera</option>
+                        <option>Taza</option>
+                        <option>Sudadera</option>
+                        <option>Vaso</option>
                     </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+
+                    <h2>Stock</h2>
+                    <input name="stock" type="number" class="form-control" placeholder="0">
                 </div>
             </div>
 
 
+
         <!-- FER -->
         <h2>Tallas del producto</h2>
-        <label class="label-list"><span class="circle">G</span>{talla: G}<input type="checkbox" checked> </label><br>
-        <label class="label-list"><span class="circle">M</span>{talla: M}<input type="checkbox" checked> </label><br>
-        <label class="label-list"><span class="circle">CH</span>{talla: CH}<input type="checkbox" checked> </label><br>
+        <label class="label-list"><span class="circle">G</span>{talla: G}<input name="size-g" type="checkbox" checked> </label><br>
+        <label class="label-list"><span class="circle">M</span>{talla: M}<input name="size-m" type="checkbox" checked> </label><br>
+        <label class="label-list"><span class="circle">CH</span>{talla: CH}<input name="size-c" type="checkbox" checked> </label><br>
 
         <h2>Colores del producto</h2>
-        <label class="label-list"><span class="circle">B</span>{color: Blanco}<input type="checkbox" checked> </label><br>
-        <label class="label-list"><span class="circle">N</span>{color: Negro}<input type="checkbox" checked> </label><br>
-        <label class="label-list"><span class="circle">A</span>{color: Azul}<input type="checkbox" checked> </label><br>
-        <label class="label-list"><span class="circle">R</span>{color: Rojo}<input type="checkbox" checked> </label><br>
-        <label class="label-list"><span class="circle">G</span>{color: Gris}<input type="checkbox" checked> </label><br>
+        <label class="label-list"><span class="circle">B</span>{color: Blanco}<input name="color-blanco" type="checkbox" checked> </label><br>
+        <label class="label-list"><span class="circle">N</span>{color: Negro}<input name="color-negro" type="checkbox" checked> </label><br>
+        <label class="label-list"><span class="circle">A</span>{color: Azul}<input name="color-azul" type="checkbox" checked> </label><br>
+        <label class="label-list"><span class="circle">R</span>{color: Rojo}<input name="color-rojo" type="checkbox" checked> </label><br>
+        <label class="label-list"><span class="circle">G</span>{color: Gris}<input name="color-gris" type="checkbox" checked> </label><br>
 
 
 
@@ -163,7 +171,7 @@
 
             <div style="padding-top: 1rem;">
                     <h2>Descuento a aplicar</h2>
-                <input type="text" class="form-control rounded-3 shadow-sm border-secondary-subtle" id="descuento"
+                <input name="descuento" type="text" class="form-control rounded-3 shadow-sm border-secondary-subtle" id="descuento"
                     placeholder="Descuento">
             </div>
 
@@ -174,7 +182,7 @@
                     <p class="text-muted small mb-0">Permitir al cliente personalizar el producto</p>
                 </div>
                 <div class="form-check form-switch pt-1" style="float: right; width: 50px;">
-                    <input class="form-check-input border-secondary" type="checkbox" role="switch" id="customDesign"
+                    <input name="diseno" class="form-check-input border-secondary" type="checkbox" role="switch" id="customDesign"
                         style="width: 2.4em; height: 1.2em; cursor: pointer;">
                 </div>
                 <div style="clear: both;"></div>
@@ -185,7 +193,7 @@
         <!-- MAITE -->
         <!-- CHUCHO -->
         <div id="liveAlertPlaceholder"></div>
-        <button type="button" class="btn btn-primary mt-4 w-100" id="liveAlertBtn">Guardar cambios</button>
+        <button type="submit" class="btn btn-primary w-100" id="liveAlertBtn">Guardar cambios</button>
 
 
 
@@ -193,8 +201,6 @@
 
 
     </div>
-
-
 
                 </form>
                 <div class="d-grid mt-4">

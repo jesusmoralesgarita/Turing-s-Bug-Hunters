@@ -1,6 +1,8 @@
 /* MAITTE */
 
 /* LUIS */
+
+let selected = 0;
 class Producto {
     constructor(
         idProducto,
@@ -30,6 +32,8 @@ class Producto {
 
 }
 
+
+
 if (!localStorage.getItem("catalogo")) {
     const listaProductos = [
         new Producto(
@@ -38,7 +42,7 @@ if (!localStorage.getItem("catalogo")) {
             "Polo basica",
             200,
             ["P", "M", "G"],
-            ["azul", "blanco"][""],
+            ["Azul", "Blanco"],
             ["imagen1", "imagen2"],
             ["se lava", "huele"],
             3,
@@ -47,11 +51,11 @@ if (!localStorage.getItem("catalogo")) {
         ),
         new Producto(
             1,
-            "Playera 2",
+            "Playera",
             "Polo no basica",
             200,
             ["P", "M", "G"],
-            ["azul", "blanco"][""],
+            ["Azul", "Blanco"],
             ["imagen1", "imagen2"],
             ["se lava", "huele"],
             3,
@@ -60,11 +64,11 @@ if (!localStorage.getItem("catalogo")) {
         ),
         new Producto(
             2,
-            "Playera 3",
+            "Playera",
             "Playera en V",
             2300,
             ["P", "M", "G"],
-            ["azul", "blanco"][""],
+            ["Azul", "Blanco"],
             ["imagen1", "imagen2"],
             ["no se lava", "huele"],
             3,
@@ -73,11 +77,11 @@ if (!localStorage.getItem("catalogo")) {
         ),
         new Producto(
             3,
-            "Playera 4",
+            "Playera",
             "Playera invisible",
             99999,
             ["P", "M", "G"],
-            ["azul", "blanco"][""],
+            ["Azul", "Blanco"],
             ["imagen1", "imagen2"],
             ["se lava", "huele"],
             3,
@@ -86,11 +90,11 @@ if (!localStorage.getItem("catalogo")) {
         ),
         new Producto(
             4,
-            "Playera 5",
+            "Playera",
             "Playera con tirantes",
             300,
             ["P", "M", "G"],
-            ["azul", "blanco"][""],
+            ["Azul", "Blanco"],
             ["imagen1", "imagen2"],
             ["se lava", "huele"],
             3,
@@ -99,11 +103,11 @@ if (!localStorage.getItem("catalogo")) {
         ),
         new Producto(
             5,
-            "Playera 6",
+            "Playera",
             "Pollo",
             450,
             ["P", "M", "G"],
-            ["azul", "blanco"][""],
+            ["Azul", "Blanco"],
             ["imagen1", "imagen2"],
             ["se lava", "no huele"],
             3,
@@ -112,11 +116,11 @@ if (!localStorage.getItem("catalogo")) {
         ),
         new Producto(
             6,
-            "Playera 7",
+            "Playera",
             "Playera que vuela",
             777,
             ["P", "M", "G"],
-            ["azul", "blanco"][""],
+            ["Azul", "Blanco"],
             ["imagen1", "imagen2"],
             ["se lava", "huele"],
             3,
@@ -125,11 +129,11 @@ if (!localStorage.getItem("catalogo")) {
         ),
         new Producto(
             7,
-            "Playera 8",
+            "Playera",
             "Playa",
             888,
             ["P", "M", "G"],
-            ["azul", "blanco"][""],
+            ["Azul", "Blanco"],
             ["imagen1", "imagen2"],
             ["se lava", "huele"],
             3,
@@ -138,11 +142,11 @@ if (!localStorage.getItem("catalogo")) {
         ),
         new Producto(
             8,
-            "Playera 9",
+            "Playera",
             "Plancha",
             999,
             ["P", "M", "G"],
-            ["azul", "blanco"][""],
+            ["Azul", "Blanco"],
             ["imagen1", "imagen2"],
             ["se lava", "huele"],
             3,
@@ -151,11 +155,11 @@ if (!localStorage.getItem("catalogo")) {
         ),
         new Producto(
             9,
-            "Playera 10",
+            "Playera",
             "Plancha",
             10000,
             ["P", "M", "G"],
-            ["azul", "blanco"][""],
+            ["Azul", "Blanco"],
             ["imagen1", "imagen2"],
             ["se lava", "huele"],
             3,
@@ -207,11 +211,17 @@ function generateHTML(item){
                 const buttonEdit = document.createElement("button")
                 buttonEdit.className = "btn btn-light btn-edit"
                 buttonEdit.innerHTML = "<i class='bi bi-pencil me-2'></i> Editar"
+                buttonEdit.addEventListener("click", () => {
+                    editarCarrito(item.idProducto)
+                } )
 
                 const buttonBorrar = document.createElement("button")
                 buttonBorrar.className = "btn btn-danger btn-delete"
                 buttonBorrar.innerHTML = "<i class='bi bi-trash me-2'></i> Eliminar"
-                buttonBorrar.addEventListener("click", mostrarAlerta)
+                buttonBorrar.addEventListener("click", () => { 
+                    selected = item;
+                    mostrarAlerta()
+                })
 
 
     divActions.append(buttonEdit,buttonBorrar);
@@ -225,9 +235,76 @@ function generateHTML(item){
 
 }
 
-const lista = JSON.parse(localStorage.getItem("catalogo"));
-(lista).forEach(e => document.getElementById("contenedor").append(generateHTML(e)))
 
+function render() {
+
+    let addLink = document.getElementById("contenedor-playeras").getElementsByClassName("card-add")[0].cloneNode(true)
+    addLink.addEventListener("click",agregarCarrito)
+
+    document.getElementById("contenedor-playeras").innerHTML = "";
+    document.getElementById("contenedor-playeras").append(addLink);
+
+    addLink = document.getElementById("contenedor-playeras").getElementsByClassName("card-add")[0].cloneNode(true)
+    addLink.addEventListener("click",agregarCarrito)
+    document.getElementById("contenedor-tazas").innerHTML = "";
+    document.getElementById("contenedor-tazas").append(addLink);
+
+    addLink = document.getElementById("contenedor-playeras").getElementsByClassName("card-add")[0].cloneNode(true)
+    addLink.addEventListener("click",agregarCarrito)
+    document.getElementById("contenedor-sudaderas").innerHTML = "";
+    document.getElementById("contenedor-sudaderas").append(addLink);
+
+    addLink = document.getElementById("contenedor-playeras").getElementsByClassName("card-add")[0].cloneNode(true)
+    addLink.addEventListener("click",agregarCarrito)
+    document.getElementById("contenedor-vasos").innerHTML = "";
+    document.getElementById("contenedor-vasos").append(addLink);
+
+
+    const lista = JSON.parse(localStorage.getItem("catalogo"));
+
+
+    let tmp = (lista).filter((v) => v.tipoProducto === "Playera")
+    tmp.forEach(e => document.getElementById("contenedor-playeras").append(generateHTML(e)))
+
+    tmp = (lista).filter((v) => v.tipoProducto === "Taza")
+    tmp.forEach(e => document.getElementById("contenedor-tazas").append(generateHTML(e)))
+    
+    tmp = (lista).filter((v) => v.tipoProducto === "Sudadera")
+    tmp.forEach(e => document.getElementById("contenedor-sudaderas").append(generateHTML(e)))
+
+    tmp = (lista).filter((v) => v.tipoProducto === "Vaso")
+    tmp.forEach(e => document.getElementById("contenedor-vasos").append(generateHTML(e)))
+
+    
+}
+
+function addProducto(item) {
+    const lista = JSON.parse(localStorage.getItem("catalogo"));
+    lista.push(lista);
+    render();
+}
+
+
+function editProducto(item){
+    const lista = JSON.parse(localStorage.getItem("catalogo"));
+    const index = (lista).findIndex((v) => v.idProducto === item.idProducto);
+    lista[index] = item;
+    render();
+}
+
+function deleteProducto(item){
+    console.log(item)
+    const lista = JSON.parse(localStorage.getItem("catalogo"));
+    const index = (lista).findIndex((v) => v.idProducto === item.idProducto);
+
+    console.log(index)
+    lista.splice(index,1);
+
+    localStorage.setItem("catalogo", JSON.stringify(lista))
+    render();
+}
+
+render();
 /* LEI */
 
 /* ERICK */
@@ -240,6 +317,10 @@ function agregarCarrito() {
     window.location.href = "masteradd.html";
 }
 
+function editarCarrito(id) {
+    window.location.href = "masteredit.html?id="+id;
+}
+
 /* CHUCHO */
 
 /* OSWALDO */
@@ -248,6 +329,11 @@ function mostrarAlerta() {
 }
 
 function cerrarAlerta() {
+    document.getElementById("miAlerta").style.display = "none";
+}
+
+function borrarAlerta() {
+    deleteProducto(selected)
     document.getElementById("miAlerta").style.display = "none";
 }
 

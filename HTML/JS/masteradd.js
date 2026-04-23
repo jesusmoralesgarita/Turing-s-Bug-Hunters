@@ -12,7 +12,6 @@ function prepararEdicion(id) {
     inputDescuento.value = productoAEditar.descuento;
     switchDiseno.checked = productoAEditar.personalizado;
 
-    console.log(`Editando producto ${id}: Formulario listo.`);
 }
 
 // 3. Guardar los cambios realizados
@@ -60,6 +59,7 @@ class Producto {
 
 }
 
+
 if (!localStorage.getItem("catalogo")) {
     const listaProductos = [
         new Producto(
@@ -68,7 +68,7 @@ if (!localStorage.getItem("catalogo")) {
             "Polo basica",
             200,
             ["P", "M", "G"],
-            ["azul", "blanco"][""],
+            ["Azul", "Blanco"],
             ["imagen1", "imagen2"],
             ["se lava", "huele"],
             3,
@@ -77,11 +77,11 @@ if (!localStorage.getItem("catalogo")) {
         ),
         new Producto(
             1,
-            "Playera 2",
+            "Playera",
             "Polo no basica",
             200,
             ["P", "M", "G"],
-            ["azul", "blanco"][""],
+            ["Azul", "Blanco"],
             ["imagen1", "imagen2"],
             ["se lava", "huele"],
             3,
@@ -90,11 +90,11 @@ if (!localStorage.getItem("catalogo")) {
         ),
         new Producto(
             2,
-            "Playera 3",
+            "Playera",
             "Playera en V",
             2300,
             ["P", "M", "G"],
-            ["azul", "blanco"][""],
+            ["Azul", "Blanco"],
             ["imagen1", "imagen2"],
             ["no se lava", "huele"],
             3,
@@ -103,11 +103,11 @@ if (!localStorage.getItem("catalogo")) {
         ),
         new Producto(
             3,
-            "Playera 4",
+            "Playera",
             "Playera invisible",
             99999,
             ["P", "M", "G"],
-            ["azul", "blanco"][""],
+            ["Azul", "Blanco"],
             ["imagen1", "imagen2"],
             ["se lava", "huele"],
             3,
@@ -116,11 +116,11 @@ if (!localStorage.getItem("catalogo")) {
         ),
         new Producto(
             4,
-            "Playera 5",
+            "Playera",
             "Playera con tirantes",
             300,
             ["P", "M", "G"],
-            ["azul", "blanco"][""],
+            ["Azul", "Blanco"],
             ["imagen1", "imagen2"],
             ["se lava", "huele"],
             3,
@@ -129,11 +129,11 @@ if (!localStorage.getItem("catalogo")) {
         ),
         new Producto(
             5,
-            "Playera 6",
+            "Playera",
             "Pollo",
             450,
             ["P", "M", "G"],
-            ["azul", "blanco"][""],
+            ["Azul", "Blanco"],
             ["imagen1", "imagen2"],
             ["se lava", "no huele"],
             3,
@@ -142,11 +142,11 @@ if (!localStorage.getItem("catalogo")) {
         ),
         new Producto(
             6,
-            "Playera 7",
+            "Playera",
             "Playera que vuela",
             777,
             ["P", "M", "G"],
-            ["azul", "blanco"][""],
+            ["Azul", "Blanco"],
             ["imagen1", "imagen2"],
             ["se lava", "huele"],
             3,
@@ -155,11 +155,11 @@ if (!localStorage.getItem("catalogo")) {
         ),
         new Producto(
             7,
-            "Playera 8",
+            "Playera",
             "Playa",
             888,
             ["P", "M", "G"],
-            ["azul", "blanco"][""],
+            ["Azul", "Blanco"],
             ["imagen1", "imagen2"],
             ["se lava", "huele"],
             3,
@@ -168,11 +168,11 @@ if (!localStorage.getItem("catalogo")) {
         ),
         new Producto(
             8,
-            "Playera 9",
+            "Playera",
             "Plancha",
             999,
             ["P", "M", "G"],
-            ["azul", "blanco"][""],
+            ["Azul", "Blanco"],
             ["imagen1", "imagen2"],
             ["se lava", "huele"],
             3,
@@ -181,11 +181,11 @@ if (!localStorage.getItem("catalogo")) {
         ),
         new Producto(
             9,
-            "Playera 10",
+            "Playera",
             "Plancha",
             10000,
             ["P", "M", "G"],
-            ["azul", "blanco"][""],
+            ["Azul", "Blanco"],
             ["imagen1", "imagen2"],
             ["se lava", "huele"],
             3,
@@ -196,6 +196,33 @@ if (!localStorage.getItem("catalogo")) {
 
     localStorage.setItem("catalogo",JSON.stringify(listaProductos))
 }
+
+
+
+
+function addProducto(item) {
+    const lista = JSON.parse(localStorage.getItem("catalogo"));
+    lista.push(lista);
+    localStorage.setItem("catalogo", JSON.stringify(lista))
+}
+
+
+function editProducto(item){
+    const lista = JSON.parse(localStorage.getItem("catalogo"));
+    const index = (lista).findIndex((v) => v.idProducto === item.idProducto);
+    lista[index] = item;
+    localStorage.setItem("catalogo", JSON.stringify(lista))
+}
+
+function deleteProducto(item){
+    const lista = JSON.parse(localStorage.getItem("catalogo"));
+    const index = (lista).findIndex((v) => v.idProducto === item.idProducto);
+
+    lista.splice(index,1);
+
+    localStorage.setItem("catalogo", JSON.stringify(lista))
+}
+
 
 
 /* LEI */
@@ -268,20 +295,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (formulario) {
         formulario.addEventListener('submit', (e) => {
+
             e.preventDefault();
 
-            const datosProducto = {
-                nombre: formulario.querySelector('input').value,
-                descripcion: formulario.querySelector('textarea').value,
-                precio: formulario.querySelector('input[type="number"]').value,
-                categoria: formulario.querySelector('select').value,
-                id: Date.now()
-            };
+            const data = Object.fromEntries(new FormData(e.target).entries());
 
-            console.log("Producto a agregar:", datosProducto);
+
+            const lista = JSON.parse(localStorage.getItem("catalogo"));
             
-            alert(`¡Producto "${datosProducto.nombre}" guardado correctamente!`);
-            
+            let talla = [];
+            if(data["size-c"]) talla.push("C");
+            if(data["size-g"]) talla.push("G");
+            if(data["size-m"]) talla.push("M");
+
+
+            let color = [];
+            if(data["color-azul"]) color.push("Azul");
+            if(data["color-blanco"]) color.push("Blanco");
+            if(data["color-gris"]) color.push("Gris");
+            if(data["color-negro"]) color.push("Negro");
+            if(data["color-rojo"]) color.push("Rojo");
+
+            const nuevo = new Producto(
+                lista.at(-1).idProducto +1,
+                data.categoria,
+                data.nombre,
+                data.precio,
+                talla,
+                color,
+                data.diseno,
+                data.descripcion.split("\n"),
+                data.stock,
+                data.imagen.name,
+                data.descuento
+            )
+
+            addProducto(nuevo)
+
             formulario.reset();
         });
     }
