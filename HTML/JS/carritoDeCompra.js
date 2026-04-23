@@ -55,7 +55,7 @@ calcularTotal();
 
       // Validación de longitudes
       const esValido = (
-        tarjeta.length === 18 && 
+        tarjeta.length === 16 && 
         mes.length === 2 && 
         anio.length === 2 && 
         cvv.length === 3
@@ -64,10 +64,11 @@ calcularTotal();
       if (!form.checkValidity() || !esValido) {
         event.stopPropagation();
         if(!esValido) {
-            alert("Por favor, verifica los datos:\n- Tarjeta: 18 dígitos\n- Fecha: 2 dígitos por campo\n- CVV: 3 dígitos");
+            alert("Por favor, verifica los datos:\n- Tarjeta: 16 dígitos\n- Fecha: 2 dígitos por campo\n- CVV: 3 dígitos");
         }
       } else {
         successModal.show();
+        form.reset();
       }
 
       form.classList.add('was-validated');
