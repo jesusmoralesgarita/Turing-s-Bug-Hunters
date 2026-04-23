@@ -55,7 +55,7 @@ calcularTotal();
 
       // Validación de longitudes
       const esValido = (
-        tarjeta.length === 18 && 
+        tarjeta.length === 16 && 
         mes.length === 2 && 
         anio.length === 2 && 
         cvv.length === 3
