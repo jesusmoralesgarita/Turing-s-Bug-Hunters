@@ -1,5 +1,20 @@
  /* Erick */
+.overlay-container {
+  position: relative;
+  display: inline-block;
+}
 
+.fondo {
+  width: 300px; /* ajusta según tu diseño */
+}
+
+.overlay {
+  position: absolute;
+  top: 30%;   /* posición vertical */
+  left: 25%;  /* posición horizontal */
+  width: 150px; /* tamaño del diseño */
+  pointer-events: none;
+}
 
 
 /* Fer */
