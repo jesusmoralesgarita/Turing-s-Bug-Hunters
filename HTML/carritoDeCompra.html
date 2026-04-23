@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,8 +12,9 @@
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/carritoDeCompra.css">
 </head>
+
 <body>
-    
+
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-custom px-4">
         <!-- boton para las categorias con dropdown  -->
@@ -73,61 +75,144 @@
     </nav>
 
     <!-- Gio -->
+    <div class="container py-5">
+  <div class="row g-4">
+
+    <!--LISTA DE PRODUCTOS-->
+    <div class="col-md-8" id="lista-productos">
+
+      <!-- Producto 1 -->
+      <div class="card-product d-flex justify-content-between align-items-center mb-3 producto">
+        
+        <div class="d-flex align-items-center gap-3">
+          <img src="Pictures/playdeportiva.png" width="80">
+          <div>
+            <h6>Playera Deportiva</h6>
+            <small class="text-muted">Unitalla</small>
+          </div>
+        </div>
+
+        <div class="text-end">
+          <h6>$<span class="precio">559.99</span></h6>
+
+          <div class="d-flex align-items-center gap-2 mt-2">
+            <button class="btn btn-success btn-circle btn-plus">+</button>
+            <input type="text" value="0" class="qty-box cantidad" readonly>
+            <button class="btn btn-success btn-circle btn-minus">-</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Producto 2 -->
+      <div class="card-product d-flex justify-content-between align-items-center mb-3 producto">
+        
+        <div class="d-flex align-items-center gap-3">
+          <img src="Pictures/ButtonFrontCardiganHoodie.png" width="80">
+          <div>
+            <h6>Cardigan</h6>
+            <small class="text-muted">Unitalla</small>
+          </div>
+        </div>
+
+        <div class="text-end">
+          <h6>$<span class="precio">600.99</span></h6>
+
+          <div class="d-flex align-items-center gap-2 mt-2">
+            <button class="btn btn-success btn-circle btn-plus">+</button>
+            <input type="text" value="0" class="qty-box cantidad" readonly>
+            <button class="btn btn-success btn-circle btn-minus">-</button>
+          </div>
+        </div>
+
+        <!-- producto 3 -->
+        
+    </div>
+    <div class="card-product d-flex justify-content-between align-items-center mb-3 producto">
+        
+        <div class="d-flex align-items-center gap-3">
+          <img src="Pictures/ClassicPulloverHoodie.png" width="80">
+          <div>
+            <h6>Hoodie</h6>
+            <small class="text-muted">Unitalla</small>
+          </div>
+        </div>
+
+        <div class="text-end">
+          <h6>$<span class="precio">550.99</span></h6>
+
+          <div class="d-flex align-items-center gap-2 mt-2">
+            <button class="btn btn-success btn-circle btn-plus">+</button>
+            <input type="text" value="0" class="qty-box cantidad" readonly>
+            <button class="btn btn-success btn-circle btn-minus">-</button>
+          </div>
+        </div>
+      </div>
+
+    <!--TOTAL-->
+    <div class="col-md-4">
+      <h1>Total:</h1>
+      <h4 class="fw-bold">$<span id="total">0.00</span></h4>
+    </div>
+
+  </div>
+</div>
+
+            <!-- Oswa -->
 
 
 
-    <!-- Oswa -->
+            <footer class="f-dorado text-white pt-4 pb-2">
+                <div class="container">
+                    <div class="row">
+                        <!---Contacto-->
+                        <div class="col-md-3">
+                            <h5 class="text-dark">
+                                <i class="bi bi-envelope me-2"></i>Contacto
+                            </h5>
+                            <p>
+                                <a href="mailto:turingsbh@contacto.com" class="correo">turingsbh@contacto.com</a>
+                            </p>
+                        </div>
 
-    
+                        <!---Redes Sociales-->
+                        <div class="col-md-3">
+                            <h5 class="text-dark">Nuestras Redes Sociales</h5>
+                            <a href="enlace Facebook" class="text-white me-2"><i class="bi bi-facebook"></i></a>
+                            <a href="enlace Instagram" class="text-white me-2"><i class="bi bi-instagram"></i></a>
+                            <a href="enlace Github" class="text-white"><i class="bi bi-github"></i></a>
+                        </div>
 
-     <footer class="f-dorado text-white pt-4 pb-2">
-            <div class="container">
-                <div class="row">
-                    <!---Contacto-->
-                    <div class="col-md-3">
-                        <h5 class="text-dark">
-                            <i class="bi bi-envelope me-2"></i>Contacto
-                        </h5>
-                        <p>
-                            <a href="mailto:turingsbh@contacto.com" class="correo">turingsbh@contacto.com</a>
-                        </p>
+
+
+                        <!---Ubicación-->
+                        <div class="col-md-3">
+                            <h5 class="text-dark">
+                                <i class="bi bi-geo-alt me-2"></i>Ubicación
+                            </h5>
+                            <p class="text-dark">Temascalpa, Estado de México</p>
+                        </div>
+
+                        <!---Políticas-->
+                        <div class="col-md-3 text-md-end">
+                            <h5 class="text-dark">Política de Privacidad</h5>
+                            <p>
+                                <a href="Enlace a Políticas" class="politica">Ver Política</a>
+                            </p>
+                        </div>
+
+                        <!---Estructura de footer-->
                     </div>
-
-                    <!---Redes Sociales-->
-                    <div class="col-md-3">
-                        <h5 class="text-dark">Nuestras Redes Sociales</h5>
-                        <a href="enlace Facebook" class="text-white me-2"><i class="bi bi-facebook"></i></a>
-                        <a href="enlace Instagram" class="text-white me-2"><i class="bi bi-instagram"></i></a>
-                        <a href="enlace Github" class="text-white"><i class="bi bi-github"></i></a>
-                    </div>
-
-
-
-                    <!---Ubicación-->
-                    <div class="col-md-3">
-                        <h5 class="text-dark">
-                            <i class="bi bi-geo-alt me-2"></i>Ubicación
-                        </h5>
-                        <p class="text-dark">Temascalpa, Estado de México</p>
-                    </div>
-
-                    <!---Políticas-->
-                    <div class="col-md-3 text-md-end">
-                        <h5 class="text-dark">Política de Privacidad</h5>
-                        <p>
-                            <a href="Enlace a Políticas" class="politica">Ver Política</a>
-                        </p>
-                    </div>
-
-                    <!---Estructura de footer-->
+                    <hr class="border-light" />
+                    <p class="text-center">
+                        Copyright © 2026 Turing's Bug Hunters S.A de C.V. All Rights Reserved.
+                    </p>
                 </div>
-                <hr class="border-light" />
-                <p class="text-center">
-                    Copyright © 2026 Turing's Bug Hunters S.A de C.V. All Rights Reserved.
-                </p>
-            </div>
-        </footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-<script src="JS/carritoDeCompra.js"></script>
+            </footer>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+                crossorigin="anonymous"></script>
+            <script src="JS/carritoDeCompra.js"></script>
 </body>
+
 </html>
