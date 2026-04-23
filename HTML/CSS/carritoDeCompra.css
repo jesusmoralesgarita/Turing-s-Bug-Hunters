@@ -6,7 +6,8 @@
     background-color: #061F2F;
     border-color: #061F2F;
     font-family: "DM Sans";
-    width: 24%;
-    height: 40px;
 }
-
+.modal-backdrop {
+    background-color: #b194b5; /* El color morado de tu imagen */
+    opacity: 0.9 !important;
+}
