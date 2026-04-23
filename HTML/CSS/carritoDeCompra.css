@@ -2,5 +2,11 @@
 
 
 /* Oswa */
-
+.btn-rpago{
+    background-color: #061F2F;
+    border-color: #061F2F;
+    font-family: "DM Sans";
+    width: 24%;
+    height: 40px;
+}
 
