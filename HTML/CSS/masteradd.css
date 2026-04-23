@@ -1,0 +1,53 @@
+/* MAITTE */
+
+
+
+/* LUIS */
+
+
+
+/* LEI */
+
+
+
+/* ERICK */
+
+
+
+/* FER */
+
+
+
+/* GIO */
+
+
+
+/* CHUCHO */
+
+
+
+/* OSWALDO */
+
+
+
+/* ALE */
+
+.btn-verde-turing {
+    background-color: #008080;
+    color: white;
+    border: none;
+}
+
+.btn-verde-turing:hover {
+    background-color: #006666;
+    color: white;
+}
+
+.card-formulario {
+    background-color: #ffffff;
+    border-radius: 15px;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
