@@ -25,5 +25,12 @@
     }
 
 /* Oswa */
-
-
+.btn-rpago{
+    background-color: #061F2F;
+    border-color: #061F2F;
+    font-family: "DM Sans";
+}
+.modal-backdrop {
+    background-color: #b194b5; /* El color morado de tu imagen */
+    opacity: 0.9 !important;
+}
