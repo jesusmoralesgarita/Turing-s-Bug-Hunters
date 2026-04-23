@@ -48,7 +48,7 @@ calcularTotal();
     form.addEventListener('submit', event => {
       event.preventDefault(); // Detenemos el envío para validar primero
 
-      const tarjeta = document.getElementById('validationCustom01').value;
+      const tarjeta = document.getElementById('tarjeta').value;
       const mes = form.querySelector('input[placeholder="MM"]').value;
       const anio = form.querySelector('input[placeholder="YY"]').value;
       const cvv = document.getElementById('cvv').value;
