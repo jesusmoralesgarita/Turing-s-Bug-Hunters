@@ -223,6 +223,100 @@ function deleteProducto(item){
 
 
 
+function validarNombre() {
+
+
+    const nombre = document.getElementById("contact-name").value.trim();
+    if (nombre === "") {
+        return "El nombre es obligatorio.";
+    }
+    if ((!/\d/.test(nombre))) {
+        return "";
+    } else {
+        return "El nombre sin números";
+    }
+};
+
+// Validar email
+function validarEmail1() {
+
+    const email = document.getElementById("contact-email").value.trim();
+    if (email === "") {
+        return "El email es obligatorio.";
+    }
+    if (!validarEmail(email)) {
+        return "Formato de email inválido.";
+    } else {
+        return "";
+    }
+
+};
+
+// Validar numero de telefono
+function validarNumCel() {
+
+    const cel = document.getElementById("contact-number").value.trim();
+    if (/^\d$/.test(cel)) {
+        return "Solo se aceptan números";
+    }
+    if (cel.length < 10) {
+        return "El número de telefono debe tener al menos 10 digitos.";
+    } else {
+        return "";
+    }
+
+}
+
+function validarNombreProducto(input) {
+
+    const nombre = input.value.trim();
+    
+    if (nombre.length === 0) {
+        return "El nombre no puede quedar vacio.";
+    } else {
+        return "";
+    }
+
+}
+
+
+function validarPrecio(input) {
+
+    const precio = parseInt( input.value.trim());
+    
+    if (precio && precio > 0) {
+        return "";
+    } else {
+        return "El numero debe ser mayor a 0.";
+    }
+
+}
+
+function validarDescuento(input) {
+    console.log("descuento")
+
+    const precio = parseInt( input.value.trim());
+    
+    if (precio && precio >= 0 && precio <= 100) {
+        return "";
+    } else {
+        return "El descuento debe ser un numero entre 0 y 100.";
+    }
+
+}
+
+
+
+// Validar mensaje
+function validarMensaje(input) {
+    const mensaje = input.value.trim();
+    if (mensaje.length < 0 && mensaje.length <= 250) {
+        return "";
+    }else{
+        return "Coloca un mensaje"
+    }
+
+}
 
 
 const params = new URLSearchParams(window.location.search);
@@ -286,12 +380,6 @@ const appendAlert = (message, type) => {
   alertPlaceholder.append(wrapper)
 }
 
-const alertTrigger = document.getElementById('liveAlertBtn')
-if (alertTrigger) {
-  alertTrigger.addEventListener('click', () => {
-    appendAlert('Genial, se han guardado los cambios', 'success')
-  })
-}
 
 
 /* OSWALDO */
@@ -302,6 +390,7 @@ if (alertTrigger) {
 
 document.addEventListener('DOMContentLoaded', () => {
     const formulario = document.getElementById('form-edit-producto');
+
 
     if (formulario) {
 
@@ -321,6 +410,49 @@ document.addEventListener('DOMContentLoaded', () => {
         formulario.querySelector('input[name="stock"]').value = elementoActual.cantidad;
 
         formulario.addEventListener('submit', (e) => {
+
+
+            console.log("validar")
+        formulario.classList.add("was-validated");
+        formulario.querySelectorAll(".form-element").forEach((e1) => {
+            const input = e1.getElementsByTagName("input")[0];
+            let salida = "";
+            switch (input.getAttribute("valtype")) {
+                case "email":
+                    salida = validarEmail1(input);
+                    break;
+                case "name":
+                    salida = validarNombre(input);
+                    break;
+                case "number":
+                    salida = validarNumCel(input);
+                    break;
+                case "price":
+                    salida = validarPrecio(input);
+                    break;
+                case "product":
+                    salida = validarNombreProducto(input);
+                    break;
+                case "discount":
+                    salida = validarDescuento(input);
+                    break;
+            }
+            if (salida !== "") {
+                const feedback = e1.querySelector(".invalid-feedback");
+                if (feedback) feedback.innerText = salida;
+                input.setCustomValidity(salida);
+            } else {
+                input.setCustomValidity("");
+            }
+        });
+
+        if (!formulario.checkValidity()){ 
+            e.preventDefault()
+            return;
+        };
+
+
+
             e.preventDefault();
 
 
@@ -357,6 +489,10 @@ document.addEventListener('DOMContentLoaded', () => {
             )
 
             editProducto(nuevo)
+
+
+    appendAlert('Genial, se han guardado los cambios', 'success')
+
 
         });
     }

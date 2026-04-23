@@ -90,6 +90,7 @@
 
                 <form id="form-edit-producto" method="POST" class="needs-validation" novalidate>
 
+           
                     <!--AGREGAR NUEVOS CAMPOS-->
 
 
@@ -117,19 +118,25 @@
         </div>
 
         <!-- ALE -->
-            <div class="mb-3">
+            <div class="mb-3 form-element" >
                     <h2>Nombre del Producto</h2>
-                <input name="nombre" type="text" class="form-control" placeholder="Ej. Playera Básica">
+                <input valtype="product" name="nombre" type="text" class="form-control" placeholder="Ej. Playera Básica">
+                <div class="invalid-feedback">
+                    Looks bad!
+                </div>
             </div>
             <div class="mb-3">
                     <h2>Descripción</h2>
                 <textarea name="descripcion" class="form-control" rows="3"></textarea>
             </div>
             <div class="row">
-                <div class="col-md-6 mb-3">
+                <div class="col-md-6 mb-3 form-element">
                     
                     <h2>Precio</h2>
-                    <input name="precio" type="number" class="form-control" placeholder="$0.00">
+                    <input valtype="price" name="precio" type="number" class="form-control" placeholder="$0.00">
+                    <div class="invalid-feedback">
+                        Looks bad!
+                    </div>
                 </div>
                 <div class="col-md-6 mb-3">
                     <h2>Categoría</h2>
@@ -142,10 +149,13 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col">
+                <div class="col form-element">
 
                     <h2>Stock</h2>
-                    <input name="stock" type="number" class="form-control" placeholder="0">
+                    <input  valtype="price" name="stock" type="number" class="form-control" placeholder="0">
+                    <div class="invalid-feedback">
+                        Looks bad!
+                    </div>
                 </div>
             </div>
 
@@ -153,26 +163,29 @@
 
         <!-- FER -->
         <h2>Tallas del producto</h2>
-        <label class="label-list"><span class="circle">G</span>{talla: G}<input name="size-g" type="checkbox" checked> </label><br>
-        <label class="label-list"><span class="circle">M</span>{talla: M}<input name="size-m" type="checkbox" checked> </label><br>
-        <label class="label-list"><span class="circle">CH</span>{talla: CH}<input name="size-c" type="checkbox" checked> </label><br>
+        <label class="label-list"><span class="circle">G</span>{talla: G}<input name="size-g" type="checkbox" > </label><br>
+        <label class="label-list"><span class="circle">M</span>{talla: M}<input name="size-m" type="checkbox" > </label><br>
+        <label class="label-list"><span class="circle">CH</span>{talla: CH}<input name="size-c" type="checkbox" > </label><br>
 
         <h2>Colores del producto</h2>
-        <label class="label-list"><span class="circle">B</span>{color: Blanco}<input name="color-blanco" type="checkbox" checked> </label><br>
-        <label class="label-list"><span class="circle">N</span>{color: Negro}<input name="color-negro" type="checkbox" checked> </label><br>
-        <label class="label-list"><span class="circle">A</span>{color: Azul}<input name="color-azul" type="checkbox" checked> </label><br>
-        <label class="label-list"><span class="circle">R</span>{color: Rojo}<input name="color-rojo" type="checkbox" checked> </label><br>
-        <label class="label-list"><span class="circle">G</span>{color: Gris}<input name="color-gris" type="checkbox" checked> </label><br>
+        <label class="label-list"><span class="circle">B</span>{color: Blanco}<input name="color-blanco" type="checkbox" > </label><br>
+        <label class="label-list"><span class="circle">N</span>{color: Negro}<input name="color-negro" type="checkbox" > </label><br>
+        <label class="label-list"><span class="circle">A</span>{color: Azul}<input name="color-azul" type="checkbox" > </label><br>
+        <label class="label-list"><span class="circle">R</span>{color: Rojo}<input name="color-rojo" type="checkbox" > </label><br>
+        <label class="label-list"><span class="circle">G</span>{color: Gris}<input name="color-gris" type="checkbox" > </label><br>
 
 
 
 
         <!-- MAITE -->
 
-            <div style="padding-top: 1rem;">
+            <div style="padding-top: 1rem;" class="form-element">
                     <h2>Descuento a aplicar</h2>
-                <input name="descuento" type="text" class="form-control rounded-3 shadow-sm border-secondary-subtle" id="descuento"
+                <input valtype="discount" name="descuento" type="text" class="form-control rounded-3 shadow-sm border-secondary-subtle" id="descuento"
                     placeholder="Descuento">
+                <div class="invalid-feedback">
+                    Looks bad!
+                </div>
             </div>
 
             <div style="padding-top: 2rem;">
@@ -201,6 +214,8 @@
 
 
     </div>
+
+
 
                 </form>
                 <div class="d-grid mt-4">

@@ -171,6 +171,8 @@ if (!localStorage.getItem("catalogo")) {
     localStorage.setItem("catalogo",JSON.stringify(listaProductos))
 }
 
+console.log(JSON.parse(localStorage.getItem("catalogo")))
+
 function generateHTML(item){
     const divRoot = document.createElement("div");
     divRoot.className = "col-md-3 mb-4"
