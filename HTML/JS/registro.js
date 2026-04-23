@@ -9,14 +9,15 @@
             event.preventDefault();
 
             const divs = form.getElementsByClassName("form-element");
+            let isFormValid = true;
+
             Array.from(divs).forEach(div => {
                 let message = "";
                 const divInput = div.getElementsByTagName("input").item(0);
+                if (!divInput) return;
 
                 const inputType = divInput.getAttribute("valtype");
 
-
-                console.log(inputType)
                 if (inputType !== null) {
                     switch (inputType) {
                         case "nombrehomes":
@@ -31,19 +32,23 @@
                         case "password":
                             message = validarPassword();
                             break;
+                        case "confirm-password":
+                            message = validarConfirmarPassword();
+                            break;
                     }
 
+                    const feedback = div.querySelector(".invalid-feedback");
                     if (message.length !== 0) {
-                        const feedback = div.querySelector(".invalid-feedback");
                         if (feedback) feedback.innerText = message;
                         divInput.setCustomValidity(message);
+                        isFormValid = false;
                     } else {
                         divInput.setCustomValidity("");
                     }
                 }
             });
 
-            if (!form.checkValidity()) {
+            if (!form.checkValidity() || !isFormValid) {
                 event.stopPropagation();
             } else {
                 const boton = document.getElementById('submit-btn');
@@ -55,26 +60,15 @@
                 const formData = new FormData(form);
 
                 try {
-                    const response = await fetch(Config.ENDPOINT, {
-                        method: 'POST',
-                        body: formData,
-                        headers: {
-                            'Accept': 'application/json'
-                        }
-                    });
-
-                    if (response.ok) {
-                        enviarFormulario();
-                        cerrarModal();
-                        form.reset();
-                        form.classList.remove('was-validated');
-                    } else {
-                        alert("Hubo un error al enviar. Revisa el endpoint en la clase Config.");
-                    }
-                } catch (error) {
-                    enviarFormulario();
-                    console.error("Error de red:", error);
+                    // Simulación de envío o fetch real
+                    // const response = await fetch(Config.ENDPOINT, { ... });
+                    // if (response.ok) { ... }
                     
+                    enviarFormulario();
+                    form.reset();
+                    form.classList.remove('was-validated');
+                } catch (error) {
+                    console.error("Error de red:", error);
                 } finally {
                     boton.innerText = textoOriginal;
                     boton.disabled = false;
@@ -86,19 +80,17 @@
     }
 })();
 
-
-
 /* Gio  */
 function enviarFormulario() {
-  const modal = document.getElementById("modal");
-  modal.style.display = "block";
+const modal = document.getElementById("modal");
+modal.style.display = "block";
   // Auto cerrar en 3 segundos
-  setTimeout(() => {
+setTimeout(() => {
     modal.style.display = "none";
-  }, 3000);
+}, 3000);
 }
 function cerrarModal() {
-  document.getElementById("modal").style.display = "none";
+document.getElementById("modal").style.display = "none";
 }
 
 /* Erick */
@@ -108,19 +100,8 @@ function validarEmail(email) {
     return regex.test(email);
 }
 
-/*
-document.getElementById("registroForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Evita el envío automático */
-
-// Limpiar mensajes previos
-//document.querySelectorAll(".error").forEach(e => e.textContent = "");
-
-
-
 // Validar nombre
 function validarNombre() {
-
-
     const nombre = document.getElementById("contact-name").value.trim();
     if (nombre === "") {
         return "El nombre es obligatorio.";
@@ -131,21 +112,37 @@ function validarNombre() {
         return "El nombre sin números";
     }
 };
-//Validar contraseña
 
+//Validar contraseña
 function validarPassword(){
     const password = document.getElementById("password").value.trim();
+    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*(),.?":{}|<>]).{8,15}$/;
+    
     if (password === "") {
-        return "La contraseña es obligatoria"
+        return "La contraseña es obligatoria";
+    } else if (!regex.test(password)) {
+        return "Debe tener 8-15 caracteres, una mayúscula, una minúscula y un carácter especial.";
     } else {
         return "";
     }
 }
 
+// Validar confirmar contraseña
+function validarConfirmarPassword() {
+    const password = document.getElementById("password").value.trim();
+    const confirmPassword = document.getElementById("confirm-password").value.trim();
+    
+    if (confirmPassword === "") {
+        return "Debes repetir la contraseña.";
+    } else if (password !== confirmPassword) {
+        return "Las contraseñas no coinciden.";
+    } else {
+        return "";
+    }
+}
 
 // Validar email
 function validarEmail1() {
-
     const email = document.getElementById("contact-email").value.trim();
     if (email === "") {
         return "El email es obligatorio.";
@@ -155,14 +152,12 @@ function validarEmail1() {
     } else {
         return "";
     }
-
 };
 
 // Validar numero de telefono
 function validarNumCel() {
-
     const cel = document.getElementById("contact-number").value.trim();
-    if (/^\d$/.test(cel)) {
+    if (/[a-zA-Z]/.test(cel)) {
         return "Solo se aceptan números";
     }
     if (cel.length < 10) {
@@ -170,26 +165,4 @@ function validarNumCel() {
     } else {
         return "";
     }
-
 }
-
-
-
-// Validar mensaje
-function validarMensaje() {
-    const mensaje = document.getElementById("contact-menssage").value.trim();
-    if (mensaje.length < 0 && mensaje.length <= 250) {
-        return "";
-    }else{
-        return "Coloca un mensaje"
-    }
-
-}
-
-
-// Si todo es válido, enviar formulario
-if (valido) {
-    alert("Registro realizado con exito");
-    this.submit();
-}
-
