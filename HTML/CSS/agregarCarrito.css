@@ -7,5 +7,77 @@
 
 
 /* Ale */
+.contenedor-compra-ale {
+    max-width: 450px;
+    margin: 20px auto;
+}
 
+.caja-subida {
+    background-color: #D1D1D1;
+    border-radius: 25px;
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
 
+.icono-esquina {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.img-preview-ale {
+    max-width: 100px;
+    margin-bottom: 10px;
+}
+
+.txt-subir {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1.8rem;
+    color: #242424;
+    margin: 0;
+}
+
+.btn-agregar-ale {
+    background-color: #061F2F;
+    color: white;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.info-acordeon-ale {
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.header-acordeon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.header-acordeon h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    margin: 0;
+}
+
+.info-acordeon-ale p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 10px;
+    line-height: 1.4;
+}
