@@ -73,18 +73,16 @@
             </div>
     </nav>
 
-       <!-- Contenedor principal de contáctanos -->
+       <!-- Contenedor de Registro-->
     <div class="container my-5 d-flex justify-content-center">
         <!-- Carta de color responsive para formulario -->
         <div class="card card-cttn text-white border-0 shadow-cttn">
             <div class="card-body p-4 p-md-5">
                 <h2 class="text-cttn text-center mb-4">
-                    Contáctanos
+                    Registrate
                 </h2>
             </div>
-            <!-- Se cierran las etiquetas (div) déspues de ALEX -->
-
-        <!-- Luis, Maitte y Alex -->
+        
     <div class="card-body form-ctn">
                 <form id="contact-form" method="POST" class="needs-validation" novalidate>
             
@@ -114,7 +112,7 @@
             
                     <div class="mb-3 form-element">
                         <label for="password" class=" form-label">Contraseña</label>
-                        <input type="password" name="password" valtype="password" class="form-control" placeholder="Contraseña123"
+                        <input type="password" name="password" valtype="password" class=" form-control" placeholder="Contraseña123"
                             id="password" aria-describedby="password">
 
                         <div class="invalid-feedback">
@@ -126,7 +124,17 @@
             <input type="hidden" name="_subject" value="Nuevo mensaje de Tinta Nómada">
 
                         <div class="d-grid mt-4">
-            <button type="submit" id="submit-btn" class="btn btn-primary btn-lg shadow-sm">Enviar Solicitud</button>
+            <button type="submit" id="submit-btn" class="btn btn-primary btn-lg shadow-sm">Registro</button>
+            </div>
+             <!-- boton de enviar -->
+              <!-- <button type="submit" id="submit-btn" class="btn btn-primary" disabled>Enviar</button> -->
+              <!-- modal para mostrar mensaje de enviado -->
+               <div id="modal" class="modal-custom">
+                <div class="contenido">
+                    <h2 class="titulo">✅ Éxito</h2>
+                    <p>Formulario enviado correctamente</p>
+                    <button onclick="cerrarModal()" class="btn">Cerrar</button>
+                </div>
             </div>
         </form>
             <div class="d-grid mt-4">
