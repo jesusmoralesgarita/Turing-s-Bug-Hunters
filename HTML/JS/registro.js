@@ -162,11 +162,17 @@ function validarEmail1() {
 function validarNumCel() {
 
     const cel = document.getElementById("contact-number").value.trim();
-    if (/^\d$/.test(cel)) {
-        return "Solo se aceptan números";
+
+    if(cel === ""){
+        return "Se necesita un telefono."
     }
-    if (cel.length < 10) {
-        return "El número de telefono debe tener al menos 10 digitos.";
+    if ((/^[0-9]+$/.test(cel))) {
+        
+    }else{
+        return "Solo se aceptan números"
+    }
+    if (cel.length != 10 ) {
+        return "El número de telefono debe tener 10 digitos.";
     } else {
         return "";
     }
