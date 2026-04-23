@@ -1,5 +1,5 @@
 //  Erick
-/*
+
 const inputImagen = document.getElementById("inputImagen");
 const preview = document.getElementById("preview");
 const guardarBtn = document.getElementById("guardarBtn");
@@ -17,7 +17,7 @@ inputImagen.addEventListener("change", function(event) {
 guardarBtn.addEventListener("click", function() {
   inputImagen.click();
 });
-*/
+
 
 // Fer
 
