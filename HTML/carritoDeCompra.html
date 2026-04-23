@@ -77,48 +77,54 @@
 
 
     <!-- Oswa -->
-    <form class="row g-3 needs-validation" novalidate>
-    
-      <div class="col-3 mb-1">
-        <h1 class="display-4 fw-bold">Total:</h1>
-        <h2 class="text-end fw-bold" id="costo-total">$0.00</h2>
+<!-- Modal para proceso de pago -->
+<div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content border-0 shadow-lg" style="border-radius: 15px;">
+      <div class="modal-body text-center py-5">
+        <div class="mb-4">
+          <img src="Pictures/verified_process.svg" alt="Proceso Verificado" style="width: 100px; height: auto;">
+        </div>
+        <h3 class="fw-bold">¡Gracias por tu compra!</h3>
       </div>
-  
+    </div>
+  </div>
+</div>
+
+<!-- Sección para pagar artículos seleccionados -->
+<div class="p-4" style="max-width: 500px; margin: auto;">
+  <form class="row g-3 needs-validation" novalidate>
+    
+    <div class="col-12 mb-1">
+      <h1 class="display-4 fw-bold">Total:</h1>
+      <h2 class="text-end fw-bold" id="total">$0.00</h2>
+    </div>
+
+    <div class="col-12 mb-1">
       <label for="validationCustom01" class="form-label">Número de Tarjeta</label>
-      <div class="col-3 mb-1">
-        <input type="number" class="form-control" id="validationCustom01" placeholder="Número de Tarjeta" required>
-        <div class="valid-feedback">
-          ¡Se ve bien!
-        </div>
+      <input type="number" class="form-control" id="validationCustom01" placeholder="Número de Tarjeta" pattern="\d{16}" required>
+      <div class="valid-feedback">¡Se ve bien!</div>
+    </div>
+
+    <div class="col-md-8">
+      <label class="form-label">Expiración</label>
+      <div class="input-group">
+        <input type="number" class="form-control" id="mm" placeholder="MM" required>
+        <span class="input-group-text">/</span>
+        <input type="number" class="form-control" id="yy" placeholder="YY" required>
       </div>
-        <div class="row g-3 align-items-start">
-          <div class="col-md-2">
-            <label class="form-label">Expiración</label>
-            <div class="input-group">
-              <input type="number" class="form-control" placeholder="MM" min="2" required>
-              <span class="input-group-text">/</span>
-              <input type="number" class="form-control" placeholder="YY" min="2" required>
-              <div class="invalid-feedback">
-                Ingresa una fecha válida.
-              </div>
-            </div>
-          </div>
-      
-          <div class="col-md-1">
-            <label for="cvv" class="form-label">CVV</label>
-            <input type="number" class="form-control" id="cvv" placeholder="CVV" min="3" required>
-            <div class="invalid-feedback">
-              Dato requerido.
-            </div>
-          </div>
-        </div>
-      </div>
-  
-      <div class="col-12">
-        <button class="btn btn-primary btn-rpago" type="submit">Realizar pago</button>
-      </div>
-    </form>
-    
+    </div>
+
+    <div class="col-md-4">
+      <label for="cvv" class="form-label">CVV</label>
+      <input type="number" class="form-control" id="cvv" placeholder="CVV" required>
+    </div>
+
+    <div class="col-12 mt-4">
+      <button class="btn btn-primary btn-lg w-100 py-3 fw-bold btn-rpago" type="submit">Realizar pago</button>
+    </div>
+  </form>
+</div>
 
      <footer class="f-dorado text-white pt-4 pb-2">
             <div class="container">
