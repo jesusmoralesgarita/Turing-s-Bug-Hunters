@@ -1,12 +1,8 @@
-//import { URL } from './constantes.js';
-
-/* Oswaldo */
-
 /* --- INTEGRACIÓN LUIS, Maitte & ALEX --- */
 (() => {
     'use strict'
 
-    const form = document.getElementById('registro-form');
+    const form = document.getElementById('contact-form');
 
     if (form) {
         form.addEventListener('submit', async (event) => {
@@ -23,15 +19,18 @@
                 console.log(inputType)
                 if (inputType !== null) {
                     switch (inputType) {
-                        
+                        case "nombrehomes":
+                            message = validarNombre();
+                            break;
+                        case "number":
+                            message = validarNumCel();
+                            break;
                         case "email":
                             message = validarEmail1();
                             break;
                         case "password":
-                            message = validarContraseña();
+                            message = validarPassword();
                             break;
-                        default:
-                            message = "";
                     }
 
                     if (message.length !== 0) {
@@ -106,6 +105,28 @@ document.getElementById("registroForm").addEventListener("submit", function(even
 
 
 
+// Validar nombre
+function validarNombre() {
+
+
+    const nombre = document.getElementById("contact-name").value.trim();
+    if (nombre === "") {
+        return "El nombre es obligatorio.";
+    }
+    if ((!/\d/.test(nombre))) {
+        return "";
+    } else {
+        return "El nombre sin números";
+    }
+};
+//Validar contraseña
+
+function validarPassword(){
+    const password = document.getElementById("password").value.trim();
+    if (password === "") {
+        return "La contraseña es obligatoria"
+    }
+}
 
 
 // Validar email
@@ -121,27 +142,40 @@ function validarEmail1() {
         return "";
     }
 
+};
+
+// Validar numero de telefono
+function validarNumCel() {
+
+    const cel = document.getElementById("contact-number").value.trim();
+    if (/^\d$/.test(cel)) {
+        return "Solo se aceptan números";
+    }
+    if (cel.length < 10) {
+        return "El número de telefono debe tener al menos 10 digitos.";
+    } else {
+        return "";
+    }
+
 }
 
-//Validar contraseña
-function validarContraseña() {
-    
-    let password = document.getElementById("password").value;
-    if (password.trim() === "") {
-        return "Por favor, ingresa una contraseña";
+
+
+// Validar mensaje
+function validarMensaje() {
+    const mensaje = document.getElementById("contact-menssage").value.trim();
+    if (mensaje.length < 0 && mensaje.length <= 250) {
+        return "";
+    }else{
+        return "Coloca un mensaje"
     }
-    return "";
+
 }
+
+
 // Si todo es válido, enviar formulario
 if (valido) {
     alert("Registro realizado con exito");
     this.submit();
 }
-//});
-
-/* Mai */
-
-
-/* Alex */
-
 

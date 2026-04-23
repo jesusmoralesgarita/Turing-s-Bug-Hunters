@@ -73,21 +73,37 @@
             </div>
     </nav>
 
-        <!-- Contenedor de registro -->
-         <!--Todo esto lo hice siguiendo la estructura que tenian los compañeros-->
+       <!-- Contenedor principal de contáctanos -->
     <div class="container my-5 d-flex justify-content-center">
         <!-- Carta de color responsive para formulario -->
         <div class="card card-cttn text-white border-0 shadow-cttn">
             <div class="card-body p-4 p-md-5">
                 <h2 class="text-cttn text-center mb-4">
-                    Registrate
+                    Contáctanos
                 </h2>
             </div>
-            
+            <!-- Se cierran las etiquetas (div) déspues de ALEX -->
+
+        <!-- Luis, Maitte y Alex -->
     <div class="card-body form-ctn">
-                <form id="registro-form" method="POST" class="needs-validation" novalidate>
+                <form id="contact-form" method="POST" class="needs-validation" novalidate>
             
-            
+            <div class="mb-3 form-element">
+                <label for="contact-name" class="form-label">Nombre</label>
+                <input type="text" name="Nombre" valtype="nombrehomes" class="form-control" placeholder="Nombre" id="contact-name" aria-describedby="Nombre">
+                
+                <div class="invalid-feedback">
+                    Looks bad!
+                </div>
+            </div>
+            <div class="mb-3 form-element">
+                <label for="contact-number" class="form-label">Teléfono</label>
+                <input type="text" name="Telefono" valtype="number" class="form-control" placeholder="Teléfono" id="contact-number" aria-describedby="Telefono">
+                
+                <div class="invalid-feedback">
+                    Looks bad!
+                </div>
+            </div>
             <div class="mb-3 form-element">
                 <label for="contact-email" class="form-label">Correo</label>
                 <input type="email" name="Email" valtype="email" placeholder="ejemplo@tintanomada.com" class="form-control" id="contact-email" aria-describedby="Correo">
@@ -96,15 +112,22 @@
                 </div>
             </div>
             
-            <div class="mb-3 form-element">
-                <label for="password" class="form-label">Contraseña</label>
-                <input type="password" name="Password" valtype="password" class="form-control" placeholder="Contraseña123" id="password" aria-describedby="Contraseña">
-            </div>
+                    <div class="mb-3 form-element">
+                        <label for="password" class=" form-label">Contraseña</label>
+                        <input type="password" name="password" valtype="password" class="form-control" placeholder="Contraseña123"
+                            id="password" aria-describedby="password">
 
-            <div class="d-grid mt-4">
-            <button type="submit" id="submit-btn" class="btn btn-primary btn-lg shadow-sm">Registro</button>
-            </div>
+                        <div class="invalid-feedback">
+                            Looks bad!
+                        </div>
+                    </div>
             
+
+            <input type="hidden" name="_subject" value="Nuevo mensaje de Tinta Nómada">
+
+                        <div class="d-grid mt-4">
+            <button type="submit" id="submit-btn" class="btn btn-primary btn-lg shadow-sm">Enviar Solicitud</button>
+            </div>
         </form>
             <div class="d-grid mt-4">
             <img class="form-logo" src="./Pictures/logo.png">
