@@ -10,18 +10,6 @@ inputImagen.addEventListener("change", function(event) {
     preview.classList.remove("d-none");
   }
 });
-/*
-
-
-const guardarBtn = document.getElementById("guardarBtn");
-
-
-
-
-guardarBtn.addEventListener("click", function() {
-  inputImagen.click();
-});
-*/
 
 // Fer
 
