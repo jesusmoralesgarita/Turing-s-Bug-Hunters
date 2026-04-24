@@ -1,0 +1,59 @@
+ /* Erick */
+
+
+
+/* Fer */
+.add-to-cart-card {
+  width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  background-color: #fff;
+  margin: 20px;
+  position: relative; /* referencia para el badge */
+}
+
+.badge-cart {
+  position: absolute;
+  top: 35px;              /* prueba con 35px o 40px para bajarlo solo un poquito */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #90EE90;    /* verde claro */
+  color: #000;
+  padding: 5px 10px;
+  font-size: 0.8em;
+  border-radius: 8%;
+  text-align: center;
+}
+
+
+.add-to-cart-card .card-body {
+  padding: 20px;
+}
+
+.add-to-cart-card .card-title {
+  font-size: 1.2em;
+  margin-top: -5px;   /* valor negativo lo sube ligeramente */
+  margin-bottom: 10px;
+}
+
+.add-to-cart-card .card-price {
+  font-weight: bold;
+  color: #358ce9;
+  margin-top: 25px;   /* agrega espacio arriba para bajarlo */
+  margin-bottom: 20px;
+}
+
+
+.add-to-cart-card .card-details {
+  font-size: 0.9em;
+  color: #1b1a1a;
+  margin-bottom: 20px;
+}
+
+
+
+/* Ale */
+
+
