@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Producto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/fonts.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/masteradd.css">
+</head>
+<body>
+    
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-custom px-4">
+        <!-- boton para las categorias con dropdown  -->
+        <!-- dropdown para las categorias -->
+        <div class="dropdown">
+            <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                <i class="bi bi-list"></i> Categorías
+            </button>
+            <!-- Chucho-->
+
+            <div class="dropdown-menu p-4 custom-dropdown">
+                <!-- Lista de categorías -->
+                <div class="menu-categorias text-center mb-4">
+                    <a href="#" class="dropdown-item text-center">Playeras</a>
+                    <a href="#" class="dropdown-item text-center">Tazas</a>
+                    <a href="#" class="dropdown-item text-center">Sudaderas</a>
+                    <a href="#" class="dropdown-item text-center">Vasos</a>
+                    <a href="#" class="dropdown-item text-center">Plumas</a>
+                    <a href="#" class="dropdown-item text-center">Pines</a>
+                    <a href="#" class="dropdown-item text-center">Stickers</a>
+                </div>
+
+                <!-- Sección diseño personalizado -->
+                <div class="menu-contacto d-flex align-items-center">
+                    <i class="bi bi-envelope fs-1 me-3"></i>
+                    <div>
+                        <strong>¿Necesitas un diseño personalizado?</strong>
+                        <a href="#" class="contacto-link">Contáctanos y te cotizaremos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Secciones -->
+        <div class="collapse navbar-collapse show">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="quienessomos.html">Quiénes Somos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contacto.html">Contacto</a>
+                </li>
+            </ul>
+            <!-- carrito de compras -->
+            <div class="dropdown">
+                <button class="btn text-white" type="button" data-bs-toggle="dropdown">
+                    <i class="bi bi-cart fs-4"></i>
+                </button>
+                <div class="dropdown-menu dropdown-carrito dropdown-menu-end p-3">
+                    <div class="carrito-menu text-center">
+                        <a href="#" class="dropdown-item text-center">Carrito de Compras</a>
+                        <a href="#" class="dropdown-item text-center">Historial de Compras</a>
+                    </div>
+                </div>
+            </div>
+    </nav>
+
+
+    <!-- Contenedor principal de contáctanos -->
+    <div class="container my-5 d-flex justify-content-center">
+        <!-- Carta de color responsive para formulario -->
+        <div class="card card-cttn text-white border-0 shadow-cttn">
+            <div class="card-body p-4 p-md-5">
+                <h2 class="text-cttn text-center mb-4">
+                    Agregar Producto
+                </h2>
+            </div>
+
+            <div class="card-body form-ctn">
+                <form id="form-agregar-producto" method="POST" class="needs-validation" novalidate>
+
+                    <!--AGREGAR NUEVOS CAMPOS-->
+
+
+
+
+
+
+    <div class="container">
+
+        <!-- ERICK -->
+        <div class="card shadow-sm">
+            <div class="card-body text-center">
+
+                <!-- Área de subida -->
+                <label for="inputImagen" class="upload-area w-100 mb-3">
+                    <div class="upload-icon">＋</div>
+                    <p class="text-muted">Haz clic para seleccionar una imagen</p>
+                    <input name="imagen" type="file" id="inputImagen" accept="image/*" class="d-none">
+                    <img id="preview" class="img-fluid rounded mt-3 d-none" alt="Vista previa">
+                </label>
+
+                <!-- Botón para cambiar imagen -->
+                <button id="guardarBtn" class="btn btn-primary w-100">Cambiar Imagen</button>
+            </div>
+        </div>
+
+        <!-- ALE -->
+            <div class="mb-3 form-element" >
+                    <h2>Nombre del Producto</h2>
+                <input valtype="product" name="nombre" type="text" class="form-control" placeholder="Ej. Playera Básica">
+                <div class="invalid-feedback">
+                    Looks bad!
+                </div>
+            </div>
+            <div class="mb-3">
+                    <h2>Descripción</h2>
+                <textarea name="descripcion" class="form-control" rows="3"></textarea>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3 form-element">
+                    
+                    <h2>Precio</h2>
+                    <input valtype="price" name="precio" type="number" class="form-control" placeholder="$0.00">
+                    <div class="invalid-feedback">
+                        Looks bad!
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <h2>Categoría</h2>
+                    <select name="categoria" class="form-select">
+                        <option>Playera</option>
+                        <option>Taza</option>
+                        <option>Sudadera</option>
+                        <option>Vaso</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col form-element">
+
+                    <h2>Stock</h2>
+                    <input  valtype="price" name="stock" type="number" class="form-control" placeholder="0">
+                    <div class="invalid-feedback">
+                        Looks bad!
+                    </div>
+                </div>
+            </div>
+
+
+
+        <!-- FER -->
+        <h2>Tallas del producto</h2>
+        <label class="label-list"><span class="circle">G</span>{talla: G}<input name="size-g" type="checkbox" > </label><br>
+        <label class="label-list"><span class="circle">M</span>{talla: M}<input name="size-m" type="checkbox" > </label><br>
+        <label class="label-list"><span class="circle">CH</span>{talla: CH}<input name="size-c" type="checkbox" > </label><br>
+
+        <h2>Colores del producto</h2>
+        <label class="label-list"><span class="circle">B</span>{color: Blanco}<input name="color-blanco" type="checkbox" > </label><br>
+        <label class="label-list"><span class="circle">N</span>{color: Negro}<input name="color-negro" type="checkbox" > </label><br>
+        <label class="label-list"><span class="circle">A</span>{color: Azul}<input name="color-azul" type="checkbox" > </label><br>
+        <label class="label-list"><span class="circle">R</span>{color: Rojo}<input name="color-rojo" type="checkbox" > </label><br>
+        <label class="label-list"><span class="circle">G</span>{color: Gris}<input name="color-gris" type="checkbox" > </label><br>
+
+
+
+
+        <!-- MAITE -->
+
+            <div style="padding-top: 1rem;" class="form-element">
+                    <h2>Descuento a aplicar</h2>
+                <input valtype="discount" name="descuento" type="text" class="form-control rounded-3 shadow-sm border-secondary-subtle" id="descuento"
+                    placeholder="Descuento">
+                <div class="invalid-feedback">
+                    Looks bad!
+                </div>
+            </div>
+
+            <div style="padding-top: 2rem;">
+                <div style="float: left;">
+
+                    <h2>Diseño personalizado</h2>
+                    <p class="text-muted small mb-0">Permitir al cliente personalizar el producto</p>
+                </div>
+                <div class="form-check form-switch pt-1" style="float: right; width: 50px;">
+                    <input name="diseno" class="form-check-input border-secondary" type="checkbox" role="switch" id="customDesign"
+                        style="width: 2.4em; height: 1.2em; cursor: pointer;">
+                </div>
+                <div style="clear: both;"></div>
+            </div>
+
+
+
+        <!-- MAITE -->
+        <!-- CHUCHO -->
+        <div id="liveAlertPlaceholder"></div>
+        <button type="submit" class="btn btn-primary w-100" id="liveAlertBtn">Guardar cambios</button>
+
+
+
+        <!-- CHUCHO -->
+
+
+    </div>
+
+
+                </form>
+                <div class="d-grid mt-4">
+                    <img class="form-logo" src="./Pictures/logo.png">
+                </div>
+            </div>
+            <!-- Fin del contenedor azul -->
+        </div>
+    </div>
+
+
+
+
+     <footer class="f-dorado text-white pt-4 pb-2">
+            <div class="container">
+                <div class="row">
+                    <!---Contacto-->
+                    <div class="col-md-3">
+                        <h5 class="text-dark">
+                            <i class="bi bi-envelope me-2"></i>Contacto
+                        </h5>
+                        <p>
+                            <a href="mailto:turingsbh@contacto.com" class="correo">turingsbh@contacto.com</a>
+                        </p>
+                    </div>
+
+                    <!---Redes Sociales-->
+                    <div class="col-md-3">
+                        <h5 class="text-dark">Nuestras Redes Sociales</h5>
+                        <a href="enlace Facebook" class="text-white me-2"><i class="bi bi-facebook"></i></a>
+                        <a href="enlace Instagram" class="text-white me-2"><i class="bi bi-instagram"></i></a>
+                        <a href="enlace Github" class="text-white"><i class="bi bi-github"></i></a>
+                    </div>
+
+
+
+                    <!---Ubicación-->
+                    <div class="col-md-3">
+                        <h5 class="text-dark">
+                            <i class="bi bi-geo-alt me-2"></i>Ubicación
+                        </h5>
+                        <p class="text-dark">Temascalpa, Estado de México</p>
+                    </div>
+
+                    <!---Políticas-->
+                    <div class="col-md-3 text-md-end">
+                        <h5 class="text-dark">Política de Privacidad</h5>
+                        <p>
+                            <a href="Enlace a Políticas" class="politica">Ver Política</a>
+                        </p>
+                    </div>
+
+                    <!---Estructura de footer-->
+                </div>
+                <hr class="border-light" />
+                <p class="text-center">
+                    Copyright © 2026 Turing's Bug Hunters S.A de C.V. All Rights Reserved.
+                </p>
+            </div>
+        </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script src="JS/masteradd.js"></script>
+</body>
+</html>

@@ -4,17 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Editar Producto</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="CSS/fonts.css">
     <link rel="stylesheet" href="CSS/style.css">
-    <link rel="stylesheet" href="CSS/login.css">
+    <link rel="stylesheet" href="CSS/masteredit.css">
 </head>
 
-<body> 
- 
+<body>
+
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-custom px-4">
         <!-- boton para las categorias con dropdown  -->
@@ -74,62 +74,157 @@
             </div>
     </nav>
 
+    <!-- LEI -->
 
-
+    <!-- Contenedor principal de contáctanos -->
     <div class="container my-5 d-flex justify-content-center">
         <!-- Carta de color responsive para formulario -->
         <div class="card card-cttn text-white border-0 shadow-cttn">
             <div class="card-body p-4 p-md-5">
                 <h2 class="text-cttn text-center mb-4">
-                    Inicio de sesión
+                    Editar Producto
                 </h2>
             </div>
-            <div class="card-body">
-                <diV class="form-ctn">
 
-                <form id="contact-form" method="POST" class="needs-validation" novalidate>
+            <div class="card-body form-ctn">
 
-                    <div class="mb-3 form-element">
-                        <label for="login-email" class="form-label">Email</label>
-                        <input valtype="email" type="text" name="email" class="ctm-input form-control" placeholder="tintanomada@gmail.com"
-                            id="login-email" aria-describedby="Nombre">
+                <form id="form-edit-producto" method="POST" class="needs-validation" novalidate>
 
-                        <div class="invalid-feedback">
-                            Looks bad!
-                        </div>
-                    </div>
+           
+                    <!--AGREGAR NUEVOS CAMPOS-->
 
 
-                    <div class="mb-3">
-                        <label for="login-password" class=" form-label">Contraseña</label>
-                        <input type="password" name="password" valtype="nombrehomes" class="ctm-input form-control" placeholder="Contraseña123"
-                            id="login-password" aria-describedby="Nombre">
 
-                        <div class="invalid-feedback">
-                            Looks bad!
-                        </div>
-                    </div>
 
-                    <div class="form-check">
-                        <input class="form-check-input check" type="checkbox" value="" id="login-remember">
-                        <label class="form-check-label" for="login-remember">
-                            Recordarme
-                        </label>
-                    </div>
+
+
+    <div class="container">
+
+        <!-- ERICK -->
+        <div class="card shadow-sm">
+            <div class="card-body text-center">
+
+                <!-- Área de subida -->
+                <label for="inputImagen" class="upload-area w-100 mb-3">
+                    <div class="upload-icon">＋</div>
+                    <p class="text-muted">Haz clic para seleccionar una imagen</p>
+                    <input name="imagen" type="file" id="inputImagen" accept="image/*" class="d-none">
+                    <img id="preview" class="img-fluid rounded mt-3 d-none" alt="Vista previa">
+                </label>
+
+                <!-- Botón para cambiar imagen -->
+                <button id="guardarBtn" class="btn btn-primary w-100">Cambiar Imagen</button>
+            </div>
+        </div>
+
+        <!-- ALE -->
+            <div class="mb-3 form-element" >
+                    <h2>Nombre del Producto</h2>
+                <input valtype="product" name="nombre" type="text" class="form-control" placeholder="Ej. Playera Básica">
+                <div class="invalid-feedback">
+                    Looks bad!
+                </div>
+            </div>
+            <div class="mb-3">
+                    <h2>Descripción</h2>
+                <textarea name="descripcion" class="form-control" rows="3"></textarea>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3 form-element">
                     
-
-                    <div class="d-grid mt-4">
-                        <button type="submit" id="submit-btn" class="btn btn-primary btn-lg shadow-sm btn-custom">Iniciar Sesión</button>
+                    <h2>Precio</h2>
+                    <input valtype="price" name="precio" type="number" class="form-control" placeholder="$0.00">
+                    <div class="invalid-feedback">
+                        Looks bad!
                     </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <h2>Categoría</h2>
+                    <select name="categoria" class="form-select">
+                        <option>Playera</option>
+                        <option>Taza</option>
+                        <option>Sudadera</option>
+                        <option>Vaso</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col form-element">
+
+                    <h2>Stock</h2>
+                    <input  valtype="price" name="stock" type="number" class="form-control" placeholder="0">
+                    <div class="invalid-feedback">
+                        Looks bad!
+                    </div>
+                </div>
+            </div>
+
+
+
+        <!-- FER -->
+        <h2>Tallas del producto</h2>
+        <label class="label-list"><span class="circle">G</span>{talla: G}<input name="size-g" type="checkbox" > </label><br>
+        <label class="label-list"><span class="circle">M</span>{talla: M}<input name="size-m" type="checkbox" > </label><br>
+        <label class="label-list"><span class="circle">CH</span>{talla: CH}<input name="size-c" type="checkbox" > </label><br>
+
+        <h2>Colores del producto</h2>
+        <label class="label-list"><span class="circle">B</span>{color: Blanco}<input name="color-blanco" type="checkbox" > </label><br>
+        <label class="label-list"><span class="circle">N</span>{color: Negro}<input name="color-negro" type="checkbox" > </label><br>
+        <label class="label-list"><span class="circle">A</span>{color: Azul}<input name="color-azul" type="checkbox" > </label><br>
+        <label class="label-list"><span class="circle">R</span>{color: Rojo}<input name="color-rojo" type="checkbox" > </label><br>
+        <label class="label-list"><span class="circle">G</span>{color: Gris}<input name="color-gris" type="checkbox" > </label><br>
+
+
+
+
+        <!-- MAITE -->
+
+            <div style="padding-top: 1rem;" class="form-element">
+                    <h2>Descuento a aplicar</h2>
+                <input valtype="discount" name="descuento" type="text" class="form-control rounded-3 shadow-sm border-secondary-subtle" id="descuento"
+                    placeholder="Descuento">
+                <div class="invalid-feedback">
+                    Looks bad!
+                </div>
+            </div>
+
+            <div style="padding-top: 2rem;">
+                <div style="float: left;">
+
+                    <h2>Diseño personalizado</h2>
+                    <p class="text-muted small mb-0">Permitir al cliente personalizar el producto</p>
+                </div>
+                <div class="form-check form-switch pt-1" style="float: right; width: 50px;">
+                    <input name="diseno" class="form-check-input border-secondary" type="checkbox" role="switch" id="customDesign"
+                        style="width: 2.4em; height: 1.2em; cursor: pointer;">
+                </div>
+                <div style="clear: both;"></div>
+            </div>
+
+
+
+        <!-- MAITE -->
+        <!-- CHUCHO -->
+        <div id="liveAlertPlaceholder"></div>
+        <button type="submit" class="btn btn-primary w-100" id="liveAlertBtn">Guardar cambios</button>
+
+
+
+        <!-- CHUCHO -->
+
+
+    </div>
+
+
+
                 </form>
-                </diV>
                 <div class="d-grid mt-4">
                     <img class="form-logo" src="./Pictures/logo.png">
                 </div>
             </div>
+            <!-- Fin del contenedor azul -->
         </div>
     </div>
-
 
 
     <footer class="f-dorado text-white pt-4 pb-2">
@@ -182,7 +277,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
-    <script src="JS/login.js"></script>
+    <script src="JS/masteredit.js"></script>
 </body>
 
 </html>
