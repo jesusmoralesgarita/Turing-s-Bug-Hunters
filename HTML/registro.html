@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="CSS/fonts.css">
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/registro.css">
+    <link rel="stylesheet" href="JS/registro.js">
 </head>
 <body>
     
@@ -45,11 +46,10 @@
                 </div>
             </div>
         </div>
-        <!-- Secciones -->
         <div class="collapse navbar-collapse show">
-            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Inicio</a>
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Inicio</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="quienessomos.html">Quiénes Somos</a>
@@ -58,7 +58,6 @@
                     <a class="nav-link" href="contacto.html">Contacto</a>
                 </li>
             </ul>
-            <!-- carrito de compras -->
             <div class="dropdown">
                 <button class="btn text-white" type="button" data-bs-toggle="dropdown">
                     <i class="bi bi-cart fs-4"></i>
@@ -71,6 +70,84 @@
                 </div>
             </div>
     </nav>
+
+        <div class="container my-5 d-flex justify-content-center">
+        <div class="card card-cttn text-white border-0 shadow-cttn">
+        <div class="card-body p-4 p-md-5"> 
+        <h2 class="text-cttn text-center mb-4">Registrate</h2>
+        </div>
+
+    <div class="card-body form-ctn">
+    <form id="contact-form" method="POST" class="needs-validation" novalidate>
+
+    <div class="mb-3 form-element">
+    <label for="contact-name" class="form-label">Nombre</label>
+    <input type="text" name="Nombre" valtype="nombrehomes" class="form-control" placeholder="Nombre" id="contact-name" required>
+    <div class="invalid-feedback">El nombre es obligatorio.</div>
+    </div>
+
+    <div class="mb-3 form-element">
+    <label for="contact-number" class="form-label">Teléfono</label>
+    <input type="text" name="Telefono" valtype="number" class="form-control" placeholder="Teléfono" id="contact-number" required>
+    <div class="invalid-feedback">Número inválido.</div>
+    </div>
+
+    <div class="mb-3 form-element">
+    <label for="contact-email" class="form-label">Correo</label>
+    <input type="email" name="Email" valtype="email" placeholder="ejemplo@tintanomada.com" class="form-control" id="contact-email" required>
+    <div class="invalid-feedback">Correo inválido.</div>
+    </div>
+
+    <div class="mb-3 form-element">
+    <label for="password" class="form-label">Contraseña</label>
+    <input type="password" name="password" valtype="password" class="form-control" placeholder="Contraseña123" id="password" required>
+    <div class="invalid-feedback">Password requerido.</div>
+    </div>
+
+    <!-- Nuevo campo para repetir contraseña -->
+    <div class="mb-3 form-element">
+    <label for="confirm-password" class="form-label">Repetir Contraseña</label>
+    <input type="password" name="confirm-password" valtype="confirm-password" class="form-control" placeholder="Repite tu contraseña" id="confirm-password" required>
+    <div class="invalid-feedback">Las contraseñas deben coincidir.</div>
+    </div>
+
+    <input type="hidden" name="_subject" value="Nuevo mensaje de Tinta Nómada">
+    
+    <div class="d-grid mt-4">
+    <button type="submit" id="submit-btn" class="btn btn-primary btn-lg shadow-sm">Registro</button>
+    </div>
+
+    <!-- modal para mostrar mensaje de enviado -->
+    <div id="modal" class="modal-custom">
+    <div class="contenido">
+        <h2 class="titulo">✅ Éxito</h2>
+        <p>Formulario enviado correctamente</p>
+        <button type="button" onclick="cerrarModal()" class="btn">Cerrar</button>
+    </div>
+    </div>
+</form>
+
+<div class="d-grid mt-4">
+    <img class="form-logo" src="./Pictures/logo.png">
+</div>
+</div>
+
+    <!-- Scripts -->
+    <!-- Gio  -->
+
+
+    <!-- Erick -->
+    
+        <!-- Mai -->
+
+
+        <!-- Alex -->
+
+
+        <!-- Fin del contenedor azul -->
+        </div>
+    </div>
+
 
      <footer class="f-dorado text-white pt-4 pb-2">
       <div class="container">
