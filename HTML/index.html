@@ -11,112 +11,77 @@
     <link rel="stylesheet" href="CSS/fonts.css">
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/index.css">
+    <script src="js/login.js"></script>
 </head>
 <body>
     
     <!--Navbar-->
-    <nav class="navbar navbar-expand-lg navbar-custom px-4">
-        <!-- boton para las categorias con dropdown  -->
-        <!-- dropdown para las categorias -->
+    <!--Navbar-->
+<nav class="navbar navbar-expand-lg navbar-custom px-4">
+    <!-- 1. Dropdown para las categorías -->
+    <div class="dropdown">
+        <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
+            <i class="bi bi-list"></i> Categorías
+        </button>
+
+        <div class="dropdown-menu p-4 custom-dropdown">
+            <!-- Lista de categorías -->
+            <div class="menu-categorias text-center mb-4">
+                <a href="#" class="dropdown-item text-center">Playeras</a>
+                <a href="#" class="dropdown-item text-center">Tazas</a>
+                <a href="#" class="dropdown-item text-center">Sudaderas</a>
+                <a href="#" class="dropdown-item text-center">Vasos</a>
+                <a href="#" class="dropdown-item text-center">Plumas</a>
+                <a href="#" class="dropdown-item text-center">Pines</a>
+                <a href="#" class="dropdown-item text-center">Stickers</a>
+            </div>
+
+            <!-- Sección diseño personalizado -->
+            <div class="menu-contacto d-flex align-items-center">
+                <i class="bi bi-envelope fs-1 me-3"></i>
+                <div>
+                    <strong>¿Necesitas un diseño personalizado?</strong>
+                    <a href="contacto.html" class="contacto-link">Contáctanos y te cotizaremos</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Secciones Centrales -->
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="quienessomos.html">Quiénes Somos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contacto.html">Contacto</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 3. Contenedor de iconos (Usuario y Carrito) alineados a la derecha -->
+    <div class="d-flex align-items-center ms-auto">
+        
+        <!-- CONTENEDOR DE USUARIO (Aquí el JS pondrá el icono de perfil) -->
+        <div id="user-menu-container" class="me-3"></div>
+
+        <!-- Carrito de compras -->
         <div class="dropdown">
-            <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                <i class="bi bi-list"></i> Categorías
+            <button class="btn text-white" type="button" data-bs-toggle="dropdown">
+                <i class="bi bi-cart fs-4"></i>
             </button>
-            <!-- Chucho-->
-
-            <div class="dropdown-menu p-4 custom-dropdown">
-                <!-- Lista de categorías -->
-                <div class="menu-categorias text-center mb-4">
-                    <a href="catalogo.html" class="dropdown-item text-center">Playeras</a>
-                    <a href="catalogo.html#secttazas" class="dropdown-item text-center">Tazas</a>
-                    <a href="catalogo.html#sectsudaderas" class="dropdown-item text-center">Sudaderas</a>
-                    <a href="catalogo.html#sectvasos" class="dropdown-item text-center">Vasos</a>
-                    <a href="catalogo.html#sectplumas" class="dropdown-item text-center">Plumas</a>
-                    <a href="catalogo.html#sectpines" class="dropdown-item text-center">Pines</a>
-                    <a href="catalogo.html#sectstickers" class="dropdown-item text-center">Stickers</a>
-                </div>
-
-                <!-- Sección diseño personalizado -->
-                <div class="menu-contacto d-flex align-items-center">
-                    <i class="bi bi-envelope fs-1 me-3"></i>
-                    <div>
-                        <strong>¿Necesitas un diseño personalizado?</strong>
-                        <a href="contacto.html" class="contacto-link">Contáctanos y te cotizaremos</a>
-                    </div>
+            <div class="dropdown-menu dropdown-carrito dropdown-menu-end p-3">
+                <div class="carrito-menu text-center">
+                    <a href="carritoDeCompra.html" class="dropdown-item text-center">Carrito de Compras</a>
+                    <a href="historialCompras.html" class="dropdown-item text-center">Historial de Compras</a>
                 </div>
             </div>
         </div>
-        <!-- Secciones -->
-        <div class="collapse navbar-collapse show">
-            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="quienessomos.html">Quiénes Somos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contacto.html">Contacto</a>
-                </li>
-            </ul>
-            <!-- carrito de compras -->
-            <div class="dropdown">
-                <button class="btn text-white" type="button" data-bs-toggle="dropdown">
-                    <i class="bi bi-cart fs-4"></i>
-                </button>
-                <div class="dropdown-menu dropdown-carrito dropdown-menu-end p-3">
-                    <div class="carrito-menu text-center">
-                        <a href="carritoDeCompra.html" class="dropdown-item text-center">Carrito de Compras</a>
-                        <a href="historialCompras.html" class="dropdown-item text-center">Historial de Compras</a>
-                    </div>
-                </div>
-            </div>
-    </nav>
-
-    <!-- Grid con el nombre de la marca, slogan 1 y botones de iniciar sesión y registrate -->
-    <div class="row g-0 align-items-center color-row">
-        <div class="col-12 col-md-4 px-3">
-            <h1 class="text-center text-md-start marca m-0">
-                Tinta Nómada
-            </h1>
-        </div>
-
-        <div class="col-12 col-md-4 py-2 py-md-0">
-            <p class="text-center sloga1 m-0 ">
-                Ponle color a tu vida, ponle Tinta Nómada
-            </p>
-        </div>
-
-        <div class="col-12 col-md-4 d-grid d-md-flex justify-content-md-end gap-3 p-2">
-            <!-- [Importante sustituir el contenido de href] Botón de iniciar sesión -->
-            <a href="login.html" target="_self" rel="noopener noreferrer" class="d-grid d-md-inline-block text-decoration-none">
-                <button type="button" class="btn btn-primary btn-inicio-sesion">
-                    Iniciar Sesión
-                </button>
-            </a>
-            <!--[Importante sustituir el contenido de href] Botón de registrate -->
-            <a href="registro.html" target="_self" rel="noopener noreferrer" class="d-grid d-md-inline-block text-decoration-none">
-                <button type="button" class="btn btn-secondary btn-registrate">
-                    Registrate
-                </button> 
-            </a>
-        </div>
     </div>
-
-    <!-- Slogan 2 y gradiente -->
-    <div class="row g-0">
-        <div class="col-12">
-            <p class="sloga2 text-center m-0 d-flex align-items-center justify-content-center">
-                Creatividad que conecta emociones
-            </p>
-        </div>
-    </div>
-
-
-   
-   <!------------ ------------ ------------ ------------ ------------>
-    
-
+</nav>
     <div class="banner">
         <div class="logo">
             <img src="Pictures/turinglogo.jpeg" alt="Tinta Nómada">
@@ -127,8 +92,6 @@
         </div>
     </div>
 
-
-
 <!-- //Oswaldo -->
 <!-- Sección 3  -->
     <!-- Sección del botón para explorar descuentos del día -->
@@ -138,7 +101,7 @@
         <div class="col-md-3">
             <div class="d-grid gap-2">
                 <!-- Faltaria el link de los descuentos del día -->
-                <a href="catalogo.html#descuentos" class="btn btn-primary color-desc">Explora nuestros descuentos del día</a>
+                <a href="catalogoplay.html#descuentos" class="btn btn-primary color-desc">Explora nuestros descuentos del día</a>
             </div>
         </div>
       </div>
@@ -174,7 +137,7 @@
       </div>
     </div>
 
-
+<!-- //Giovani -->
 <section class="carousel-section">
   <h2>Últimos Encargos</h2>
   <p>Mira algunos de los productos personalizados que hemos creado recientemente.</p>
@@ -270,7 +233,7 @@
   </div>
 </section>
 
-
+<!-- //Alex -->
 
 <section class="container my-5">
     <h5 class="mb-4 fw-bold">Lo que dicen nuestros clientes</h5>
@@ -375,63 +338,53 @@
     </div>
 </section>
 
-
-
      <footer class="f-dorado text-white pt-4 pb-2">
-      <div class="container">
-        <div class="row">
-          <!---Contacto-->
-          <div class="col-md-3">
-            <h5 class="text-dark">
-              <i class="bi bi-envelope me-2"></i>Contacto
-            </h5>
-            <p>
-              <a href="mailto:tinta_nomada@hotmail.com" class="correo"
-                >tinta_nomada@hotmail.com</a
-              >
-            </p>
-          </div>
+            <div class="container">
+                <div class="row">
+                    <!---Contacto-->
+                    <div class="col-md-3">
+                        <h5 class="text-dark">
+                            <i class="bi bi-envelope me-2"></i>Contacto
+                        </h5>
+                        <p>
+                            <a href="mailto:turingsbh@contacto.com" class="correo">turingsbh@contacto.com</a>
+                        </p>
+                    </div>
 
-          <!---Redes Sociales-->
-          <div class="col-md-3">
-            <h5 class="text-dark">Nuestras Redes Sociales</h5>
-            <a href="https://www.tiktok.com/@tinta.n0mada?_r=1&_t=ZS-95wb1xqooDM" class="text-white me-2"
-              ><i class="bi bi-tiktok"></i
-            ></a>
-            <a href="https://www.instagram.com/tinta_n0mada?utm_source=qr&igsh=NWsybnJhNjJnbnFy" class="text-white me-2"
-              ><i class="bi bi-instagram"></i
-            ></a>
-            <a href="https://github.com/jesusmoralesgarita/Turing-s-Bug-Hunters" class="text-white"
-              ><i class="bi bi-github"></i
-            ></a>
-          </div>
-     
-       
+                    <!---Redes Sociales-->
+                    <div class="col-md-3">
+                        <h5 class="text-dark">Nuestras Redes Sociales</h5>
+                        <a href="enlace Facebook" class="text-white me-2"><i class="bi bi-facebook"></i></a>
+                        <a href="enlace Instagram" class="text-white me-2"><i class="bi bi-instagram"></i></a>
+                        <a href="enlace Github" class="text-white"><i class="bi bi-github"></i></a>
+                    </div>
 
-          <!---Ubicación-->
-          <div class="col-md-3">
-            <h5 class="text-dark">
-              <i class="bi bi-geo-alt me-2"></i>Ubicación
-            </h5>
-            <p class="text-dark">Temascalpa, Estado de México</p>
-          </div>
 
-          <!---Políticas-->
-          <div class="col-md-3 text-md-end">
-            <h5 class="text-dark">Política de Privacidad</h5>
-            <p>
-              <a href="politicasPrivacidad.html" class="politica">Ver Política</a>
-            </p>
-          </div>
 
-          <!---Estructura de footer-->
-        </div>
-        <hr class="border-light" />
-        <p class="text-center">
-          Copyright © 2026 Turing's Bug Hunters S.A de C.V. All Rights Reserved.
-        </p>
-      </div>
-    </footer>
+                    <!---Ubicación-->
+                    <div class="col-md-3">
+                        <h5 class="text-dark">
+                            <i class="bi bi-geo-alt me-2"></i>Ubicación
+                        </h5>
+                        <p class="text-dark">Temascalpa, Estado de México</p>
+                    </div>
+
+                    <!---Políticas-->
+                    <div class="col-md-3 text-md-end">
+                        <h5 class="text-dark">Política de Privacidad</h5>
+                        <p>
+                            <a href="Enlace a Políticas" class="politica">Ver Política</a>
+                        </p>
+                    </div>
+
+                    <!---Estructura de footer-->
+                </div>
+                <hr class="border-light" />
+                <p class="text-center">
+                    Copyright © 2026 Turing's Bug Hunters S.A de C.V. All Rights Reserved.
+                </p>
+            </div>
+        </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
