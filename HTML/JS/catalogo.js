@@ -116,7 +116,7 @@ const listaProductos = [
         0,
     ),
     new Producto(
-        0,
+        1,
         "Playera",
         "Polo Basica",
         199.99,
@@ -129,7 +129,7 @@ const listaProductos = [
         0,
     ),
     new Producto(
-        0,
+        2,
         "Playera",
         "Juego de Playeras",
         379.99,
@@ -142,7 +142,7 @@ const listaProductos = [
         0,
     ),
     new Producto(
-        0,
+        3,
         "Playera",
         "Playera de Mangas Raglan",
         229.99,
@@ -155,7 +155,7 @@ const listaProductos = [
         0,
     ),
     new Producto(
-        0,
+        4,
         "Playera",
         "Playera de Compresión Deportiva",
         259.99,
@@ -168,7 +168,7 @@ const listaProductos = [
         0,
     ),
     new Producto(
-        0,
+        5,
         "Taza",
         "Taza clásica (12 Oz)",
         149.99,
@@ -184,7 +184,7 @@ const listaProductos = [
         0,
     ),
     new Producto(
-        0,
+        6,
         "Taza",
         "Taza Personalizable (12 Oz)",
         199.99,
@@ -200,7 +200,7 @@ const listaProductos = [
         0,
     ),
     new Producto(
-        0,
+        7,
         "Taza",
         "Taza Mágica Rick & Morty (12Oz, Termosensible)",
         299.99,
@@ -216,7 +216,7 @@ const listaProductos = [
         0,
     ),
     new Producto(
-        0,
+        8,
         "Taza",
         "Taza Mágica Personalizable (12 Oz, Termosensible)",
         279.99,
@@ -232,7 +232,7 @@ const listaProductos = [
         0,
     ),
     new Producto(
-        0,
+        9,
         "Taza",
         "Taza Para Parejas (Personalizables)",
         249.99,
@@ -248,7 +248,7 @@ const listaProductos = [
         0,
     ),
     new Producto(
-        0,
+        10,
         "Sudadera",
         "Classic Pullover Hoodie",
         259.99,
@@ -265,7 +265,7 @@ const listaProductos = [
         0,
     ),
     new Producto(
-        0,
+        11,
         "Sudadera",
         "Full Zip Up Hoodie",
         259.99,
@@ -282,7 +282,7 @@ const listaProductos = [
         0,
     ),
     new Producto(
-        0,
+        12,
         "Sudadera",
         "Mock Neck Half Zip",
         259.99,
@@ -299,7 +299,7 @@ const listaProductos = [
         0,
     ),
     new Producto(
-        0,
+        13,
         "Sudadera",
         "Classic Crewneck Sweatshirt",
         259.99,
@@ -316,7 +316,7 @@ const listaProductos = [
         0,
     ),
     new Producto(
-        0,
+        14,
         "Sudadera",
         "Button Front Cardigan Hoodie",
         259.99,
@@ -333,7 +333,7 @@ const listaProductos = [
         0,
     ),
     new Producto(
-        0,
+        15,
         "Vaso",
         "Termo de viaje",
         189.99,
@@ -349,7 +349,7 @@ const listaProductos = [
         0,
     ),
     new Producto(
-        0,
+        16,
         "Vaso",
         "Vaso Doble Pared con Popote",
         99.99,
@@ -365,7 +365,7 @@ const listaProductos = [
         0,
     ),
     new Producto(
-        0,
+        17,
         "Vaso",
         "Botella de Agua de Acero (750 ml)",
         199.99,
@@ -381,7 +381,7 @@ const listaProductos = [
         0,
     ),
     new Producto(
-        0,
+        18,
         "Vaso",
         "Frasco Mason Esmerilado con Popote (32 Oz)",
         149.99,
@@ -397,7 +397,7 @@ const listaProductos = [
         0,
     ),
     new Producto(
-        0,
+        19,
         "Vaso",
         "Termo Insulado con Panel (750 ml)",
         189.99,
@@ -413,7 +413,7 @@ const listaProductos = [
         0,
     ),
     new Producto(
-        0,
+        20,
         "Pluma",
         "Bolígrafo Táctico de Agarre",
         39.99,
@@ -429,7 +429,7 @@ const listaProductos = [
         0,
     ),
     new Producto(
-        0,
+        21,
         "Pluma",
         "Portaminas Táctico Multicolor",
         29.99,
@@ -445,7 +445,7 @@ const listaProductos = [
         0,
     ),
     new Producto(
-        0,
+        22,
         "Pluma",
         "Pluma Rollerball Luxe",
         69.99,
@@ -461,7 +461,7 @@ const listaProductos = [
         0,
     ),
     new Producto(
-        0,
+        23,
         "Pluma",
         "Bolígrafo Retractil de Aluminio",
         59.99,
@@ -477,7 +477,7 @@ const listaProductos = [
         0,
     ),
     new Producto(
-        0,
+        24,
         "Pluma",
         "Pluma Fuente Clasica",
         99.99,
@@ -493,7 +493,7 @@ const listaProductos = [
         0,
     ),
     new Producto(
-        0,
+        25,
         "Pin",
         "Paquetes de Pines (10piezas)",
         199.99,
@@ -509,7 +509,7 @@ const listaProductos = [
         0,
     ),
     new Producto(
-        0,
+        26,
         "Pin",
         "Pin Personalizable (1 pieza)",
         199.99,
@@ -525,7 +525,7 @@ const listaProductos = [
         0,
     ),
     new Producto(
-        0,
+        27,
         "Pin",
         "Pines Metálicos (10 piezas)",
         299.99,
@@ -541,7 +541,7 @@ const listaProductos = [
         0,
     ),
     new Producto(
-        0,
+        28,
         "Pin",
         "Pines de Graduación (1 pieza)",
         99.99,
@@ -557,7 +557,7 @@ const listaProductos = [
         0,
     ),
     new Producto(
-        0,
+        29,
         "Pin",
         "Pines de Recuerdo (1 pieza)",
         29.99,
