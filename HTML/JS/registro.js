@@ -3,6 +3,7 @@
     'use strict'
 
     const form = document.getElementById('contact-form');
+    const loginForm = document.getElementById('login-form');
 
     if (form) {
         form.addEventListener('submit', async (event) => {
@@ -54,16 +55,22 @@
                 const boton = document.getElementById('submit-btn');
                 const textoOriginal = boton.innerText;
                 
-                boton.innerText = "Enviando...";
+                boton.innerText = "Registrando...";
                 boton.disabled = true;
 
-                const formData = new FormData(form);
+                const email = document.getElementById("contact-email").value;
+                const password = document.getElementById("password").value;
+                const nombre = document.getElementById("contact-name").value;
+
+                const nuevoUsuario = {
+                    nombre: nombre,
+                    email: email,
+                    password: password
+                };
+
+                localStorage.setItem('usuarioRegistrado', JSON.stringify(nuevoUsuario));
 
                 try {
-                    // Simulación de envío o fetch real
-                    // const response = await fetch(Config.ENDPOINT, { ... });
-                    // if (response.ok) { ... }
-                    
                     enviarFormulario();
                     form.reset();
                     form.classList.remove('was-validated');
@@ -78,29 +85,48 @@
             form.classList.add('was-validated');
         }, false);
     }
+
+    if (loginForm) {
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('login-email').value;
+            const pass = document.getElementById('login-password').value;
+            
+            const resultado = validarLogin(email, pass);
+            
+            if (resultado === "success") {
+                alert("¡Bienvenido!");
+                window.location.href = "index.html";
+            } else {
+                alert(resultado);
+            }
+        });
+    }
 })();
 
 /* Gio  */
 function enviarFormulario() {
-const modal = document.getElementById("modal");
-modal.style.display = "block";
-  // Auto cerrar en 3 segundos
-setTimeout(() => {
-    modal.style.display = "none";
-}, 3000);
+    const modal = document.getElementById("modal");
+    modal.style.display = "block";
+    
+    // Auto cerrar y redirigir en 3 segundos
+    setTimeout(() => {
+        cerrarModal();
+    }, 3000);
 }
+
 function cerrarModal() {
-document.getElementById("modal").style.display = "none";
+    document.getElementById("modal").style.display = "none";
+    // Redirige al login después de cerrar
+    window.location.href = "login.html";
 }
 
 /* Erick */
-// Función para validar email con expresión regular
 function validarEmail(email) {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return regex.test(email);
 }
 
-// Validar nombre
 function validarNombre() {
     const nombre = document.getElementById("contact-name").value.trim();
     if (nombre === "") {
@@ -111,9 +137,8 @@ function validarNombre() {
     } else {
         return "El nombre sin números";
     }
-};
+}
 
-//Validar contraseña
 function validarPassword(){
     const password = document.getElementById("password").value.trim();
     const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*(),.?":{}|<>]).{8,15}$/;
@@ -127,7 +152,6 @@ function validarPassword(){
     }
 }
 
-// Validar confirmar contraseña
 function validarConfirmarPassword() {
     const password = document.getElementById("password").value.trim();
     const confirmPassword = document.getElementById("confirm-password").value.trim();
@@ -141,7 +165,6 @@ function validarConfirmarPassword() {
     }
 }
 
-// Validar email
 function validarEmail1() {
     const email = document.getElementById("contact-email").value.trim();
     if (email === "") {
@@ -152,9 +175,8 @@ function validarEmail1() {
     } else {
         return "";
     }
-};
+}
 
-// Validar numero de telefono
 function validarNumCel() {
     const cel = document.getElementById("contact-number").value.trim();
     if (/[a-zA-Z]/.test(cel)) {
@@ -164,5 +186,19 @@ function validarNumCel() {
         return "El número de telefono debe tener al menos 10 digitos.";
     } else {
         return "";
+    }
+}
+
+function validarLogin(emailIngresado, passIngresada) {
+    const datosSrt = localStorage.getItem('usuarioRegistrado');
+    if (!datosSrt) return "No hay usuarios registrados.";
+
+    const usuario = JSON.parse(datosSrt);
+
+    if (usuario.email === emailIngresado && usuario.password === passIngresada) {
+        localStorage.setItem('sesionActiva', 'true');
+        return "success";
+    } else {
+        return "Correo o contraseña incorrectos.";
     }
 }
