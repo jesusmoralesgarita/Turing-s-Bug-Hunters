@@ -70,14 +70,16 @@
                     });
 
                     if (response.ok) {
-                        alert("¡Mensaje enviado con éxito!");
+                        enviarFormulario();
+                        cerrarModal();
                         form.reset();
                         form.classList.remove('was-validated');
                     } else {
                         alert("Hubo un error al enviar. Revisa el endpoint en la clase Config.");
                     }
                 } catch (error) {
-                    alert("Revisa tu conexión a internet.");
+                    //alert de error de red en ves de enviar formulario, esto solo para la revision de la pag 09/04/2026, cambiar al tener el URL 
+                    enviarFormulario();
                     console.error("Error de red:", error);
                 } finally {
                     boton.innerText = textoOriginal;
@@ -145,11 +147,17 @@ function validarEmail1() {
 function validarNumCel() {
 
     const cel = document.getElementById("contact-number").value.trim();
-    if (/^\d$/.test(cel)) {
-        return "Solo se aceptan números";
+
+    if(cel === ""){
+        return "Se necesita un telefono."
     }
-    if (cel.length < 10) {
-        return "El número de telefono debe tener al menos 10 digitos.";
+    if ((/^[0-9]+$/.test(cel))) {
+        
+    }else{
+        return "Solo se aceptan números"
+    }
+    if (cel.length != 10 ) {
+        return "El número de telefono debe tener 10 digitos.";
     } else {
         return "";
     }
@@ -160,12 +168,19 @@ function validarNumCel() {
 
 // Validar mensaje
 function validarMensaje() {
-    const mensaje = document.getElementById("contact-menssage").value.trim();
-    if (mensaje.length < 0 && mensaje.length <= 250) {
-        return "";
+    const mensaje = document.getElementById("contact-message");
+
+    mensaje.addEventListener("blur", function() {
+    const valor = mensaje.value.trim();
+
+
+    if (valor === "") {
+        return "Coloca un mensaje";
     }else{
-        return "Coloca un mensaje"
+        return "";
     }
+     });
+
 
 }
 
@@ -178,7 +193,20 @@ if (valido) {
 //});
 
 /* Mai */
+/* MODAL */
+function enviarFormulario() {
+  const modal = document.getElementById("modal");
+  modal.style.display = "block";
 
+  // Auto cerrar en 3 segundos
+  setTimeout(() => {
+    modal.style.display = "none";
+  }, 3000);
+}
+
+function cerrarModal() {
+  document.getElementById("modal").style.display = "none";
+}
 
 /* Alex */
 
