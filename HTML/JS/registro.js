@@ -160,8 +160,8 @@ function validarNumCel() {
     if (/[a-zA-Z]/.test(cel)) {
         return "Solo se aceptan números";
     }
-    if (cel.length < 10) {
-        return "El número de telefono debe tener al menos 10 digitos.";
+    if (cel.length != 10 ) {
+        return "El número de telefono debe tener 10 digitos.";
     } else {
         return "";
     }
