@@ -282,7 +282,7 @@ function validarNombreProducto(input) {
 
 function validarPrecio(input) {
 
-    const precio = parseInt( input.value.trim());
+    const precio = parseFloat( input.value.trim());
     
     if (precio && precio > 0) {
         return "";
@@ -293,11 +293,8 @@ function validarPrecio(input) {
 }
 
 function validarDescuento(input) {
-    console.log("descuento")
-
     const precio = parseInt( input.value.trim());
-    
-    if (precio && precio >= 0 && precio <= 100) {
+    if (precio !== NaN && precio >= 0 && precio <= 100) {
         return "";
     } else {
         return "El descuento debe ser un numero entre 0 y 100.";
@@ -412,8 +409,8 @@ document.addEventListener('DOMContentLoaded', () => {
         formulario.addEventListener('submit', (e) => {
 
 
-            console.log("validar")
         formulario.classList.add("was-validated");
+
         formulario.querySelectorAll(".form-element").forEach((e1) => {
             const input = e1.getElementsByTagName("input")[0];
             let salida = "";
@@ -436,6 +433,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 case "discount":
                     salida = validarDescuento(input);
                     break;
+                default:
+                    salida="";
             }
             if (salida !== "") {
                 const feedback = e1.querySelector(".invalid-feedback");
@@ -454,6 +453,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
             e.preventDefault();
+
 
 
             const data = Object.fromEntries(new FormData(e.target).entries());
