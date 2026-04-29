@@ -1,0 +1,56 @@
+.card-cttn {
+  background-color: #ffffff;
+  border-radius: 25px;
+  width: 100%;
+  max-width: 80%;
+  box-shadow: 18px -18px 2px 5px #1E6458;
+}
+.text-cttn {
+  font-size: 2.2rem;
+  color: #000000;
+  font-family: "Montserrat-T";
+}
+
+body {
+    background-color: #268674;
+}
+/* Luis */
+
+.form-ctn{
+  background-color: #ffffff;
+  border: 3px solid #00000014;
+  border-radius: 25px;
+  color: #061f2f;
+  margin: 2rem;
+  padding: 1.5rem;
+}
+
+.btn-custom {
+    background-color: #303030;
+    border-color: #303030;
+}
+
+.btn-custom:hover{
+    background-color: #202020;
+}
+
+.form-logo{
+  width: 30%;
+  padding: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.check:checked {
+    background-color: #303030;
+}
+
+.check:focus {
+    -webkit-box-shadow: 0px 0px 10px 0px #000000; 
+    box-shadow: 0px 0px 10px 0px #000000;
+}
+
+.ctm-input:focus {
+    -webkit-box-shadow: 0px 0px 10px 0px #000000; 
+    box-shadow: 0px 0px 10px 0px #000000;
+}

@@ -126,7 +126,7 @@ function validarNombre() {
     } else {
         return "El nombre sin números";
     }
-};
+}; 
 
 // Validar email
 function validarEmail1() {
@@ -147,11 +147,17 @@ function validarEmail1() {
 function validarNumCel() {
 
     const cel = document.getElementById("contact-number").value.trim();
-    if (/^\d$/.test(cel)) {
-        return "Solo se aceptan números";
+
+    if(cel === ""){
+        return "Se necesita un telefono."
     }
-    if (cel.length < 10) {
-        return "El número de telefono debe tener al menos 10 digitos.";
+    if ((/^[0-9]+$/.test(cel))) {
+        
+    }else{
+        return "Solo se aceptan números"
+    }
+    if (cel.length != 10 ) {
+        return "El número de telefono debe tener 10 digitos.";
     } else {
         return "";
     }
@@ -162,12 +168,19 @@ function validarNumCel() {
 
 // Validar mensaje
 function validarMensaje() {
-    const mensaje = document.getElementById("contact-message").value.trim();
-    if (mensaje.length < 0 && mensaje.length <= 250) {
-        return "";
+    const mensaje = document.getElementById("contact-message");
+
+    mensaje.addEventListener("blur", function() {
+    const valor = mensaje.value.trim();
+
+
+    if (valor === "") {
+        return "Coloca un mensaje";
     }else{
-        return "Coloca un mensaje"
+        return "";
     }
+     });
+
 
 }
 
