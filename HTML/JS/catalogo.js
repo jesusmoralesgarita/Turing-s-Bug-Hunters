@@ -71,6 +71,9 @@ function generateHTML(element) {
         "btn btn-custom d-flex justify-content-between align-items-center";
     button.addEventListener("click", (e) => {
         const storage = localStorage.getItem("carrito");
+
+        window.location.href = "./agregarCarrito.html?id="+element.idProducto
+
         if (storage) {
             const carritoStorage = JSON.parse(storage);
             carritoStorage.push(new ProductoCarrito(2, "imagen1", 0, element));
