@@ -47,12 +47,22 @@
     border-color: #BE814F;
 }
 
+button.check-ent:hover {
+    border-color: #be814fb3;
+    background-color: #be814fb3;
+}
+
+
 
 .check-env{
     background-color: #70216D;
     border-color: #70216D;
 }
 
+button.check-ent:hover {
+    border-color: #70216Db3;
+    background-color: #70216Db3;
+}
 
 .check-cre{
     background-color: #172936;
@@ -60,9 +70,21 @@
 }
 
 
+button.check-ent:hover {
+    border-color: #172936b3;
+    background-color: #172936b3;
+}
+
+
 .check-res{
     background-color: #2A8574;
     border-color: #2A8574;
+}
+
+
+button.check-ent:hover {
+    border-color: #2A8574b3;
+    background-color: #2A8574b3;
 }
 
 

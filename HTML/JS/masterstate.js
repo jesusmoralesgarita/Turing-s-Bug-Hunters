@@ -1,5 +1,6 @@
 class Pedido {
     constructor(
+        id,
         precio,
         cantidad,
         imagen,
@@ -9,6 +10,7 @@ class Pedido {
         rastreador,
         producto
     ){
+        this.id = id
         this.precio = precio
         this.cantidad = cantidad
         this.imagen = imagen
@@ -28,6 +30,7 @@ function render() {
     }else{
         pedidos = []
         pedidos.push({
+            id: 0,
             precio: 300,
             cantidad: 3,
             imagen:"a.png",
@@ -72,7 +75,7 @@ function render() {
             case "Creación del pedido":
                 return check2;
                 break;
-            case "Envio del pedido":
+            case "Envío del pedido":
                 return check3;
                 break;
             case "Entregado":
@@ -164,7 +167,8 @@ function generateHMTL(pedido) {
     statePrice.appendChild(row1);
     statePrice.appendChild(row2);
 
-    /* STATUS */
+    
+    /* STATUS SECTION */
     const stateStatus = document.createElement("div");
     stateStatus.className = "state-stateesc";
 
@@ -173,41 +177,53 @@ function generateHMTL(pedido) {
     statusTitle.className = "state-stateesc-title";
     statusTitle.textContent = "Estado";
 
-    /* CURRENT STATUS */
-    const currentStatus = document.createElement("div");
-    currentStatus.className = "state-stateesc-current "+states[indexPedido].class;
-    currentStatus.textContent = pedido.estado;
+    /* CONTAINER */
+    const statusContainer = document.createElement("div");
 
-    /* STATUS LIST */
-    const statusList = document.createElement("div");
-    statusList.className = "state-stateesc-list";
+    /* SELECT */
+    const select = document.createElement("select");
+    select.className = "form-select form-select-sm";
+    select.setAttribute("aria-label", "Default select example");
 
-    /* ITEMS */
-    states.forEach((state,index) => {
-        const p = document.createElement("p");
+    /* OPTIONS */
+    const options = [
+    "Recepcion del pedido",
+    "Creación del pedido",
+    "Envío del pedido",
+    "Entregado"
+    ];
 
-        if (index <= indexPedido) {
-            const icon = document.createElement("i");
-            icon.className = `bi bi-check check ${state.class}`;
+    options.forEach(optionText => {
+    const option = document.createElement("option");
+    option.value = optionText;
+    option.textContent = optionText;
 
-            p.appendChild(icon);
-            p.append(" " + state.text);
-
-            statusList.appendChild(p);   
-        }else{
-            const icon = document.createElement("i");
-            icon.className = `bi bi-check ${state.class}`;
-
-            p.appendChild(icon);
-            p.append(" " + state.text);
-
-            statusList.appendChild(p);   
-        }
+    select.appendChild(option);
     });
 
+    select.selectedIndex=(indexPedido)
+    select.id = "selector-"+pedido.id
+
+    /* BUTTON CONTAINER */
+    const buttonGrid = document.createElement("div");
+    buttonGrid.className = "d-grid gap-2";
+
+    /* BUTTON */
+    const button = document.createElement("button");
+    button.className = "m-2 btn btn-primary "+states[indexPedido].class;
+    button.textContent = "Actualizar";
+    button.addEventListener("click", (e) => {
+        update(pedido.id, document.getElementById("selector-"+pedido.id).value);
+    })
+
+    /* APPEND */
+    buttonGrid.appendChild(button);
+
+    statusContainer.appendChild(select);
+    statusContainer.appendChild(buttonGrid);
+
     stateStatus.appendChild(statusTitle);
-    stateStatus.appendChild(currentStatus);
-    stateStatus.appendChild(statusList);
+    stateStatus.appendChild(statusContainer);
 
     /* APPEND ALL */
     container.appendChild(stateImg);
@@ -218,8 +234,13 @@ function generateHMTL(pedido) {
     return container;
 }
 
-function update() {
-    
+function update(id,state) {
+    let pedidos = JSON.parse( localStorage.getItem("pedidos"));
+    const index = pedidos.findIndex((val) => val.id === id );
+    pedidos[index].estado = state;
+
+    localStorage.setItem("pedidos", JSON.stringify(pedidos) )
+    render();
 }
 
 
