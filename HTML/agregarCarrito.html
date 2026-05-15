@@ -100,7 +100,7 @@
                         <!-- Contenedor con fondo y overlay -->
                         <div class="overlay-container">
                             <!-- Fondo fijo: la camisa -->
-                            <img src="Pictures/playdeportiva.png" class="fondo" alt="producto">
+                            <img id="imagen-place" class="fondo" alt="producto">
 
                             <!-- Imagen cargada por el usuario -->
                             <img id="preview" class="overlay d-none" alt="Diseño">
@@ -165,7 +165,7 @@
                         <input type="file" id="file-input-ale" hidden accept="image/*">
                     </div>
 
-                    <button class="btn-agregar-ale">Agregar al carrito</button>
+                    <button onclick="agregar()" class="btn-agregar-ale">Agregar al carrito</button>
 
                     <div class="info-acordeon-ale">
                         <div class="header-acordeon" data-bs-toggle="collapse" data-bs-target="#collapseComodidad">
