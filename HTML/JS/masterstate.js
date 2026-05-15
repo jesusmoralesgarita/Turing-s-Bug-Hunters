@@ -3,8 +3,9 @@
 async function render() {
 
     // 1. Obtener pedidos desde el backend
-    let response = await fetchJson(URL_BASE + "/api/v1/detalles-pedidos");
+    let response = await fetch(URL_BASE + "/api/v1/detalles-pedidos");
     let pedidos = await response.json();
+    console.log(pedidos);
 
     // 2. Revisar filtros
     let check1 = document.getElementById("btncheck1").checked;
@@ -45,7 +46,7 @@ async function render() {
 }
 
 
-
+/**@param {DetallePedido} pedido */
 function generateHMTL(pedido) {
 
     const states = [
@@ -54,9 +55,13 @@ function generateHMTL(pedido) {
         { text: "Envío del pedido", class: "check-env" },
         { text: "Entregado", class: "check-ent" }
     ];
-    const indexPedido = states.findIndex((va) => va.text === pedido.estado_pedido);
+    let indexPedido = states.findIndex((va) => va.text === pedido.estado_pedido);
+    
+    if (indexPedido == -1){
+        indexPedido = 0;
+    }
     const container = document.createElement("div");
-    container.className = "state-div " + states[indexPedido].class;
+    container.className = "state-div" + states[indexPedido].class;
 
     /* IMG */
     const stateImg = document.createElement("div");
@@ -152,7 +157,7 @@ function generateHMTL(pedido) {
     });
 
     select.selectedIndex=(indexPedido)
-    select.id = "selector-"+pedido.id
+    select.id = "selector-"+pedido.id_detalle;
 
     /* BUTTON CONTAINER */
     const buttonGrid = document.createElement("div");
@@ -163,7 +168,7 @@ function generateHMTL(pedido) {
     button.className = "m-2 btn btn-primary "+states[indexPedido].class;
     button.textContent = "Actualizar";
     button.addEventListener("click", (e) => {
-        update(pedido.id, document.getElementById("selector-"+pedido.id).value, pedido);
+        update(pedido.id_detalle, document.getElementById("selector-"+pedido.id_detalle).value, pedido);
     })
 
     /* APPEND */
@@ -185,6 +190,7 @@ function generateHMTL(pedido) {
 }
 
 async function update(id, state, detalles_pedidos) {
+    console.log({ ... detalles_pedidos, estado_pedido: state });
     await fetch(`${URL_BASE}/api/v1/detalles-pedidos/${id}`, {
         method: "PUT",
         headers: {
