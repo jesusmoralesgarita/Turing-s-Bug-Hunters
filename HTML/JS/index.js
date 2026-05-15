@@ -71,7 +71,7 @@ async function renderReview() {
       },
       body: JSON.stringify({ nombre: 'Juan', edad: 30 }),
     }
-  
+
     */);
 
   //CONFIRMAMOS QUE RECIBIMOS INFORMACION CON console.log()

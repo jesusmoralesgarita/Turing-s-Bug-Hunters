@@ -5,75 +5,205 @@ const totalElement = document.getElementById("total");
 function calcularTotal() {
     let total = 0;
 
-    productos.forEach(producto => {
-        let precio = parseFloat(producto.querySelector(".precio").innerText);
-        let cantidad = parseInt(producto.querySelector(".cantidad").value);
+    detalles.forEach(detalle => {
+        let precio = parseFloat(detalle.precio_total);
+        let cantidad = parseInt(detalle.cantidad_producto);
 
         total += precio * cantidad;
     });
 
-    totalElement.innerText = total.toFixed(2);
+    return total
 }
 
-// Eventos
-productos.forEach(producto => {
-    const btnPlus = producto.querySelector(".btn-plus");
-    const btnMinus = producto.querySelector(".btn-minus");
-    const inputCantidad = producto.querySelector(".cantidad");
 
+
+
+/**@type {DetallePedido[]} */
+let detalles = JSON.parse(localStorage.getItem("detalles"))
+
+
+/**@param {DetallePedido} pedido */
+function crearProductoDOM(pedido,id) {
+
+    // CONTENEDOR PRINCIPAL
+    const card = document.createElement("div");
+    card.className =
+        "card-product d-flex justify-content-between align-items-center mb-3 producto";
+
+    // =========================
+    // SECCIÓN IZQUIERDA
+    // =========================
+
+    const leftSection = document.createElement("div");
+    leftSection.className = "d-flex align-items-center gap-3";
+
+    // IMAGEN
+    const img = document.createElement("img");
+    img.src = pedido.producto.imagen;
+    img.width = 80;
+
+    // CONTENEDOR TEXTO
+    const textContainer = document.createElement("div");
+
+    // TÍTULO
+    const title = document.createElement("h6");
+    title.textContent = pedido.producto.nombre;
+
+    // SUBTÍTULO
+    const subtitle = document.createElement("small");
+    subtitle.className = "text-muted";
+    subtitle.textContent = pedido.producto.talla;
+
+    // APPEND TEXTO
+    textContainer.appendChild(title);
+    textContainer.appendChild(subtitle);
+
+    // APPEND LEFT
+    leftSection.appendChild(img);
+    leftSection.appendChild(textContainer);
+
+    // =========================
+    // SECCIÓN DERECHA
+    // =========================
+
+    const rightSection = document.createElement("div");
+    rightSection.className = "text-end";
+
+    // PRECIO
+    const priceTitle = document.createElement("h6");
+
+    const dollar = document.createTextNode("$");
+
+    const priceSpan = document.createElement("span");
+    priceSpan.className = "precio";
+    priceSpan.textContent = pedido.precio_total;
+
+    priceTitle.appendChild(dollar);
+    priceTitle.appendChild(priceSpan);
+
+    // CONTROLES CANTIDAD
+    const controls = document.createElement("div");
+    controls.className =
+        "d-flex align-items-center gap-2 mt-2";
+
+    // BOTÓN +
+    const btnPlus = document.createElement("button");
+    btnPlus.className =
+        "btn btn-success btn-circle btn-plus";
+    btnPlus.textContent = "+";
     btnPlus.addEventListener("click", () => {
-        inputCantidad.value++;
-        calcularTotal();
-    });
+      updateCount(id,1)
+    })
 
+    // INPUT CANTIDAD
+    const qtyInput = document.createElement("input");
+    qtyInput.type = "text";
+    qtyInput.value = pedido.cantidad_producto;
+    qtyInput.readOnly = true;
+    qtyInput.className = "qty-box cantidad";
+
+    // BOTÓN -
+    const btnMinus = document.createElement("button");
+    btnMinus.className =
+        "btn btn-success btn-circle btn-minus";
+    btnMinus.textContent = "-";
     btnMinus.addEventListener("click", () => {
-        if (inputCantidad.value > 0) {
-            inputCantidad.value--;
-            calcularTotal();
+      updateCount(id,-1)
+    })
+
+    // APPEND CONTROLES
+    controls.appendChild(btnPlus);
+    controls.appendChild(qtyInput);
+    controls.appendChild(btnMinus);
+
+    // APPEND RIGHT
+    rightSection.appendChild(priceTitle);
+    rightSection.appendChild(controls);
+
+    // =========================
+    // APPEND FINAL
+    // =========================
+
+    card.appendChild(leftSection);
+    card.appendChild(rightSection);
+
+    return card;
+}
+
+function render() {
+  console.log(detalles)
+  document.getElementById("lista-productos").innerHTML = ""
+  detalles.forEach((e,i) => {
+    document.getElementById("lista-productos").append(crearProductoDOM(e,i))
+  })
+
+  document.getElementById("total").innerText = calcularTotal()
+}
+
+function updateCount(id,add) {
+  detalles[id].cantidad_producto += add;
+  render()
+}
+
+async function pago(ev) {
+  ev.preventDefault()
+  const subir = new Pedido({
+    direccion: document.getElementById("dir").value,
+    fecha_pedido: new Date(),
+    rastreador: "ssadsad",
+    usuario: {
+      id_usuario: 1
+    }
+  })
+
+  /**@type {Pedido} */
+    const responsePedido = await fetch(
+        URL_BASE + "/api/v1/pedidos",
+        {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(subir),
         }
-    });
-});
-
-// Inicializar total en 0
-calcularTotal();  
-/* Oswa */
-(() => {
-  'use strict'
-
-  const forms = document.querySelectorAll('.needs-validation')
-  // Inicializamos el modal de Bootstrap
-  const successModal = new bootstrap.Modal(document.getElementById('successModal'))
-
-  Array.from(forms).forEach(form => {
-    form.addEventListener('submit', event => {
-      event.preventDefault(); // Detenemos el envío para validar primero
-
-      const tarjeta = document.getElementById('tarjeta').value;
-      const mes = form.querySelector('input[placeholder="MM"]').value;
-      const anio = form.querySelector('input[placeholder="YY"]').value;
-      const cvv = document.getElementById('cvv').value;
-
-      // Validación de longitudes
-      const esValido = (
-        tarjeta.length === 16 && 
-        mes.length === 2 && 
-        anio.length === 2 && 
-        cvv.length === 3
-      );
-
-      if (!form.checkValidity() || !esValido) {
-        event.stopPropagation();
-        if(!esValido) {
-            alert("Por favor, verifica los datos:\n- Tarjeta: 16 dígitos\n- Fecha: 2 dígitos por campo\n- CVV: 3 dígitos");
-        }
-      } else {
-        successModal.show();
-        form.reset();
-      }
-
-      form.classList.add('was-validated');
-    }, false);
-  });
-})();
+    );
 
 
+    const fetchPedido = await responsePedido.json();
+console.log(fetchPedido.id_pedido);
+
+      await delay(1000);
+    
+    for (const e of detalles) {
+      console.log(e)
+
+        e.pedido = {
+            id_pedido: fetchPedido.id_pedido
+        };
+
+        e.producto = {
+            id_producto: e.producto.id_producto
+        };
+
+        console.log(e);
+
+        const responseDetalle = await fetch(
+            URL_BASE + "/api/v1/detalles-pedidos",
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(e),
+            }
+        );
+
+        console.log(await responseDetalle.text());
+    }
+}
+
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+render()

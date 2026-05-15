@@ -236,6 +236,11 @@ class Usuario {
 class Pedido {
     /**
      * @param {Object} data
+     * @param {number} data.id_pedido
+     * @param {Usuario} data.usuario
+     * @param {string} data.fecha_pedido
+     * @param {string} data.direccion
+     * @param {string} data.rastreador
      */
     constructor(data) {
         /** @type {number} */
@@ -261,6 +266,14 @@ class Pedido {
 class DetallePedido {
     /**
      * @param {Object} data
+     * @param {number} data.id_detalle
+     * @param {Pedido} data.pedido
+     * @param {number} data.cantidad_producto
+     * @param {number} data.precio_total
+     * @param {string} data.rastreador
+     * @param {string} data.imagen
+     * @param {string} data.estado_pedido
+     * @param {number} data.producto
      */
     constructor(data) {
         /** @type {number} */

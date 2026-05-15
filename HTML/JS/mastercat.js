@@ -486,6 +486,9 @@ const listaProductos = [
 
 console.log(JSON.parse(localStorage.getItem("catalogo")))
 
+
+
+/**@param {Producto} item*/
 function generateHTML(item){
     const divRoot = document.createElement("div");
     divRoot.className = "col-md-3 mb-4"
@@ -504,7 +507,7 @@ function generateHTML(item){
 
 
             const h5Title = document.createElement("h5")
-            h5Title.textContent = item.nombreProducto;
+            h5Title.textContent = item.nombre;
             h5Title.className = "card-title"
 
             const pCard = document.createElement("p");
@@ -517,7 +520,7 @@ function generateHTML(item){
 
                 const spanText = document.createElement("span")
                 spanText.className = "details"
-                spanText.innerHTML =  (item.descripcion).map((e ) => {
+                spanText.innerHTML =  (item.descripcion.split("\n")).map((e ) => {
                     return "• " + e + "<br>"
                 })
             const divActions = document.createElement("div")
@@ -527,7 +530,7 @@ function generateHTML(item){
                 buttonEdit.className = "btn btn-light btn-edit"
                 buttonEdit.innerHTML = "<i class='bi bi-pencil me-2'></i> Editar"
                 buttonEdit.addEventListener("click", () => {
-                    editarCarrito(item.idProducto)
+                    editarCarrito(item.id_producto)
                 } )
 
                 const buttonBorrar = document.createElement("button")
@@ -551,7 +554,7 @@ function generateHTML(item){
 }
 
 
-function render() {
+async function render() {
 
     let addLink = document.getElementById("contenedor-playeras").getElementsByClassName("card-add")[0].cloneNode(true)
     addLink.addEventListener("click",agregarCarrito)
@@ -589,25 +592,26 @@ function render() {
     document.getElementById("contenedor-plumas").append(addLink);
     
 
-    const lista = JSON.parse(localStorage.getItem("catalogo"));
+    /**@type {Producto[]} */
+    const lista = await fetchJson(URL_BASE+"/api/v1/productos");
 
 
-    let tmp = (lista).filter((v) => v.tipoProducto === "Playera")
+    let tmp = (lista).filter((v) => v.categoria.categoria === "Playeras")
     tmp.forEach(e => document.getElementById("contenedor-playeras").append(generateHTML(e)))
 
-    tmp = (lista).filter((v) => v.tipoProducto === "Taza")
+    tmp = (lista).filter((v) => v.categoria.categoria === "Tazas")
     tmp.forEach(e => document.getElementById("contenedor-tazas").append(generateHTML(e)))
     
-    tmp = (lista).filter((v) => v.tipoProducto === "Sudadera")
+    tmp = (lista).filter((v) => v.categoria.categoria === "Sudaderas")
     tmp.forEach(e => document.getElementById("contenedor-sudaderas").append(generateHTML(e)))
 
-    tmp = (lista).filter((v) => v.tipoProducto === "Vaso")
+    tmp = (lista).filter((v) => v.categoria.categoria === "Vasos")
     tmp.forEach(e => document.getElementById("contenedor-vasos").append(generateHTML(e)))
 
-    tmp = (lista).filter((v) => v.tipoProducto === "Pluma")
+    tmp = (lista).filter((v) => v.categoria.categoria=== "Plumas")
     tmp.forEach(e => document.getElementById("contenedor-plumas").append(generateHTML(e)))
 
-    tmp = (lista).filter((v) => v.tipoProducto === "Pin")
+    tmp = (lista).filter((v) => v.categoria.categoria === "Pines")
     tmp.forEach(e => document.getElementById("contenedor-pins").append(generateHTML(e)))
     
 }
@@ -626,15 +630,20 @@ function editProducto(item){
     render();
 }
 
-function deleteProducto(item){
-    console.log(item)
-    const lista = JSON.parse(localStorage.getItem("catalogo"));
-    const index = (lista).findIndex((v) => v.idProducto === item.idProducto);
+/**@param {Producto} item */
+async function deleteProducto(item){
 
-    console.log(index)
-    lista.splice(index,1);
+    console.log(URL_BASE+"/api/v1/productos/"+item.id_producto)
+    
+    try {
+     
+    const salida = await fetchJson(URL_BASE+"/api/v1/productos/"+item.id_producto,{
+      method: 'DELETE'
+    })   
+    } catch (error) {
+        
+    }
 
-    localStorage.setItem("catalogo", JSON.stringify(lista))
     render();
 }
 

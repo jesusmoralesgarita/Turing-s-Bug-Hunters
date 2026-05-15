@@ -1,12 +1,4 @@
 
-class ProductoCarrito {
-    constructor(cantidad, imagenCargada, tallaSeleccionada, producto) {
-        this.cantidad = cantidad;
-        this.imagenCargada = imagenCargada;
-        this.tallaSeleccionada = tallaSeleccionada;
-        this.producto = producto;
-    }
-}
 
 /**@param {Producto} element*/
 function generateHTML(element) {
@@ -19,13 +11,13 @@ function generateHTML(element) {
     const img = document.createElement("img");
     img.src = element.imagen;
     img.className = "card-img-top";
-    img.alt = element.nombreProducto;
+    img.alt = element.nombre;
 
     const divBody = document.createElement("div");
     divBody.className = "card-body";
 
     const h5 = document.createElement("h5");
-    h5.innerText = element.nombreProducto;
+    h5.innerText = element.nombre;
     h5.className = "card-title";
 
     const pBody = document.createElement("p");
@@ -37,7 +29,7 @@ function generateHTML(element) {
 
     const spanDetails = document.createElement("span");
     spanDetails.className = "details";
-    spanDetails.innerHTML = element.descripcion.map((e) => {
+    spanDetails.innerHTML = element.descripcion.split("\n").map((e) => {
         return "• " + e + "<br>";
     });
 
@@ -47,19 +39,8 @@ function generateHTML(element) {
     button.addEventListener("click", (e) => {
         const storage = localStorage.getItem("carrito");
 
-        window.location.href = "./agregarCarrito.html?id="+element.idProducto
+        window.location.href = "./agregarCarrito.html?id="+element.id_producto
 
-        if (storage) {
-            const carritoStorage = JSON.parse(storage);
-            carritoStorage.push(new ProductoCarrito(2, "imagen1", 0, element));
-            localStorage.setItem("carrito", JSON.stringify(carritoStorage));
-        } else {
-            localStorage.setItem(
-                "carrito",
-                JSON.stringify([new ProductoCarrito(2, "imagen1", 0, element)]),
-            );
-        }
-        console.log(JSON.parse(localStorage.getItem("carrito")));
     });
 
     const spanButton = document.createElement("span");
@@ -89,32 +70,32 @@ async function render() {
 
     console.log(lista)
 
-    let tmp = lista.filter((v) => v.tipoProducto === "Playera");
+    let tmp = lista.filter((v) => v.categoria.categoria === "Playeras");
     tmp.forEach((e) =>
         document.getElementById("contenedor-playeras").append(generateHTML(e)),
     );
 
-    tmp = lista.filter((v) => v.tipoProducto === "Taza");
+    tmp = lista.filter((v) => v.categoria.categoria === "Tazas");
     tmp.forEach((e) =>
         document.getElementById("contenedor-tazas").append(generateHTML(e)),
     );
 
-    tmp = lista.filter((v) => v.tipoProducto === "Sudadera");
+    tmp = lista.filter((v) => v.categoria.categoria === "Sudaderas");
     tmp.forEach((e) =>
         document.getElementById("contenedor-sudaderas").append(generateHTML(e)),
     );
 
-    tmp = lista.filter((v) => v.tipoProducto === "Vaso");
+    tmp = lista.filter((v) => v.categoria.categoria === "Vasos");
     tmp.forEach((e) =>
         document.getElementById("contenedor-vasos").append(generateHTML(e)),
     );
 
-    tmp = lista.filter((v) => v.tipoProducto === "Pluma");
+    tmp = lista.filter((v) => v.categoria.categoria === "Plumas");
     tmp.forEach((e) =>
         document.getElementById("contenedor-plumas").append(generateHTML(e)),
     );
 
-    tmp = lista.filter((v) => v.tipoProducto === "Pin");
+    tmp = lista.filter((v) => v.categoria.categoria=== "Pines");
     tmp.forEach((e) =>
         document.getElementById("contenedor-pins").append(generateHTML(e)),
     );
