@@ -2,7 +2,77 @@
 
 
 //Fernando
+// Variable global para mantener la referencia
+let swiperInstance = null;
 
+async function renderCarrusel() {
+  try {
+    const detalles = await fetchJson(URL_BASE + "/api/v1/detalles-pedidos");
+    console.log(detalles);
+
+    const wrapper = document.querySelector(".swiper-wrapper");
+    if (!wrapper) return; // Guard clause por seguridad
+    
+    wrapper.innerHTML = ""; 
+    console.log(wrapper);
+
+    detalles.forEach(item => {
+      wrapper.append(generateCarrusel(item));
+    });
+
+    // 1. Destruir instancia previa si existe
+    if (swiperInstance) {
+      swiperInstance.destroy(true, true);
+    }
+
+    // 2. Inicializar nueva instancia
+    swiperInstance = new Swiper(".mySwiper", {
+      slidesPerView: "auto",
+      centeredSlides: true,
+      spaceBetween: 20,
+      loop: detalles.length > 1, // Solo hacer loop si hay más de 1 item
+      observer: true,            // Ayuda a Swiper a detectar cambios en el DOM
+      observeParents: true,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+    });
+
+  } catch (error) {
+    console.error("Error al renderizar el carrusel:", error);
+  }
+}
+
+function generateCarrusel(item) {
+  const slide = document.createElement("div");
+  slide.className = "swiper-slide";
+
+  // Agregando validación simple para la imagen y el texto
+  const { producto } = item;
+  
+  slide.innerHTML = `
+    <div class="card">
+      <img src="${producto.imagen || 'placeholder.jpg'}" alt="${producto.nombre}">
+      <div class="info">
+        <h3>${producto.nombre}</h3>
+        <p>${producto.descripcion}</p>
+      </div>
+    </div>
+  `;
+  return slide;
+}
+
+// Ejecución
+renderCarrusel();
 
 //Oswaldo
 
@@ -71,7 +141,7 @@ async function renderReview() {
       },
       body: JSON.stringify({ nombre: 'Juan', edad: 30 }),
     }
-  
+
     */);
 
   //CONFIRMAMOS QUE RECIBIMOS INFORMACION CON console.log()

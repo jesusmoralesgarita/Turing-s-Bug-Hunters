@@ -202,3 +202,23 @@ function validarLogin(emailIngresado, passIngresada) {
         return "Correo o contraseña incorrectos.";
     }
 }
+
+// creamos la funcion asincrona
+async function renderRegistro(params) {
+/**
+   * @type {Usuario[]}
+   */
+  const reviews = await fetchJson(URL_BASE+"/api/v1/reviews"
+    
+    //EN CASO DE SER UN POST/PUT/DELETE PUEDEN UTILIZAR ESTE PARAMETRO
+
+    ,{
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ nombre: 'Juan', edad: 30 ,password:qwerty123}),
+    }
+
+    );
+  }
