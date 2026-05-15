@@ -79,51 +79,175 @@
     <div class="card-body form-ctn">
     <form id="contact-form" method="POST" class="needs-validation" novalidate>
 
+    <!-- Nombre -->
     <div class="mb-3 form-element">
-    <label for="contact-name" class="form-label">Nombre</label>
-    <input type="text" name="Nombre" valtype="nombrehomes" class="form-control" placeholder="Nombre" id="contact-name" required>
-    <div class="invalid-feedback">El nombre es obligatorio.</div>
+        <label for="contact-name" class="form-label">Nombre</label>
+
+        <input
+            type="text"
+            name="nombre"
+            valtype="nombrehomes"
+            class="form-control"
+            placeholder="Nombre"
+            id="contact-name"
+            required>
+
+        <div class="invalid-feedback">
+            El nombre es obligatorio.
+        </div>
     </div>
 
+    <!-- Apellidos -->
     <div class="mb-3 form-element">
-    <label for="contact-number" class="form-label">Teléfono</label>
-    <input type="text" name="Telefono" valtype="number" class="form-control" placeholder="Teléfono" id="contact-number" required>
-    <div class="invalid-feedback">Número inválido.</div>
+        <label for="contact-lastname" class="form-label">
+            Apellidos
+        </label>
+
+        <input
+            type="text"
+            name="apellidos"
+            class="form-control"
+            placeholder="Apellidos"
+            id="contact-lastname"
+            required>
+
+        <div class="invalid-feedback">
+            Los apellidos son obligatorios.
+        </div>
     </div>
 
+    <!-- Teléfono -->
     <div class="mb-3 form-element">
-    <label for="contact-email" class="form-label">Correo</label>
-    <input type="email" name="Email" valtype="email" placeholder="ejemplo@tintanomada.com" class="form-control" id="contact-email" required>
-    <div class="invalid-feedback">Correo inválido.</div>
+        <label for="contact-number" class="form-label">
+            Teléfono
+        </label>
+
+        <input
+            type="text"
+            name="numero_telefonico"
+            valtype="number"
+            class="form-control"
+            placeholder="Teléfono"
+            id="contact-number"
+            required>
+
+        <div class="invalid-feedback">
+            Número inválido.
+        </div>
     </div>
 
+    <!-- Correo -->
     <div class="mb-3 form-element">
-    <label for="password" class="form-label">Contraseña</label>
-    <input type="password" name="password" valtype="password" class="form-control" placeholder="Contraseña123" id="password" required>
-    <div class="invalid-feedback">Password requerido.</div>
+        <label for="contact-email" class="form-label">
+            Correo
+        </label>
+
+        <input
+            type="email"
+            name="correo_electronico"
+            valtype="email"
+            placeholder="ejemplo@tintanomada.com"
+            class="form-control"
+            id="contact-email"
+            required>
+
+        <div class="invalid-feedback">
+            Correo inválido.
+        </div>
     </div>
 
-    <!-- Nuevo campo para repetir contraseña -->
+    <!-- Dirección -->
     <div class="mb-3 form-element">
-    <label for="confirm-password" class="form-label">Repetir Contraseña</label>
-    <input type="password" name="confirm-password" valtype="confirm-password" class="form-control" placeholder="Repite tu contraseña" id="confirm-password" required>
-    <div class="invalid-feedback">Las contraseñas deben coincidir.</div>
+        <label for="contact-address" class="form-label">
+            Dirección
+        </label>
+
+        <input
+            type="text"
+            name="direccion"
+            class="form-control"
+            placeholder="Dirección"
+            id="contact-address"
+            required>
+
+        <div class="invalid-feedback">
+            La dirección es obligatoria.
+        </div>
     </div>
 
-    <input type="hidden" name="_subject" value="Nuevo mensaje de Tinta Nómada">
-    
+    <!-- Contraseña -->
+    <div class="mb-3 form-element">
+        <label for="password" class="form-label">
+            Contraseña
+        </label>
+
+        <input
+            type="password"
+            name="contrasena"
+            valtype="password"
+            class="form-control"
+            placeholder="Contraseña123"
+            id="password"
+            required>
+
+        <div class="invalid-feedback">
+            Password requerido.
+        </div>
+    </div>
+
+    <!-- Confirmar contraseña -->
+    <div class="mb-3 form-element">
+        <label for="confirm-password" class="form-label">
+            Repetir Contraseña
+        </label>
+
+        <input
+            type="password"
+            name="confirm-password"
+            valtype="confirm-password"
+            class="form-control"
+            placeholder="Repite tu contraseña"
+            id="confirm-password"
+            required>
+
+        <div class="invalid-feedback">
+            Las contraseñas deben coincidir.
+        </div>
+    </div>
+
+    <!-- Botón -->
     <div class="d-grid mt-4">
-    <button type="submit" id="submit-btn" class="btn btn-primary btn-lg shadow-sm">Registro</button>
+        <button
+            type="submit"
+            id="submit-btn"
+            class="btn btn-primary btn-lg shadow-sm">
+
+            Registro
+        </button>
     </div>
 
-    <!-- modal para mostrar mensaje de enviado -->
+    <!-- Modal -->
     <div id="modal" class="modal-custom">
-    <div class="contenido">
-        <h2 class="titulo">✅ Éxito</h2>
-        <p>Formulario enviado correctamente</p>
-        <button type="button" onclick="cerrarModal()" class="btn">Cerrar</button>
+
+        <div class="contenido">
+
+            <h2 class="titulo">✅ Éxito</h2>
+
+            <p>
+                Usuario registrado correctamente
+            </p>
+
+            <button
+                type="button"
+                onclick="cerrarModal()"
+                class="btn">
+
+                Cerrar
+            </button>
+
+        </div>
     </div>
-    </div>
+
 </form>
 
 <div class="d-grid mt-4">
