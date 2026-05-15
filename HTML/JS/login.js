@@ -236,6 +236,11 @@ class Usuario {
 class Pedido {
     /**
      * @param {Object} data
+     * @param {number} data.id_pedido
+     * @param {Usuario} data.usuario
+     * @param {string} data.fecha_pedido
+     * @param {string} data.direccion
+     * @param {string} data.rastreador
      */
     constructor(data) {
         /** @type {number} */

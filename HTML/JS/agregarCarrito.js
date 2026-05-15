@@ -47,9 +47,25 @@ async function loadImage() {
 
   const entrada = await fetchJson(URL_BASE+"/api/v1/productos/"+id)
   
+  /**@type {Producto} */
   producto = entrada;
+  console.log(producto)
 
   document.getElementById("imagen-place").src = producto.imagen;
+
+  document.getElementById("talla").innerText = producto.talla
+  document.getElementById("color").innerText = producto.color
+
+
+  producto.descripcion.split("\n").map((e) => {
+    let lista = document.createElement("li")
+    lista.innerHTML =e
+    document.getElementById("descripcion").append(lista)
+  })
+
+  document.getElementById("precio").innerText = "$"+ producto.precio
+
+  document.getElementById("nombre").innerText = producto.nombre
 }
 
 let db;
@@ -94,15 +110,26 @@ async function agregar() {
     
 
   console.log(fileInputAle)
-  const salida = new DetallePedido({
+  console.log(producto)
+  const salida = {
     cantidad_producto: 1,
     estado_pedido: "Recepción",
     imagen: imagen.name,
     precio_total: producto.precio,
     rastreador: "ASDVVGBASD",
-    producto: producto
-  })
-  salida.cantidad_producto = 1;
+    producto: producto, 
+  }
+  
+  const carrito = localStorage.getItem("detalles")
+
+  if(carrito){
+    const storage = JSON.parse( localStorage.getItem("detalles"))
+    storage.push(salida)
+    localStorage.setItem("detalles", JSON.stringify(salida))
+  }else{
+    localStorage.setItem("detalles", JSON.stringify([salida]))
+  }
+
 }
 
 
