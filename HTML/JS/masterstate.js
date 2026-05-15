@@ -1,43 +1,11 @@
 
 
-function render() {
+async function render() {
 
     // 1. Obtener pedidos desde el backend
-    let response = await fetch("http://localhost:8081/api/v1/detalles_pedidos");
+    let response = await fetchJson(URL_BASE + "/api/v1/detalles-pedidos");
     let pedidos = await response.json();
 
-    /*
-    let pedidos;
-    if (localStorage.getItem("pedidos")) {
-        pedidos = JSON.parse( localStorage.getItem("pedidos"))
-    }else{
-        pedidos = []
-        pedidos.push({
-            id: 0,
-            precio: 300,
-            cantidad: 3,
-            imagen:"a.png",
-            estado: "Entregado",
-            fecha : "2016",
-            direccion: "Algun lugar",
-            rastreador: "dsfdsf",
-            producto: {
-        idProducto:0,
-        tipoProducto: "Playera",
-        nombreProducto: "Playera Basica",
-        precio:199.99,
-        talla:["P", "M", "G"],
-        color:["azul", "blanco"],
-        diseño:false,
-        descripcion:["100 % algodón", "Unisex", "Lavar a máquina en frío con colores similares, secar a baja temperatura"],
-        cantidad:3,
-        imagen:"../HTML/Pictures/playbasica.png",
-        descuento:0,
-            }
-        })
-        localStorage.setItem("pedidos",JSON.stringify(pedidos));
-    }
-*/
     // 2. Revisar filtros
     let check1 = document.getElementById("btncheck1").checked;
     let check2 = document.getElementById("btncheck2").checked;
@@ -63,6 +31,7 @@ function render() {
             return check3;
         case "Entregado":
             return check4;
+        default: return true;
     }
 });
 
@@ -103,7 +72,7 @@ function generateHMTL(pedido) {
     stateName.className = "state-name";
 
     const title = document.createElement("h3");
-    title.textContent = pedido.producto.nombreProducto;
+    title.textContent = pedido.producto.nombre;
 
     const description = document.createElement("p");
     description.textContent = pedido.producto.descripcion;
@@ -136,11 +105,11 @@ function generateHMTL(pedido) {
 
     const cantidadValue = document.createElement("div");
     cantidadValue.className = "state-row-value";
-    cantidadValue.textContent = pedido.cantidad;
+    cantidadValue.textContent = pedido.cantidad_producto;
 
     const totalValue = document.createElement("div");
     totalValue.className = "state-row-value";
-    totalValue.textContent = pedido.precio;
+    totalValue.textContent = pedido.precio_total;
 
     row2.appendChild(cantidadValue);
     row2.appendChild(totalValue);
@@ -216,7 +185,7 @@ function generateHMTL(pedido) {
 }
 
 async function update(id, state, detalles_pedidos) {
-    await fetch(`http://localhost:8081/api/v1/detalles_pedidos/${id}`, {
+    await fetch(`${URL_BASE}/api/v1/detalles-pedidos/${id}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"
