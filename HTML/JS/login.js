@@ -1,17 +1,17 @@
 /* --- INTEGRACIÓN LUIS, Maitte & ALEX --- */
-(() => {
+(async () => {
     'use strict'
 
     const loginForm = document.getElementById('login-form');
 
     if (loginForm) {
-        loginForm.addEventListener('submit', (e) => {
+        loginForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             
             const email = document.getElementById('login-email').value.trim();
             const pass = document.getElementById('login-password').value.trim();
             
-            const resultado = validarLogin(email, pass);
+            const resultado = await validarLogin(email, pass);
             
             if (resultado === "success") {
                 alert("¡Bienvenido de nuevo!");
@@ -24,17 +24,26 @@
     }
 })();
 
-function validarLogin(emailIngresado, passIngresada) {
-    const datosSrt = localStorage.getItem('usuarioRegistrado');
-    if (!datosSrt) return "No hay usuarios registrados.";
+async function validarLogin(emailIngresado, passIngresada) {
 
-    const usuario = JSON.parse(datosSrt);
+    try{
 
-    if (usuario.email === emailIngresado && usuario.password === passIngresada) {
-        return "success";
-    } else {
+        const usuario = await fetchJson(URL_BASE+"/api/v1/usuario/login",
+            {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ username: emailIngresado, password: passIngresada }),
+            }
+        )
+
+        localStorage.setItem("usuario", JSON.stringify( usuario))
+        return "success"
+    }catch(e){
         return "Correo o contraseña incorrectos.";
     }
+
 }
 
 // --- FUNCIONES DE VALIDACIÓN ---

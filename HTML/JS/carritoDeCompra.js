@@ -5,26 +5,22 @@ const totalElement = document.getElementById("total");
 function calcularTotal() {
     let total = 0;
 
-    detalles.forEach(detalle => {
+    detalles.forEach((detalle) => {
         let precio = parseFloat(detalle.precio_total);
         let cantidad = parseInt(detalle.cantidad_producto);
 
         total += precio * cantidad;
     });
 
-    return total
+    return total;
 }
 
-
-
-
 /**@type {DetallePedido[]} */
-let detalles = JSON.parse(localStorage.getItem("detalles"))
-
+let detalles = JSON.parse(localStorage.getItem("detalles"));
+console.log(detalles);
 
 /**@param {DetallePedido} pedido */
-function crearProductoDOM(pedido,id) {
-
+function crearProductoDOM(pedido, id) {
     // CONTENEDOR PRINCIPAL
     const card = document.createElement("div");
     card.className =
@@ -83,17 +79,15 @@ function crearProductoDOM(pedido,id) {
 
     // CONTROLES CANTIDAD
     const controls = document.createElement("div");
-    controls.className =
-        "d-flex align-items-center gap-2 mt-2";
+    controls.className = "d-flex align-items-center gap-2 mt-2";
 
     // BOTÓN +
     const btnPlus = document.createElement("button");
-    btnPlus.className =
-        "btn btn-success btn-circle btn-plus";
+    btnPlus.className = "btn btn-success btn-circle btn-plus";
     btnPlus.textContent = "+";
     btnPlus.addEventListener("click", () => {
-      updateCount(id,1)
-    })
+        updateCount(id, 1);
+    });
 
     // INPUT CANTIDAD
     const qtyInput = document.createElement("input");
@@ -104,12 +98,11 @@ function crearProductoDOM(pedido,id) {
 
     // BOTÓN -
     const btnMinus = document.createElement("button");
-    btnMinus.className =
-        "btn btn-success btn-circle btn-minus";
+    btnMinus.className = "btn btn-success btn-circle btn-minus";
     btnMinus.textContent = "-";
     btnMinus.addEventListener("click", () => {
-      updateCount(id,-1)
-    })
+        updateCount(id, -1);
+    });
 
     // APPEND CONTROLES
     controls.appendChild(btnPlus);
@@ -131,79 +124,89 @@ function crearProductoDOM(pedido,id) {
 }
 
 function render() {
-  console.log(detalles)
-  document.getElementById("lista-productos").innerHTML = ""
-  detalles.forEach((e,i) => {
-    document.getElementById("lista-productos").append(crearProductoDOM(e,i))
-  })
+    console.log(detalles);
+    document.getElementById("lista-productos").innerHTML = "";
+    detalles.forEach((e, i) => {
+        document
+            .getElementById("lista-productos")
+            .append(crearProductoDOM(e, i));
+    });
 
-  document.getElementById("total").innerText = calcularTotal()
+    document.getElementById("total").innerText = calcularTotal();
 }
 
-function updateCount(id,add) {
-  detalles[id].cantidad_producto += add;
-  render()
+function updateCount(id, add) {
+    detalles[id].cantidad_producto += add;
+    render();
 }
 
 async function pago(ev) {
-  ev.preventDefault()
-  const subir = new Pedido({
-    direccion: document.getElementById("dir").value,
-    fecha_pedido: new Date(),
-    rastreador: "ssadsad",
-    usuario: {
-      id_usuario: 1
-    }
-  })
+    ev.preventDefault()
+    if (detalles.length === 0) {
+        alert("Tu carrito esta vacio");
+    } else {
+        ev.preventDefault();
 
-  /**@type {Pedido} */
-    const responsePedido = await fetch(
-        URL_BASE + "/api/v1/pedidos",
-        {
-            method: 'POST',
+        /**@type {Usuario} */
+        const usuario = JSON.parse(localStorage.getItem("usuario"))
+        const subir = new Pedido({
+            direccion: document.getElementById("dir").value,
+            fecha_pedido: new Date(),
+            rastreador: "ssadsad",
+            usuario: {
+                id_usuario: usuario.id_usuario,
+            },
+        });
+
+        /**@type {Pedido} */
+        const responsePedido = await fetch(URL_BASE + "/api/v1/pedidos", {
+            method: "POST",
             headers: {
-                'Content-Type': 'application/json',
+                "Content-Type": "application/json",
             },
             body: JSON.stringify(subir),
-        }
-    );
+        });
 
+        const fetchPedido = await responsePedido.json();
 
-    const fetchPedido = await responsePedido.json();
-console.log(fetchPedido.id_pedido);
+        for (const e of detalles) {
+            console.log(e);
 
-      await delay(1000);
-    
-    for (const e of detalles) {
-      console.log(e)
+            e.pedido = {
+                id_pedido: fetchPedido.id_pedido,
+            };
 
-        e.pedido = {
-            id_pedido: fetchPedido.id_pedido
-        };
+            e.producto = {
+                id_producto: e.producto.id_producto,
+            };
 
-        e.producto = {
-            id_producto: e.producto.id_producto
-        };
+            console.log(e);
 
-        console.log(e);
-
-        const responseDetalle = await fetch(
-            URL_BASE + "/api/v1/detalles-pedidos",
-            {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
+            const responseDetalle = await fetch(
+                URL_BASE + "/api/v1/detalles-pedidos",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(e),
                 },
-                body: JSON.stringify(e),
-            }
-        );
+            );
 
-        console.log(await responseDetalle.text());
+            console.log(await responseDetalle.text());
+        }
+
+        alert("¡Gracias por tu compra!");
+
+        localStorage.setItem("detalles", "[]");
+        detalles = [];
+
+        render();
     }
 }
 
 function delay(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+    return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-render()
+render();

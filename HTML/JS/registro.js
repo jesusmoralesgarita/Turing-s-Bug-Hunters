@@ -410,7 +410,7 @@ async function crearRegistro(nuevoUsuario) {
         );
 
         const response = await fetch(
-            "http://localhost:8081/api/v1/usuario",
+            URL_BASE+ "/api/v1/usuario",
             {
 
                 method: "POST",
