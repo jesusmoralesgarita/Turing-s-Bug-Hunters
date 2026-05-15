@@ -447,7 +447,13 @@ document.addEventListener('DOMContentLoaded', () => {
             if(data["color-rojo"]) color.push("Rojo");
 
             const nuevo = new Producto(
-                parseInt(params.get("id")),
+               {
+                nombre : data.nombre,
+                color : data.color
+               }
+            )
+/*
+ parseInt(params.get("id")),
                 data.categoria,
                 data.nombre,
                 data.precio,
@@ -458,8 +464,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 data.stock,
                 data.imagen.name,
                 data.descuento
-            )
-
+*/
             editProducto(nuevo)
 
 
