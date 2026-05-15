@@ -1,42 +1,19 @@
 
 
-function render() {
-    let pedidos;
-    if (localStorage.getItem("pedidos")) {
-        pedidos = JSON.parse( localStorage.getItem("pedidos"))
-    }else{
-        pedidos = []
-        pedidos.push({
-            id: 0,
-            precio: 300,
-            cantidad: 3,
-            imagen:"a.png",
-            estado: "Entregado",
-            fecha : "2016",
-            direccion: "Algun lugar",
-            rastreador: "dsfdsf",
-            producto: {
-        idProducto:0,
-        tipoProducto: "Playera",
-        nombreProducto: "Playera Basica",
-        precio:199.99,
-        talla:["P", "M", "G"],
-        color:["azul", "blanco"],
-        diseño:false,
-        descripcion:["100 % algodón", "Unisex", "Lavar a máquina en frío con colores similares, secar a baja temperatura"],
-        cantidad:3,
-        imagen:"../HTML/Pictures/playbasica.png",
-        descuento:0,
-            }
-        })
-        localStorage.setItem("pedidos",JSON.stringify(pedidos));
-    }
+async function render() {
 
+    // 1. Obtener pedidos desde el backend
+    let response = await fetch(URL_BASE + "/api/v1/detalles-pedidos");
+    let pedidos = await response.json();
+    console.log(pedidos);
+
+    // 2. Revisar filtros
     let check1 = document.getElementById("btncheck1").checked;
     let check2 = document.getElementById("btncheck2").checked;
     let check3 = document.getElementById("btncheck3").checked;
     let check4 = document.getElementById("btncheck4").checked;
 
+    
     if (!(check1 || check2 || check3 || check4)) {
         check1 = true;
         check2 = true;
@@ -44,23 +21,22 @@ function render() {
         check4 = true;
     }
 
+    // 3. Filtrar según estado_pedido
     const filtrado = pedidos.filter((value) => {
-        switch(value.estado){
-            case "Recepcion del pedido":
-                return check1;
-                break;
-            case "Creación del pedido":
-                return check2;
-                break;
-            case "Envío del pedido":
-                return check3;
-                break;
-            case "Entregado":
-                return check4;
-                break;
-        }
-    });
+    switch(value.estado_pedido){
+        case "Recepcion del pedido":
+            return check1;
+        case "Creación del pedido":
+            return check2;
+        case "Envío del pedido":
+            return check3;
+        case "Entregado":
+            return check4;
+        default: return true;
+    }
+});
 
+    // 4. Renderizar
     const container = document.getElementsByClassName("state-container").item(0);
     container.innerHTML = "";    
     filtrado.forEach((e) => {
@@ -70,9 +46,8 @@ function render() {
 }
 
 
-
+/**@param {DetallePedido} pedido */
 function generateHMTL(pedido) {
-
 
     const states = [
         { text: "Recepcion del pedido", class: "check-res" },
@@ -80,10 +55,13 @@ function generateHMTL(pedido) {
         { text: "Envío del pedido", class: "check-env" },
         { text: "Entregado", class: "check-ent" }
     ];
-    const indexPedido = states.findIndex((va) => va.text === pedido.estado)
-
+    let indexPedido = states.findIndex((va) => va.text === pedido.estado_pedido);
+    
+    if (indexPedido == -1){
+        indexPedido = 0;
+    }
     const container = document.createElement("div");
-    container.className = "state-div " + states[indexPedido].class;
+    container.className = "state-div" + states[indexPedido].class;
 
     /* IMG */
     const stateImg = document.createElement("div");
@@ -99,7 +77,7 @@ function generateHMTL(pedido) {
     stateName.className = "state-name";
 
     const title = document.createElement("h3");
-    title.textContent = pedido.producto.nombreProducto;
+    title.textContent = pedido.producto.nombre;
 
     const description = document.createElement("p");
     description.textContent = pedido.producto.descripcion;
@@ -132,11 +110,11 @@ function generateHMTL(pedido) {
 
     const cantidadValue = document.createElement("div");
     cantidadValue.className = "state-row-value";
-    cantidadValue.textContent = pedido.cantidad;
+    cantidadValue.textContent = pedido.cantidad_producto;
 
     const totalValue = document.createElement("div");
     totalValue.className = "state-row-value";
-    totalValue.textContent = pedido.precio;
+    totalValue.textContent = pedido.precio_total;
 
     row2.appendChild(cantidadValue);
     row2.appendChild(totalValue);
@@ -179,7 +157,7 @@ function generateHMTL(pedido) {
     });
 
     select.selectedIndex=(indexPedido)
-    select.id = "selector-"+pedido.id
+    select.id = "selector-"+pedido.id_detalle;
 
     /* BUTTON CONTAINER */
     const buttonGrid = document.createElement("div");
@@ -190,7 +168,7 @@ function generateHMTL(pedido) {
     button.className = "m-2 btn btn-primary "+states[indexPedido].class;
     button.textContent = "Actualizar";
     button.addEventListener("click", (e) => {
-        update(pedido.id, document.getElementById("selector-"+pedido.id).value);
+        update(pedido.id_detalle, document.getElementById("selector-"+pedido.id_detalle).value, pedido);
     })
 
     /* APPEND */
@@ -211,12 +189,15 @@ function generateHMTL(pedido) {
     return container;
 }
 
-function update(id,state) {
-    let pedidos = JSON.parse( localStorage.getItem("pedidos"));
-    const index = pedidos.findIndex((val) => val.id === id );
-    pedidos[index].estado = state;
-
-    localStorage.setItem("pedidos", JSON.stringify(pedidos) )
+async function update(id, state, detalles_pedidos) {
+    console.log({ ... detalles_pedidos, estado_pedido: state });
+    await fetch(`${URL_BASE}/api/v1/detalles-pedidos/${id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ ... detalles_pedidos, estado_pedido: state })
+    });
     render();
 }
 
