@@ -12,11 +12,10 @@ function prepararEdicion(id) {
     inputDescuento.value = productoAEditar.descuento;
     switchDiseno.checked = productoAEditar.personalizado;
 
+    console.log(`Editando producto ${id}: Formulario listo.`);
 }
 
 // 3. Guardar los cambios realizados
-
-/*
 const btnGuardarCambios = document.getElementById('btnActualizar');
 btnGuardarCambios.addEventListener('click', () => {
     const datosActualizados = {
@@ -26,7 +25,7 @@ btnGuardarCambios.addEventListener('click', () => {
     
     console.log("Actualizando en el servidor...", datosActualizados);
 });
-*/
+
 
 /* LUIS */
 
