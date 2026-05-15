@@ -351,8 +351,6 @@ document.addEventListener("DOMContentLoaded", async () => {
                 data.descuento*/
 
 // 3. Guardar los cambios realizados
-
-/*
 const btnGuardarCambios = document.getElementById('btnActualizar');
 btnGuardarCambios.addEventListener('click', () => {
     const datosActualizados = {
@@ -362,7 +360,7 @@ btnGuardarCambios.addEventListener('click', () => {
     
     console.log("Actualizando en el servidor...", datosActualizados);
 });
-*/
+
 
 /* LUIS */
 
