@@ -113,3 +113,219 @@ Array.from(document.getElementsByTagName("form")).forEach((e) => {
     });
 });
 
+
+
+
+const URL_BASE = "http://localhost:8081"
+
+
+/**
+ * Representa un categoria.
+ */
+class Categoria {
+    /**
+     * @param {number} id_categoria
+     * @param {string} categoria
+     */
+    constructor(id_categoria, categoria) {
+        /** @type {number} */
+        this.id_categoria = id_categoria;
+
+        /** @type {string} */
+        this.categoria = categoria;
+    }
+}
+
+
+/**
+ * Representa un producto.
+ */
+class Producto {
+    /**
+     * @param {Object} data
+     * @param {number} data.id_producto
+     * @param {string} data.color
+     * @param {string} data.descripcion
+     * @param {number} data.descuento
+     * @param {boolean} data.diseno
+     * @param {string} data.imagen
+     * @param {string} data.nombre
+     * @param {number} data.precio
+     * @param {number} data.stock
+     * @param {string} data.talla
+     * @param {Categoria} data.categoria
+     * @param {number} data.id_Productos
+     */
+    constructor(data) {
+        /** @type {number} */
+        this.id_producto = data.id_producto;
+
+        /** @type {string} */
+        this.color = data.color;
+
+        /** @type {string} */
+        this.descripcion = data.descripcion;
+
+        /** @type {number} */
+        this.descuento = data.descuento;
+
+        /** @type {boolean} */
+        this.diseno = data.diseno;
+
+        /** @type {string} */
+        this.imagen = data.imagen;
+
+        /** @type {string} */
+        this.nombre = data.nombre;
+
+        /** @type {number} */
+        this.precio = data.precio;
+
+        /** @type {number} */
+        this.stock = data.stock;
+
+        /** @type {string} */
+        this.talla = data.talla;
+
+        /** @type {Categoria} */
+        this.categoria = new Categoria(
+            data.categoria.id_categoria,
+            data.categoria.categoria
+        );
+
+        /** @type {number} */
+        this.id_Productos = data.id_Productos;
+    }
+}
+
+
+/**
+ * Representa un usuario.
+ */
+class Usuario {
+    /**
+     * @param {Object} data
+     */
+    constructor(data) {
+        /** @type {number} */
+        this.id_usuario = data.id_usuario;
+
+        /** @type {string} */
+        this.nombre = data.nombre;
+
+        /** @type {string} */
+        this.apellidos = data.apellidos;
+
+        /** @type {string} */
+        this.correo_electronico = data.correo_electronico;
+
+        /** @type {string} */
+        this.direccion = data.direccion;
+
+        /** @type {string} */
+        this.numero_telefonico = data.numero_telefonico;
+
+        /** @type {string} */
+        this.contrasena = data.contrasena;
+    }
+}
+
+/**
+ * Representa un pedido.
+ */
+class Pedido {
+    /**
+     * @param {Object} data
+     */
+    constructor(data) {
+        /** @type {number} */
+        this.id_pedido = data.id_pedido;
+
+        /** @type {Usuario} */
+        this.usuario = new Usuario(data.usuario);
+
+        /** @type {string} */
+        this.fecha_pedido = data.fecha_pedido;
+
+        /** @type {string} */
+        this.direccion = data.direccion;
+
+        /** @type {string} */
+        this.rastreador = data.rastreador;
+    }
+}
+
+/**
+ * Representa el detalle de un pedido.
+ */
+class DetallePedido {
+    /**
+     * @param {Object} data
+     */
+    constructor(data) {
+        /** @type {number} */
+        this.id_detalle = data.id_detalle;
+
+        /** @type {Pedido} */
+        this.pedido = new Pedido(data.pedido);
+
+        /** @type {number} */
+        this.cantidad_producto = data.cantidad_producto;
+
+        /** @type {number} */
+        this.precio_total = data.precio_total;
+
+        /** @type {string} */
+        this.rastreador = data.rastreador;
+
+        /** @type {string} */
+        this.imagen = data.imagen;
+
+        /** @type {string} */
+        this.estado_pedido = data.estado_pedido;
+
+        /** @type {Producto} */
+        this.producto = new Producto(data.producto);
+    }
+}
+
+/**
+ * Representa una review de producto.
+ */
+class Review {
+    /**
+     * @param {Object} data
+     * @param {number} data.id_reviews
+     * @param {number} data.calificacion
+     * @param {string} data.comentario
+     * @param {string} data.fecha_review
+     * @param {Pedido} data.pedido
+     */
+    constructor(data) {
+        /** @type {number} */
+        this.id_reviews = data.id_reviews;
+
+        /** @type {number} */
+        this.calificacion = data.calificacion;
+
+        /** @type {string} */
+        this.comentario = data.comentario;
+
+        /** @type {string} */
+        this.fecha_review = data.fecha_review;
+
+        /** @type {Pedido} */
+        this.pedido = new Pedido(data.pedido);
+    }
+}
+
+
+async function fetchJson(url, options = {}) {
+  const response = await fetch(url, options);
+
+  if (!response.ok) {
+    throw new Error(`Error HTTP: ${response.status}`);
+  }
+
+  return await response.json();
+}

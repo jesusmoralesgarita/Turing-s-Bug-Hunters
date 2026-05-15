@@ -1,26 +1,3 @@
-class Pedido {
-    constructor(
-        id,
-        precio,
-        cantidad,
-        imagen,
-        estado,
-        fecha,
-        direccion,
-        rastreador,
-        producto
-    ){
-        this.id = id
-        this.precio = precio
-        this.cantidad = cantidad
-        this.imagen = imagen
-        this.estado = estado
-        this.fecha = fecha
-        this.direccion = direccion
-        this.rastreador = rastreador
-        this.producto = producto
-    }
-}
 
 
 function render() {

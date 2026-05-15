@@ -30,35 +30,6 @@ btnGuardarCambios.addEventListener('click', () => {
 
 /* LUIS */
 
-class Producto {
-    constructor(
-        idProducto,
-        tipoProducto,
-        nombreProducto,
-        precio,
-        talla,
-        color,
-        diseño,
-        descripcion,
-        cantidad,
-        imagen,
-        descuento,
-    ) {
-        this.idProducto = idProducto; 
-        this.tipoProducto = tipoProducto;
-        this.nombreProducto = nombreProducto;
-        this.precio = precio;
-        this.talla = talla;
-        this.color = color;
-        this.diseño = diseño;
-        this.descripcion = descripcion;
-        this.cantidad = cantidad;
-        this.imagen = imagen;
-        this.descuento = descuento;
-    }
-
-}
-
 
 if (!localStorage.getItem("catalogo")) {
     const listaProductos = [
