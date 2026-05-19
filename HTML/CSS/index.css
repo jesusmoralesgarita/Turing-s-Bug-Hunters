@@ -8,7 +8,7 @@
   justify-content: space-between;
   padding: 20px;
   color: white;
-  font-family: Arial, sans-serif;
+  font-family: "DM Sans";
 
   /* Aquí va tu imagen de fondo */
   background-image:
@@ -69,6 +69,7 @@
   color: #ffffff;
   font-family: "DM Sans";
   font-size: 1rem;
+  margin-top: 10px;
 }
 .color-desc:hover {
   background-color: #d68849;
