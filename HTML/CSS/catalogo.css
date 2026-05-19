@@ -65,7 +65,7 @@ footer a.correo:hover {
 .navbar-custom .nav-link,
 .navbar-custom .navbar-brand {
   color: white;
-  font-family: "DM-Sans-CT";
+  font-family: "DM Sans";
 }
 .navbar-custom .nav-link:hover {
   color: #00c3ff;
@@ -76,7 +76,7 @@ footer a.correo:hover {
   width: 280px;
   background-color: #b67c4b; /* fondo café */
   border: none;
-  font-family: "DM-Sans-CT";
+  font-family: "DM Sans";
 }
 
 /* Caja de categorías */
@@ -89,7 +89,7 @@ footer a.correo:hover {
 .menu-categorias p {
   margin: 10px 0;
   font-size: 18px;
-  font-family: "DM-Sans-CT";
+  font-family: "DM Sans";
 }
 
 /* Caja inferior */
@@ -120,7 +120,7 @@ footer a.correo:hover {
 .carrito-menu p {
   margin: 15px 0;
   font-size: 18px;
-  font-family: "DM-Sans-CT";
+  font-family: "DM Sans";
 }
 
 /*BARRA DE CATEGORÍAS*/
