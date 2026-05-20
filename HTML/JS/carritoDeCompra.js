@@ -158,11 +158,13 @@ async function pago(ev) {
             },
         });
 
+        const token = JSON.parse( localStorage.getItem("token"));
         /**@type {Pedido} */
         const responsePedido = await fetch(URL_BASE + "/api/v1/pedidos", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
+                "Authorization": `Bearer ${token.token}`,
             },
             body: JSON.stringify(subir),
         });
@@ -182,12 +184,14 @@ async function pago(ev) {
 
             console.log(e);
 
+  const token = JSON.parse( localStorage.getItem("token"));
             const responseDetalle = await fetch(
                 URL_BASE + "/api/v1/detalles-pedidos",
                 {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
+                "Authorization": `Bearer ${token.token}`,
                     },
                     body: JSON.stringify(e),
                 },

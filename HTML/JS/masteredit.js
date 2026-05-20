@@ -16,10 +16,12 @@ function prepararEdicion(id) {
 
 async function addProducto(item) {
   try {
+  const token = JSON.parse( localStorage.getItem("token"));
     const response = await fetch(URL_BASE + "/api/v1/productos", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+                "Authorization": `Bearer ${token.token}`,
       },
       body: JSON.stringify(item),
     });
@@ -39,10 +41,12 @@ async function editProducto(item) {
 
   try {
     console.log(item)
+  const token = JSON.parse( localStorage.getItem("token"));
     const response = await fetch(URL_BASE+"/api/v1/productos/"+item.id_producto,{
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
+                "Authorization": `Bearer ${token.token}`,
       },
       body: JSON.stringify(item),
     })

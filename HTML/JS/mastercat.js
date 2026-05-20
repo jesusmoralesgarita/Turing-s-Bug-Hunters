@@ -637,8 +637,12 @@ async function deleteProducto(item){
     
     try {
      
+  const token = JSON.parse( localStorage.getItem("token"));
     const salida = await fetchJson(URL_BASE+"/api/v1/productos/"+item.id_producto,{
-      method: 'DELETE'
+      method: 'DELETE',
+      headers: {
+                "Authorization": `Bearer ${token.token}`,
+      },
     })   
     } catch (error) {
         

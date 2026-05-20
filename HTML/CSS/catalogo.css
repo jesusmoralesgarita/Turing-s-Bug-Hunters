@@ -214,6 +214,8 @@ section {
   flex-direction: column;
   border: 1px solid #dee2e6;
   transition: transform 0.2s ease-in-out;
+  overflow: hidden;
+  position: relative;
 }
 .card:hover {
   transform: scale(1.03);
@@ -295,4 +297,20 @@ section {
 /*FOOTER*/
 .f-dorado {
   background-color: #be814f; /* Poner el fondo dorado */
+}
+
+
+.descuento {
+  background-color: red;
+  color: white;
+  text-align: center;
+  transform: rotateZ(45deg);
+  position: absolute;
+  top: 2rem;
+  right: -5rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+
+  padding-left: 6rem;
+  padding-right: 6rem;
 }

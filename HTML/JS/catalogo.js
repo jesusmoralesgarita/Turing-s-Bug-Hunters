@@ -8,6 +8,14 @@ function generateHTML(element) {
     const divCard = document.createElement("div");
     divCard.className = "card h-100";
 
+
+
+    const divDescuento = document.createElement("div");
+    if(element.descuento !== 0){
+        divDescuento.className = "descuento";
+        divDescuento.innerText = `${element.descuento}% DTO`
+    }
+
     const img = document.createElement("img");
     img.src = element.imagen;
     img.className = "card-img-top";
@@ -53,7 +61,7 @@ function generateHTML(element) {
     button.append(spanButton, iButton);
     pBody.append(spanPrice, spanDetails);
     divBody.append(h5, pBody, button);
-    divCard.append(img, divBody);
+    divCard.append(img, divBody,divDescuento);
     divPrincipal.append(divCard);
 
     return divPrincipal;

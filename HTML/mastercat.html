@@ -12,6 +12,15 @@
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/catalogo.css">
     <script src="./JS/login.js"></script>
+    <script>
+        // 1. Verificamos si existe el token en el almacenamiento
+        const token = localStorage.getItem("token"); // O sessionStorage
+
+        if (!token || JSON.parse( token).roles !== "[ROLE_ADMIN]") {
+            // Si no hay token, lo redirigimos al login inmediatamente
+            window.location.href = "/index.html";
+        }
+    </script>
 </head>
 <body>
     

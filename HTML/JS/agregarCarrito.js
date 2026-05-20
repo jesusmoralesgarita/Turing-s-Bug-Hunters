@@ -45,7 +45,13 @@ async function loadImage() {
   const urlParams = new URLSearchParams(queryString);
   const id = urlParams.get('id');
 
-  const entrada = await fetchJson(URL_BASE+"/api/v1/productos/"+id)
+  const token = JSON.parse( localStorage.getItem("token"));
+  const entrada = await fetchJson(URL_BASE+"/api/v1/productos/"+id,{
+
+            headers: {
+                "Authorization": `Bearer ${token.token}`,
+            },
+  })
   
   /**@type {Producto} */
   producto = entrada;

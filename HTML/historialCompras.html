@@ -12,6 +12,15 @@
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/historialCompras.css">
     <script src="JS/login.js"></script>
+    <script>
+        // 1. Verificamos si existe el token en el almacenamiento
+        const token = localStorage.getItem("token"); // O sessionStorage
+
+        if (!token) {
+            // Si no hay token, lo redirigimos al login inmediatamente
+            window.location.href = "/index.html";
+        }
+    </script>
 </head>
 
 <body>

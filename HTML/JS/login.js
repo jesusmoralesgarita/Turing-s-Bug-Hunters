@@ -27,18 +27,20 @@
 async function validarLogin(emailIngresado, passIngresada) {
 
     try{
-
-        const usuario = await fetchJson(URL_BASE+"/api/v1/usuario/login",
+        //const token = JSON.parse( localStorage.getItem("token"));
+        const usuario = await fetchJson(URL_BASE+"/api/v1/auth/login",
             {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                //"Authorization": `Bearer ${token.token}`,
             },
             body: JSON.stringify({ username: emailIngresado, password: passIngresada }),
             }
         )
+        
 
-        localStorage.setItem("usuario", JSON.stringify( usuario))
+        localStorage.setItem("token", JSON.stringify( usuario))
         return "success"
     }catch(e){
         return "Correo o contraseña incorrectos.";
@@ -99,6 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (btn) {
                 btn.onclick = () => {
                     localStorage.removeItem("sesionActiva");
+                    localStorage.removeItem("token");
                     window.location.reload();
                 };
             }
@@ -125,7 +128,7 @@ Array.from(document.getElementsByTagName("form")).forEach((e) => {
 
 
 
-const URL_BASE = "http://localhost:8081"
+const URL_BASE = "http://localhost:8080"
 
 
 /**
