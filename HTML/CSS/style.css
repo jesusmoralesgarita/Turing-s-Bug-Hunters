@@ -6,7 +6,7 @@
 .navbar-custom .nav-link,
 .navbar-custom .navbar-brand {
   color: white;
-  font-family: "DM-Sans-CT";
+  font-family: "DM Sans";
 }
 .navbar-custom .nav-link:hover {
   color: #00c3ff;
@@ -17,7 +17,7 @@
   width: 280px;
   background-color: #b67c4b; /* fondo café */
   border: none;
-  font-family: "DM-Sans-CT";
+  font-family: "DM Sans";
 }
 /*Chucho*/
 
@@ -31,7 +31,7 @@
 .menu-categorias p {
   margin: 10px 0;
   font-size: 18px;
-  font-family: "DM-Sans-CT";
+  font-family: "DM Sans";
 }
 
 /* Caja inferior */
@@ -62,7 +62,7 @@
 .carrito-menu p {
   margin: 15px 0;
   font-size: 18px;
-  font-family: "DM-Sans-CT";
+  font-family: "DM Sans";
 }
 
 /*Oswaldo*/
@@ -84,21 +84,16 @@
   background-color: #208774;
   margin: 0;
   min-height: 5rem;
-}
-
-.marca {
-  font-family: "Montserrat-T";
-  font-size: 2rem;
 }
 
 .sloga1 {
-  font-family: "Montserrat-ST";
+  font-family: "Montserrat";
   font-size: 0.8rem;
   letter-spacing: 0.08rem;
 }
 
 .btn-inicio-sesion {
-  font-family: "DM-Sans-CT";
+  font-family: "DM Sans";
   color: #fff;
   border-color: white;
   border-width: 0.15rem;
@@ -106,7 +101,7 @@
 }
 
 .btn-registrate {
-  font-family: "DM-Sans-CT";
+  font-family: "DM Sans";
   color: #fff;
   border-color: #be814f;
   border-width: 0.15rem;
@@ -114,7 +109,7 @@
 }
 
 .sloga2 {
-  font-family: "Montserrat-ST";
+  font-family: "Montserrat";
   min-height: 3.5rem;
   font-size: 1.6rem;
   color: #fff;
@@ -134,12 +129,12 @@
 /* --- 1. REGISTRO DE FUENTES --- */
 @font-face {
     font-family: 'Montserrat-Regular';
-    src: url('../FONT/Montserrat-Regular.ttf') format('truetype');
+    src: url('../FONT//Montserrat/Montserrat-Regular.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Montserrat-Bold';
-    src: url('../FONT/Montserrat-Bold.ttf') format('truetype');
+    src: url('../FONT//Montserrat/Montserrat-Bold.ttf') format('truetype');
 }
 
 /* Aplicar fuente base a todo el proyecto */
@@ -445,7 +440,7 @@ footer a.correo:hover {
   backface-visibility: hidden; /* Oculta la cara trasera */
   display: flex;
   align-items: center;
-  justify-content: center;}
+  justify-content: center;
 }
 
 .flip-card-front {
