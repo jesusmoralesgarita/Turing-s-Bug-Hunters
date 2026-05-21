@@ -120,7 +120,7 @@ async function agregar() {
     producto: producto, 
   }
   
-  const carrito = localStorage.getItem("detalles")
+ const carrito = localStorage.getItem("detalles")
 
   if(carrito){
     const storage = JSON.parse( localStorage.getItem("detalles"))
@@ -128,8 +128,7 @@ async function agregar() {
     localStorage.setItem("detalles", JSON.stringify(storage))
   }else{
     localStorage.setItem("detalles", JSON.stringify([salida]))
-  }
-
+  }  
   alert("Tu producto fue agregado a tu carrito")
 
 }

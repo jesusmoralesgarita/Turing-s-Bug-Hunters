@@ -22,141 +22,7 @@ console.log("Actualizando en el servidor...", datosActualizados);
 });
 */
 /* LUIS */
-if (!localStorage.getItem("catalogo")) {
-      const listaProductos = [
-    new Producto(
-      0,
-      "Playera",
-      "Polo basica",
-      200,
-      ["P", "M", "G"],
-      ["Azul", "Blanco"],
-      ["imagen1", "imagen2"],
-      ["se lava", "huele"],
-      3,
-      "../HTML/Pictures/playeragris.jpeg",
-      0,
-    ),
-    new Producto(
-      1,
-      "Playera",
-      "Polo no basica",
-      200,
-      ["P", "M", "G"],
-      ["Azul", "Blanco"],
-      ["imagen1", "imagen2"],
-      ["se lava", "huele"],
-      3,
-      "../HTML/Pictures/playeragris.jpeg",
-      0,
-    ),
-    new Producto(
-      2,
-      "Playera",
-      "Playera en V",
-      2300,
-      ["P", "M", "G"],
-      ["Azul", "Blanco"],
-      ["imagen1", "imagen2"],
-      ["no se lava", "huele"],
-      3,
-      "../HTML/Pictures/playeragris.jpeg",
-      0,
-    ),
-    new Producto(
-      3,
-      "Playera",
-      "Playera invisible",
-      99999,
-      ["P", "M", "G"],
-      ["Azul", "Blanco"],
-      ["imagen1", "imagen2"],
-      ["se lava", "huele"],
-      3,
-      "../HTML/Pictures/playeragris.jpeg",
-      0,
-    ),
-    new Producto(
-      4,
-      "Playera",
-      "Playera con tirantes",
-      300,
-      ["P", "M", "G"],
-      ["Azul", "Blanco"],
-      ["imagen1", "imagen2"],
-      ["se lava", "huele"],
-      3,
-      "../HTML/Pictures/playeragris.jpeg",
-      0,
-    ),
-    new Producto(
-      5,
-      "Playera",
-      "Pollo",
-      450,
-      ["P", "M", "G"],
-      ["Azul", "Blanco"],
-      ["imagen1", "imagen2"],
-      ["se lava", "no huele"],
-      3,
-      "../HTML/Pictures/playeragris.jpeg",
-      0,
-    ),
-    new Producto(
-      6,
-      "Playera",
-      "Playera que vuela",
-      777,
-      ["P", "M", "G"],
-      ["Azul", "Blanco"],
-      ["imagen1", "imagen2"],
-      ["se lava", "huele"],
-      3,
-      "../HTML/Pictures/playeragris.jpeg",
-      0,
-    ),
-    new Producto(
-      7,
-      "Playera",
-      "Playa",
-      888,
-      ["P", "M", "G"],
-      ["Azul", "Blanco"],
-      ["imagen1", "imagen2"],
-      ["se lava", "huele"],
-      3,
-      "../HTML/Pictures/playeragris.jpeg",
-      0,
-    ),
-    new Producto(
-      8,
-      "Playera",
-      "Plancha",
-      999,
-      ["P", "M", "G"],
-      ["Azul", "Blanco"],
-      ["imagen1", "imagen2"],
-      ["se lava", "huele"],
-      3,
-      "../HTML/Pictures/playeragris.jpeg",
-      0,
-    ),
-    new Producto(
-      9,
-      "Playera",
-      "Plancha",
-      10000,
-      ["P", "M", "G"],
-      ["Azul", "Blanco"],
-      ["imagen1", "imagen2"],
-      ["se lava", "huele"],
-      3,
-      "../HTML/Pictures/playeragris.jpeg",
-      0,
-    ),
-  ];
-  localStorage.setItem("catalogo", JSON.stringify(listaProductos));
-}
+
 async function addProducto(item) {
   try {
     const response = await fetch(URL_BASE + "/api/v1/productos", {
@@ -176,17 +42,36 @@ async function addProducto(item) {
     return false;
   }
 }
-function editProducto(item) {
-  const lista = JSON.parse(localStorage.getItem("catalogo"));
-  const index = lista.findIndex((v) => v.idProducto === item.idProducto);
-  lista[index] = item;
-  localStorage.setItem("catalogo", JSON.stringify(lista));
+async function editProducto(item) {
+  // Editar producto en la base de datos a través de la API
+  try {
+    const response = await fetch(URL_BASE + "/api/v1/productos/" + item.idProducto, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(item)
+    });
+    if (!response.ok) {
+      throw new Error("Error al editar el producto");
+    }
+  } catch (error) {
+    console.error("Error:", error);
+  }
 }
-function deleteProducto(item) {
-  const lista = JSON.parse(localStorage.getItem("catalogo"));
-  const index = lista.findIndex((v) => v.idProducto === item.idProducto);
-  lista.splice(index, 1);
-  localStorage.setItem("catalogo", JSON.stringify(lista));
+
+async function deleteProducto(item) {
+  // Eliminar producto de la base de datos a través de la API
+  try {
+    const response = await fetch(URL_BASE + "/api/v1/productos/" + item.idProducto, {
+      method: "DELETE"
+    });
+    if (!response.ok) {
+      throw new Error("Error al eliminar el producto");
+    }
+  } catch (error) {
+    console.error("Error:", error);
+  }
 }
 function validarNombre() {
   const nombre = document.getElementById("contact-name").value.trim();
