@@ -223,7 +223,7 @@ function generateReview(review) {
   const fecha = new Date(review.fecha_review);
 
   reviewDate.textContent = fecha.toLocaleDateString("es-MX"
-  , {day: "numeric", month: "long", year: "numeric"}
+  // , {day: "numeric", month: "long", year: "numeric"}
   );
 
   // Construcción jerárquica
