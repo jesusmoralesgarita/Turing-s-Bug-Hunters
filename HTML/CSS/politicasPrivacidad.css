@@ -1,3 +1,12 @@
+/* Paleta de colores */
+:root {
+  --color-blanco: #FFFFFF;
+  --color-azul-pastel: #7AB8FF;
+  --color-azul-profundo: #1A2A40;
+  --color-morado: #8A3D9E;
+  --color-rosa-dorado: #E6A8A1;
+}
+
 @font-face {
     font-family: 'Montserrat-Regular';
     src: url('../FONT/Montserrat-Regular.ttf') format('truetype');
@@ -9,12 +18,12 @@
 }
 
 #colosirtoFondo{
-    background-color: #208774;
+    background-color: var(--color-azul-pastel);
 }
 
 .textilloPriv{
     text-align: justify;
-    color: #FFFFFF;
+    color: var(--color-azul-profundo);
     padding: 2.5rem;
     font-family: 'Montserrat-Regular';
 }
@@ -22,11 +31,12 @@
 h2{
     padding-block-end: 10px;
     font-family: 'Montserrat-Bold';
-    color: black;
+    color: var(--color-morado);
 }
 
 h5{
     padding-block-end: 10px;
     padding-top: 10px;
-    font-family: 'Montserrat-Bold'
+    font-family: 'Montserrat-Bold';
+    color: var(--color-blanco);
 }

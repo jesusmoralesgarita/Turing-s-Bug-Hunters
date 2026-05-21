@@ -1,4 +1,11 @@
-/* Erick */
+/* Paleta de colores */
+:root {
+  --color-blanco: #FFFFFF;
+  --color-azul-pastel: #7AB8FF;
+  --color-azul-profundo: #1A2A40;
+  --color-morado: #8A3D9E;
+  --color-rosa-dorado: #E6A8A1;
+}
 
 /* Fernando */
 .banner {
@@ -7,13 +14,13 @@
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-  color: white;
+  color: var(--color-blanco);
   font-family: Arial, sans-serif;
 
-  /* Aquí va tu imagen de fondo */
+  /* Imagen de fondo */
   background-image:
-    linear-gradient(to right, rgba(0, 0, 128, 0.5), rgba(128, 0, 128, 0.5)),
-    /* azul → morado con transparencia */ url("../Pictures/fondoTinta.jpeg");
+    linear-gradient(to right, rgba(26, 42, 64, 0.6), rgba(138, 61, 158, 0.6)),
+    url("../Pictures/fondoTinta.jpeg");
   background-size: cover;
   background-position: center;
 }
@@ -36,6 +43,7 @@
   position: relative;
   z-index: 2;
 }
+
 .logo img {
   width: 150px;
   border-radius: 50%;
@@ -48,31 +56,39 @@
   font-family: "Montserrat";
   font-size: 2.4rem;
   padding-left: 100px;
+  color: var(--color-morado);
 }
+
 .sec-3-sb {
   font-family: "Montserrat";
   font-size: 1.8rem;
+  color: var(--color-azul-profundo);
 }
+
 .sec-3-ct {
   font-family: "DM Sans";
   font-size: 1.2rem;
+  color: var(--color-azul-profundo);
 }
+
 /* Formato para los iconos de la sección por qué elegirnos */
 .img-svg {
   width: 25%;
   height: 25%;
 }
+
 /* Formato y diseño para el botón para explorar descuentos */
 .color-desc {
-  border-color: #be814f;
-  background-color: #be814f;
-  color: #ffffff;
+  border-color: var(--color-rosa-dorado);
+  background-color: var(--color-rosa-dorado);
+  color: var(--color-blanco);
   font-family: "DM Sans";
   font-size: 1rem;
 }
+
 .color-desc:hover {
-  background-color: #d68849;
-  border-color: #d68849;
+  background-color: var(--color-morado);
+  border-color: var(--color-morado);
   transform: scale(1.05); /* efecto ligero */
   transition: all 0.2s ease;
 }
@@ -180,7 +196,7 @@
 .carousel-section {
   text-align: center;
   padding: 40px;
-  background: #f5f5f5;
+  background: var(--color-blanco);
 }
 
 .swiper {
@@ -192,7 +208,7 @@
 .swiper-slide {
   width: 250px;
   height: 300px;
-  background: #cfe3f1;
+  background: var(--color-azul-pastel);
   border-radius: 15px;
   display: flex;
   align-items: center;
@@ -236,15 +252,13 @@
 .card {
   width: 100%;
   height: 100%;
-  background: #cfe3f1;
+  background: var(--color-azul-pastel);
   border-radius: 15px;
   padding: 15px;
   box-sizing: border-box;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
   transition:
     transform 0.3s,
     opacity 0.3s;
@@ -266,11 +280,12 @@
   font-size: 16px;
   margin: 10px 0 5px;
   font-family: "Montserrar-T";
+  color: var(--color-morado);
 }
 
 .info p {
   font-size: 13px;
-  color: #555;
+  color: var(--color-azul-profundo);
 }
 
 /* Efecto activo */
@@ -283,7 +298,7 @@
 /* Alex */
 
 .custom-review-card {
-  background-color: #e2d4e7;
+  background-color: var(--color-morado);
   border-radius: 8px;
   height: 100%;
   min-height: 220px;
@@ -292,31 +307,28 @@
 }
 
 .review-stars {
-  color: #4b2e74;
+  color: var(--color-morado);
   font-size: 0.8rem;
 }
 
 .review-body {
   font-size: 0.85rem;
-  color: #444;
+  color: var(--color-azul-profundo);
 }
 
 .reviewer-name {
   font-size: 0.8rem;
   font-weight: 600;
+  color: var(--color-azul-profundo);
 }
 
 .review-date {
   font-size: 0.7rem;
-  color: #777;
+  color: var(--color-azul-pastel);
 }
 
 .carousel-item {
   transition: transform 1.2s ease-in-out;
 }
 
-/* Luis */
 
-/* Josue */
-
-/* Leila - Maitte */

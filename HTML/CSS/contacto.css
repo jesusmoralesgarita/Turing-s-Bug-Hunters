@@ -1,24 +1,33 @@
-/* Oswaldo */
+/* Paleta de colores */
+:root {
+  --color-blanco: #FFFFFF;
+  --color-azul-pastel: #7AB8FF;
+  --color-azul-profundo: #1A2A40;
+  --color-morado: #8A3D9E;
+  --color-rosa-dorado: #E6A8A1;
+}
+
+/*Oswaldo*/
 /* estilo del menu de categorias */
 .card-cttn {
-  background-color: #061f2f;
+  background-color: var(--color-azul-profundo);
   border-radius: 25px;
   width: 100%; 
   max-width: 80%;
-  box-shadow: 18px -18px 2px 5px #bcbbbb;
+  box-shadow: 18px -18px 2px 5px var(--color-rosa-dorado);
 }
+
 .text-cttn {
   font-size: 2.2rem;
-  color: #ffffff;
+  color: var(--color-blanco);
   font-family: "Montserrat-T";
 }
 
 /* Luis */
-
 .form-ctn{
-  background-color: #ffffff;
+  background-color: var(--color-blanco);
   border-radius: 25px;
-  color: #061f2f;
+  color: var(--color-azul-profundo);
   margin: 2rem;
   padding: 1rem;
 }
@@ -30,8 +39,8 @@
   margin-right: auto;
 }
 
-    /* Gio  */
-    /* formato al modal de mensaje enviado */
+/* Gio  */
+/* formato al modal de mensaje enviado */
 .modal-custom {
     display: none;
     position: fixed;
@@ -42,20 +51,19 @@
 }
 
 .contenido{
-    background: linear-gradient(135deg, #0B192C, #3a64ed);
+    background: linear-gradient(135deg, var(--color-azul-profundo), var(--color-azul-pastel));
     padding:25px;
     margin: 120px auto;
     width: 320px;
     border-radius: 15px;
     text-align: center;
-    color: rgb(155, 164, 239);
+    color: var(--color-morado);
     font-weight: bold;
     box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     animation: aparecer 0.4s ease;
 }
 
 /* titulo con efecto */
-
 .titulo{
     margin-bottom: 10px;
 }

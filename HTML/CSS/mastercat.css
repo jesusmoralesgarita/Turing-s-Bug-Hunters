@@ -1,3 +1,12 @@
+/* Paleta de colores */
+:root {
+  --color-blanco: #FFFFFF;
+  --color-azul-pastel: #7AB8FF;
+  --color-azul-profundo: #1A2A40;
+  --color-morado: #8A3D9E;
+  --color-rosa-dorado: #E6A8A1;
+}
+
 /* MAITTE */
 
 @font-face {
@@ -14,41 +23,22 @@
     font-style: normal;
 }
 
-
-/* LUIS */
-
-
-
-/* LEI */
-
-
-
-/* ERICK */
-
-
-
-/* FER */
-
-
-
 /* GIO */
 .card-add {
-    border: 2px solid #ddd;
+    border: 2px solid var(--color-azul-pastel);
     border-radius: 15px;
-    background-color: #f5f5f5;
-
+    background-color: var(--color-blanco);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 /* Contenedor del icono */
 .icon-container {
-    border: 3px solid #7b3ff2; /* morado */
+    border: 3px solid var(--color-morado);
     padding: 20px;
     margin-bottom: 20px;
 }
@@ -56,68 +46,66 @@
 /* Icono */
 .icon-container i {
     font-size: 80px;
-    color: #555;
+    color: var(--color-azul-profundo);
 }
 
 /* Texto */
 .btn-add {
-    background-color: #dcd6ea !important;
-    color: #4a4458 !important;
+    background-color: var(--color-rosa-dorado) !important;
+    color: var(--color-azul-profundo) !important;
 }
 
 /* Hover */
 .card-add:hover {
     transform: translateY(-5px);
-    border-color: #7b3ff2;
+    border-color: var(--color-morado);
 }
 
 .card-add:hover .icon-container {
-    background-color: #7b3ff2;
+    background-color: var(--color-morado);
 }
 
 .card-add:hover .icon-container i {
-    color: white;
+    color: var(--color-blanco);
 }
 
 /* estilo de los botones */
 .card-actions .btn-edit {
-    background-color: #dcd6ea;
-    color: #4a4458;
+    background-color: var(--color-azul-pastel);
+    color: var(--color-azul-profundo);
     border: none;
     border-radius: 10px;
     padding: 10px 16px;
 }
 
 .card-actions .btn-delete {
-    background-color: #e54848;
-    color: white;
+    background-color: var(--color-morado);
+    color: var(--color-blanco);
     border: none;
     border-radius: 10px;
     padding: 10px 16px;
 }
 
 .btn-edit {
-    background-color: #dcd6ea !important;
-    color: #4a4458 !important;
+    background-color: var(--color-azul-pastel) !important;
+    color: var(--color-azul-profundo) !important;
 }
 
 .btn-delete {
-    background-color: #e54848 !important;
+    background-color: var(--color-morado) !important;
+    color: var(--color-blanco) !important;
 }
 
 /* Hover */
 .btn-edit:hover {
-    background-color: #cfc7e2;
+    background-color: var(--color-rosa-dorado);
+    color: var(--color-blanco);
 }
 
 .btn-delete:hover {
-    background-color: #cc3b3b;
+    background-color: var(--color-azul-profundo);
+    color: var(--color-blanco);
 }
-
-
-/* CHUCHO */
-
-
 
 /* OSWALDO */
 /* Oculto por defecto y con fondo oscuro transparente */
@@ -130,10 +118,11 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
 }
+
 .modal-contenido {
   font-family: "Montserrat";
-  color: black;
-  background-color: #be814f;
+  color: var(--color-azul-profundo);
+  background-color: var(--color-rosa-dorado);
   margin: 15% auto;
   padding: 20px;
   border-radius: 10px;
@@ -141,6 +130,7 @@
   text-align: center;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
+
 .btn-eliminar-artc {
   box-sizing: border-box;
   padding: 0 0 14px 0;
@@ -149,11 +139,9 @@
 .btn-si-no {
   width: 100%;
   height: 10%;
-  border-color: #ffffff;
+  border-color: var(--color-blanco);
   border-radius: 5px;
 }
 
-
-/* ALE */
 
 
