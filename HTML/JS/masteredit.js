@@ -16,10 +16,12 @@ function prepararEdicion(id) {
 
 async function addProducto(item) {
   try {
+  const token = JSON.parse( localStorage.getItem("token"));
     const response = await fetch(URL_BASE + "/api/v1/productos", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+                "Authorization": `Bearer ${token.token}`,
       },
       body: JSON.stringify(item),
     });
@@ -39,10 +41,12 @@ async function editProducto(item) {
 
   try {
     console.log(item)
+  const token = JSON.parse( localStorage.getItem("token"));
     const response = await fetch(URL_BASE+"/api/v1/productos/"+item.id_producto,{
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
+                "Authorization": `Bearer ${token.token}`,
       },
       body: JSON.stringify(item),
     })
@@ -57,13 +61,18 @@ async function editProducto(item) {
   }
 }
 
-function deleteProducto(item) {
-    const lista = JSON.parse(localStorage.getItem("catalogo"));
-    const index = lista.findIndex((v) => v.idProducto === item.id);
-
-    lista.splice(index, 1);
-
-    localStorage.setItem("catalogo", JSON.stringify(lista));
+async function deleteProducto(item) {
+    // Eliminar producto de la base de datos a través de la API
+    try {
+        const response = await fetch(URL_BASE + "/api/v1/productos/" + item.id, {
+            method: "DELETE"
+        });
+        if (!response.ok) {
+            throw new Error("Error al eliminar el producto");
+        }
+    } catch (error) {
+        console.error("Error:", error);
+    }
 }
 
 function validarNombre() {
@@ -280,7 +289,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             const data = Object.fromEntries(new FormData(e.target).entries());
 
-            const lista = JSON.parse(localStorage.getItem("catalogo"));
+            // Los datos del catálogo se obtienen de la API
+            // const lista = JSON.parse(localStorage.getItem("catalogo"));
 
             let talla = [];
             if (data["size-c"]) talla.push("C");

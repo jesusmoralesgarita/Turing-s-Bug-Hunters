@@ -16,7 +16,9 @@ function calcularTotal() {
 }
 
 /**@type {DetallePedido[]} */
-let detalles = JSON.parse(localStorage.getItem("detalles"));
+detalles = JSON.parse(localStorage.getItem("detalles"));
+// Los detalles del carrito se cargarán desde la API
+// TODO: Implementar llamada a API para obtener detalles del carrito del usuario autenticado
 console.log(detalles);
 
 /**@param {DetallePedido} pedido */

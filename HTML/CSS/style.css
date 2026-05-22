@@ -1,29 +1,40 @@
+/*Paleta de colores*/
+:root {
+  --color-blanco: #FFFFFF;
+  --color-azul-pastel: #7AB8FF;
+  --color-azul-profundo: #1A2A40;
+  --color-morado: #8A3D9E;
+  --color-rosa-dorado: #E6A8A1;
+}
+
 /*Chucho y Gio*/
 /* custom de la navbar */
 .navbar-custom {
-  background-color: #0b1c26; 
+  background-color: var(--color-azul-profundo);
 }
+
 .navbar-custom .nav-link,
 .navbar-custom .navbar-brand {
-  color: white;
+  color: var(--color-blanco);
   font-family: "DM-Sans-CT";
 }
+
 .navbar-custom .nav-link:hover {
-  color: #00c3ff;
+  color: var(--color-azul-pastel);
 }
 
 /* estilo del menu de categorias */
 .custom-dropdown {
   width: 280px;
-  background-color: #b67c4b; /* fondo café */
+  background-color: var(--color-rosa-dorado); /* fondo rosa dorado */
   border: none;
-  font-family: "DM-Sans-CT";
+  font-family: "DM Sans";
 }
-/*Chucho*/
 
+/*Chucho*/
 /* Caja de categorías */
 .menu-categorias {
-  background-color: #e9e4ea;
+  background-color: var(--color-azul-pastel);
   border-radius: 20px;
   padding: 20px;
 }
@@ -32,29 +43,30 @@
   margin: 10px 0;
   font-size: 18px;
   font-family: "DM-Sans-CT";
+  color: var(--color-azul-profundo);
 }
 
 /* Caja inferior */
 .menu-contacto {
-  background-color: #e9e4ea;
+  background-color: var(--color-azul-pastel);
   border-radius: 20px;
   padding: 15px;
 }
 
 .menu-contacto i {
-  color: #333;
+  color: var(--color-azul-profundo);
 }
 
 /* diseño carro de compras */
 .dropdown-carrito {
   width: 250px;
-  background-color: #b67c4b; /* fondo café */
+  background-color: var(--color-rosa-dorado); /* fondo rosa dorado */
   border: none;
 }
 
 /* Caja interna */
 .carrito-menu {
-  background-color: #e9e4ea;
+  background-color: var(--color-azul-pastel);
   border-radius: 20px;
   padding: 20px;
 }
@@ -63,12 +75,13 @@
   margin: 15px 0;
   font-size: 18px;
   font-family: "DM-Sans-CT";
+  color: var(--color-azul-profundo);
 }
 
 /*Oswaldo*/
 .color-row {
-  color: #ffffff;
-  background-color: #208774;
+  color: var(--color-blanco);
+  background-color: var(--color-azul-profundo);
   margin: 0;
   min-height: 5rem;
 }
@@ -76,12 +89,13 @@
 .marca {
   font-family: "Montserrat-T";
   font-size: 2rem;
+  color: var(--color-morado);
 }
 
 /*Oswaldo*/
 .color-row {
-  color: #ffffff;
-  background-color: #208774;
+  color: var(--color-blanco);
+  background-color: var(--color-azul-pastel);
   margin: 0;
   min-height: 5rem;
 }
@@ -89,43 +103,45 @@
 .marca {
   font-family: "Montserrat-T";
   font-size: 2rem;
+  color: var(--color-morado);
 }
 
 .sloga1 {
-  font-family: "Montserrat-ST";
+  font-family: "Montserrat";
   font-size: 0.8rem;
   letter-spacing: 0.08rem;
+  color: var(--color-azul-profundo);
 }
 
 .btn-inicio-sesion {
   font-family: "DM-Sans-CT";
-  color: #fff;
-  border-color: white;
+  color: var(--color-blanco);
+  border-color: var(--color-blanco);
   border-width: 0.15rem;
-  background: #208774;
+  background: var(--color-azul-pastel);
 }
 
 .btn-registrate {
   font-family: "DM-Sans-CT";
-  color: #fff;
-  border-color: #be814f;
+  color: var(--color-blanco);
+  border-color: var(--color-rosa-dorado);
   border-width: 0.15rem;
-  background: #be814f;
+  background: var(--color-rosa-dorado);
 }
 
 .sloga2 {
-  font-family: "Montserrat-ST";
+  font-family: "Montserrat";
   min-height: 3.5rem;
   font-size: 1.6rem;
-  color: #fff;
+  color: var(--color-blanco);
   margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   background: linear-gradient(
     to right,
-    rgba(32, 135, 116, 0.7),
-    rgba(190, 129, 79, 0.7)
+    rgba(122, 184, 255, 0.7),
+    rgba(230, 168, 161, 0.7)
   );
   width: 100%;
 }
@@ -134,12 +150,12 @@
 /* --- 1. REGISTRO DE FUENTES --- */
 @font-face {
     font-family: 'Montserrat-Regular';
-    src: url('../FONT/Montserrat-Regular.ttf') format('truetype');
+    src: url('../FONT//Montserrat/Montserrat-Regular.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Montserrat-Bold';
-    src: url('../FONT/Montserrat-Bold.ttf') format('truetype');
+    src: url('../FONT//Montserrat/Montserrat-Bold.ttf') format('truetype');
 }
 
 /* Aplicar fuente base a todo el proyecto */
@@ -151,7 +167,7 @@ body {
 
 /* Sección contenedora con el fondo de acuarela suave */
 .tn-section-sobre-nosotros {
-    background-image: url('../Pictures/fondoTurings.jpeg'); 
+    background-image: url('../Pictures/fondoTurings.png'); 
     
     /* EFECTO DE TRANSPARENCIA REFORZADO */
     background-size: cover;
@@ -179,7 +195,7 @@ body {
 .tn-titulo-sobre {
     font-family: 'Montserrat-Bold', sans-serif; /* Fuente de Oswaldo aplicada */
     font-weight: 700;
-    color: #1a1a1a; 
+    color: var(--color-morado);
     font-size: 1.75rem;
 }
 
@@ -187,7 +203,7 @@ body {
 .tn-texto-sobre {
     font-family: 'Montserrat-Regular', sans-serif; /* Fuente de Oswaldo aplicada */
     font-size: 1.05rem;
-    color: #333333; 
+    color: var(--color-azul-profundo);
     line-height: 1.7;
     text-align: justify;
 }
@@ -230,29 +246,36 @@ body {
 }
 /*Erick*/
 #colorBackmv{
-    background-color: #061f2f;
+    background-color: var(--color-azul-pastel);
+    border-radius: 20px;
+    color: var(--color-blanco);
+    box-shadow: 0 8px 20px rgba(26, 42, 64, 0.25);
     font-family: 'Montserrat';
 }
+
 #colorRaya{
-    background-color: #BE814F;
+    background-color: var(--color-rosa-dorado);
 }
 
 .misionVisionT{
     font-family: 'Montserrat-T';
-    color: #FFFFFF;
+    color: var(--color-blanco);
     font-size: 2rem;
 }
+
 .misionVisionP{
     font-family: 'Montserrat-ST';
-    color: #FFFFFF;
+    color: var(--color-blanco);
     font-size: 1rem;
+    line-height: 1.6; 
 }
+
 /*Alex*/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap');
 
 .valores-card {
-    background-color: #0B192C; 
-    border: 2px solid #be814f; 
+    background-color: var(--color-azul-pastel); 
+    border: 2px solid var(--color-rosa-dorado); 
     border-radius: 12px;
     padding: 40px 30px;
     width: 350px;
@@ -263,7 +286,7 @@ body {
 }
 
 .valores-card h2 {
-    color: #FFFFFF;
+    color: var(--color-blanco);
     font-family: "Montserrat-T", sans-serif;
     font-size: 2rem;
     text-align: center;
@@ -275,11 +298,11 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 2px solid #be814f; 
+    border: 2px solid var(--color-rosa-dorado); 
     border-radius: 10px;
     padding: 12px 20px;
     margin-bottom: 16px;
-    background-color: rgba(255, 255, 255, 0.03);
+    background-color: var(--color-azul-pastel);
     
     transition: none; 
     transform: none;
@@ -290,9 +313,8 @@ body {
     margin-bottom: 0;
 }
 
-
 .valor-item span {
-    color: #FFFFFF;
+    color: var(--color-blanco);
     font-family: "Montserrat-ST", sans-serif;
     font-size: 1.2rem;
     font-weight: 500;
@@ -303,17 +325,15 @@ body {
     width: auto;
 }
 
-/*Fer*/
-
 /*Luis*/
 .profiledevs-container{
-    background-color: #DADADA;
+    background-color: var(--color-blanco);
     padding: 1rem;
 }
 
 
 .profiledevs{
-    background-color: #469487;
+    background-color: var(--color-rosa-dorado);
     border-radius: 1rem;
     display: flex;
     padding: 10px;
@@ -328,11 +348,10 @@ body {
 }
 
 .profiledevs:hover {
-    background-color: #469487bd;
+    background-color: var(--color-azul-pastel);
     transform: translateY(-5px);
     transition: all 0.3s ease;
 }
-
 
 .profiledevs-img{
     width: 8rem;
@@ -355,14 +374,14 @@ body {
      text-align: center;
 }
 .profiledevs-desc p{
-    color: white;
+    color: var(--color-blanco);
     font-family: "DM-Sans-CT";
     font-size: 0.9rem;
 }
 
 /*Leila*/
 .f-dorado {
-  background-color: #BE814F; /* Poner el fondo dorado */
+  background-color: var(--color-rosa-dorado); /* Poner el fondo dorado */
 }
 
 /*Fuentes*/
@@ -388,7 +407,7 @@ footer a i {
 }
 
 footer a i:hover {
-  color: #FFFFFF; /* blanco al pasar el mouse */
+  color: var(--color-blanco); /* blanco al pasar el mouse */
 }
 
 footer a.politica {
@@ -397,7 +416,7 @@ footer a.politica {
 }
 
 footer a.politica:hover {
-    color: #FFFFFF; /* blanco al pasar el mouse */
+    color: var(--color-blanco); /* blanco al pasar el mouse */
 }
 
 footer a.correo {
@@ -406,16 +425,14 @@ footer a.correo {
 }
 
 footer a.correo:hover {
-    color: #FFFFFF; /* blanco al pasar el mouse */
+    color: var(--color-blanco); /* blanco al pasar el mouse */
 }
 .profiledevs-desc h1{
-    color: #242424;
+    color: var(--color-azul-profundo);
     font-family: "Montserrat-ST";
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
 }
-
-
 
 .flip-card {
   background-color: transparent;
@@ -445,12 +462,12 @@ footer a.correo:hover {
   backface-visibility: hidden; /* Oculta la cara trasera */
   display: flex;
   align-items: center;
-  justify-content: center;}
+  justify-content: center;
 }
 
 .flip-card-front {
-  background-color: #bbb;
-  color: black;
+  background-color: rgba(138, 61, 158, 0.6); /* morado con 60% opacidad */
+  color: var(--color-azul-profundo);
 }
 
 .flip-card-back {

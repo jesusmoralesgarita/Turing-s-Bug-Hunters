@@ -8,6 +8,14 @@ function generateHTML(element) {
     const divCard = document.createElement("div");
     divCard.className = "card h-100";
 
+
+
+    const divDescuento = document.createElement("div");
+    if(element.descuento !== 0){
+        divDescuento.className = "descuento";
+        divDescuento.innerText = `${element.descuento}% DTO`
+    }
+
     const img = document.createElement("img");
     img.src = element.imagen;
     img.className = "card-img-top";
@@ -25,7 +33,15 @@ function generateHTML(element) {
 
     const spanPrice = document.createElement("span");
     spanPrice.className = "price";
-    spanPrice.innerText ="$"+ parseFloat(element.precio).toFixed(2);
+    spanPrice.innerText ="$"+ parseFloat(element.precio * (1- element.descuento*0.01) ).toFixed(2);
+
+
+    if (element.descuento !== 0) {
+        const spanDiscount = document.createElement("span");
+        spanDiscount.className = "price-discount";
+        spanDiscount.innerText ="$"+ parseFloat(element.precio).toFixed(2);
+        spanPrice.append(spanDiscount)
+    }
 
     const spanDetails = document.createElement("span");
     spanDetails.className = "details";
@@ -37,8 +53,7 @@ function generateHTML(element) {
     button.className =
         "btn btn-custom d-flex justify-content-between align-items-center";
     button.addEventListener("click", (e) => {
-        const storage = localStorage.getItem("carrito");
-
+        // El carrito se maneja a través de la API
         window.location.href = "./agregarCarrito.html?id="+element.id_producto
 
     });
@@ -53,7 +68,7 @@ function generateHTML(element) {
     button.append(spanButton, iButton);
     pBody.append(spanPrice, spanDetails);
     divBody.append(h5, pBody, button);
-    divCard.append(img, divBody);
+    divCard.append(img, divBody,divDescuento);
     divPrincipal.append(divCard);
 
     return divPrincipal;

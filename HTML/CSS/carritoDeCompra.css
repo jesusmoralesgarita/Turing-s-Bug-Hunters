@@ -1,11 +1,20 @@
+/*Paleta de colores*/
+:root {
+  --color-blanco: #FFFFFF;
+  --color-azul-pastel: #7AB8FF;
+  --color-azul-profundo: #1A2A40;
+  --color-morado: #8A3D9E;
+  --color-rosa-dorado: #E6A8A1;
+}
+
 /* Gio */
 .card-product {
-      border: 1px solid #7fb3a8;
-      border-radius: 25px;
-      padding: 20px;
-      background: #fff;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
+  border: 1px solid var(--color-azul-pastel);
+  border-radius: 25px;
+  padding: 20px;
+  background: var(--color-blanco);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
 
     .qty-box {
       width: 50px;
@@ -25,12 +34,27 @@
     }
 
 /* Oswa */
-.btn-rpago{
-    background-color: #061F2F;
-    border-color: #061F2F;
-    font-family: "DM Sans";
+.btn-rpago {
+  background-color: var(--color-azul-profundo);
+  border-color: var(--color-azul-profundo);
+  font-family: "DM Sans";
+  color: var(--color-blanco);
+  transition: background 0.3s ease;
 }
+
+.btn-rpago:hover {
+  background-color: var(--color-morado);
+  border-color: var(--color-morado);
+}
+
 .modal-backdrop {
-    background-color: #b194b5;
-    opacity: 0.9 !important;
+  background-color: var(--color-rosa-dorado);
+  opacity: 0.9 !important;
+}
+
+
+
+.discount {
+  padding-left: 2rem;
+  text-decoration: line-through;
 }

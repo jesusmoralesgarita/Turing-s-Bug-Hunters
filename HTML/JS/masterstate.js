@@ -3,6 +3,7 @@
 async function render() {
 
     // 1. Obtener pedidos desde el backend
+  const token = JSON.parse( localStorage.getItem("token"));
     let response = await fetch(URL_BASE + "/api/v1/detalles-pedidos");
     let pedidos = await response.json();
     console.log(pedidos);
@@ -191,10 +192,12 @@ function generateHMTL(pedido) {
 
 async function update(id, state, detalles_pedidos) {
     console.log({ ... detalles_pedidos, estado_pedido: state });
+  const token = JSON.parse( localStorage.getItem("token"));
     await fetch(`${URL_BASE}/api/v1/detalles-pedidos/${id}`, {
         method: "PUT",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+                "Authorization": `Bearer ${token.token}`,
         },
         body: JSON.stringify({ ... detalles_pedidos, estado_pedido: state })
     });
