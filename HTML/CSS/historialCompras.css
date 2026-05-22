@@ -1,0 +1,227 @@
+.state-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.button-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.state-div{
+    padding: 1rem;
+    border: solid 5px;
+    background-color: transparent !important;
+    border-radius: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.state-img{
+    display: flex;
+    height: 100%;
+    min-width: 100px;
+}
+
+
+.state-img img{
+    flex-grow: 1;
+    object-fit: contain;
+    height: 100%;
+    aspect-ratio: 1;
+}
+
+.check {
+    aspect-ratio: 1;
+    color: white;
+    border-radius: 50%;
+}
+
+.check-ent{
+    background-color: #BE814F;
+    border-color: #BE814F;
+}
+
+
+.check-env{
+    background-color: #70216D;
+    border-color: #70216D;
+}
+
+
+.check-cre{
+    background-color: #172936;
+    border-color: #172936;
+}
+
+
+.check-res{
+    background-color: #2A8574;
+    border-color: #2A8574;
+}
+
+
+
+.check-ent-check{
+    color: #BE814F;
+    border-color: #BE814F;
+}
+
+.check-ent-check:hover {
+    border-color: #BE814F !important;
+    color: #BE814F !important;
+}
+
+#btncheck4:checked  ~  .check-ent-check {
+    background-color: #BE814F !important;
+    border-color: #BE814F !important;
+    color: rgb(255, 255, 255) !important;
+}
+
+
+
+
+.check-env-check{
+    color: #70216D;
+    border-color: #70216D;
+}
+
+.check-env-check:hover {
+    border-color: #70216D !important;
+    color: #70216D !important;
+}
+
+#btncheck3:checked  ~  .check-env-check {
+    background-color: #70216D !important;
+    border-color: #70216D !important;
+    color: rgb(255, 255, 255) !important;
+}
+
+
+
+.check-cre-check{
+    color: #172936;
+    border-color: #172936;
+}
+.check-cre-check{
+    color: #172936;
+    border-color: #172936;
+}
+
+.check-cre-check:hover {
+    border-color: #172936 !important;
+    color: #172936 !important;
+}
+
+#btncheck2:checked  ~  .check-cre-check {
+    background-color: #172936 !important;
+    border-color: #172936 !important;
+    color: rgb(255, 255, 255) !important;
+}
+
+
+
+
+.check-res-check{
+    color: #2A8574;
+    border-color: #2A8574;
+}
+
+.check-res-check:hover {
+    border-color: #2A8574 !important;
+    color: #2A8574 !important;
+}
+
+#btncheck1:checked  ~  .check-res-check {
+    background-color: #2A8574 !important;
+    border-color: #2A8574 !important;
+    color: rgb(255, 255, 255) !important;
+}
+
+
+
+.state-img{
+    margin: auto;
+    aspect-ratio: 1;
+    max-width: 20%;
+    height: 100%;
+}
+
+
+
+.state-name{
+    margin: auto;
+    padding: 1rem;
+}
+
+.state-name h3 {
+
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.state-name p {
+    color: #2E8472;
+    font-size: 0.8rem;
+}
+
+
+.state-row-title {
+    text-align: right;
+    font-weight: bold;
+}
+
+
+.state-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.state-price {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+}
+
+.state-row-value{
+    padding-left: 1rem;
+}
+
+.state-stateesc{
+    margin: auto;
+    padding: 0.5rem;
+}
+
+.state-stateesc-list{
+    padding-top: 0.3rem;
+}
+
+.state-stateesc-list p{
+    margin: 0px;
+    padding: 0px;
+    font-size: 0.8rem;
+}
+
+.state-stateesc-current{
+    width: 100%;
+    text-align: center;
+    padding: 2px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+
+
+.state-stateesc-title{
+    font-size: 1rem;
+    text-align: center;
+}

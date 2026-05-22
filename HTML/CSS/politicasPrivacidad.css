@@ -1,0 +1,32 @@
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: url('../FONT/Montserrat-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat-Bold';
+    src: url('../FONT/Montserrat-Bold.ttf') format('truetype');
+}
+
+#colosirtoFondo{
+    background-color: #208774;
+}
+
+.textilloPriv{
+    text-align: justify;
+    color: #FFFFFF;
+    padding: 2.5rem;
+    font-family: 'Montserrat-Regular';
+}
+
+h2{
+    padding-block-end: 10px;
+    font-family: 'Montserrat-Bold';
+    color: black;
+}
+
+h5{
+    padding-block-end: 10px;
+    padding-top: 10px;
+    font-family: 'Montserrat-Bold'
+}

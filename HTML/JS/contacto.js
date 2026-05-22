@@ -1,7 +1,3 @@
-//import { URL } from './constantes.js';
-
-/* Oswaldo */
-
 /* --- INTEGRACIÓN LUIS, Maitte & ALEX --- */
 (() => {
     'use strict'
@@ -9,18 +5,36 @@
     const form = document.getElementById('contact-form');
 
     if (form) {
-        form.addEventListener('submit', async (event) => {
+        // Revisar si venimos de regreso de Formspree
+        if (localStorage.getItem('formSubmitted') === 'true') {
+            localStorage.removeItem('formSubmitted');
+            enviarFormulario(); // Mostrar modal de éxito
+            
+            // Forzar la limpieza de los campos (timeout para vencer la restauración de caché del navegador al ir hacia atrás)
+            setTimeout(() => {
+                form.reset();
+                const formInputs = form.querySelectorAll('input, textarea');
+                formInputs.forEach(input => {
+                    if (input.type !== 'submit' && input.type !== 'hidden' && input.type !== 'button') {
+                        input.value = '';
+                    }
+                });
+                form.classList.remove('was-validated');
+            }, 50);
+        }
+
+        form.addEventListener('submit', (event) => {
             event.preventDefault();
 
             const divs = form.getElementsByClassName("form-element");
             Array.from(divs).forEach(div => {
                 let message = "";
-                const divInput = div.getElementsByTagName("input").item(0);
+                const divInput = div.querySelector("input, textarea");
+                
+                if (!divInput) return;
 
                 const inputType = divInput.getAttribute("valtype");
 
-
-                console.log(inputType)
                 if (inputType !== null) {
                     switch (inputType) {
                         case "nombrehomes":
@@ -32,7 +46,7 @@
                         case "email":
                             message = validarEmail1();
                             break;
-                        case "mensaje":
+                        case "message":
                             message = validarMensaje();
                             break;
                         default:
@@ -51,43 +65,18 @@
 
             if (!form.checkValidity()) {
                 event.stopPropagation();
+                form.classList.add('was-validated');
             } else {
                 const boton = document.getElementById('submit-btn');
-                const textoOriginal = boton.innerText;
-                
                 boton.innerText = "Enviando...";
                 boton.disabled = true;
 
-                const formData = new FormData(form);
+                // Guardar bandera indicando que el formulario fue enviado correctamente
+                localStorage.setItem('formSubmitted', 'true');
 
-                try {
-                    const response = await fetch(Config.ENDPOINT, {
-                        method: 'POST',
-                        body: formData,
-                        headers: {
-                            'Accept': 'application/json'
-                        }
-                    });
-
-                    if (response.ok) {
-                        enviarFormulario();
-                        cerrarModal();
-                        form.reset();
-                        form.classList.remove('was-validated');
-                    } else {
-                        alert("Hubo un error al enviar. Revisa el endpoint en la clase Config.");
-                    }
-                } catch (error) {
-                    //alert de error de red en ves de enviar formulario, esto solo para la revision de la pag 09/04/2026, cambiar al tener el URL 
-                    enviarFormulario();
-                    console.error("Error de red:", error);
-                } finally {
-                    boton.innerText = textoOriginal;
-                    boton.disabled = false;
-                }
+                // Enviar nativamente a Formspree (causa la redirección)
+                form.submit();
             }
-            
-            form.classList.add('was-validated');
         }, false);
     }
 })();
@@ -104,15 +93,6 @@ function validarEmail(email) {
     return regex.test(email);
 }
 
-/*
-document.getElementById("registroForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Evita el envío automático */
-
-// Limpiar mensajes previos
-//document.querySelectorAll(".error").forEach(e => e.textContent = "");
-
-
-
 // Validar nombre
 function validarNombre() {
 
@@ -126,7 +106,7 @@ function validarNombre() {
     } else {
         return "El nombre sin números";
     }
-};
+}; 
 
 // Validar email
 function validarEmail1() {
@@ -147,37 +127,34 @@ function validarEmail1() {
 function validarNumCel() {
 
     const cel = document.getElementById("contact-number").value.trim();
-    if (/^\d$/.test(cel)) {
-        return "Solo se aceptan números";
+
+    if(cel === ""){
+        return "Se necesita un telefono."
     }
-    if (cel.length < 10) {
-        return "El número de telefono debe tener al menos 10 digitos.";
+    if ((/^[0-9]+$/.test(cel))) {
+        
+    }else{
+        return "Solo se aceptan números"
+    }
+    if (cel.length != 10 ) {
+        return "El número de telefono debe tener 10 digitos.";
     } else {
         return "";
     }
 
 }
 
-
-
 // Validar mensaje
 function validarMensaje() {
-    const mensaje = document.getElementById("contact-message").value.trim();
-    if (mensaje.length < 0 && mensaje.length <= 250) {
-        return "";
+    const mensaje = document.getElementById("contact-message");
+    const valor = mensaje.value.trim();
+
+    if (valor === "") {
+        return "Coloca un mensaje";
     }else{
-        return "Coloca un mensaje"
+        return "";
     }
-
 }
-
-
-// Si todo es válido, enviar formulario
-if (valido) {
-    alert("Registro realizado con exito");
-    this.submit();
-}
-//});
 
 /* Mai */
 /* MODAL */
@@ -194,7 +171,3 @@ function enviarFormulario() {
 function cerrarModal() {
   document.getElementById("modal").style.display = "none";
 }
-
-/* Alex */
-
-
