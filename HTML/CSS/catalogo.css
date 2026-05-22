@@ -1,5 +1,17 @@
+/*Paleta de colores*/
+:root {
+  --color-blanco: #FFFFFF;
+  --color-azul-pastel: #7AB8FF;
+  --color-azul-profundo: #1A2A40;
+  --color-morado: #8A3D9E;
+  --color-rosa-dorado: #E6A8A1;
+}
+
+/* Body */
 body {
   padding-top: 160px;
+  background-color: var(--color-blanco);
+  color: var(--color-azul-profundo);
 }
 
 /*Fuentes*/
@@ -13,41 +25,44 @@ footer a {
 footer h5 {
   font-family: "Montserrat", sans-serif;
   font-weight: 700; /* Bold, títulos principales */
+  color: var(--color-morado);
 }
 
 footer h6 {
   font-family: "Montserrat", sans-serif;
   font-weight: 600; /* SemiBold, subtítulos */
+  color: var(--color-azul-profundo);
 }
 
 footer a i {
-  color: black; /* color inicial */
+  color: var(--color-azul-profundo);
   transition: color 0.3s ease; /* efecto suave */
 }
 
 footer a i:hover {
-  color: #ffffff; /* blanco al pasar el mouse */
+  color: var(--color-blanco); /* blanco al pasar el mouse */
 }
 
 footer a.politica {
-  color: black; /* color inicial */
+  color: var(--color-azul-profundo); /* color inicial */
   transition: color 0.3s ease;
 }
 
 footer a.politica:hover {
-  color: #ffffff; /* blanco al pasar el mouse */
+  color: var(--color-blanco); /* blanco al pasar el mouse */
 }
 
 footer a.correo {
-  color: black; /* color inicial */
+  color: var(--color-azul-profundo);
   transition: color 0.3s ease;
 }
 
 footer a.correo:hover {
-  color: #ffffff; /* blanco al pasar el mouse */
+  color: var(--color-blanco); /* blanco al pasar el mouse */
 }
+
 .profiledevs-desc h1 {
-  color: #242424;
+  color: var(--color-azul-profundo);
   font-family: "Montserrat-ST";
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
@@ -60,28 +75,28 @@ footer a.correo:hover {
   left: 0;
   width: 100%;
   z-index: 1000;
-  background-color: #0b1c26;
+  background-color: var(--color-azul-profundo);
 }
 .navbar-custom .nav-link,
 .navbar-custom .navbar-brand {
-  color: white;
-  font-family: "DM Sans";
+  color: var(--color-blanco);
+  font-family: "DM-Sans-CT";
 }
 .navbar-custom .nav-link:hover {
-  color: #00c3ff;
+  color: var(--color-azul-pastel);
 }
 
 /* estilo del menu de categorias */
 .custom-dropdown {
   width: 280px;
-  background-color: #b67c4b; /* fondo café */
+  background-color: var(--color-rosa-dorado); /* fondo café */
   border: none;
   font-family: "DM Sans";
 }
 
 /* Caja de categorías */
 .menu-categorias {
-  background-color: #e9e4ea;
+  background-color: var(--color-azul-pastel);
   border-radius: 20px;
   padding: 20px;
 }
@@ -94,25 +109,25 @@ footer a.correo:hover {
 
 /* Caja inferior */
 .menu-contacto {
-  background-color: #e9e4ea;
+  background-color: var(--color-azul-pastel);
   border-radius: 20px;
   padding: 15px;
 }
 
 .menu-contacto i {
-  color: #333;
+  color: var(--color-azul-profundo);
 }
 
 /* diseño carro de compras */
 .dropdown-carrito {
   width: 250px;
-  background-color: #b67c4b; /* fondo café */
+  background-color: var(--color-rosa-dorado); /* fondo café */
   border: none;
 }
 
 /* Caja interna */
 .carrito-menu {
-  background-color: #e9e4ea;
+  background-color: var(--color-azul-pastel);
   border-radius: 20px;
   padding: 20px;
 }
@@ -160,19 +175,21 @@ h1 {
 .btn-primary {
   font-family: url(/FONT/DM_Sans/DMSans-Regular.ttf);
   font-weight: 400;
-  background-color: #061f2f;
-  border-color: #061f2f;
+  background-color: var(--color-azul-profundo);
+  border-color: var(--color-azul-profundo);
+  color: var(--color-blanco);
 }
 
 .btn-primary:hover {
-  background-color: #061f2f;
+  background-color: var(--color-morado);
 }
 
 .btn-secondary {
   font-family: url(/FONT/DM_Sans/DMSans-Regular.ttf);
   font-weight: 400;
-  background-color: #71156e;
-  border-color: #71156e;
+  background-color: var(--color-morado);
+  border-color: var(--color-morado);
+  color: var(--color-blanco);
 }
 
 /*BANNER PLAYERAS*/
@@ -192,7 +209,7 @@ section {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 2rem;
-  color: black;
+  color: var(--color-azul-profundo);
   background:
     linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
     url("../Pictures/banner.jpeg");
@@ -202,17 +219,17 @@ section {
   padding: 10px 100px;
   display: inline-block;
   text-shadow:
-    -1px -1px 0 white,
-    1px -1px 0 white,
-    -1px 1px 0 white,
-    1px 1px 0 white;
+    -1px -1px 0 var(--color-blanco),
+    1px -1px 0 var(--color-blanco),
+    -1px 1px 0 var(--color-blanco),
+    1px 1px 0 var(--color-blanco);
 }
 
 /*CARDS DE PRODUCTOS*/
 .card {
   display: flex;
   flex-direction: column;
-  border: 1px solid #dee2e6;
+  border: 1px solid var(--color-azul-pastel);
   transition: transform 0.2s ease-in-out;
 }
 .card:hover {
@@ -240,10 +257,13 @@ section {
   text-align: center;
   font-size: 1.2rem;
   font-weight: 600;
+  color: var(--color-morado);
 }
+
 .card-text {
   margin-bottom: 15px;
 }
+
 .card-img-top {
   width: 100%;
   height: 200px;
@@ -256,7 +276,7 @@ section {
   text-align: center; /* centra el texto */
   font-size: 1.1rem;
   font-weight: bold;
-  color: #71156e;
+  color: var(--color-morado);
   margin-bottom: 8px;
 }
 
@@ -266,13 +286,13 @@ section {
   text-align: justify; /* distribuye el texto */
   font-size: 0.95rem;
   line-height: 1.5;
-  color: #6c757d;
+  color: var(--color-azul-profundo);
 }
 
 /* Botón dentro de la card */
 .card .btn {
-  background-color: #71156e; /* color corporativo */
-  color: #fff;
+  background-color: var(--color-morado); /* color corporativo */
+  color: var(--color-blanco);
   border: none;
   display: block; /* hace que el botón sea un bloque */
   margin: 0 auto; /* centra horizontalmente */
@@ -283,8 +303,8 @@ section {
   border-radius: 8px;
 }
 .card .btn:hover {
-  background-color: #9a1f91; /* tono más claro para hover */
-  color: #fff;
+  background-color: var(--color-azul-pastel); /* tono más claro para hover */
+  color: var(--color-blanco);
 }
 .btn-custom {
   width: 100%;
@@ -294,5 +314,5 @@ section {
 
 /*FOOTER*/
 .f-dorado {
-  background-color: #be814f; /* Poner el fondo dorado */
+  background-color: var(--color-rosa-dorado); /* Poner el fondo dorado */
 }

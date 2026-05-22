@@ -1,26 +1,30 @@
-/* MAITTE */
-
-/* LUIS */
-
-/* LEI */
+/* Paleta de colores */
+:root {
+  --color-blanco: #FFFFFF;
+  --color-azul-pastel: #7AB8FF;
+  --color-azul-profundo: #1A2A40;
+  --color-morado: #8A3D9E;
+  --color-rosa-dorado: #E6A8A1;
+}
 
 .card-cttn {
-    background-color: #061f2f;
+    background-color: var(--color-azul-profundo);
     border-radius: 25px;
     width: 100%;
     max-width: 80%;
-    box-shadow: 18px -18px 2px 5px #bcbbbb;
+    box-shadow: 18px -18px 2px 5px var(--color-rosa-dorado);
 }
+
 .text-cttn {
     font-size: 2.2rem;
-    color: #ffffff;
+    color: var(--color-blanco);
     font-family: "Montserrat-T";
 }
 
 .form-ctn {
-    background-color: #ffffff;
+    background-color: var(--color-blanco);
     border-radius: 25px;
-    color: #061f2f;
+    color: var(--color-azul-profundo);
     margin: 2rem;
     padding: 1rem;
 }
@@ -34,25 +38,27 @@
 
 /* ERICK */
 .upload-area {
-    border: 2px dashed #ccc;
+    border: 2px dashed var(--color-azul-pastel);
     border-radius: 8px;
     padding: 40px;
-    background-color: #f8f9fa;
+    background-color: var(--color-blanco);
     cursor: pointer;
     transition: border-color 0.3s;
 }
+
 .upload-area:hover {
-    border-color: #0d6efd; /* azul Bootstrap */
+    border-color: var(--color-morado);
 }
+
 .upload-icon {
     font-size: 48px;
-    color: #6c757d;
+    color: var(--color-azul-profundo);
 }
 
 /* FER */
 
 h2 {
-    color: #333;
+    color: var(--color-morado);
 }
 
 .label-list {
@@ -61,6 +67,7 @@ h2 {
     margin: 8px 0;
     font-size: 16px;
     cursor: pointer;
+    color: var(--color-azul-profundo);
 }
 
 /* círculo con la letra */
@@ -71,48 +78,47 @@ h2 {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: #d8b4fe; /* color de fondo del círculo */
-    color: #333;
+    background-color: var(--color-rosa-dorado); /* color de fondo del círculo */
+    color: var(--color-blanco);
     font-weight: bold;
     margin-right: 10px;
 }
 
 /* estilo de los checkboxes */
 input[type="checkbox"] {
-    accent-color: green; /* palomita verde */
+    accent-color: var(--color-morado); /* palomita morada */
     width: 18px;
     height: 18px;
     margin-left: auto; /* empuja el checkbox a la derecha */
 }
 
-/* GIO */
-
 /* CHUCHO */
 .btn-primary {
     font-family: url(/FONT/DM_Sans/DMSans-Regular.ttf);
-    background-color: #208774;
+    background-color: var(--color-azul-pastel);
+    border-color: var(--color-azul-pastel);
+    color: var(--color-blanco);
 }
-
-/* OSWALDO */
 
 /* ALE */
 
 .btn-verde-turing {
-    background-color: #008080;
-    color: white;
+    background-color: var(--color-morado);
+    color: var(--color-blanco);
     border: none;
 }
 
 .btn-verde-turing:hover {
-    background-color: #006666;
-    color: white;
+    background-color: var(--color-azul-profundo);
+    color: var(--color-blanco);
 }
 
 .card-formulario {
-    background-color: #ffffff;
+    background-color: var(--color-blanco);
     border-radius: 15px;
 }
 
 body {
     font-family: "Montserrat", sans-serif;
+    background-color: var(--color-azul-pastel);
 }

@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
         container.innerHTML = `
             <div class="d-flex gap-2">
                 <a href="login.html" class="btn btn-outline-light btn-sm">Iniciar Sesión</a>
-                <a href="registro.html" class="btn btn-sm" style="background-color: #b07d54; color: white; border: none;">Registrate</a>
+                <a href="registro.html" class="btn btn-sm" style="background-color: #8A3D9E; color: white; border: none;">Registrate</a>
             </div>
         `;
     }
@@ -125,7 +125,7 @@ Array.from(document.getElementsByTagName("form")).forEach((e) => {
 
 
 
-const URL_BASE = "http://localhost:8081"
+const URL_BASE = "http://localhost:8080"
 
 
 /**
