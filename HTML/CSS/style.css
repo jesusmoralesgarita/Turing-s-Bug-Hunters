@@ -28,7 +28,7 @@
   width: 280px;
   background-color: var(--color-rosa-dorado); /* fondo rosa dorado */
   border: none;
-  font-family: "DM-Sans-CT";
+  font-family: "DM Sans";
 }
 
 /*Chucho*/
@@ -107,7 +107,7 @@
 }
 
 .sloga1 {
-  font-family: "Montserrat-ST";
+  font-family: "Montserrat";
   font-size: 0.8rem;
   letter-spacing: 0.08rem;
   color: var(--color-azul-profundo);
@@ -130,7 +130,7 @@
 }
 
 .sloga2 {
-  font-family: "Montserrat-ST";
+  font-family: "Montserrat";
   min-height: 3.5rem;
   font-size: 1.6rem;
   color: var(--color-blanco);
@@ -150,12 +150,12 @@
 /* --- 1. REGISTRO DE FUENTES --- */
 @font-face {
     font-family: 'Montserrat-Regular';
-    src: url('../FONT/Montserrat-Regular.ttf') format('truetype');
+    src: url('../FONT//Montserrat/Montserrat-Regular.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Montserrat-Bold';
-    src: url('../FONT/Montserrat-Bold.ttf') format('truetype');
+    src: url('../FONT//Montserrat/Montserrat-Bold.ttf') format('truetype');
 }
 
 /* Aplicar fuente base a todo el proyecto */

@@ -84,6 +84,7 @@
   color: var(--color-blanco);
   font-family: "DM Sans";
   font-size: 1rem;
+  margin-top: 10px;
 }
 
 .color-desc:hover {
