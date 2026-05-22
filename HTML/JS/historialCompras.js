@@ -1,33 +1,17 @@
 
-function render() {
+async function render() {
     let pedidos;
-    if (localStorage.getItem("pedidos")) {
-        pedidos = JSON.parse( localStorage.getItem("pedidos"))
-    }else{
-        pedidos = []
-        pedidos.push({
-            precio: 300,
-            cantidad: 3,
-            imagen:"a.png",
-            estado: "Entregado",
-            fecha : "2016",
-            direccion: "Algun lugar",
-            rastreador: "dsfdsf",
-            producto: {
-        idProducto:0,
-        tipoProducto: "Playera",
-        nombreProducto: "Playera Basica",
-        precio:199.99,
-        talla:["P", "M", "G"],
-        color:["azul", "blanco"],
-        diseño:false,
-        descripcion:["100 % algodón", "Unisex", "Lavar a máquina en frío con colores similares, secar a baja temperatura"],
-        cantidad:3,
-        imagen:"../HTML/Pictures/playbasica.png",
-        descuento:0,
-            }
-        })
-        localStorage.setItem("pedidos",JSON.stringify(pedidos));
+    // Cargar pedidos desde la API
+    try {
+        const response = await fetch(URL_BASE + "/api/v1/pedidos");
+        if (response.ok) {
+            pedidos = await response.json();
+        } else {
+            pedidos = [];
+        }
+    } catch (error) {
+        console.error("Error al cargar pedidos:", error);
+        pedidos = [];
     }
 
     let check1 = document.getElementById("btncheck1").checked;

@@ -38,7 +38,7 @@ async function validarLogin(emailIngresado, passIngresada) {
             }
         )
 
-        localStorage.setItem("usuario", JSON.stringify( usuario))
+        // El usuario se guarda en la sesión del servidor, no en localStorage
         return "success"
     }catch(e){
         return "Correo o contraseña incorrectos.";
@@ -99,7 +99,8 @@ document.addEventListener("DOMContentLoaded", () => {
             if (btn) {
                 btn.onclick = () => {
                     localStorage.removeItem("sesionActiva");
-                    window.location.reload();
+                        window.location.reload();
+        
                 };
             }
         }, 100);
