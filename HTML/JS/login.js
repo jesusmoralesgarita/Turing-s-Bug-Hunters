@@ -75,9 +75,46 @@ document.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("user-menu-container");
     if (!container) return;
 
-    const sesionActiva = localStorage.getItem("sesionActiva");
+     const token = localStorage.getItem("token");
 
-    if (sesionActiva === "true") {
+    if (token && JSON.parse( token).roles === "[ROLE_ADMIN]") {
+        container.innerHTML = `
+            <div class="dropdown">
+                <button class="btn text-white p-0 border-0" type="button" data-bs-toggle="dropdown">
+                    <i class="bi bi-person-circle fs-4"></i>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end p-0" style="background-color: #b07d54; border: none; min-width: 150px; overflow: hidden;">
+                    <li class="text-center pt-2 pb-1">
+                        <span class="fw-bold" style="color: #2c1a10; font-size: 0.85rem; letter-spacing: 1px;">PERFIL</span>
+                    </li>
+                    <li class="p-3">
+                        <button id="btn-cerrar-sesion" class="btn w-100" style="background-color: white; color: #555; border-radius: 8px; font-size: 0.8rem; font-weight: bold; border: none;">
+                            cerrar sesión
+                        </button>
+                    </li>
+                </ul>
+            </div>`;
+
+            console.log(document.querySelector(".carrito-menu"))
+            document.querySelector(".carrito-menu").innerHTML += `
+                <a href="mastercat.html" class="dropdown-item text-center">Administrar Catalogo</a>
+                <a href="masterstate.html" class="dropdown-item text-center">Administrar Pedidos</a>
+            `
+            
+
+        // Configurar el click manualmente para que siempre funcione
+        setTimeout(() => {
+            const btn = document.getElementById('btn-cerrar-sesion');
+            if (btn) {
+                btn.onclick = () => {
+                    localStorage.removeItem("sesionActiva");
+                    localStorage.removeItem("token");
+                    window.location.reload();
+                };
+            }
+        }, 100);
+    }else if(token && JSON.parse( token).roles === "[ROLE_USER]"){
+
         container.innerHTML = `
             <div class="dropdown">
                 <button class="btn text-white p-0 border-0" type="button" data-bs-toggle="dropdown">

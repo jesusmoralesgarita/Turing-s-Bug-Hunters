@@ -33,7 +33,15 @@ function generateHTML(element) {
 
     const spanPrice = document.createElement("span");
     spanPrice.className = "price";
-    spanPrice.innerText ="$"+ parseFloat(element.precio).toFixed(2);
+    spanPrice.innerText ="$"+ parseFloat(element.precio * (1- element.descuento*0.01) ).toFixed(2);
+
+
+    if (element.descuento !== 0) {
+        const spanDiscount = document.createElement("span");
+        spanDiscount.className = "price-discount";
+        spanDiscount.innerText ="$"+ parseFloat(element.precio).toFixed(2);
+        spanPrice.append(spanDiscount)
+    }
 
     const spanDetails = document.createElement("span");
     spanDetails.className = "details";

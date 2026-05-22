@@ -72,7 +72,15 @@ function crearProductoDOM(pedido, id) {
 
     const priceSpan = document.createElement("span");
     priceSpan.className = "precio";
-    priceSpan.textContent = pedido.precio_total;
+    priceSpan.textContent =  parseFloat(pedido.precio_total).toFixed(2);
+
+
+    if (pedido.producto.descuento !== 0) {
+        const spanDiscount = document.createElement("span");
+        spanDiscount.className = "discount";
+        spanDiscount.innerText ="$"+ parseFloat(pedido.producto.precio).toFixed(2);
+        priceSpan.append(spanDiscount)
+    }
 
     priceTitle.appendChild(dollar);
     priceTitle.appendChild(priceSpan);

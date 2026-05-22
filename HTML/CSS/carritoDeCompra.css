@@ -34,3 +34,10 @@
     background-color: #b194b5;
     opacity: 0.9 !important;
 }
+
+
+
+.discount {
+  padding-left: 2rem;
+  text-decoration: line-through;
+}

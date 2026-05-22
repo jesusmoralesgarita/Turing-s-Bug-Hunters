@@ -262,6 +262,16 @@ section {
   margin-bottom: 8px;
 }
 
+.price-discount {
+  display: block; /* ocupa toda la línea */
+  text-align: center; /* centra el texto */
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #71156e;
+  margin-bottom: 8px;
+  text-decoration: line-through;
+}
+
 /* Detalles justificados */
 .details {
   display: block;

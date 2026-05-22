@@ -17,6 +17,11 @@
   pointer-events: none;
 }
 
+.discount {
+  padding-left: 2rem;
+  text-decoration: line-through;
+}
+
 
 /* Fer */
 .add-to-cart-card {
