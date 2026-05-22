@@ -148,11 +148,8 @@
                         usuarioGuardado
                     );
 
-                    // Guardar en localStorage
-                    localStorage.setItem(
-                        "usuarioRegistrado",
-                        JSON.stringify(usuarioGuardado)
-                    );
+                    // El usuario se guarda en la base de datos a través de la API
+                    // No se utiliza localStorage
 
                     // Mostrar modal
                     enviarFormulario();
@@ -372,31 +369,30 @@ function validarNumCel() {
 // LOGIN
 // =====================================
 
-function validarLogin(emailIngresado, passIngresada) {
+async function validarLogin(emailIngresado, passIngresada) {
 
-    const datosSrt =
-        localStorage.getItem("usuarioRegistrado");
+    // La validación de login se realiza contra la base de datos a través de la API
+    try {
+        const response = await fetch(URL_BASE + "/api/v1/usuarios/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                correo_electronico: emailIngresado,
+                contrasena: passIngresada
+            })
+        });
 
-    if (!datosSrt)
-        return "No hay usuarios registrados.";
-
-    const usuario = JSON.parse(datosSrt);
-
-    if (
-
-        usuario.correo_electronico === emailIngresado &&
-
-        usuario.contrasena === passIngresada
-
-    ) {
-
-        localStorage.setItem("sesionActiva", "true");
-
-        return "success";
-
-    } else {
-
-        return "Correo o contraseña incorrectos.";
+        if (response.ok) {
+            // La sesión se mantiene en el servidor, no en localStorage
+            return "success";
+        } else {
+            return "Correo o contraseña incorrectos.";
+        }
+    } catch (error) {
+        console.error("Error en login:", error);
+        return "Error en la conexión con el servidor.";
     }
 }
 

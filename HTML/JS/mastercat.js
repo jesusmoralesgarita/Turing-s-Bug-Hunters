@@ -140,18 +140,43 @@ async function render() {
     
 }
 
-function addProducto(item) {
-    const lista = JSON.parse(localStorage.getItem("catalogo"));
-    lista.push(lista);
-    render();
+async function addProducto(item) {
+    // Agregar producto a la base de datos a través de la API
+    try {
+        const response = await fetch(URL_BASE + "/api/v1/productos", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(item)
+        });
+        if (!response.ok) {
+            throw new Error("Error al agregar el producto");
+        }
+        render();
+    } catch (error) {
+        console.error("Error:", error);
+    }
 }
 
 
-function editProducto(item){
-    const lista = JSON.parse(localStorage.getItem("catalogo"));
-    const index = (lista).findIndex((v) => v.idProducto === item.idProducto);
-    lista[index] = item;
-    render();
+async function editProducto(item){
+    // Editar producto en la base de datos a través de la API
+    try {
+        const response = await fetch(URL_BASE + "/api/v1/productos/" + item.idProducto, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(item)
+        });
+        if (!response.ok) {
+            throw new Error("Error al editar el producto");
+        }
+        render();
+    } catch (error) {
+        console.error("Error:", error);
+    }
 }
 
 /**@param {Producto} item */

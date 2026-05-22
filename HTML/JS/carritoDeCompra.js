@@ -16,7 +16,9 @@ function calcularTotal() {
 }
 
 /**@type {DetallePedido[]} */
-let detalles = JSON.parse(localStorage.getItem("detalles"));
+detalles = JSON.parse(localStorage.getItem("detalles"));
+// Los detalles del carrito se cargarán desde la API
+// TODO: Implementar llamada a API para obtener detalles del carrito del usuario autenticado
 console.log(detalles);
 
 /**@param {DetallePedido} pedido */
@@ -156,7 +158,8 @@ async function pago(ev) {
         ev.preventDefault();
 
         /**@type {Usuario} */
-        const usuario = JSON.parse(localStorage.getItem("usuario"))
+        // El usuario debe obtenerse de la sesión autenticada en el servidor
+        const usuario = await fetch(URL_BASE + "/api/v1/usuarios").then(r => r.json())
         const subir = new Pedido({
             direccion: document.getElementById("dir").value,
             fecha_pedido: new Date(),
@@ -212,7 +215,6 @@ async function pago(ev) {
 
         localStorage.setItem("detalles", "[]");
         detalles = [];
-
         render();
     }
 }

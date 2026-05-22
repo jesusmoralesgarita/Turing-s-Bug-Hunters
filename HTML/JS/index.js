@@ -218,7 +218,13 @@ function generateReview(review) {
   // Fecha
   const reviewDate = document.createElement("p");
   reviewDate.className = "review-date mb-0";
-  reviewDate.textContent = new Date( review.fecha_review );
+
+  // reviewDate.textContent = new Date( review.fecha_review );
+  const fecha = new Date(review.fecha_review);
+
+  reviewDate.textContent = fecha.toLocaleDateString("es-MX"
+  // , {day: "numeric", month: "long", year: "numeric"}
+  );
 
   // Construcción jerárquica
   userInfo.appendChild(reviewerName);

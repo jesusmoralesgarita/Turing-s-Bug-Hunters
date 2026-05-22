@@ -1,37 +1,49 @@
+/* Paleta de colores */
+:root {
+  --color-blanco: #FFFFFF;
+  --color-azul-pastel: #7AB8FF;
+  --color-azul-profundo: #1A2A40;
+  --color-morado: #8A3D9E;
+  --color-rosa-dorado: #E6A8A1;
+}
+
 .card-cttn {
-  background-color: #ffffff;
+  background-color: var(--color-blanco);
   border-radius: 25px;
   width: 100%;
   max-width: 80%;
-  box-shadow: 18px -18px 2px 5px #1E6458;
+  box-shadow: 18px -18px 2px 5px var(--color-rosa-dorado);
 }
+
 .text-cttn {
   font-size: 2.2rem;
-  color: #000000;
+  color: var(--color-azul-profundo);
   font-family: "Montserrat-T";
 }
 
 body {
-    background-color: #268674;
+    background-color: var(--color-azul-pastel);
 }
 /* Luis */
 
 .form-ctn{
-  background-color: #ffffff;
+  background-color: var(--color-blanco);
   border: 3px solid #00000014;
   border-radius: 25px;
-  color: #061f2f;
+  color: var(--color-azul-profundo);
   margin: 2rem;
   padding: 1.5rem;
 }
 
 .btn-custom {
-    background-color: #303030;
-    border-color: #303030;
+    background-color: var(--color-azul-profundo);
+    border-color: var(--color-azul-profundo);
+    color: var(--color-blanco);
 }
 
 .btn-custom:hover{
-    background-color: #202020;
+    background-color: var(--color-morado);
+    border-color: var(--color-morado);
 }
 
 .form-logo{
@@ -42,15 +54,15 @@ body {
 }
 
 .check:checked {
-    background-color: #303030;
+    background-color: var(--color-morado);
 }
 
 .check:focus {
-    -webkit-box-shadow: 0px 0px 10px 0px #000000; 
-    box-shadow: 0px 0px 10px 0px #000000;
+    -webkit-box-shadow: 0px 0px 10px 0px var(--color-azul-profundo); 
+    box-shadow: 0px 0px 10px 0px var(--color-azul-profundo);
 }
 
 .ctm-input:focus {
-    -webkit-box-shadow: 0px 0px 10px 0px #000000; 
-    box-shadow: 0px 0px 10px 0px #000000;
+    -webkit-box-shadow: 0px 0px 10px 0px var(--color-azul-profundo); 
+    box-shadow: 0px 0px 10px 0px var(--color-azul-profundo);
 }

@@ -5,23 +5,8 @@
     const form = document.getElementById('contact-form');
 
     if (form) {
-        // Revisar si venimos de regreso de Formspree
-        if (localStorage.getItem('formSubmitted') === 'true') {
-            localStorage.removeItem('formSubmitted');
-            enviarFormulario(); // Mostrar modal de éxito
-            
-            // Forzar la limpieza de los campos (timeout para vencer la restauración de caché del navegador al ir hacia atrás)
-            setTimeout(() => {
-                form.reset();
-                const formInputs = form.querySelectorAll('input, textarea');
-                formInputs.forEach(input => {
-                    if (input.type !== 'submit' && input.type !== 'hidden' && input.type !== 'button') {
-                        input.value = '';
-                    }
-                });
-                form.classList.remove('was-validated');
-            }, 50);
-        }
+        // La validación del formulario se realiza en el servidor
+        // No se utiliza localStorage para tracking de envíos
 
         form.addEventListener('submit', (event) => {
             event.preventDefault();
@@ -71,8 +56,7 @@
                 boton.innerText = "Enviando...";
                 boton.disabled = true;
 
-                // Guardar bandera indicando que el formulario fue enviado correctamente
-                localStorage.setItem('formSubmitted', 'true');
+                // El formulario será procesado por Formspree y la base de datos
 
                 // Enviar nativamente a Formspree (causa la redirección)
                 form.submit();
