@@ -6,10 +6,6 @@ let selected = 0;
 
 
 
-
-
-
-
 /**@param {Producto} item*/
 function generateHTML(item){
     const divRoot = document.createElement("div");
@@ -115,7 +111,13 @@ async function render() {
     
 
     /**@type {Producto[]} */
-    const lista = await fetchJson(URL_BASE+"/api/v1/productos");
+  const token = JSON.parse( localStorage.getItem("token"));
+    const lista = await fetchJson(URL_BASE+"/api/v1/productos",{
+        
+      headers: {
+                "Authorization": `Bearer ${token.token}`,
+      },
+    });
 
 
     let tmp = (lista).filter((v) => v.categoria.categoria === "Playeras")
@@ -184,8 +186,12 @@ async function deleteProducto(item){
     
     try {
      
+  const token = JSON.parse( localStorage.getItem("token"));
     const salida = await fetchJson(URL_BASE+"/api/v1/productos/"+item.id_producto,{
-      method: 'DELETE'
+      method: 'DELETE',
+      headers: {
+                "Authorization": `Bearer ${token.token}`,
+      },
     })   
     } catch (error) {
         

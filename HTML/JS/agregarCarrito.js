@@ -45,6 +45,7 @@ async function loadImage() {
   const urlParams = new URLSearchParams(queryString);
   const id = urlParams.get('id');
 
+  const token = JSON.parse( localStorage.getItem("token"));
   const entrada = await fetchJson(URL_BASE+"/api/v1/productos/"+id)
   
   /**@type {Producto} */
@@ -63,7 +64,15 @@ async function loadImage() {
     document.getElementById("descripcion").append(lista)
   })
 
-  document.getElementById("precio").innerText = "$"+ producto.precio
+  document.getElementById("precio").innerText = "$"+ (producto.precio * (1- producto.descuento*0.01) ).toFixed(2)
+
+
+    if (producto.descuento !== 0) {
+        const spanDiscount = document.createElement("span");
+        spanDiscount.className = "discount";
+        spanDiscount.innerText ="$"+ parseFloat(producto.precio).toFixed(2);
+        document.getElementById("precio").append(spanDiscount)
+    }
 
   document.getElementById("nombre").innerText = producto.nombre
 }
@@ -115,7 +124,7 @@ async function agregar() {
     cantidad_producto: 1,
     estado_pedido: "Recepción",
     imagen: imagen.name,
-    precio_total: producto.precio,
+    precio_total: producto.precio* (1- producto.descuento*0.01),
     rastreador: "ASDVVGBASD",
     producto: producto, 
   }

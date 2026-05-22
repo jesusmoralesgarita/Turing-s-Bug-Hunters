@@ -406,7 +406,7 @@ async function crearRegistro(nuevoUsuario) {
         );
 
         const response = await fetch(
-            URL_BASE+ "/api/v1/usuario",
+            URL_BASE+ "/api/v1/auth/registro",
             {
 
                 method: "POST",

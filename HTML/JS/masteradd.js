@@ -25,10 +25,12 @@ console.log("Actualizando en el servidor...", datosActualizados);
 
 async function addProducto(item) {
   try {
+  const token = JSON.parse( localStorage.getItem("token"));
     const response = await fetch(URL_BASE + "/api/v1/productos", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+                "Authorization": `Bearer ${token.token}`,
       },
       body: JSON.stringify(item),
     });

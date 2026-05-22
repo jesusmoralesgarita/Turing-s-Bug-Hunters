@@ -231,6 +231,8 @@ section {
   flex-direction: column;
   border: 1px solid var(--color-azul-pastel);
   transition: transform 0.2s ease-in-out;
+  overflow: hidden;
+  position: relative;
 }
 .card:hover {
   transform: scale(1.03);
@@ -280,6 +282,16 @@ section {
   margin-bottom: 8px;
 }
 
+.price-discount {
+  display: block; /* ocupa toda la línea */
+  text-align: center; /* centra el texto */
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #71156e;
+  margin-bottom: 8px;
+  text-decoration: line-through;
+}
+
 /* Detalles justificados */
 .details {
   display: block;
@@ -315,4 +327,20 @@ section {
 /*FOOTER*/
 .f-dorado {
   background-color: var(--color-rosa-dorado); /* Poner el fondo dorado */
+}
+
+
+.descuento {
+  background-color: red;
+  color: white;
+  text-align: center;
+  transform: rotateZ(45deg);
+  position: absolute;
+  top: 2rem;
+  right: -5rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+
+  padding-left: 6rem;
+  padding-right: 6rem;
 }
