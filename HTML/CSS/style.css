@@ -167,7 +167,7 @@ body {
 
 /* Sección contenedora con el fondo de acuarela suave */
 .tn-section-sobre-nosotros {
-    background-image: url('../Pictures/fondoTurings.jpeg'); 
+    background-image: url('../Pictures/fondoTurings.png'); 
     
     /* EFECTO DE TRANSPARENCIA REFORZADO */
     background-size: cover;
@@ -246,9 +246,13 @@ body {
 }
 /*Erick*/
 #colorBackmv{
-    background-color: var(--color-azul-profundo);
+    background-color: var(--color-azul-pastel);
+    border-radius: 20px;
+    color: var(--color-blanco);
+    box-shadow: 0 8px 20px rgba(26, 42, 64, 0.25);
     font-family: 'Montserrat';
 }
+
 #colorRaya{
     background-color: var(--color-rosa-dorado);
 }
@@ -263,13 +267,14 @@ body {
     font-family: 'Montserrat-ST';
     color: var(--color-blanco);
     font-size: 1rem;
+    line-height: 1.6; 
 }
 
 /*Alex*/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap');
 
 .valores-card {
-    background-color: var(--color-azul-profundo); 
+    background-color: var(--color-azul-pastel); 
     border: 2px solid var(--color-rosa-dorado); 
     border-radius: 12px;
     padding: 40px 30px;
@@ -297,7 +302,7 @@ body {
     border-radius: 10px;
     padding: 12px 20px;
     margin-bottom: 16px;
-    background-color: rgba(255, 255, 255, 0.03);
+    background-color: var(--color-azul-pastel);
     
     transition: none; 
     transform: none;
@@ -328,7 +333,7 @@ body {
 
 
 .profiledevs{
-    background-color: var(--color-azul-pastel);
+    background-color: var(--color-rosa-dorado);
     border-radius: 1rem;
     display: flex;
     padding: 10px;
@@ -461,7 +466,7 @@ footer a.correo:hover {
 }
 
 .flip-card-front {
-  background-color: var(--color-morado);
+  background-color: rgba(138, 61, 158, 0.6); /* morado con 60% opacidad */
   color: var(--color-azul-profundo);
 }
 
