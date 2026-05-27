@@ -473,3 +473,24 @@ footer a.correo:hover {
 .flip-card-back {
   transform: rotateY(180deg); /* La parte trasera ya está volteada */
 }
+
+#navbarNav{
+  display: flex;
+  position: absolute; /* o absolute si quieres relativo al contenedor */
+  left: 50%;       /* mueve el punto de referencia al centro */
+  transform: translateX(-50%); /* corrige el desplazamiento */
+  max-width: 100%; 
+  box-sizing: border-box;
+  
+}
+
+@media (max-width: 993px) {
+  #navbarNav {
+    display: flex;
+    position: relative;
+    flex-direction: row !important; /* evita el apilado vertical */
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+}
