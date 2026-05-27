@@ -3,7 +3,12 @@ async function render() {
     let pedidos;
     // Cargar pedidos desde la API
     try {
-        const response = await fetch(URL_BASE + "/api/v1/pedidos");
+  const token = JSON.parse( localStorage.getItem("token"));
+        const response = await fetch(URL_BASE + "/api/v1/detalles-pedidos/historial",{
+      headers: {
+                "Authorization": `Bearer ${token.token}`,
+      },
+        });
         if (response.ok) {
             pedidos = await response.json();
         } else {
