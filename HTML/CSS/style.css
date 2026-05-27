@@ -133,7 +133,7 @@
   font-family: "Montserrat";
   min-height: 3.5rem;
   font-size: 1.6rem;
-  color: var(--color-blanco);
+  color: #000000;
   margin: 0;
   display: flex;
   align-items: center;
@@ -259,13 +259,13 @@ body {
 
 .misionVisionT{
     font-family: 'Montserrat-T';
-    color: var(--color-blanco);
+    color: #000000;
     font-size: 2rem;
 }
 
 .misionVisionP{
     font-family: 'Montserrat-ST';
-    color: var(--color-blanco);
+    color: #000000;
     font-size: 1rem;
     line-height: 1.6; 
 }
@@ -286,7 +286,7 @@ body {
 }
 
 .valores-card h2 {
-    color: var(--color-blanco);
+    color: #000000;
     font-family: "Montserrat-T", sans-serif;
     font-size: 2rem;
     text-align: center;
@@ -314,7 +314,7 @@ body {
 }
 
 .valor-item span {
-    color: var(--color-blanco);
+    color: #000000;
     font-family: "Montserrat-ST", sans-serif;
     font-size: 1.2rem;
     font-weight: 500;

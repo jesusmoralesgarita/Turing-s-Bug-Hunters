@@ -114,6 +114,16 @@ async function render() {
     tmp.forEach((e) =>
         document.getElementById("contenedor-pins").append(generateHTML(e)),
     );
+
+    tmp = lista.filter((v) => v.categoria.categoria=== "Stickers");
+    tmp.forEach((e) =>
+        document.getElementById("contenedor-stickers").append(generateHTML(e)),
+    );
+
+    tmp = lista.filter((v) => v.descuento > 0);
+    tmp.forEach((e) =>
+        document.getElementById("contenedor-descuento").append(generateHTML(e)),
+    );
 }
 
 render();

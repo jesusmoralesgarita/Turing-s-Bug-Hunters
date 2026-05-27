@@ -9,7 +9,7 @@
 
 /* Body */
 body {
-  padding-top: 160px;
+  padding-top: 60px;
   background-color: var(--color-blanco);
   color: var(--color-azul-profundo);
 }
@@ -141,9 +141,8 @@ footer a.correo:hover {
 /*BARRA DE CATEGORÍAS*/
 
 .contenedor-categorias {
-  position: fixed;
-  top: 66px;
-  left: 0;
+  position: relative;
+  
   width: 100%;  
   z-index: 999;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
