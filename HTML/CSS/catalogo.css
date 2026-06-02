@@ -1,17 +1,5 @@
-/*Paleta de colores*/
-:root {
-  --color-blanco: #FFFFFF;
-  --color-azul-pastel: #7AB8FF;
-  --color-azul-profundo: #1A2A40;
-  --color-morado: #8A3D9E;
-  --color-rosa-dorado: #E6A8A1;
-}
-
-/* Body */
 body {
   padding-top: 160px;
-  background-color: var(--color-blanco);
-  color: var(--color-azul-profundo);
 }
 
 /*Fuentes*/
@@ -25,44 +13,41 @@ footer a {
 footer h5 {
   font-family: "Montserrat", sans-serif;
   font-weight: 700; /* Bold, títulos principales */
-  color: var(--color-morado);
 }
 
 footer h6 {
   font-family: "Montserrat", sans-serif;
   font-weight: 600; /* SemiBold, subtítulos */
-  color: var(--color-azul-profundo);
 }
 
 footer a i {
-  color: var(--color-azul-profundo);
+  color: black; /* color inicial */
   transition: color 0.3s ease; /* efecto suave */
 }
 
 footer a i:hover {
-  color: var(--color-blanco); /* blanco al pasar el mouse */
+  color: #ffffff; /* blanco al pasar el mouse */
 }
 
 footer a.politica {
-  color: var(--color-azul-profundo); /* color inicial */
+  color: black; /* color inicial */
   transition: color 0.3s ease;
 }
 
 footer a.politica:hover {
-  color: var(--color-blanco); /* blanco al pasar el mouse */
+  color: #ffffff; /* blanco al pasar el mouse */
 }
 
 footer a.correo {
-  color: var(--color-azul-profundo);
+  color: black; /* color inicial */
   transition: color 0.3s ease;
 }
 
 footer a.correo:hover {
-  color: var(--color-blanco); /* blanco al pasar el mouse */
+  color: #ffffff; /* blanco al pasar el mouse */
 }
-
 .profiledevs-desc h1 {
-  color: var(--color-azul-profundo);
+  color: #242424;
   font-family: "Montserrat-ST";
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
@@ -75,28 +60,28 @@ footer a.correo:hover {
   left: 0;
   width: 100%;
   z-index: 1000;
-  background-color: var(--color-azul-profundo);
+  background-color: #0b1c26;
 }
 .navbar-custom .nav-link,
 .navbar-custom .navbar-brand {
-  color: var(--color-blanco);
+  color: white;
   font-family: "DM-Sans-CT";
 }
 .navbar-custom .nav-link:hover {
-  color: var(--color-azul-pastel);
+  color: #00c3ff;
 }
 
 /* estilo del menu de categorias */
 .custom-dropdown {
   width: 280px;
-  background-color: var(--color-rosa-dorado); /* fondo café */
+  background-color: #b67c4b; /* fondo café */
   border: none;
-  font-family: "DM Sans";
+  font-family: "DM-Sans-CT";
 }
 
 /* Caja de categorías */
 .menu-categorias {
-  background-color: var(--color-azul-pastel);
+  background-color: #e9e4ea;
   border-radius: 20px;
   padding: 20px;
 }
@@ -104,30 +89,30 @@ footer a.correo:hover {
 .menu-categorias p {
   margin: 10px 0;
   font-size: 18px;
-  font-family: "DM Sans";
+  font-family: "DM-Sans-CT";
 }
 
 /* Caja inferior */
 .menu-contacto {
-  background-color: var(--color-azul-pastel);
+  background-color: #e9e4ea;
   border-radius: 20px;
   padding: 15px;
 }
 
 .menu-contacto i {
-  color: var(--color-azul-profundo);
+  color: #333;
 }
 
 /* diseño carro de compras */
 .dropdown-carrito {
   width: 250px;
-  background-color: var(--color-rosa-dorado); /* fondo café */
+  background-color: #b67c4b; /* fondo café */
   border: none;
 }
 
 /* Caja interna */
 .carrito-menu {
-  background-color: var(--color-azul-pastel);
+  background-color: #e9e4ea;
   border-radius: 20px;
   padding: 20px;
 }
@@ -135,7 +120,7 @@ footer a.correo:hover {
 .carrito-menu p {
   margin: 15px 0;
   font-size: 18px;
-  font-family: "DM Sans";
+  font-family: "DM-Sans-CT";
 }
 
 /*BARRA DE CATEGORÍAS*/
@@ -175,21 +160,19 @@ h1 {
 .btn-primary {
   font-family: url(/FONT/DM_Sans/DMSans-Regular.ttf);
   font-weight: 400;
-  background-color: var(--color-azul-profundo);
-  border-color: var(--color-azul-profundo);
-  color: var(--color-blanco);
+  background-color: #061f2f;
+  border-color: #061f2f;
 }
 
 .btn-primary:hover {
-  background-color: var(--color-morado);
+  background-color: #061f2f;
 }
 
 .btn-secondary {
   font-family: url(/FONT/DM_Sans/DMSans-Regular.ttf);
   font-weight: 400;
-  background-color: var(--color-morado);
-  border-color: var(--color-morado);
-  color: var(--color-blanco);
+  background-color: #71156e;
+  border-color: #71156e;
 }
 
 /*BANNER PLAYERAS*/
@@ -209,7 +192,7 @@ section {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 2rem;
-  color: var(--color-azul-profundo);
+  color: black;
   background:
     linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
     url("../Pictures/banner.jpeg");
@@ -219,114 +202,180 @@ section {
   padding: 10px 100px;
   display: inline-block;
   text-shadow:
-    -1px -1px 0 var(--color-blanco),
-    1px -1px 0 var(--color-blanco),
-    -1px 1px 0 var(--color-blanco),
-    1px 1px 0 var(--color-blanco);
+    -1px -1px 0 white,
+    1px -1px 0 white,
+    -1px 1px 0 white,
+    1px 1px 0 white;
 }
 
 /*CARDS DE PRODUCTOS*/
-.card {
+.catalogo-wrapper {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto 60px auto;
+  padding: 0 32px;
+}
+
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(170px, 1fr));
+  gap: 44px 64px;
+  align-items: stretch;
+}
+
+.producto-item {
+  width: 100%;
+}
+
+.producto-card {
+  min-height: 430px;
   display: flex;
   flex-direction: column;
-  border: 1px solid var(--color-azul-pastel);
-  transition: transform 0.2s ease-in-out;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  background: #ffffff;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   overflow: hidden;
-  position: relative;
 }
-.card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+.producto-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.14);
 }
+
+.card-img-top,
+.producto-sin-imagen {
+  width: calc(100% - 28px);
+  height: 190px;
+  margin: 14px auto 0 auto;
+  border-radius: 4px;
+  object-fit: contain;
+  background-color: #f7f7f7;
+}
+
+.producto-sin-imagen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed #b8b8b8;
+  color: #777;
+  font-family: "DM Sans", sans-serif;
+  gap: 8px;
+}
+
+.producto-sin-imagen i {
+  font-size: 2.2rem;
+}
+
 .card-body {
   flex: 1;
-  display: flex; /* activa flexbox */
-  flex-direction: column; /* coloca elementos en columna */
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center; /* centra horizontalmente */
-  text-align: center; /* centra el texto */
-  padding: 15px;
-}
-.card-body .btn {
-  margin-top: auto; /* empuja el botón hacia abajo */
+  align-items: stretch;
+  text-align: center;
+  padding: 16px;
 }
 
 .card-title {
-  min-height: 72px;
+  min-height: 45px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  color: var(--color-morado);
+  line-height: 1.25;
+  margin-bottom: 12px;
 }
 
 .card-text {
-  margin-bottom: 15px;
+  margin-bottom: 16px;
 }
 
-.card-img-top {
-  width: 100%;
-  height: 200px;
-  object-fit: contain;
-}
-
-/* Precio centrado */
 .price {
-  display: block; /* ocupa toda la línea */
-  text-align: center; /* centra el texto */
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: var(--color-morado);
+  display: block;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111;
   margin-bottom: 8px;
 }
 
-.price-discount {
-  display: block; /* ocupa toda la línea */
-  text-align: center; /* centra el texto */
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: #71156e;
-  margin-bottom: 8px;
-  text-decoration: line-through;
-}
-
-/* Detalles justificados */
 .details {
   display: block;
-  text-align: justify; /* distribuye el texto */
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: var(--color-azul-profundo);
+  text-align: left;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: #6c757d;
 }
 
-/* Botón dentro de la card */
-.card .btn {
-  background-color: var(--color-morado); /* color corporativo */
-  color: var(--color-blanco);
-  border: none;
-  display: block; /* hace que el botón sea un bloque */
-  margin: 0 auto; /* centra horizontalmente */
-  text-align: center; /* asegura que el texto esté centrado */
-  width: 80%;
-  padding: 12px 20px;
-  font-size: 1.1rem; /* opcional: ancho fijo para mejor estética */
-  border-radius: 8px;
-}
-.card .btn:hover {
-  background-color: var(--color-azul-pastel); /* tono más claro para hover */
-  color: var(--color-blanco);
-}
+.card .btn,
 .btn-custom {
+  background-color: #6d4bb3;
+  color: #fff;
+  border: none;
   width: 100%;
-  padding: 14px;
-  font-size: 1.1rem;
+  padding: 10px 12px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  border-radius: 10px;
+}
+
+.card .btn:hover,
+.btn-custom:hover {
+  background-color: #56369b;
+  color: #fff;
+}
+
+@media (max-width: 1200px) {
+  .productos-grid {
+    grid-template-columns: repeat(4, minmax(170px, 1fr));
+    gap: 36px;
+  }
+}
+
+@media (max-width: 992px) {
+  body {
+    padding-top: 210px;
+  }
+
+  .productos-grid {
+    grid-template-columns: repeat(3, minmax(160px, 1fr));
+    gap: 28px;
+  }
+
+  .botones-categorias {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .catalogo-wrapper {
+    padding: 0 20px;
+  }
+
+  .productos-grid {
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+    gap: 24px;
+  }
+
+  .banner-playeras {
+    font-size: 1.35rem;
+    padding: 8px 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .productos-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /*FOOTER*/
 .f-dorado {
-  background-color: var(--color-rosa-dorado); /* Poner el fondo dorado */
+  background-color: #be814f; /* Poner el fondo dorado */
 }
 
 
@@ -343,4 +392,15 @@ section {
 
   padding-left: 6rem;
   padding-right: 6rem;
+}
+
+
+.price-discount {
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 8px;
+  margin-left: 1.5rem;
+  text-decoration: line-through;
 }

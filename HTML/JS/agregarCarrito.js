@@ -52,6 +52,11 @@ async function loadImage() {
   producto = entrada;
   console.log(producto)
 
+  if(!producto.diseno){
+    inputImagen.disabled = true;
+    dropZoneAle.style = "display: none"
+  }
+
   document.getElementById("imagen-place").src = producto.imagen;
 
   document.getElementById("talla").innerText = producto.talla
@@ -85,8 +90,7 @@ request.onupgradeneeded = (event) => {
 
     if (!db.objectStoreNames.contains("imagenes")) {
         db.createObjectStore("imagenes", {
-            keyPath: "id",
-            autoIncrement: true
+            keyPath: "id"
         });
     }
 };
@@ -103,6 +107,33 @@ request.onerror = (event) => {
 
 async function agregar() {
 
+
+  const salida = {
+    cantidad_producto: 1,
+    estado_pedido: "Recepcion del pedido",
+    imagen: imagen?.name ?? null,
+    precio_total: producto.precio* (1- producto.descuento*0.01),
+    rastreador: "ASDVVGBASD",
+    producto: producto, 
+  }
+  
+ const carrito = localStorage.getItem("detalles")
+
+ let storage = [];
+  if(carrito){
+    storage = JSON.parse( localStorage.getItem("detalles"))
+    storage.push(salida)
+    localStorage.setItem("detalles", JSON.stringify(storage))
+  }else{
+    storage.push(salida)
+    localStorage.setItem("detalles", JSON.stringify([salida]))
+  }  
+  alert("Tu producto fue agregado a tu carrito")
+
+  
+
+
+  if (producto.diseno && imagen) {
     const transaction = db.transaction(["imagenes"], "readwrite");
 
     const store = transaction.objectStore("imagenes");
@@ -110,6 +141,7 @@ async function agregar() {
 
 
     store.add({
+        id: storage.length,
         archivo: imagen
     });
 
@@ -120,25 +152,8 @@ async function agregar() {
 
   console.log(fileInputAle)
   console.log(imagen)
-  const salida = {
-    cantidad_producto: 1,
-    estado_pedido: "Recepción",
-    imagen: imagen.name,
-    precio_total: producto.precio* (1- producto.descuento*0.01),
-    rastreador: "ASDVVGBASD",
-    producto: producto, 
+    
   }
-  
- const carrito = localStorage.getItem("detalles")
-
-  if(carrito){
-    const storage = JSON.parse( localStorage.getItem("detalles"))
-    storage.push(salida)
-    localStorage.setItem("detalles", JSON.stringify(storage))
-  }else{
-    localStorage.setItem("detalles", JSON.stringify([salida]))
-  }  
-  alert("Tu producto fue agregado a tu carrito")
 
 }
 

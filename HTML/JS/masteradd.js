@@ -26,13 +26,13 @@ console.log("Actualizando en el servidor...", datosActualizados);
 async function addProducto(item) {
   try {
   const token = JSON.parse( localStorage.getItem("token"));
+    
     const response = await fetch(URL_BASE + "/api/v1/productos", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
                 "Authorization": `Bearer ${token.token}`,
       },
-      body: JSON.stringify(item),
+      body: item,
     });
     if (!response.ok) {
       throw new Error("Error en la respuesta del servidor");
@@ -128,7 +128,8 @@ function validarPrecio(input) {
 }
 function validarDescuento(input) {
   const precio = parseInt(input.value.trim());
-  if (precio && precio >= 0 && precio <= 100) {
+  console.log(precio)
+  if (precio >= 0 && precio <= 100) {
     return "";
   } else {
     return "El descuento debe ser un numero entre 0 y 100.";
@@ -247,30 +248,39 @@ document.addEventListener("DOMContentLoaded", () => {
       let guardadoExitoso = true;
       talla.forEach((t) => {
         color.forEach(async(c) => {
+
+
+          const form = new FormData();
+          form.append("descripcion",data.descripcion);
+          form.append("color",c);
+          form.append("diseno",data.diseno ? true : false);
+          form.append("descuento", parseInt(data.descuento) || 0);
+          console.log(document.getElementById("inputImagen").files[0])
+          form.append("imagenFile",document.getElementById("inputImagen").files[0]);
+          form.append("imagen",data.imagen.name);
+          form.append("nombre",data.nombre);
+          form.append("precio",parseFloat(data.precio));
+          form.append("stock",parseInt(data.stock) || 0);
+          form.append("talla",t);
+          form.append("categoria.id_categoria",parseInt(data.categoria))
+/*
 const nuevo = new Producto({
 categoria: {
     id_categoria: parseInt(data.categoria),
 },
 descripcion: data.descripcion,
-
 color: c,
-
 diseno: data.diseno ? true : false,
-
 descuento: parseInt(data.descuento) || 0,
-
 imagen: data.imagen && data.imagen.name ? "/images/" + data.imagen.name : "/images/placeholder.png",
-
 nombre: data.nombre,
-
 precio: parseFloat(data.precio),
-
 stock: parseInt(data.stock) || 0,
-
 talla: t,
 
       });
-       guardadoExitoso = guardadoExitoso && await addProducto(nuevo);
+      */
+       guardadoExitoso = guardadoExitoso && await addProducto(form);
         });
       });
       /*{

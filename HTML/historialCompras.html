@@ -110,8 +110,53 @@
 
 
     </div>
-
   </div>
+
+
+<div id="modal-resena-steam" class="modal-overlay-steam" style="display: none;">
+    <div class="modal-content-steam">
+        
+        <div class="modal-logo-header">
+            <img src="Pictures/logo.jpeg" alt="Logo Tinta Nómada" class="rounded-circle" width="70" height="70">
+        </div>
+
+        <h3 class="fw-bold text-center mt-4 mb-1" style="color: #2D1442;">Escribe tu opinión</h3>
+        <p class="text-muted text-center small mb-2">Tu experiencia nos ayuda a mejorar</p>
+        <p id="modal-descripcion-producto" class="text-center small mb-4 descripcion-producto-modal"></p>
+
+        <form id="formReviewFlotante" onsubmit="enviarResenaFlotante(event)">
+            
+            <div class="mb-3">
+                <label class="form-label fw-bold d-block mb-1" style="color: #2D1442;">Calificación</label>
+                <div class="d-flex align-items-center gap-2">
+                    <div class="selector-estrellas-modal" id="estrellas-modal" style="cursor: pointer; font-size: 1.5rem; display: flex; gap: 5px;">
+                        <span data-value="1">★</span>
+                        <span data-value="2">★</span>
+                        <span data-value="3">★</span>
+                        <span data-value="4">★</span>
+                        <span data-value="5">★</span>
+                    </div>
+                    <span class="text-muted small ms-2">Selecciona de 1 a 5 estrellas</span>
+                </div>
+            </div>
+            
+            <div class="mb-3">
+                <label for="modal-comentario" class="form-label fw-bold" style="color: #2D1442;">Tu comentario</label>
+                <textarea id="modal-comentario" class="form-control input-custom-steam" rows="4" placeholder="Cuéntanos qué te pareció el artículo..." required></textarea>
+            </div>
+
+            <div class="mb-4">
+                <span class="badge-verificado-steam">
+                    <i class="bi bi-check-lg"></i> Reseña verificada
+                </span>
+            </div>
+
+            <button type="submit" class="btn-publicar-degradado-steam">Publicar reseña</button>
+            <button type="button" class="btn-regresar-modal-steam" onclick="cerrarModalResena()">Regresar al inicio</button>
+        </form>
+    </div>
+</div>
+
 
 
   <footer class="f-dorado text-white pt-4 pb-2">

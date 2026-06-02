@@ -120,6 +120,7 @@ async function render() {
     });
 
 
+    console.log(lista)
     let tmp = (lista).filter((v) => v.categoria.categoria === "Playeras")
     tmp.forEach(e => document.getElementById("contenedor-playeras").append(generateHTML(e)))
 

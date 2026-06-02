@@ -6,11 +6,11 @@
     <title>Inicio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="CSS/fonts.css">
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/index.css">
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <script src="JS/login.js"></script>
 </head>
 <body>
@@ -162,7 +162,7 @@
       </div>
     </div>
 
-
+    
 <section class="carousel-section">
   <h2>Últimos Encargos</h2>
   <p>Mira algunos de los productos personalizados que hemos creado recientemente.</p>
@@ -260,58 +260,19 @@
 
 
 
-<section class="container my-5">
-    <h5 class="mb-4 fw-bold">Lo que dicen nuestros clientes</h5>
-    <div id="carouselTestimonios" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
-        <div class="carousel-inner">
-            
-            <div class="carousel-item active">
-                <div class="row g-3" id="reviews">
-                    <div class="col-md-4">
-                        <div class="custom-review-card p-4">
-                            <div class="review-stars mb-2"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-                            <h6 class="fw-bold mb-1">¡Increíble sudadera!</h6>
-                            <p class="review-body">La calidad de la tela es excelente y el diseño de Kemonito superó mis expectativas. ¡Muy calientita!</p>
-                            <div class="d-flex align-items-center mt-auto">
-                                <img src="Pictures/cliente1.jpg" class="rounded-circle me-2" width="35" height="35" alt="Perfil">
-                                <div>
-                                    <p class="reviewer-name mb-0">Caballerito</p>
-                                    <p class="review-date mb-0">15/04/2026</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="custom-review-card p-4">
-                            <div class="review-stars mb-2"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i></div>
-                            <h6 class="fw-bold mb-1">Taza de gran calidad</h6>
-                            <p class="review-body">El estampado de la taza es muy resistente. Ya la metí al microondas varias veces y sigue como nueva.</p>
-                            <div class="d-flex align-items-center mt-auto">
-                                <img src="Pictures/cliente2.jfif" class="rounded-circle me-2" width="35" height="35" alt="Perfil">
-                                <div>
-                                    <p class="reviewer-name mb-0">Spider-Man.</p>
-                                    <p class="review-date mb-0">12/04/2026</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="custom-review-card p-4">
-                            <div class="review-stars mb-2"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-                            <h6 class="fw-bold mb-1">Stickers y Vasos top</h6>
-                            <p class="review-body">Compré varios stickers para mi laptop y un vaso térmico. Todo llegó muy bien protegido y rápido.</p>
-                            <div class="d-flex align-items-center mt-auto">
-                                <img src="Pictures/cliente3.jfif" class="rounded-circle me-2" width="35" height="35" alt="Perfil">
-                                <div>
-                                    <p class="reviewer-name mb-0">Slendeman</p>
-                                    <p class="review-date mb-0">10/04/2026</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+<section style="background-image: url('Pictures/primer-fondo-reseñas.png'); background-size: cover; background-position: center; padding: 50px 0; text-align: center;">
+    <div class="container">
+        <!-- Logotipo central -->
+        <div class="mb-3">
+            <img src="Pictures/logo.jpeg" alt="Logo Tinta Nómada" class="rounded-circle shadow-sm" width="90" height="90" style="border: 3px solid white;">
+        </div>
+        <h2 class="text-white fw-bold mb-1">Lo que dicen nuestros clientes</h2>
+        <p class="text-white-50 small">Reseñas verificadas de compradores reales</p>
+    </div>
+    <div class="container">
+        <div class="grid-resenas-steam row" id="bloque-resenas-dinamicas">
+            <p class="text-center text-muted w-100">Cargando las opiniones de nuestros compradores...</p>
+        
         </div>
     </div>
 </section>
