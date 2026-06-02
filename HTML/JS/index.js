@@ -7,7 +7,7 @@ let swiperInstance = null;
 
 async function renderCarrusel() {
   try {
-    const detalles = await fetchJson(URL_BASE + "/api/v1/detalles-pedidos");
+    const detalles = await fetchJson(URL_BASE + "/api/v1/detalles-pedidos/last");
     console.log(detalles);
 
     const wrapper = document.querySelector(".swiper-wrapper");
@@ -15,6 +15,7 @@ async function renderCarrusel() {
     
     wrapper.innerHTML = ""; 
     console.log(wrapper);
+
 
     detalles.forEach(item => {
       wrapper.append(generateCarrusel(item));
@@ -25,9 +26,11 @@ async function renderCarrusel() {
       swiperInstance.destroy(true, true);
     }
 
+
     // 2. Inicializar nueva instancia
     swiperInstance = new Swiper(".mySwiper", {
-      slidesPerView: "auto",
+slidesPerView: 3, // Asegúrate de que el fetch devuelva más elementos que este número
+            slidesPerGroup: 1,
       centeredSlides: true,
       spaceBetween: 20,
       loop: detalles.length > 1, // Solo hacer loop si hay más de 1 item
@@ -52,12 +55,17 @@ async function renderCarrusel() {
   }
 }
 
+
+/**
+ * 
+ * @param {Pedido} item 
+ */
 function generateCarrusel(item) {
   const slide = document.createElement("div");
   slide.className = "swiper-slide";
 
   // Agregando validación simple para la imagen y el texto
-  const { producto } = item;
+  const producto = item;
   
   slide.innerHTML = `
     <div class="card">
@@ -76,30 +84,7 @@ renderCarrusel();
 
 //Oswaldo
 
-
 //Giovani
-const swiper = new Swiper(".mySwiper", {
-  slidesPerView: "auto",
-  centeredSlides: true,
-  spaceBetween: 20,
-  loop: true,
-
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: false,
-  },
-});
-
 
 //Alex
 
@@ -152,14 +137,16 @@ async function renderReview() {
   //CREAMOS NUESTRA FUNCION GENERATE
 
   //OBTENEMOS EL CONTENEDOR DONDE SE MOSTRARA
-  const reviewContainer = document.getElementById("reviews")
+  const reviewContainer = document.getElementById("bloque-resenas-dinamicas")
+
+
   
   //BORRAMOS EL CONTENIDO DEL CONTENERDOR
   reviewContainer.innerHTML = ""
 
   //COLOCAMOS LA INFORMACION USANDO LA FUNCION GENERATE
-  reviews.forEach((e) => {
-    reviewContainer.append( generateReview( e))
+  reviews.forEach((e,i) => {
+      reviewContainer.append( generateReview( e))
   })
 
 }
@@ -190,7 +177,7 @@ function generateReview(review) {
 
   for (let i = 0; i < 5-review.calificacion; i++) {
       const star = document.createElement("i");
-      star.className = "bi bi bi-star";
+      star.className = "bi bi-star";
       stars.appendChild(star);
   }
 
@@ -234,6 +221,11 @@ function generateReview(review) {
 
   card.appendChild(stars);
   card.appendChild(reviewBody);
+
+
+  const reviewBreak = document.createElement("hr");
+
+  card.appendChild(reviewBreak);
   card.appendChild(footer);
 
   col.appendChild(card);

@@ -29,6 +29,7 @@
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
+    margin-bottom: 1rem;
 }
 
 .state-img{
@@ -45,10 +46,15 @@
     aspect-ratio: 1;
 }
 
+.uncheck {
+    color: transparent !important; 
+}
+
 .check {
     aspect-ratio: 1;
     color: var(--color-blanco);
     border-radius: 50%;
+    width: 1rem;
 }
 
 .check-ent{
@@ -141,13 +147,14 @@
 .state-img{
     margin: auto;
     aspect-ratio: 1;
-    max-width: 20%;
+    max-width: 10rem;
     height: 100%;
 }
 
 .state-name{
     margin: auto;
     padding: 1rem;
+    max-width: 15rem;
 }
 
 .state-name h3 {
@@ -208,11 +215,188 @@
     color: var(--color-blanco);
     font-weight: bold;
     font-size: 1.3rem;
-    background-color: var(--color-morado);
 }
 
 .state-stateesc-title{
     font-size: 1rem;
     text-align: center;
     color: var(--color-azul-profundo);
+}
+
+
+.pedido-container{
+    border: solid 5px var(--color-azul-profundo);
+    padding: 1rem;
+    border-radius: 1.5rem;
+}
+
+.boton-reseña {
+    background-color: var(--color-azul-profundo);
+    border-color: var(--color-azul-profundo);
+}
+
+.boton-reseña:hover {
+
+    background-color: var(--color-azul-pastel);
+    border-color: var(--color-azul-pastel);
+}
+
+
+/* La tarjeta blanca centralizada de reseñas */
+.tarjeta-invitacion-blanca {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 24px;
+    padding: 40px;
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* El botón degradado "Tinta Nómada" */
+.btn-tinta-nomada-degradado {
+    background: linear-gradient(90deg, #EAA688, #C38CB5);
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding: 12px 64px;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(234, 166, 136, 0.3);
+    transition: transform 0.2s ease;
+}
+
+.btn-tinta-nomada-degradado:hover {
+    transform: scale(1.02);
+}
+
+/* Contenedor oscuro de fondo que cubre toda la pantalla */
+.modal-overlay-steam {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo negro transparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Tarjeta blanca centrada del formulario */
+.modal-content-steam {
+    background-color: #ffffff !important;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Centrar el logo en la parte superior */
+.modal-logo-header {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Diseño de las estrellas */
+.selector-estrellas-modal span {
+    font-size: 2rem;
+    color: #ccc; /* Gris por defecto */
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+/* Cajas de texto e inputs */
+.input-custom-steam {
+    border: 1px solid #ddd !important;
+    border-radius: 8px !important;
+    padding: 10px !important;
+    width: 100%;
+    background-color: #fff !important;
+}
+
+/* Botón Publicar con su degradado rosa/morado */
+.btn-publicar-degradado-steam {
+    background: linear-gradient(90deg, #EAA688, #C38CB5) !important;
+    color: white !important;
+    border: none !important;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    width: 100%;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.btn-publicar-degradado-steam:hover {
+    opacity: 0.9;
+}
+
+/* Botón Regresar al inicio */
+.btn-regresar-modal-steam {
+    background-color: transparent !important;
+    color: #2D1442 !important;
+    border: 1px solid #2D1442 !important;
+    padding: 12px 20px;
+    border-radius: 8px;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-regresar-modal-steam:hover {
+    background-color: #2D1442 !important;
+    color: white !important;
+}
+
+/* Badge verde de verificación */
+.badge-verificado-steam {
+    display: inline-block;
+    background-color: #e2f0d9;
+    color: #385723;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+/* Ajustes finales: botón de reseña dentro de cada pedido entregado */
+.state-review {
+    margin: auto;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 180px;
+}
+
+.btn-review-pedido {
+    font-size: 0.95rem;
+    padding: 10px 38px;
+    white-space: nowrap;
+}
+
+.descripcion-producto-modal {
+    color: #2E8472;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .state-div {
+        gap: 0.75rem;
+    }
+
+    .state-review {
+        width: 100%;
+        order: 3;
+    }
 }

@@ -20,10 +20,9 @@ async function addProducto(item) {
     const response = await fetch(URL_BASE + "/api/v1/productos", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
                 "Authorization": `Bearer ${token.token}`,
       },
-      body: JSON.stringify(item),
+      body: item,
     });
     if (!response.ok) {
       throw new Error("Error en la respuesta del servidor");
@@ -37,18 +36,17 @@ async function addProducto(item) {
 }
 
 /**@param {Producto} item */
-async function editProducto(item) {
+async function editProducto(item,id) {
 
   try {
     console.log(item)
   const token = JSON.parse( localStorage.getItem("token"));
-    const response = await fetch(URL_BASE+"/api/v1/productos/"+item.id_producto,{
+    const response = await fetch(URL_BASE+"/api/v1/productos/"+id,{
       method: 'PUT',
       headers: {
-        'Content-Type': 'application/json',
                 "Authorization": `Bearer ${token.token}`,
       },
-      body: JSON.stringify(item),
+      body: item,
     })
     if (!response.ok) {
       throw new Error("Error en la respuesta del servidor");
@@ -331,10 +329,25 @@ document.addEventListener("DOMContentLoaded", async () => {
                         imagen: inputImagen.files[0]?.name || "",
                         descuento: data.descuento,
                     });
+
+                    const formData = new FormData();
+                    formData.append("id_producto",parseInt(params.get("id")));
+                    formData.append("categoria.id_categoria", data.categoria);
+                    formData.append("nombre",data.nombre);
+                    formData.append("precio",data.precio);
+                    formData.append("talla",t);
+                    formData.append("color",c);
+                    formData.append("diseno",data.diseno? true : false);
+                    formData.append("descripcion",data.descripcion);
+                    formData.append("stock",data.stock);
+                    formData.append("imagen",inputImagen.files[0]?.name || "");
+                    formData.append("descuento",data.descuento);
+                    formData.append("imagenFile",inputImagen.files[0]);
+                    console.log(data.categoria)
                     if(cuenta == 1){
-                        editProducto(nuevo);
+                        editProducto(formData,parseInt(params.get("id")));
                     }else{
-                        addProducto(nuevo);
+                        addProducto(formData);
                     }
                     cuenta++;
 
