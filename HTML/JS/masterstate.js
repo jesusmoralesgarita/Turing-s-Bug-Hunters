@@ -115,7 +115,7 @@ function generateHMTL(pedido) {
 
     const totalValue = document.createElement("div");
     totalValue.className = "state-row-value";
-    totalValue.textContent = pedido.precio_total;
+    totalValue.textContent = parseFloat( pedido.precio_total).toFixed(2);
 
     row2.appendChild(cantidadValue);
     row2.appendChild(totalValue);
@@ -182,7 +182,9 @@ function generateHMTL(pedido) {
     stateStatus.appendChild(statusContainer);
 
     /* APPEND ALL */
-    container.appendChild(stateImg);
+    if (pedido.imagen != null && pedido.imagen != "null") {    
+        container.appendChild(stateImg);
+    }
     container.appendChild(stateName);
     container.appendChild(statePrice);
     container.appendChild(stateStatus);
