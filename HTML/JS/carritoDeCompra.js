@@ -112,9 +112,9 @@ function crearProductoDOM(pedido, id) {
     });
 
     // APPEND CONTROLES
-    controls.appendChild(btnPlus);
-    controls.appendChild(qtyInput);
     controls.appendChild(btnMinus);
+    controls.appendChild(qtyInput);
+    controls.appendChild(btnPlus);
 
     // APPEND RIGHT
     rightSection.appendChild(priceTitle);
@@ -174,6 +174,7 @@ async function pago(ev) {
 
 const token = JSON.parse(localStorage.getItem("token"));
 
+
 /**@type {Pedido} */
 const responsePedido = await fetch(URL_BASE + "/api/v1/pedidos", {
     method: "POST",
@@ -186,6 +187,8 @@ const responsePedido = await fetch(URL_BASE + "/api/v1/pedidos", {
 
 const fetchPedido = await responsePedido.json();
 console.log(fetchPedido);
+
+
 
 // --- 1. PASO NUEVO: LEER TODAS LAS IMÁGENES PRIMERO ---
 // Creamos una función promesa para vaciar IndexedDB rápidamente a un array
@@ -260,18 +263,20 @@ try {
         formData.append("rastreador", e.rastreador);
 
         try {
-            const responseDetalle = await fetch(
-                URL_BASE + "/api/v1/detalles-pedidos",
-                {
-                    method: "POST",
-                    headers: {
-                        Authorization: `Bearer ${token.token}`,
+            if (e.cantidad_producto >0) {
+                const responseDetalle = await fetch(
+                    URL_BASE + "/api/v1/detalles-pedidos",
+                    {
+                        method: "POST",
+                        headers: {
+                            Authorization: `Bearer ${token.token}`,
+                        },
+                        body: formData,
                     },
-                    body: formData,
-                },
-            );
+                );
 
-            console.log(await responseDetalle.text());
+                console.log(await responseDetalle.text());
+            }
         } catch (error) {
             console.error(`Error enviando el detalle ${idImagen}:`, error);
         }

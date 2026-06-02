@@ -62,7 +62,7 @@ function generateHMTL(pedido) {
         indexPedido = 0;
     }
     const container = document.createElement("div");
-    container.className = "state-div" + states[indexPedido].class;
+    container.className = "state-div " + states[indexPedido].class;
 
     /* IMG */
     const stateImg = document.createElement("div");
